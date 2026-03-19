@@ -16,7 +16,7 @@ from sqlalchemy import (
     ForeignKey, Enum, UniqueConstraint
 )
 from sqlalchemy.orm import relationship
-from database import Base
+from .database import Base
 
 # basic user profile information
 

@@ -8,14 +8,14 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from database import engine, Base
+from .database import engine, Base
 
 
 # Uncomment as we build each component
-# from routers import auth, users, restaurants, reviews, favorites, owner, ai_assistant
+# from .routers import auth, users, restaurants, reviews, favorites, owner, ai_assistant
 
 
-from models import User, UserPreference, Restaurant, Review, Favorite
+from .models import User, UserPreference, Restaurant, Review, Favorite
 
 load_dotenv()
 
