@@ -4,7 +4,7 @@ database.py - MySQL connection via SQLAlchemy
 import os
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy.orm import sessionmaker, DeclarativeBase
 
 load_dotenv()
 
@@ -16,7 +16,7 @@ DB_NAME = os.getenv("DB_NAME")
 # PyMySQL Driver
 DATABASE_URL = f"mysql+pymysql://{DB_USER}:@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
-engine = create_engine(DATABASE_URL, echo=False)
+engine = create_engine(DATABASE_URL, echo=True)  # echo=True for debugging
 
 # Each call to SessionLocal() gives you one DB session
 # autocommit=False means we control when commits happen
@@ -27,7 +27,10 @@ SessionLocal = sessionmaker(autocommit=False,
                             )
 
 # All the ORM models inherit from this Base class
-Base = declarative_base()
+
+
+class Base(DeclarativeBase):
+    pass
 
 
 def get_db():

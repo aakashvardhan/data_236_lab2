@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from app.routers.auth import router as auth_router
 
 from .database import engine, Base
 
@@ -61,16 +62,11 @@ app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
 
 # -------------- Routers -----------------------------
 # Mounting all route modules
-# app.include_router(auth.router, prefix="/auth", tags=["Auth"])
-# app.include_router(users.router, prefix="/users", tags=["Users"])
-# app.include_router(restaurants.router, prefix="/restaurants", tags=["Restaurants"])
-# app.include_router(reviews.router, prefix="/reviews", tags=["Reviews"])
-# app.include_router(favorites.router, prefix="/favorites", tags=["Favorites"])
-# app.include_router(owner.router, prefix="/owner", tags=["Owner"])
-# app.include_router(ai_assistant.router, prefix="/ai-assistant", tags=["AI Assistant"])
+app.include_router(auth_router)
 
 
 # ------------ Health Check ---------------------
+
 
 @app.get("/", tags=["Health"])
 def root():
