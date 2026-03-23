@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from models import Restaurant, Review
+from app.models import Restaurant, Review
 
 def recalculate_rating(db: Session, restaurant_id: int) -> None:
     restaurant = db.query(Restaurant).filter(

@@ -10,7 +10,6 @@ This script:
 """
 
 import os
-import sys
 import urllib.request
 import uuid
 from dotenv import load_dotenv
@@ -20,8 +19,7 @@ load_dotenv()
 # --- Database setup ---
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from database import Base
-from models import Restaurant, User
+from app.models import Restaurant
 
 DB_USER = os.getenv("DB_USER", "root")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "")
@@ -138,52 +136,76 @@ def download_image(url, filename):
         return None
 
 
+def get_existing_restaurant(restaurant_data: dict) -> Restaurant | None:
+    """Return an existing seeded restaurant using a stable natural key."""
+    return (
+        db.query(Restaurant)
+        .filter(
+            Restaurant.name == restaurant_data["name"],
+            Restaurant.address == restaurant_data["address"],
+            Restaurant.city == restaurant_data["city"],
+            Restaurant.state == restaurant_data["state"],
+            Restaurant.zip_code == restaurant_data["zip_code"],
+        )
+        .first()
+    )
+
+
 def seed():
     print("\n🍽️  Starting restaurant seeding...\n")
 
-    # Get first user as the owner (or None)
-    first_user = db.query(User).first()
-    owner_id = first_user.id if first_user else None
-
-    success_count = 0
+    inserted_count = 0
+    updated_count = 0
 
     for i, restaurant_data in enumerate(RESTAURANTS):
-        print(f"[{i+1}/30] Adding: {restaurant_data['name']}")
+        existing = get_existing_restaurant(restaurant_data)
+        mode = "Updating" if existing else "Adding"
+        print(f"[{i+1}/30] {mode}: {restaurant_data['name']}")
 
-        # Download image
-        image_url = FOOD_IMAGES[i % len(FOOD_IMAGES)]
-        image_filename = f"seed_{i+1}_{uuid.uuid4().hex[:8]}.jpg"
-        photo_path = download_image(image_url, image_filename)
+        restaurant = existing or Restaurant()
 
-        # Create restaurant
-        restaurant = Restaurant(
-            name=restaurant_data['name'],
-            cuisine_type=restaurant_data['cuisine_type'],
-            pricing_tier=restaurant_data['pricing_tier'],
-            city=restaurant_data['city'],
-            state=restaurant_data['state'],
-            zip_code=restaurant_data['zip_code'],
-            address=restaurant_data['address'],
-            contact_info=restaurant_data['contact_info'],
-            description=restaurant_data['description'],
-            hours=restaurant_data['hours'],
-            photos=photo_path,
-            avg_rating=round(3.5 + (i % 15) * 0.1, 1),  # ratings between 3.5 - 5.0
-            review_count=i * 3 + 5,
-        )
+        # Download image only when creating, or when an existing row has no photo.
+        photo_path = restaurant.photos
+        if existing is None or not restaurant.photos:
+            image_url = FOOD_IMAGES[i % len(FOOD_IMAGES)]
+            image_filename = f"seed_{i+1}_{uuid.uuid4().hex[:8]}.jpg"
+            downloaded = download_image(image_url, image_filename)
+            if downloaded:
+                photo_path = downloaded
+
+        restaurant.name = restaurant_data["name"]
+        restaurant.cuisine_type = restaurant_data["cuisine_type"]
+        restaurant.pricing_tier = restaurant_data["pricing_tier"]
+        restaurant.city = restaurant_data["city"]
+        restaurant.state = restaurant_data["state"]
+        restaurant.zip_code = restaurant_data["zip_code"]
+        restaurant.address = restaurant_data["address"]
+        restaurant.contact_info = restaurant_data["contact_info"]
+        restaurant.description = restaurant_data["description"]
+        restaurant.hours = restaurant_data["hours"]
+        restaurant.photos = photo_path
+        restaurant.avg_rating = round(3.5 + (i % 15) * 0.1, 1)  # ratings between 3.5 - 5.0
+        restaurant.review_count = i * 3 + 5
 
         try:
-            db.add(restaurant)
+            if existing is None:
+                db.add(restaurant)
             db.commit()
             db.refresh(restaurant)
-            print(f"  ✓ Added to database (ID: {restaurant.id})")
-            success_count += 1
+            if existing is None:
+                print(f"  ✓ Added to database (ID: {restaurant.id})")
+                inserted_count += 1
+            else:
+                print(f"  ✓ Updated existing restaurant (ID: {restaurant.id})")
+                updated_count += 1
         except Exception as e:
             db.rollback()
             print(f"  ✗ Database error: {e}")
 
-    print(f"\n✅ Done! {success_count}/30 restaurants added successfully!")
-    print(f"📍 Visit http://localhost:5173 to see them!\n")
+    print(
+        f"\n✅ Done! Inserted: {inserted_count}, Updated: {updated_count}, Total processed: {len(RESTAURANTS)}"
+    )
+    print("📍 Visit http://localhost:5173 to see them!\n")
     db.close()
 
 

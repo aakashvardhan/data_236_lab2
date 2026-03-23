@@ -2,10 +2,10 @@ import os
 import uuid
 from fastapi import APIRouter, Depends, HTTPException, status, Query, UploadFile, File
 from sqlalchemy.orm import Session
-from database import get_db
-from models import User, Restaurant
-from schemas import RestaurantCreate, RestaurantResponse, RestaurantUpdate
-from utils.security import get_current_user
+from app.database import get_db
+from app.models import User, Restaurant
+from app.schemas import RestaurantCreate, RestaurantResponse, RestaurantUpdate
+from app.utils.security import get_current_user
 router = APIRouter(prefix="/restaurants", tags=["Restaurants"])
 
 RESTAURANT_UPLOAD_DIR = "uploads/restaurant_photos"

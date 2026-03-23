@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from database import get_db
-from models import User, Restaurant, Review
-from schemas import ReviewCreate, ReviewResponse, ReviewUpdate
-from utils.security import get_current_user
-from utils.ratings import recalculate_rating
+from app.database import get_db
+from app.models import User, Restaurant, Review
+from app.schemas import ReviewCreate, ReviewResponse, ReviewUpdate
+from app.utils.security import get_current_user
+from app.utils.ratings import recalculate_rating
 router = APIRouter(tags=["Reviews"])
 
 def _get_user_review(review_id: int, user_id, db: Session) -> Review:

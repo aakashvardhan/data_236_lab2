@@ -2,7 +2,7 @@ from langchain_classic.memory import ConversationBufferWindowMemory
 from sqlalchemy import func
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
-from models import ConversationMessage
+from app.models import ConversationMessage
 
 
 class ConversationManager:

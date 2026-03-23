@@ -12,11 +12,12 @@ class Settings(BaseSettings):
     JWT_SECRET_KEY: str = "change-me"
     JWT_ALGORITHM: str = "HS256"
     JWT_EXPIRATION_MINUTES: int = 60
-    TAVILY_API_KEY: str = "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"
-    GEMINI_API_KEY: str = "AIzaSyC4PhqGMPP6M0LaDb6JL_Ji77qJZ5LIH7g"
+    TAVILY_API_KEY: str = ""
+    GEMINI_API_KEY: str = ""
     HF_API_TOKEN: str = ""
+
     class Config:
-        env_file = ".env"
+        env_file = "../.env"
 
 
 @lru_cache()

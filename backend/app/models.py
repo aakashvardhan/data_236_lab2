@@ -12,7 +12,7 @@ Each class = one MySQL table. SQLAlchemy maps Python objects <-> rows
 from datetime import datetime
 from sqlalchemy import Column, Integer, String, Text, Float, DateTime, ForeignKey, Enum, UniqueConstraint
 from sqlalchemy.orm import relationship
-from database import Base
+from app.database import Base
 from sqlalchemy.sql import func
 # basic user profile information
 

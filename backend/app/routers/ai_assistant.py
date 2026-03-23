@@ -3,11 +3,11 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from sse_starlette.sse import EventSourceResponse
-from database import get_db
-from utils.security import get_current_user
-from models import User
-from services.ai_assistant import chat, chat_stream
-from services.conversation_manager import conversation_manager
+from app.database import get_db
+from app.utils.security import get_current_user
+from app.models import User
+from app.services.ai_assistant import chat, chat_stream
+from app.services.conversation_manager import conversation_manager
 
 router = APIRouter(prefix="/ai-assistant", tags=["AI Assistant"])
 

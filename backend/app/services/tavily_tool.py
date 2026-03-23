@@ -1,5 +1,5 @@
 from langchain_community.tools.tavily_search import TavilySearchResults
-from config import get_settings
+from app.config import get_settings
 
 _settings = get_settings()
 

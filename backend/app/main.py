@@ -4,24 +4,24 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from routers.auth import router as auth_router
-from routers.restaurants import router as restaurant_router
-from routers.reviews import router as review_router
-from routers.users import router as user_router
-from routers.favorites import router as favorite_router
-from routers.owner import router as owner_router
-from database import engine, Base
-from models import User, UserPreference, Restaurant, Review, Favorite
+from app.routers.auth import router as auth_router
+from app.routers.restaurants import router as restaurant_router
+from app.routers.reviews import router as review_router
+from app.routers.users import router as user_router
+from app.routers.favorites import router as favorite_router
+from app.routers.owner import router as owner_router
+from app.database import engine, Base
+from app.models import User, UserPreference, Restaurant, Review, Favorite
 
 from fastapi.requests import Request
 from fastapi.responses import JSONResponse
-from routers.ai_assistant import router as ai_assistant_router
-from middleware.error_handler import GlobalErrorHandler
+from app.routers.ai_assistant import router as ai_assistant_router
+from app.middleware.error_handler import GlobalErrorHandler
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 
-from models import ConversationMessage
+from app.models import ConversationMessage
 load_dotenv()
 
 tags_metadata = [

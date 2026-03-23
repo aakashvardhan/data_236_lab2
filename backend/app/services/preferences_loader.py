@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from models import UserPreference
+from app.models import UserPreference
 
 
 def load_user_preferences(user_id: int, db: Session) -> dict:

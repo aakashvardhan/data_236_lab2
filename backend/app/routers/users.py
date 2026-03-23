@@ -2,10 +2,10 @@ import os
 import uuid
 from fastapi import APIRouter, Depends, UploadFile, File, HTTPException, status
 from sqlalchemy.orm import Session
-from database import get_db
-from models import User, UserPreference
-from schemas import UserProfileResponse, UserProfileUpdate, UserPreferenceCreate, UserPreferencesResponse
-from utils.security import get_current_user
+from app.database import get_db
+from app.models import User, UserPreference
+from app.schemas import UserProfileResponse, UserProfileUpdate, UserPreferenceCreate, UserPreferencesResponse
+from app.utils.security import get_current_user
 
 router = APIRouter(prefix="/users", tags=["Users"])
 
