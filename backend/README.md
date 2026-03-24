@@ -64,6 +64,68 @@ Useful endpoints:
 - `GET /health`
 - `GET /docs`
 
+## API Endpoints
+
+Most endpoints return JSON. Auth-protected routes require a Bearer token from
+`POST /auth/login`.
+
+### Health
+
+- `GET /` - service status message
+- `GET /health` - health check
+
+### Auth
+
+- `POST /auth/signup` - register a standard user
+- `POST /auth/owner/signup` - register a restaurant owner
+- `POST /auth/login` - authenticate user and get access token
+- `POST /auth/logout` - logout current user
+
+### Users
+
+- `GET /users/me` - fetch authenticated user profile
+- `PUT /users/me` - update authenticated user profile
+- `PUT /users/me/profile-pic` - update profile picture
+- `POST /users/me/preferences` - create/update user preferences
+- `GET /users/me/preferences` - fetch user preferences
+
+### Restaurants
+
+- `POST /restaurants` - create a new restaurant
+- `GET /restaurants` - list/search restaurants
+- `GET /restaurants/{restaurant_id}` - get restaurant details
+- `PUT /restaurants/{restaurant_id}` - update a restaurant
+- `POST /restaurants/{restaurant_id}/photos` - upload a restaurant photo
+- `POST /restaurants/{restaurant_id}/claim` - claim ownership of a restaurant
+
+### Reviews
+
+- `POST /restaurants/{restaurant_id}/reviews` - create a review
+- `GET /restaurants/{restaurant_id}/reviews` - list reviews for a restaurant
+- `PUT /reviews/{review_id}` - update a review
+- `DELETE /reviews/{review_id}` - delete a review
+
+### Favorites
+
+- `POST /favorites/{restaurant_id}` - add restaurant to favorites
+- `DELETE /favorites/{restaurant_id}` - remove restaurant from favorites
+- `GET /favorites` - list authenticated user favorites
+- `GET /favorites/me/history` - fetch favorite history data
+
+### Owner
+
+- `GET /owner/restaurants` - list owner-managed restaurants
+- `GET /owner/restaurants/{restaurant_id}/reviews` - list restaurant reviews for owner
+- `GET /owner/restaurants/{restaurant_id}/analytics` - fetch owner analytics
+
+### AI Assistant
+
+- `POST /ai-assistant/chat` - send a chat message
+- `POST /ai-assistant/chat/stream` - stream chat response
+- `GET /ai-assistant/chat/history` - fetch chat history
+- `POST /ai-assistant/chat/clear` - clear chat history
+- `GET /ai-assistant/sessions` - list chat sessions
+
 ## Seed Data
 
 ```bash
