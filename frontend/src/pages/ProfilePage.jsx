@@ -140,7 +140,7 @@ export default function ProfilePage() {
   if (loading) return <div className="text-center py-20 text-gray-400">Loading...</div>
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
+    <div className="max-w-3xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
       {/* Header */}
       <div className="flex items-center gap-4 mb-6">
         <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center flex-shrink-0">
@@ -158,10 +158,10 @@ export default function ProfilePage() {
       </div>
 
       {/* Tabs */}
-      <div className="flex border-b border-gray-200 mb-6">
+      <div className="flex border-b border-gray-200 mb-6 overflow-x-auto">
         {['profile', 'preferences', 'history'].map(t => (
           <button key={t} onClick={() => setTab(t)}
-            className={`px-5 py-2 text-sm font-semibold capitalize transition border-b-2 ${
+            className={`px-4 sm:px-5 py-2 text-sm font-semibold capitalize transition border-b-2 whitespace-nowrap ${
               tab === t ? 'border-red-600 text-red-600' : 'border-transparent text-gray-500 hover:text-gray-700'
             }`}>{t}</button>
         ))}
@@ -175,9 +175,9 @@ export default function ProfilePage() {
 
       {/* Profile Tab */}
       {tab === 'profile' && (
-        <form onSubmit={handleSaveProfile} className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
+        <form onSubmit={handleSaveProfile} className="bg-white rounded-2xl shadow p-4 sm:p-6 flex flex-col gap-4">
           {/* Profile Picture */}
-          <div className="flex items-center gap-4 pb-4 border-b border-gray-100">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pb-4 border-b border-gray-100">
             <div className="w-20 h-20 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
               {profilePicPreview ? (
                 <img src={profilePicPreview} alt="Profile" className="w-full h-full object-cover" />
@@ -252,7 +252,7 @@ export default function ProfilePage() {
 
       {/* Preferences Tab */}
       {tab === 'preferences' && (
-        <form onSubmit={handleSavePrefs} className="bg-white rounded-2xl shadow p-6 flex flex-col gap-6">
+        <form onSubmit={handleSavePrefs} className="bg-white rounded-2xl shadow p-4 sm:p-6 flex flex-col gap-6">
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">Cuisine Preferences</label>
             <div className="flex flex-wrap gap-2">
@@ -330,7 +330,7 @@ export default function ProfilePage() {
       {tab === 'history' && (
         <div className="flex flex-col gap-4">
           {/* Reviews History */}
-          <div className="bg-white rounded-2xl shadow p-6">
+          <div className="bg-white rounded-2xl shadow p-4 sm:p-6">
             <h3 className="font-bold text-gray-800 mb-4">
               My Reviews ({history.reviews?.length || 0})
             </h3>
@@ -345,7 +345,7 @@ export default function ProfilePage() {
               <div className="flex flex-col gap-3">
                 {history.reviews.map((item, i) => (
                   <Link key={i} to={`/restaurant/${item.restaurant_id}`}
-                    className="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-red-50 transition">
+                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-xl bg-gray-50 hover:bg-red-50 transition">
                     <div>
                       <p className="font-semibold text-gray-800">{item.restaurant_name}</p>
                       <p className="text-sm text-gray-500 mt-0.5">{item.comment?.slice(0, 60)}{item.comment?.length > 60 ? '...' : ''}</p>
@@ -361,7 +361,7 @@ export default function ProfilePage() {
           </div>
 
           {/* Restaurants Added History */}
-          <div className="bg-white rounded-2xl shadow p-6">
+          <div className="bg-white rounded-2xl shadow p-4 sm:p-6">
             <h3 className="font-bold text-gray-800 mb-4">
               Restaurants I Added ({history.restaurants_added?.length || 0})
             </h3>
@@ -376,7 +376,7 @@ export default function ProfilePage() {
               <div className="flex flex-col gap-3">
                 {history.restaurants_added.map((item, i) => (
                   <Link key={i} to={`/restaurant/${item.restaurant_id}`}
-                    className="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-red-50 transition">
+                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-xl bg-gray-50 hover:bg-red-50 transition">
                     <p className="font-semibold text-gray-800">{item.restaurant_name}</p>
                     <div className="text-xs text-gray-400">{new Date(item.date).toLocaleDateString()}</div>
                   </Link>

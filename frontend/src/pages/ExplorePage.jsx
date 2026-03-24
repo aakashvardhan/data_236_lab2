@@ -102,8 +102,8 @@ export default function ExplorePage() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="bg-red-600 text-white py-16 px-4 text-center">
-        <h1 className="text-4xl font-bold mb-2">Find great local businesses</h1>
+      <div className="bg-red-600 text-white py-12 sm:py-16 px-4 text-center">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-2">Find great local businesses</h1>
         <p className="text-red-200 mb-8">Restaurants, food, and more near you</p>
         <div className="max-w-4xl mx-auto flex flex-col gap-3">
           <div className="flex flex-col sm:flex-row gap-3">
@@ -138,7 +138,7 @@ export default function ExplorePage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 py-6 sm:py-8 flex flex-col lg:flex-row gap-6 sm:gap-8">
 
         {/* Left - Restaurant Results */}
         <div className="flex-1">
@@ -146,16 +146,16 @@ export default function ExplorePage() {
             <h2 className="text-xl font-bold text-gray-800">
               {loading ? 'Searching...' : `${restaurants.length} Restaurants Found`}
             </h2>
-            <div className="flex items-center gap-3">
+            <div className="flex w-full sm:w-auto flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
               <select value={sort} onChange={e => setSort(e.target.value)}
-                className="border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-red-400 bg-white">
+                className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-400 bg-white">
                 <option value="rating">Sort: Top Rated</option>
                 <option value="reviews">Sort: Most Reviewed</option>
                 <option value="price_low">Sort: Price Low → High</option>
                 <option value="price_high">Sort: Price High → Low</option>
               </select>
               <Link to="/add-restaurant"
-                className="bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-red-700 transition">
+                className="bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-red-700 transition text-center">
                 + Add Restaurant
               </Link>
             </div>
@@ -196,7 +196,7 @@ export default function ExplorePage() {
                 className="text-red-200 text-xs hover:text-white">Clear</button>
             </div>
 
-            <div className="h-80 overflow-y-auto p-3 flex flex-col gap-3 bg-gray-50">
+            <div className="h-72 sm:h-80 overflow-y-auto p-3 flex flex-col gap-3 bg-gray-50">
               {messages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div className={`max-w-xs rounded-2xl px-3 py-2 text-sm ${

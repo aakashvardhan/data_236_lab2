@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     TAVILY_API_KEY: str = ""
     GEMINI_API_KEY: str = ""
     HF_API_TOKEN: str = ""
+    YELP_API_KEY: str = ""
 
     class Config:
         env_file = "../.env"

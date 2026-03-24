@@ -76,8 +76,8 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
-      <div className="flex items-center justify-between mb-6">
+    <div className="max-w-3xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
+      <div className="flex items-center justify-between mb-6 gap-3 flex-wrap">
         <div>
           <h1 className="text-2xl font-bold text-gray-800">AI Food Assistant</h1>
           <p className="text-gray-500 text-sm">Powered by your preferences</p>
@@ -86,7 +86,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Chat Window */}
-      <div className="bg-white rounded-2xl shadow overflow-hidden flex flex-col" style={{ height: '60vh' }}>
+      <div className="bg-white rounded-2xl shadow overflow-hidden flex flex-col" style={{ height: '65vh' }}>
         <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4">
           {messages.map((msg, i) => (
             <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>

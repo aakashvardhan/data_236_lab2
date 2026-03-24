@@ -2,12 +2,18 @@ import { Link } from 'react-router-dom'
 import StarRating from './StarRating'
 
 function RestaurantCard({ restaurant }) {
-  const photos = restaurant.photos ? restaurant.photos.split(',') : []
+  const photos = restaurant.photos
+    ? restaurant.photos.split(',').map((p) => p.trim()).filter(Boolean)
+    : []
+  const resolvePhotoUrl = (photo) =>
+    photo.startsWith('http://') || photo.startsWith('https://')
+      ? photo
+      : `http://localhost:8000${photo}`
 
   return (
     <div className="bg-white rounded-xl shadow hover:shadow-md transition p-4 flex flex-col gap-2">
       {photos.length > 0 ? (
-        <img src={`http://localhost:8000${photos[0]}`} alt={restaurant.name}
+        <img src={resolvePhotoUrl(photos[0])} alt={restaurant.name}
           className="rounded-lg h-36 w-full object-cover" />
       ) : (
         <div className="bg-gray-100 rounded-lg h-36 flex items-center justify-center text-gray-400 text-sm">

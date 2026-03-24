@@ -72,19 +72,25 @@ export default function RestaurantDetailPage() {
   if (loading) return <div className="flex justify-center items-center min-h-screen"><div className="text-gray-400 text-lg">Loading...</div></div>
   if (!restaurant) return <div className="text-center py-20 text-gray-400">Restaurant not found.</div>
 
-  const photos = restaurant.photos ? restaurant.photos.split(',') : []
+  const photos = restaurant.photos
+    ? restaurant.photos.split(',').map((p) => p.trim()).filter(Boolean)
+    : []
+  const resolvePhotoUrl = (photo) =>
+    photo.startsWith('http://') || photo.startsWith('https://')
+      ? photo
+      : `http://localhost:8000${photo}`
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-4xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
       <button onClick={() => navigate(-1)} className="text-red-600 text-sm mb-4 hover:underline">← Back to results</button>
 
-      <div className="bg-white rounded-2xl shadow p-6 mb-6">
+      <div className="bg-white rounded-2xl shadow p-4 sm:p-6 mb-6">
         {/* Photos */}
         {photos.length > 0 ? (
           <div className="flex gap-2 mb-4 overflow-x-auto">
             {photos.map((photo, i) => (
-              <img key={i} src={`http://localhost:8000${photo}`} alt={`${restaurant.name} photo ${i + 1}`}
-                className="h-48 w-72 object-cover rounded-xl flex-shrink-0" />
+              <img key={i} src={resolvePhotoUrl(photo)} alt={`${restaurant.name} photo ${i + 1}`}
+                className="h-44 sm:h-48 w-64 sm:w-72 object-cover rounded-xl flex-shrink-0" />
             ))}
           </div>
         ) : (
@@ -95,7 +101,7 @@ export default function RestaurantDetailPage() {
 
         <div className="flex items-start justify-between flex-wrap gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-gray-800">{restaurant.name}</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 break-words">{restaurant.name}</h1>
             <div className="flex items-center gap-2 text-gray-500 text-sm mt-1">
               <span>{restaurant.cuisine_type}</span>
               <span>•</span>
@@ -154,8 +160,8 @@ export default function RestaurantDetailPage() {
       </div>
 
       {/* Reviews */}
-      <div className="bg-white rounded-2xl shadow p-6">
-        <div className="flex items-center justify-between mb-4">
+      <div className="bg-white rounded-2xl shadow p-4 sm:p-6">
+        <div className="flex items-center justify-between mb-4 gap-3 flex-wrap">
           <h2 className="text-xl font-bold text-gray-800">Reviews</h2>
           {token && (
             <button onClick={() => { setShowReviewForm(!showReviewForm); setEditingReviewId(null); setReviewForm({ rating: 5, comment: '' }) }}

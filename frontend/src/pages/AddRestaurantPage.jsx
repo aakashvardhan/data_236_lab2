@@ -209,7 +209,7 @@ export default function AddRestaurantPage() {
     }`
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-8">
+    <div className="max-w-2xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
       <h1 className="text-2xl font-bold text-gray-800 mb-2">Add a Restaurant</h1>
       <p className="text-gray-500 text-sm mb-6">Fields marked with * are required</p>
 
@@ -219,7 +219,7 @@ export default function AddRestaurantPage() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow p-6 flex flex-col gap-6">
+      <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow p-4 sm:p-6 flex flex-col gap-6">
 
         {/* Basic Info */}
         <div>

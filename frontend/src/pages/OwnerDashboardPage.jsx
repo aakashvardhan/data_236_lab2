@@ -30,8 +30,8 @@ export default function OwnerDashboardPage() {
     : '0.0'
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8">
-      <div className="flex items-center justify-between mb-8">
+    <div className="max-w-5xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
+      <div className="flex items-center justify-between mb-8 gap-3 flex-wrap">
         <div>
           <h1 className="text-2xl font-bold text-gray-800">Owner Dashboard</h1>
           <p className="text-gray-500 text-sm mt-1">Manage your restaurants and view analytics</p>

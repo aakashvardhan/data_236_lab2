@@ -28,7 +28,7 @@ export default function FavoritesPage() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
+    <div className="max-w-3xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
       <h1 className="text-2xl font-bold text-gray-800 mb-6">My Favorites</h1>
       {loading ? (
         <div className="text-gray-400 text-center py-20">Loading...</div>
@@ -41,7 +41,7 @@ export default function FavoritesPage() {
       ) : (
         <div className="flex flex-col gap-4">
           {favorites.map((fav) => (
-            <div key={fav.id} className="bg-white rounded-xl shadow p-4 flex items-center justify-between">
+            <div key={fav.id} className="bg-white rounded-xl shadow p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <Link to={`/restaurant/${fav.restaurant_id}`}
                   className="font-semibold text-gray-800 hover:text-red-600 transition">

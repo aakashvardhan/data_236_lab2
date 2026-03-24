@@ -114,9 +114,13 @@ const handleSave = async (e) => {
     count: reviews.filter(r => r.rating === star).length,
     pct: reviews.length > 0 ? Math.round(reviews.filter(r => r.rating === star).length / reviews.length * 100) : 0
   }))
+  const resolvePhotoUrl = (photo) =>
+    photo.startsWith('http://') || photo.startsWith('https://')
+      ? photo
+      : `http://localhost:8000${photo}`
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-4xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
       <button onClick={() => navigate('/owner/dashboard')}
         className="text-red-600 text-sm mb-4 hover:underline">
         ← Back to Dashboard
@@ -147,10 +151,10 @@ const handleSave = async (e) => {
       )}
 
       {/* Tabs */}
-      <div className="flex border-b border-gray-200 mb-6">
+      <div className="flex border-b border-gray-200 mb-6 overflow-x-auto">
         {['details', 'reviews', 'analytics'].map(t => (
           <button key={t} onClick={() => setTab(t)}
-            className={`px-5 py-2 text-sm font-semibold capitalize transition border-b-2 ${
+            className={`px-4 sm:px-5 py-2 text-sm font-semibold capitalize transition border-b-2 whitespace-nowrap ${
               tab === t ? 'border-red-600 text-red-600' : 'border-transparent text-gray-500 hover:text-gray-700'
             }`}>{t}</button>
         ))}
@@ -158,7 +162,7 @@ const handleSave = async (e) => {
 
       {/* Details Tab */}
       {tab === 'details' && (
-        <form onSubmit={handleSave} className="bg-white rounded-2xl shadow p-6 flex flex-col gap-6">
+        <form onSubmit={handleSave} className="bg-white rounded-2xl shadow p-4 sm:p-6 flex flex-col gap-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { label: 'Restaurant Name', name: 'name' },
@@ -250,8 +254,8 @@ const handleSave = async (e) => {
   {/* Show existing photos */}
   {restaurant?.photos && (
     <div className="flex gap-2 mt-3 flex-wrap">
-      {restaurant.photos.split(',').map((photo, i) => (
-        <img key={i} src={`http://localhost:8000${photo}`} alt={`photo ${i+1}`}
+      {restaurant.photos.split(',').map((photo) => photo.trim()).filter(Boolean).map((photo, i) => (
+        <img key={i} src={resolvePhotoUrl(photo)} alt={`photo ${i+1}`}
           className="w-20 h-20 object-cover rounded-lg border border-gray-200" />
       ))}
     </div>
@@ -266,7 +270,7 @@ const handleSave = async (e) => {
 
       {/* Reviews Tab - Read Only */}
       {tab === 'reviews' && (
-        <div className="bg-white rounded-2xl shadow p-6">
+        <div className="bg-white rounded-2xl shadow p-4 sm:p-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-bold text-gray-800">Customer Reviews</h2>
             <span className="text-sm text-gray-400 bg-gray-100 px-3 py-1 rounded-full">Read-only</span>
@@ -316,7 +320,7 @@ const handleSave = async (e) => {
           </div>
 
           {/* Rating Distribution */}
-          <div className="bg-white rounded-2xl shadow p-6">
+          <div className="bg-white rounded-2xl shadow p-4 sm:p-6">
             <h3 className="font-bold text-gray-800 mb-4">Rating Distribution</h3>
             <div className="flex flex-col gap-3">
               {ratingCounts.map(({ star, count, pct }) => (
@@ -334,7 +338,7 @@ const handleSave = async (e) => {
           </div>
 
           {/* Recent Reviews */}
-          <div className="bg-white rounded-2xl shadow p-6">
+          <div className="bg-white rounded-2xl shadow p-4 sm:p-6">
             <h3 className="font-bold text-gray-800 mb-4">Recent Reviews</h3>
             {reviews.slice(0, 3).map(review => (
               <div key={review.id} className="border-b border-gray-100 pb-3 mb-3">
