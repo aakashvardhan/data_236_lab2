@@ -23,7 +23,7 @@ Yelp Prototype lets users discover restaurants, write reviews, save favorites, a
 
 ## Architecture
 
-![System Architecture](docs/system-diagram.png)
+![System Architecture](https://raw.githubusercontent.com/aakashvardhan/data236-lab1-yelp/blob/main/screenshots/system-diagram-2026-03-24-071015.png)
 
 ### Frontend — React + Vite
 
