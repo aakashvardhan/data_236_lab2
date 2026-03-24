@@ -1,29 +1,37 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Login from "./pages/Login.jsx";
-import Signup from "./pages/Signup.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
-import ProtectedRoute from "./auth/ProtectedRoute";
-import Navbar from "./components/Navbar";
-import Explore from "./pages/Explore";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import ExplorePage from './pages/ExplorePage'
+import LoginPage from './pages/LoginPage'
+import SignupPage from './pages/SignupPage'
+import RestaurantDetailPage from './pages/RestaurantDetailPage'
+import ProfilePage from './pages/ProfilePage'
+import AddRestaurantPage from './pages/AddRestaurantPage'
+import FavoritesPage from './pages/FavoritesPage'
+import DashboardPage from './pages/DashboardPage'
+import OwnerDashboardPage from './pages/OwnerDashboardPage'
+import OwnerRestaurantPage from './pages/OwnerRestaurantPage'
 
-export default function App() {
+function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Navigate to="/explore" replace />} />
-        <Route path="/explore" element={<Explore />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
+      <div className="min-h-screen bg-gray-50">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ExplorePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/restaurant/:id" element={<RestaurantDetailPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/add-restaurant" element={<AddRestaurantPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/owner/dashboard" element={<OwnerDashboardPage />} />
+          <Route path="/owner/restaurant/:id" element={<OwnerRestaurantPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </div>
     </BrowserRouter>
-  );
+  )
 }
+
+export default App
