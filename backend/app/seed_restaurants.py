@@ -5,11 +5,13 @@ Run from inside backend/app folder:
 
 This script:
 1. Downloads real food images from Unsplash (free, no API key needed)
-2. Inserts 30 restaurants into your MySQL database
-3. Saves images to uploads/restaurant_photos/
+2. Inserts or updates 50 restaurants into your MySQL database
+3. Seeds fake reviews from seeded users for each restaurant
+4. Saves images to uploads/restaurant_photos/
 """
 
 import os
+import random
 import urllib.request
 import uuid
 from dotenv import load_dotenv
@@ -19,7 +21,8 @@ load_dotenv()
 # --- Database setup ---
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from app.models import Restaurant
+from app.models import Restaurant, Review, User
+from app.utils.ratings import sync_all_restaurant_aggregates
 
 DB_USER = os.getenv("DB_USER", "root")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "")
@@ -69,7 +72,7 @@ FOOD_IMAGES = [
     "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800",  # pizza margherita
 ]
 
-# 30 restaurants with rich data
+# Base 30 restaurants with rich data
 RESTAURANTS = [
     # Italian
     {"name": "Pasta Paradise", "cuisine_type": "Italian", "pricing_tier": "$$", "city": "San Jose", "state": "CA", "zip_code": "95112", "address": "123 Main St", "contact_info": "408-555-0001", "description": "Authentic Italian dining with handmade pasta and wood-fired pizza. Family recipes passed down for generations.", "hours": "mon:11AM-9PM,tue:11AM-9PM,wed:11AM-9PM,thu:11AM-9PM,fri:11AM-10PM,sat:10AM-10PM,sun:10AM-8PM"},
@@ -120,6 +123,44 @@ RESTAURANTS = [
     {"name": "Sahara Grill", "cuisine_type": "Middle Eastern", "pricing_tier": "$$", "city": "San Jose", "state": "CA", "zip_code": "95129", "address": "678 Saratoga Ave", "contact_info": "408-555-0030", "description": "Lebanese and Middle Eastern specialties including shawarma, kebabs, and fresh mezze platters.", "hours": "mon:11AM-9PM,tue:11AM-9PM,wed:11AM-9PM,thu:11AM-9PM,fri:11AM-10PM,sat:11AM-10PM,sun:12PM-8PM"},
 ]
 
+ADDITIONAL_RESTAURANTS = [
+    {"name": "Napoli Oven", "cuisine_type": "Italian", "pricing_tier": "$$", "city": "San Jose", "state": "CA", "zip_code": "95124", "address": "901 Blossom Ave", "contact_info": "408-555-1031", "description": "Neighborhood Italian kitchen known for stone-oven pizza and fresh gnocchi.", "hours": "mon:11AM-9PM,tue:11AM-9PM,wed:11AM-9PM,thu:11AM-9PM,fri:11AM-10PM,sat:11AM-10PM,sun:11AM-8PM"},
+    {"name": "Harbor Catch", "cuisine_type": "Seafood", "pricing_tier": "$$$", "city": "Santa Clara", "state": "CA", "zip_code": "95050", "address": "22 Mission College Blvd", "contact_info": "408-555-1032", "description": "Coastal-inspired seafood with seasonal oysters and grilled fish specials.", "hours": "mon:11AM-9PM,tue:11AM-9PM,wed:11AM-9PM,thu:11AM-9PM,fri:11AM-10PM,sat:11AM-10PM,sun:11AM-8PM"},
+    {"name": "Dragon Wok Express", "cuisine_type": "Chinese", "pricing_tier": "$", "city": "Sunnyvale", "state": "CA", "zip_code": "94085", "address": "140 Tasman Dr", "contact_info": "408-555-1033", "description": "Quick Chinese comfort food with made-to-order noodles and wok classics.", "hours": "mon:10AM-9PM,tue:10AM-9PM,wed:10AM-9PM,thu:10AM-9PM,fri:10AM-10PM,sat:10AM-10PM,sun:11AM-8PM"},
+    {"name": "Pho Lotus", "cuisine_type": "Vietnamese", "pricing_tier": "$", "city": "Milpitas", "state": "CA", "zip_code": "95035", "address": "77 Great Mall Pkwy", "contact_info": "408-555-1034", "description": "Light, aromatic pho and rice plates with house-made chili oils.", "hours": "mon:8AM-9PM,tue:8AM-9PM,wed:8AM-9PM,thu:8AM-9PM,fri:8AM-10PM,sat:8AM-10PM,sun:9AM-8PM"},
+    {"name": "Kebab District", "cuisine_type": "Middle Eastern", "pricing_tier": "$$", "city": "Cupertino", "state": "CA", "zip_code": "95014", "address": "210 Stevens Creek Blvd", "contact_info": "408-555-1035", "description": "Charcoal-grilled kebabs, saffron rice, and mezze platters for sharing.", "hours": "mon:11AM-9PM,tue:11AM-9PM,wed:11AM-9PM,thu:11AM-9PM,fri:11AM-10PM,sat:11AM-10PM,sun:12PM-8PM"},
+    {"name": "Brasa Grill House", "cuisine_type": "Steakhouse", "pricing_tier": "$$$", "city": "Palo Alto", "state": "CA", "zip_code": "94306", "address": "515 El Camino Real", "contact_info": "650-555-1036", "description": "Modern steakhouse serving dry-aged cuts and seasonal sides.", "hours": "mon:5PM-10PM,tue:5PM-10PM,wed:5PM-10PM,thu:5PM-10PM,fri:5PM-11PM,sat:4PM-11PM,sun:4PM-9PM"},
+    {"name": "Bangkok Basil", "cuisine_type": "Thai", "pricing_tier": "$$", "city": "Mountain View", "state": "CA", "zip_code": "94040", "address": "650 El Camino Real", "contact_info": "650-555-1037", "description": "Thai street-style dishes with balanced spice and fresh herbs.", "hours": "mon:11AM-9PM,tue:11AM-9PM,wed:11AM-9PM,thu:11AM-9PM,fri:11AM-10PM,sat:11AM-10PM,sun:12PM-8PM"},
+    {"name": "Miso House", "cuisine_type": "Japanese", "pricing_tier": "$$", "city": "Campbell", "state": "CA", "zip_code": "95008", "address": "95 Campbell Ave", "contact_info": "408-555-1038", "description": "Casual Japanese dining with ramen, donburi, and sushi rolls.", "hours": "mon:11AM-9PM,tue:11AM-9PM,wed:11AM-9PM,thu:11AM-9PM,fri:11AM-10PM,sat:11AM-10PM,sun:11AM-8PM"},
+    {"name": "Cantina Azul", "cuisine_type": "Mexican", "pricing_tier": "$$", "city": "Los Gatos", "state": "CA", "zip_code": "95032", "address": "140 Lark Ave", "contact_info": "408-555-1039", "description": "Vibrant taqueria with handmade tortillas and regional mole sauces.", "hours": "mon:11AM-9PM,tue:11AM-9PM,wed:11AM-9PM,thu:11AM-9PM,fri:11AM-11PM,sat:10AM-11PM,sun:10AM-8PM"},
+    {"name": "Urban Greens", "cuisine_type": "Vegan", "pricing_tier": "$$", "city": "San Jose", "state": "CA", "zip_code": "95134", "address": "301 River Oaks Pkwy", "contact_info": "408-555-1040", "description": "Plant-forward bowls, wraps, and smoothies with seasonal produce.", "hours": "mon:8AM-7PM,tue:8AM-7PM,wed:8AM-7PM,thu:8AM-7PM,fri:8AM-8PM,sat:9AM-6PM,sun:9AM-5PM"},
+    {"name": "Capri Café", "cuisine_type": "Cafe", "pricing_tier": "$", "city": "Sunnyvale", "state": "CA", "zip_code": "94086", "address": "250 Murphy Ave", "contact_info": "408-555-1041", "description": "Coffee bar and brunch cafe known for pastries and seasonal lattes.", "hours": "mon:7AM-5PM,tue:7AM-5PM,wed:7AM-5PM,thu:7AM-5PM,fri:7AM-6PM,sat:8AM-6PM,sun:8AM-4PM"},
+    {"name": "Patio Paella", "cuisine_type": "Spanish", "pricing_tier": "$$$", "city": "San Jose", "state": "CA", "zip_code": "95110", "address": "890 Autumn Pkwy", "contact_info": "408-555-1042", "description": "Spanish classics with saffron paella and tapas on an open patio.", "hours": "mon:Closed,tue:5PM-10PM,wed:5PM-10PM,thu:5PM-10PM,fri:5PM-11PM,sat:4PM-11PM,sun:4PM-9PM"},
+    {"name": "Blue Bayou Bistro", "cuisine_type": "American", "pricing_tier": "$$", "city": "Fremont", "state": "CA", "zip_code": "94539", "address": "830 Warm Springs Blvd", "contact_info": "510-555-1043", "description": "American comfort food with seasonal specials and craft cocktails.", "hours": "mon:11AM-9PM,tue:11AM-9PM,wed:11AM-9PM,thu:11AM-9PM,fri:11AM-10PM,sat:10AM-10PM,sun:10AM-8PM"},
+    {"name": "Taste of Delhi", "cuisine_type": "Indian", "pricing_tier": "$$", "city": "Santa Clara", "state": "CA", "zip_code": "95051", "address": "455 El Camino Real", "contact_info": "408-555-1044", "description": "Classic Indian curries, tandoori platters, and house-baked naan.", "hours": "mon:11AM-10PM,tue:11AM-10PM,wed:11AM-10PM,thu:11AM-10PM,fri:11AM-11PM,sat:11AM-11PM,sun:12PM-9PM"},
+    {"name": "Le Jardin Moderne", "cuisine_type": "French", "pricing_tier": "$$$", "city": "Mountain View", "state": "CA", "zip_code": "94041", "address": "175 Castro St", "contact_info": "650-555-1045", "description": "Modern French bistro with tasting menus and a curated wine list.", "hours": "mon:Closed,tue:5PM-10PM,wed:5PM-10PM,thu:5PM-10PM,fri:5PM-11PM,sat:4PM-11PM,sun:4PM-9PM"},
+    {"name": "Aegean Oven", "cuisine_type": "Mediterranean", "pricing_tier": "$$", "city": "Palo Alto", "state": "CA", "zip_code": "94303", "address": "389 Middlefield Rd", "contact_info": "650-555-1046", "description": "Mediterranean grill serving kebabs, flatbreads, and fresh salads.", "hours": "mon:11AM-9PM,tue:11AM-9PM,wed:11AM-9PM,thu:11AM-9PM,fri:11AM-10PM,sat:11AM-10PM,sun:11AM-8PM"},
+    {"name": "Nori Point", "cuisine_type": "Japanese", "pricing_tier": "$$$", "city": "San Jose", "state": "CA", "zip_code": "95135", "address": "620 Silver Creek Valley Rd", "contact_info": "408-555-1047", "description": "Sushi-forward Japanese restaurant with nigiri flights and sashimi towers.", "hours": "mon:Closed,tue:5PM-10PM,wed:5PM-10PM,thu:5PM-10PM,fri:5PM-11PM,sat:12PM-11PM,sun:12PM-9PM"},
+    {"name": "BBQ Republic", "cuisine_type": "Korean", "pricing_tier": "$$", "city": "Santa Clara", "state": "CA", "zip_code": "95054", "address": "55 Great America Pkwy", "contact_info": "408-555-1048", "description": "Korean BBQ spot with premium cuts and all-you-can-grill options.", "hours": "mon:11AM-11PM,tue:11AM-11PM,wed:11AM-11PM,thu:11AM-11PM,fri:11AM-12AM,sat:11AM-12AM,sun:11AM-10PM"},
+    {"name": "Taco Viento", "cuisine_type": "Mexican", "pricing_tier": "$", "city": "San Jose", "state": "CA", "zip_code": "95122", "address": "1490 Story Rd", "contact_info": "408-555-1049", "description": "Fast-casual tacos and burritos with house salsas and grilled meats.", "hours": "mon:10AM-10PM,tue:10AM-10PM,wed:10AM-10PM,thu:10AM-10PM,fri:10AM-11PM,sat:10AM-11PM,sun:10AM-9PM"},
+    {"name": "Garden Bowl Kitchen", "cuisine_type": "Vegan", "pricing_tier": "$", "city": "Campbell", "state": "CA", "zip_code": "95008", "address": "83 Winchester Blvd", "contact_info": "408-555-1050", "description": "Healthy vegan bowls and wraps built around local produce and grains.", "hours": "mon:9AM-7PM,tue:9AM-7PM,wed:9AM-7PM,thu:9AM-7PM,fri:9AM-8PM,sat:9AM-6PM,sun:9AM-5PM"},
+]
+
+ALL_RESTAURANTS = RESTAURANTS + ADDITIONAL_RESTAURANTS
+SEED_REVIEWER_COUNT = 20
+FAKE_REVIEW_COMMENTS = [
+    "Great service and tasty food. I would come back.",
+    "Solid flavors and good portions for the price.",
+    "Friendly staff and quick seating on a busy night.",
+    "Loved the atmosphere. Food arrived hot and fresh.",
+    "The signature dishes were excellent. Worth trying.",
+    "Good neighborhood spot with consistent quality.",
+    "Very flavorful and nicely presented plates.",
+    "Nice ambiance and attentive service throughout.",
+    "Good value overall and an easy recommendation.",
+    "Fresh ingredients and balanced seasoning.",
+]
+
 
 def download_image(url, filename):
     """Download image from URL and save to uploads folder."""
@@ -151,16 +192,75 @@ def get_existing_restaurant(restaurant_data: dict) -> Restaurant | None:
     )
 
 
+def get_or_create_seed_users() -> list[User]:
+    """Create deterministic reviewer accounts used for fake reviews."""
+    users: list[User] = []
+    for idx in range(1, SEED_REVIEWER_COUNT + 1):
+        email = f"seed_reviewer_{idx}@example.com"
+        user = db.query(User).filter(User.email == email).first()
+        if user is None:
+            user = User(
+                name=f"Seed Reviewer {idx}",
+                email=email,
+                # This account is for seed data only and is not intended for login.
+                password_hash=f"seeded_hash_{idx}",
+                role="user",
+            )
+            db.add(user)
+            db.flush()
+        users.append(user)
+    return users
+
+
+def reseed_reviews_for_restaurant(
+    restaurant: Restaurant, restaurant_index: int, seed_users: list[User]
+) -> tuple[float, int]:
+    """Replace reviews from seeded users, then return (avg_rating, review_count)."""
+    seeded_user_ids = [user.id for user in seed_users]
+    (
+        db.query(Review)
+        .filter(
+            Review.restaurant_id == restaurant.id,
+            Review.user_id.in_(seeded_user_ids),
+        )
+        .delete(synchronize_session=False)
+    )
+
+    rng = random.Random(restaurant_index + 2026)
+    review_count = rng.randint(3, 8)
+    selected_users = rng.sample(seed_users, k=review_count)
+    ratings: list[int] = []
+
+    for review_idx, user in enumerate(selected_users):
+        rating = rng.choices([3, 4, 5], weights=[1, 3, 4], k=1)[0]
+        ratings.append(rating)
+        comment_prefix = FAKE_REVIEW_COMMENTS[(restaurant_index + review_idx) % len(FAKE_REVIEW_COMMENTS)]
+        review = Review(
+            user_id=user.id,
+            restaurant_id=restaurant.id,
+            rating=rating,
+            comment=f"{comment_prefix} (seeded review)",
+        )
+        db.add(review)
+
+    avg_rating = round(sum(ratings) / len(ratings), 1) if ratings else 0.0
+    return avg_rating, len(ratings)
+
+
 def seed():
     print("\n🍽️  Starting restaurant seeding...\n")
+    print("Creating/validating seeded reviewer users...")
+    seed_users = get_or_create_seed_users()
+    db.commit()
+    print(f"  ✓ Ready reviewer accounts: {len(seed_users)}")
 
     inserted_count = 0
     updated_count = 0
 
-    for i, restaurant_data in enumerate(RESTAURANTS):
+    for i, restaurant_data in enumerate(ALL_RESTAURANTS):
         existing = get_existing_restaurant(restaurant_data)
         mode = "Updating" if existing else "Adding"
-        print(f"[{i+1}/30] {mode}: {restaurant_data['name']}")
+        print(f"[{i+1}/{len(ALL_RESTAURANTS)}] {mode}: {restaurant_data['name']}")
 
         restaurant = existing or Restaurant()
 
@@ -184,14 +284,16 @@ def seed():
         restaurant.description = restaurant_data["description"]
         restaurant.hours = restaurant_data["hours"]
         restaurant.photos = photo_path
-        restaurant.avg_rating = round(3.5 + (i % 15) * 0.1, 1)  # ratings between 3.5 - 5.0
-        restaurant.review_count = i * 3 + 5
-
         try:
             if existing is None:
                 db.add(restaurant)
+                db.flush()
+
+            avg_rating, review_count = reseed_reviews_for_restaurant(restaurant, i, seed_users)
+            restaurant.avg_rating = avg_rating
+            restaurant.review_count = review_count
+
             db.commit()
-            db.refresh(restaurant)
             if existing is None:
                 print(f"  ✓ Added to database (ID: {restaurant.id})")
                 inserted_count += 1
@@ -203,8 +305,11 @@ def seed():
             print(f"  ✗ Database error: {e}")
 
     print(
-        f"\n✅ Done! Inserted: {inserted_count}, Updated: {updated_count}, Total processed: {len(RESTAURANTS)}"
+        f"\n✅ Done! Inserted: {inserted_count}, Updated: {updated_count}, Total processed: {len(ALL_RESTAURANTS)}"
     )
+    synced = sync_all_restaurant_aggregates(db)
+    db.commit()
+    print(f"🔄 Synced aggregate ratings/review counts for {synced} restaurants.")
     print("📍 Visit http://localhost:5173 to see them!\n")
     db.close()
 

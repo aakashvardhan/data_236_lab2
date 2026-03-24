@@ -17,3 +17,16 @@ def recalculate_rating(db: Session, restaurant_id: int) -> None:
     else:
         restaurant.avg_rating = 0.0
         restaurant.review_count = 0
+
+
+def sync_all_restaurant_aggregates(db: Session) -> int:
+    """
+    Recompute rating and review_count for every restaurant from Review rows.
+
+    Returns:
+        Number of restaurants processed.
+    """
+    restaurants = db.query(Restaurant).all()
+    for restaurant in restaurants:
+        recalculate_rating(db, int(restaurant.id))
+    return len(restaurants)

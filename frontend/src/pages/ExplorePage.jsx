@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom'
 
 export default function ExplorePage() {
   const [restaurants, setRestaurants] = useState([])
+  const [totalRestaurants, setTotalRestaurants] = useState(0)
+  const [page, setPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(1)
+  const [perPage] = useState(12)
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
   const [cuisine, setCuisine] = useState('')
@@ -23,13 +27,18 @@ export default function ExplorePage() {
 
   const QUICK_ACTIONS = ['Best rated near me ⭐', 'Vegan options 🌱', 'Something romantic 🕯️', 'Cheap eats 💰']
 
-  // Real-time search — fires on every filter change with debounce
+  // Reset to first page when filters/sort criteria change.
+  useEffect(() => {
+    setPage(1)
+  }, [search, cuisine, price, keywords, city, sort])
+
+  // Real-time search — fires on filter/sort/page changes with debounce.
   useEffect(() => {
     const timer = setTimeout(() => {
       fetchRestaurants()
     }, 400) // wait 400ms after user stops typing
     return () => clearTimeout(timer)
-  }, [search, cuisine, price, keywords, city, sort])
+  }, [search, cuisine, price, keywords, city, sort, page, perPage])
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: 'smooth' }) }, [messages])
 
@@ -37,24 +46,38 @@ export default function ExplorePage() {
     setLoading(true)
     try {
       const params = {}
+      params.page = page
+      params.per_page = perPage
+      if (sort === 'rating') { params.sort_by = 'rating'; params.sort_order = 'desc' }
+      else if (sort === 'reviews') { params.sort_by = 'reviews'; params.sort_order = 'desc' }
+      else if (sort === 'price_low') { params.sort_by = 'price'; params.sort_order = 'asc' }
+      else if (sort === 'price_high') { params.sort_by = 'price'; params.sort_order = 'desc' }
       if (search) params.name = search
       if (cuisine) params.cuisine_type = cuisine
       if (keywords) params.keywords = keywords
       if (city) params.city = city
       if (price) params.pricing_tier = price  // fixed: use pricing_tier not price_tier
       const res = await getRestaurants(params)
-      let results = res.data.items || []
-
-      // Client-side sorting
-      if (sort === 'rating') results.sort((a, b) => b.avg_rating - a.avg_rating)
-      else if (sort === 'price_low') results.sort((a, b) => (a.pricing_tier || '').length - (b.pricing_tier || '').length)
-      else if (sort === 'price_high') results.sort((a, b) => (b.pricing_tier || '').length - (a.pricing_tier || '').length)
-      else if (sort === 'reviews') results.sort((a, b) => b.review_count - a.review_count)
+      const results = res.data.items || []
+      const total = Number(res.data.total) || results.length
+      const pages = Number(res.data.total_pages) || Math.max(1, Math.ceil(total / perPage))
 
       setRestaurants(results)
+      setTotalRestaurants(total)
+      setTotalPages(pages)
     } catch (err) {
       setRestaurants([])
+      setTotalRestaurants(0)
+      setTotalPages(1)
     } finally { setLoading(false) }
+  }
+
+  const buildVisiblePages = () => {
+    const windowSize = 5
+    const start = Math.max(1, page - Math.floor(windowSize / 2))
+    const end = Math.min(totalPages, start + windowSize - 1)
+    const adjustedStart = Math.max(1, end - windowSize + 1)
+    return Array.from({ length: end - adjustedStart + 1 }, (_, idx) => adjustedStart + idx)
   }
 
   const sendChat = async (text) => {
@@ -144,7 +167,7 @@ export default function ExplorePage() {
         <div className="flex-1">
           <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
             <h2 className="text-xl font-bold text-gray-800">
-              {loading ? 'Searching...' : `${restaurants.length} Restaurants Found`}
+              {loading ? 'Searching...' : `${totalRestaurants} Restaurants Found`}
             </h2>
             <div className="flex w-full sm:w-auto flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
               <select value={sort} onChange={e => setSort(e.target.value)}
@@ -178,9 +201,40 @@ export default function ExplorePage() {
               <p className="text-sm mt-1">Try different search terms or ask the AI assistant!</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-              {restaurants.map(r => <RestaurantCard key={r.id} restaurant={r} />)}
-            </div>
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                {restaurants.map(r => <RestaurantCard key={r.id} restaurant={r} />)}
+              </div>
+              <div className="mt-6 flex items-center justify-center gap-2 flex-wrap">
+                <button
+                  onClick={() => setPage((prev) => Math.max(1, prev - 1))}
+                  disabled={page <= 1}
+                  className="px-3 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 bg-white disabled:opacity-50 disabled:cursor-not-allowed hover:border-red-400 hover:text-red-600"
+                >
+                  Previous
+                </button>
+                {buildVisiblePages().map((pageNumber) => (
+                  <button
+                    key={pageNumber}
+                    onClick={() => setPage(pageNumber)}
+                    className={`px-3 py-2 rounded-lg border text-sm ${
+                      pageNumber === page
+                        ? 'bg-red-600 text-white border-red-600'
+                        : 'border-gray-200 text-gray-700 bg-white hover:border-red-400 hover:text-red-600'
+                    }`}
+                  >
+                    {pageNumber}
+                  </button>
+                ))}
+                <button
+                  onClick={() => setPage((prev) => Math.min(totalPages, prev + 1))}
+                  disabled={page >= totalPages}
+                  className="px-3 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 bg-white disabled:opacity-50 disabled:cursor-not-allowed hover:border-red-400 hover:text-red-600"
+                >
+                  Next
+                </button>
+              </div>
+            </>
           )}
         </div>
 

@@ -1,15 +1,11 @@
 import { Link } from 'react-router-dom'
 import StarRating from './StarRating'
+import { resolvePhotoUrl } from '../utils/url'
 
 function RestaurantCard({ restaurant }) {
   const photos = restaurant.photos
     ? restaurant.photos.split(',').map((p) => p.trim()).filter(Boolean)
     : []
-  const resolvePhotoUrl = (photo) =>
-    photo.startsWith('http://') || photo.startsWith('https://')
-      ? photo
-      : `http://localhost:8000${photo}`
-
   return (
     <div className="bg-white rounded-xl shadow hover:shadow-md transition p-4 flex flex-col gap-2">
       {photos.length > 0 ? (

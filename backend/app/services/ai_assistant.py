@@ -152,9 +152,14 @@ def _build_recommendation_fallback(recommendations: list[dict]) -> str:
     top_price = top.get("pricing_tier") or "N/A"
     top_rating = top.get("rating")
     rating_text = f"{top_rating}" if isinstance(top_rating, (int, float)) else "N/A"
+    alternatives_text = (
+        "I also included a few alternatives below."
+        if len(recommendations) > 1
+        else "No alternatives available."
+    )
     return (
         f"A good pick is {top_name} ({top_cuisine}, {top_price}, rating {rating_text}). "
-        "I also included a few alternatives below."
+        f"{alternatives_text}"
     )
 
 

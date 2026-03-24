@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getRestaurant, getReviews, createReview, updateReview, deleteReview, addFavorite, removeFavorite } from '../services/api'
 import StarRating from '../components/StarRating'
+import { resolvePhotoUrl } from '../utils/url'
 
 export default function RestaurantDetailPage() {
   const { id } = useParams()
@@ -75,10 +76,6 @@ export default function RestaurantDetailPage() {
   const photos = restaurant.photos
     ? restaurant.photos.split(',').map((p) => p.trim()).filter(Boolean)
     : []
-  const resolvePhotoUrl = (photo) =>
-    photo.startsWith('http://') || photo.startsWith('https://')
-      ? photo
-      : `http://localhost:8000${photo}`
 
   return (
     <div className="max-w-4xl mx-auto px-3 sm:px-4 py-6 sm:py-8">

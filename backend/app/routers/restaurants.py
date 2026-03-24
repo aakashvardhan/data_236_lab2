@@ -1,6 +1,7 @@
 import os
 import uuid
 from fastapi import APIRouter, Depends, HTTPException, status, Query, UploadFile, File
+from sqlalchemy import case
 from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models import User, Restaurant
@@ -64,6 +65,8 @@ def search_restaurants(
     zip_code: str | None = Query(None),
     pricing_tier: str | None = Query(None),
     keywords: str | None = Query(None),
+    sort_by: str = Query("rating"),
+    sort_order: str = Query("desc"),
     page: int = Query(1, ge=1),
     per_page: int = Query(20, ge=1, le=100),
     db: Session = Depends(get_db)
@@ -93,6 +96,26 @@ def search_restaurants(
             | (Restaurant.cuisine_type.ilike(keyword_filter))
             | (Restaurant.description.ilike(keyword_filter))
         )
+
+    price_rank_expr = case(
+        (Restaurant.pricing_tier == "$", 1),
+        (Restaurant.pricing_tier == "$$", 2),
+        (Restaurant.pricing_tier == "$$$", 3),
+        (Restaurant.pricing_tier == "$$$$", 4),
+        else_=99,
+    )
+    sort_columns = {
+        "rating": Restaurant.avg_rating,
+        "reviews": Restaurant.review_count,
+        "price": price_rank_expr,
+        "name": Restaurant.name,
+        "created_at": Restaurant.created_at,
+    }
+    sort_column = sort_columns.get(sort_by, Restaurant.avg_rating)
+    if sort_order.lower() == "asc":
+        query = query.order_by(sort_column.asc(), Restaurant.id.asc())
+    else:
+        query = query.order_by(sort_column.desc(), Restaurant.id.desc())
 
     # total count before pagination
     total = query.count()
