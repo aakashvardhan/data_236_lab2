@@ -1,0 +1,170 @@
+# Lab 2 — Yelp Prototype Enhancement
+# Distributed Systems for Data Engineering (SJSU)
+
+## Project Context
+Enhancing a Lab 1 Yelp prototype (React frontend + Python/FastAPI backend + MySQL) by adding:
+- Docker containerization & Kubernetes orchestration
+- Kafka async messaging (producer/consumer pattern)
+- MongoDB migration (from MySQL)
+- Redux state management
+- JMeter performance testing
+- AWS deployment
+
+## Architecture
+```
+Frontend (React + Redux)
+    ↓ HTTP
+API Services (FastAPI) — Producers
+    ↓ Kafka Topics
+Worker Services — Consumers
+    ↓
+MongoDB
+```
+
+### Services (5 total)
+1. user-service (User/Reviewer)
+2. restaurant-owner-service
+3. restaurant-service
+4. review-service
+5. frontend (React)
+
+### Kafka Topics
+- review.created, review.updated, review.deleted
+- restaurant.created, restaurant.updated, restaurant.claimed
+- user.created, user.updated
+- booking.status
+
+## Tech Stack
+- **Backend:** Python 3.11+, FastAPI, Pydantic v2
+- **Frontend:** React 18, Redux Toolkit, Axios
+- **Database:** MongoDB (pymongo or motor for async)
+- **Messaging:** Apache Kafka (confluent-kafka-python)
+- **Containerization:** Docker, docker-compose
+- **Orchestration:** Kubernetes (kubectl + manifests)
+- **Cloud:** AWS (EKS or EC2-based K8s)
+- **Testing:** Apache JMeter
+
+## Code Standards
+
+### Python / FastAPI
+- Use Pydantic BaseModel for all request/response schemas
+- Async endpoints with `async def` when doing I/O
+- Environment variables for ALL connection strings (DB, Kafka brokers, service URLs)
+- Never hardcode `localhost` — use service names for inter-container communication
+- Use `motor` (async MongoDB driver) over `pymongo` for FastAPI services
+- bcrypt for password hashing — never store plaintext
+- JWT for authentication tokens
+
+### Docker
+- One Dockerfile per service, placed at service root: `services/<name>/Dockerfile`
+- Multi-stage builds: builder stage + slim runtime
+- Use `python:3.11-slim` as base
+- .dockerignore in each service: exclude venv, __pycache__, .git, .env
+- All services must read config from environment variables
+- Health checks in every Dockerfile
+
+### docker-compose.yml
+- Single compose file at project root
+- Service names must match Kubernetes service names (for parity)
+- Use named volumes for MongoDB data persistence
+- Kafka + Zookeeper as separate services
+- Expose only frontend and API gateway ports to host
+- Use `depends_on` with health checks for startup ordering
+
+### Kubernetes
+- All manifests in `k8s/` directory
+- One file per resource: `k8s/<service>-deployment.yaml`, `k8s/<service>-service.yaml`
+- Use ConfigMaps for non-secret config, Secrets for credentials
+- Resource limits on all pods (request + limit)
+- Readiness and liveness probes on all deployments
+- Use ClusterIP for internal services, LoadBalancer/NodePort for frontend
+
+### MongoDB
+- Database name: `yelp_db`
+- Collections: users, restaurants, reviews, favourites, sessions, photos, activity_logs
+- Indexes on: users.email (unique), restaurants.name, reviews.restaurant_id, sessions.token
+- Sessions: store with TTL index for auto-expiry
+- All ObjectId references stored as proper ObjectId, not strings
+- Schema validation rules on collections where possible
+
+### Kafka
+- Broker accessible at `kafka:9092` inside cluster
+- Topic naming: `<entity>.<action>` (e.g., review.created)
+- JSON serialization for all messages
+- Include correlation_id in every message for tracing
+- Consumer group naming: `<service>-group` (e.g., review-worker-group)
+- Idempotent consumers — handle duplicate messages gracefully
+
+### Redux (Frontend)
+- Use Redux Toolkit (createSlice, configureStore)
+- 4 slices: authSlice, restaurantSlice, reviewSlice, favouritesSlice
+- Async operations with createAsyncThunk
+- Store JWT in Redux state (not localStorage for this lab)
+- Selectors for all state access — no direct state.x.y in components
+
+### File Structure
+```
+project-root/
+├── docker-compose.yml
+├── k8s/
+│   ├── kafka-deployment.yaml
+│   ├── kafka-service.yaml
+│   ├── zookeeper-deployment.yaml
+│   ├── zookeeper-service.yaml
+│   ├── mongodb-deployment.yaml
+│   ├── mongodb-service.yaml
+│   ├── user-service-deployment.yaml
+│   ├── user-service-service.yaml
+│   ├── restaurant-service-deployment.yaml
+│   ├── restaurant-service-service.yaml
+│   ├── review-service-deployment.yaml
+│   ├── review-service-service.yaml
+│   ├── restaurant-owner-service-deployment.yaml
+│   ├── restaurant-owner-service-service.yaml
+│   ├── frontend-deployment.yaml
+│   ├── frontend-service.yaml
+│   └── configmap.yaml
+├── services/
+│   ├── user-service/
+│   │   ├── Dockerfile
+│   │   ├── requirements.txt
+│   │   ├── app/
+│   │   │   ├── main.py
+│   │   │   ├── models.py
+│   │   │   ├── routes.py
+│   │   │   ├── kafka_producer.py
+│   │   │   └── config.py
+│   ├── review-service/
+│   ├── restaurant-service/
+│   ├── restaurant-owner-service/
+│   └── workers/
+│       ├── review-worker/
+│       ├── restaurant-worker/
+│       └── user-worker/
+├── frontend/
+│   ├── Dockerfile
+│   ├── src/
+│   │   ├── store/
+│   │   │   ├── index.js
+│   │   │   ├── authSlice.js
+│   │   │   ├── restaurantSlice.js
+│   │   │   ├── reviewSlice.js
+│   │   │   └── favouritesSlice.js
+│   │   └── ...
+├── scripts/
+│   ├── migrate_mysql_to_mongo.py
+│   └── create_kafka_topics.sh
+├── jmeter/
+│   ├── test-plan.jmx
+│   └── results/
+└── README.md
+```
+
+## Critical Rules
+1. NEVER hardcode connection strings — always use env vars
+2. NEVER commit venv/, __pycache__/, node_modules/, .env files
+3. NEVER store plaintext passwords — bcrypt only
+4. ALL inter-service communication uses service names, not IPs
+5. Every Kafka message must be JSON-serializable with a correlation_id
+6. docker-compose up must bring the full stack up from scratch
+7. README must document how to run locally and on K8s
