@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: restaurant-owner-service
+  labels:
+    app: restaurant-owner-service
+spec:
+  type: ClusterIP
+  selector:
+    app: restaurant-owner-service
+  ports:
+    - port: 8003
+      targetPort: 8003
+      protocol: TCP

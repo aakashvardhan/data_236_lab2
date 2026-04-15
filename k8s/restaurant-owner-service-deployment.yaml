@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restaurant-owner-service
+  labels:
+    app: restaurant-owner-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restaurant-owner-service
+  template:
+    metadata:
+      labels:
+        app: restaurant-owner-service
+    spec:
+      containers:
+        - name: restaurant-owner-service
+          image: restaurant-owner-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8003
+          envFrom:
+            - configMapRef:
+                name: app-config
+            - secretRef:
+                name: app-secrets
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8003
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8003
+            initialDelaySeconds: 15
+            periodSeconds: 20
