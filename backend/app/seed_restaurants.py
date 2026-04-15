@@ -24,11 +24,11 @@ from sqlalchemy.orm import sessionmaker
 from app.models import Restaurant, Review, User
 from app.utils.ratings import sync_all_restaurant_aggregates
 
-DB_USER = os.getenv("DB_USER", "root")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "")
-DB_HOST = os.getenv("DB_HOST", "localhost")
-DB_PORT = os.getenv("DB_PORT", "3306")
-DB_NAME = os.getenv("DB_NAME", "yelp_db")
+DB_USER = os.environ.get("DB_USER", "root")
+DB_PASSWORD = os.environ.get("DB_PASSWORD", "")
+DB_HOST = os.environ.get("DB_HOST", "mysql")
+DB_PORT = os.environ.get("DB_PORT", "3306")
+DB_NAME = os.environ.get("DB_NAME", "yelp_db")
 
 DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 engine = create_engine(DATABASE_URL)
@@ -310,7 +310,8 @@ def seed():
     synced = sync_all_restaurant_aggregates(db)
     db.commit()
     print(f"🔄 Synced aggregate ratings/review counts for {synced} restaurants.")
-    print("📍 Visit http://localhost:5173 to see them!\n")
+    frontend_url = os.environ.get("FRONTEND_URL", "http://localhost:5173")
+    print(f"📍 Visit {frontend_url} to see them!\n")
     db.close()
 
 

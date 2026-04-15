@@ -30,6 +30,19 @@ You have access to the following tools:
 
 Tool names: {tool_names}
 
+TOOL SELECTION GUIDE:
+- Use "search_restaurants" ONLY for cities available in our local database (e.g. San Jose, San Francisco, and other Bay Area cities).
+- Use "tavily_search_results_json" for:
+  - Locations outside our database coverage (e.g. Dubai, New York, London, Tokyo, etc.)
+  - Real-time queries: "open now", "tonight", "trending", "new openings"
+  - Anything requiring current or up-to-date information (hours, events, recent reviews)
+- If "search_restaurants" returns no results or irrelevant results for a location, try "tavily_search_results_json" next.
+
+RESPONSE FORMAT:
+- When using tavily_search_results_json results, present your Final Answer as a short intro sentence followed by a numbered list.
+- Each item should be: "<number>. <Restaurant Name> — <cuisine type>, <brief description in one sentence>."
+- Include at most 5 restaurants. Do NOT dump raw web content.
+
 IMPORTANT RULES:
 - For simple greetings or casual messages, respond directly with Final Answer without using any tools.
 - After receiving ONE tool result, immediately write your Final Answer. Do NOT call the same tool again with a similar query.
@@ -65,6 +78,19 @@ _REACT_LINE_PATTERN = re.compile(
 _GENERIC_FALLBACK_RESPONSE = "I can help with restaurant recommendations. Could you share a few more details?"
 
 
+def _dedupe_repeated_text(text: str) -> str:
+    """Detect and remove exact duplicate halves from LLM output."""
+    length = len(text)
+    if length < 20:
+        return text
+    half = length // 2
+    first_half = text[:half].strip()
+    second_half = text[half:].strip()
+    if first_half == second_half:
+        return first_half
+    return text
+
+
 def _sanitize_agent_output(raw_output: str) -> str:
     """Return a user-facing answer without ReAct scaffolding."""
     text = (raw_output or "").strip()
@@ -76,7 +102,6 @@ def _sanitize_agent_output(raw_output: str) -> str:
         marker = marker_matches[-1]
         text = text[marker.end():].strip()
     else:
-        # Fallback for parser failures: strip obvious ReAct/planning traces.
         if re.search(r"(?i)\b(Thought|Action|Action Input|Observation)\s*:", text):
             return _GENERIC_FALLBACK_RESPONSE
 
@@ -91,7 +116,7 @@ def _sanitize_agent_output(raw_output: str) -> str:
 
     if not text:
         return _GENERIC_FALLBACK_RESPONSE
-    return text
+    return _dedupe_repeated_text(text)
 
 
 def _coerce_chunk_text(chunk: object) -> str:
@@ -104,6 +129,35 @@ def _coerce_chunk_text(chunk: object) -> str:
     if isinstance(token, str):
         return token
     return str(token)
+
+
+# Pattern: "1. Restaurant Name — Cuisine, description."
+_NUMBERED_ITEM_PATTERN = re.compile(
+    r"^\s*\d+\.\s+"
+    r"(?:\*\*)?(?P<name>[^—\-*]+?)(?:\*\*)?"  # name (with optional bold **)
+    r"\s*[—\-]+\s*"
+    r"(?P<cuisine>[^,]+)"
+    r",\s*(?P<desc>.+)$",
+)
+
+
+def _parse_web_recommendations(response_text: str) -> list[dict]:
+    """Parse the LLM's numbered-list response into structured recommendation cards."""
+    restaurants: list[dict] = []
+    for line in response_text.splitlines():
+        match = _NUMBERED_ITEM_PATTERN.match(line.strip())
+        if not match:
+            continue
+        name = match.group("name").strip().strip("*")
+        cuisine = match.group("cuisine").strip()
+        restaurants.append({
+            "id": f"web-{hash(name) % 100000}",
+            "name": name,
+            "cuisines": cuisine,
+            "pricing_tier": "",
+            "rating": None,
+        })
+    return restaurants[:5]
 
 
 def _parse_restaurant_lines(tool_output: str) -> list[dict]:
@@ -209,11 +263,17 @@ async def chat(
     executor = _build_executor(user_id, session_id, db, return_intermediate_steps=True)
     result = await executor.ainvoke({"input": message})
     recommendations: list[dict] = []
+    used_tavily = False
     for action, observation in result.get("intermediate_steps", []):
-        if getattr(action, "tool", "") == "search_restaurants":
+        tool_name = getattr(action, "tool", "")
+        if tool_name == "search_restaurants":
             recommendations.extend(_parse_restaurant_lines(str(observation)))
-    recommendations = _dedupe_recommendations(recommendations)[:5]
+        elif tool_name == "tavily_search_results_json":
+            used_tavily = True
     ai_response = _finalize_response(str(result.get("output", "")), recommendations)
+    if used_tavily and not recommendations:
+        recommendations = _parse_web_recommendations(ai_response)
+    recommendations = _dedupe_recommendations(recommendations)[:5]
     conversation_manager.save_turn(user_id, session_id, message, ai_response, db)
     return ai_response, recommendations
 
@@ -260,13 +320,21 @@ async def chat_stream(
                 collected_restaurants.extend(restaurants)
                 if restaurants:
                     yield {"type": "tool_result", "restaurants": restaurants}
+            elif kind == "on_tool_end" and name == "tavily_search_results_json":
+                pass  # Cards will be parsed from LLM's formatted response
             elif kind == "on_chain_end" and name == "AgentExecutor":
                 output = event["data"].get("output", {})
-                unique_recommendations = _dedupe_recommendations(collected_restaurants)[:5]
                 final_response = _finalize_response(
                     str(output.get("output", "")),
-                    unique_recommendations,
+                    collected_restaurants,
                 )
+                if not collected_restaurants:
+                    collected_restaurants = _parse_web_recommendations(
+                        final_response
+                    )
+                unique_recommendations = _dedupe_recommendations(
+                    collected_restaurants
+                )[:5]
                 conversation_manager.save_turn(
                     user_id, session_id, message, final_response, db
                 )
