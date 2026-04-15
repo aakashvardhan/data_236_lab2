@@ -1,316 +1,201 @@
-# Yelp Prototype
+# Yelp Prototype - Lab 2
 
-A full-stack restaurant discovery and review platform with an AI-powered recommendation assistant. Built with FastAPI, React, and LangChain.
-
-![Python](https://img.shields.io/badge/Python-3.11+-blue) ![React](https://img.shields.io/badge/React-18-61dafb) ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688) ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1) ![LangChain](https://img.shields.io/badge/LangChain-Agents-green)
-
----
-
-## Overview
-
-Yelp Prototype lets users discover restaurants, write reviews, save favorites, and get personalized recommendations through a conversational AI assistant. Restaurant owners get a separate dashboard with review management and analytics.
-
-### Key Capabilities
-
-- **Restaurant Discovery** — Search, filter by cuisine/price/location, sort by rating or distance, with server-side pagination.
-- **Reviews & Ratings** — Full CRUD for reviews with real-time aggregate rating updates.
-- **Favorites & Activity** — Bookmark restaurants and track browsing/review history.
-- **AI Assistant** — Natural-language restaurant recommendations powered by LangChain + Google Gemini, with Tavily web search for live context (hours, trends, events). Supports multi-turn conversations and session management.
-- **Owner Dashboard** — Restaurant owners can manage listings, view reviews, upload photos, and access per-restaurant analytics.
-- **User Preferences** — Cuisine preferences, dietary restrictions, price range, ambiance, and location radius feed directly into AI recommendations.
-
----
+Restaurant discovery and review platform enhanced with Docker, Kubernetes, Kafka, MongoDB, and Redux.
 
 ## Architecture
 
-![System Architecture](https://github.com/aakashvardhan/data236-lab1-yelp/blob/main/screenshots/system-diagram-2026-03-24-071015.png)
+```
+Frontend (React + Redux)
+    |
+    | HTTP (nginx reverse proxy)
+    |
+    +--- user-service         (FastAPI, port 8001) -- Auth, profiles, favorites, AI assistant
+    +--- restaurant-service   (FastAPI, port 8002) -- Restaurant CRUD and search
+    +--- restaurant-owner-service (FastAPI, port 8003) -- Owner dashboard and analytics
+    +--- review-service       (FastAPI, port 8004) -- Review CRUD
+    |
+    +--- Kafka (port 9092)    -- Async messaging (producer/consumer)
+    |       |
+    |       +--- review-worker, restaurant-worker, user-worker (consumers)
+    |
+    +--- MongoDB (port 27017) -- Primary database
+```
 
-### Frontend — React + Vite
+## Tech Stack
 
-Two user personas (End User, Restaurant Owner) enter through a shared **App Router** into role-specific pages: Explore, Detail, Favorites, Profile, and Owner Dashboard. An **Axios API Service** handles all backend communication, attaching the JWT stored in `localStorage` as a Bearer token on every request.
+| Layer          | Technology                                     |
+|----------------|------------------------------------------------|
+| Frontend       | React 19, Redux Toolkit, Axios, TailwindCSS    |
+| Backend        | Python 3.11, FastAPI, motor (async MongoDB)    |
+| Database       | MongoDB 7                                      |
+| Messaging      | Apache Kafka (Confluent 7.5.0) + Zookeeper     |
+| AI Assistant   | LangChain + Google Gemini + Tavily             |
+| Containers     | Docker, docker-compose                         |
+| Orchestration  | Kubernetes                                     |
+| Testing        | Apache JMeter                                  |
 
-### Backend — FastAPI
+## Prerequisites
 
-`main.py` bootstraps CORS, mounts all routers, and exposes a health endpoint. Requests flow through a **Global Error Handler** and seven modular routers:
+- Docker and Docker Compose
+- kubectl (for Kubernetes deployment)
+- Node.js 18+ (for local frontend development)
+- Python 3.11+ (for local backend development)
 
-| Router | Responsibility |
-|--------|---------------|
-| **Auth Router** | signup / login / logout |
-| **Users Router** | profile / preferences |
-| **Restaurants Router** | CRUD / search / photos / claim |
-| **Reviews Router** | create / update / delete |
-| **Favorites Router** | bookmarks / history |
-| **Owner Router** | dashboard / analytics |
-| **AI Assistant Router** | chat / stream / history |
-
-All protected routers pass through **Security Utils** (`JWT + get_current_user`) before touching the data layer. File uploads (profile pics, restaurant photos) are served from a static `/uploads` directory.
-
-### Data Layer
-
-**SQLAlchemy** (`SessionLocal` / `get_db` dependency) connects to a **MySQL** `yelp_db` instance. All routers share the same session factory.
-
-### AI Services
-
-The AI Assistant Router delegates to a **LangChain ReAct Agent** backed by **Google Gemini 2.5 Flash Lite**. The agent has access to three components:
-
-- **Preferences Loader** — pulls the current user's saved preferences (cuisines, dietary needs, price range, location, ambiance) from the database at the start of each chat request.
-- **`search_restaurants` tool** — structured query against the MySQL restaurant data with filters derived from the user's message + preferences.
-- **`tavily_search` tool** — calls the **Tavily Web Search** API for live external context (hours, trending dishes, local events).
-
-A **Conversation Manager** handles session memory and chat history persistence, enabling multi-turn follow-up conversations.
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.11+
-- Node.js 18+
-- MySQL 8.0+
-
-### 1. Clone
+## Quick Start (Docker Compose)
 
 ```bash
-git clone https://github.com/<your-username>/yelp-prototype.git
-cd yelp-prototype
+# Clone and enter project
+cd data_236_lab2
+
+# Start all services
+docker-compose up --build
+
+# In another terminal, create Kafka topics
+docker-compose exec kafka bash /scripts/create_kafka_topics.sh
 ```
 
-### 2. Environment Variables
+Services will be available at:
 
-Create `.env` at the project root:
+| Service                   | URL                    |
+|---------------------------|------------------------|
+| Frontend                  | http://localhost:5173   |
+| User Service              | http://localhost:8001   |
+| Restaurant Service        | http://localhost:8002   |
+| Restaurant Owner Service  | http://localhost:8003   |
+| Review Service            | http://localhost:8004   |
+| MongoDB                   | localhost:27017         |
+| Kafka                     | localhost:9092          |
 
-```env
-DB_USER=your_db_user
-DB_PASSWORD=your_db_password
-DB_HOST=localhost
-DB_PORT=3306
-DB_NAME=yelp_db
+## Data Migration (MySQL to MongoDB)
 
-JWT_SECRET_KEY=change-me
-JWT_ALGORITHM=HS256
-JWT_EXPIRATION_MINUTES=60
-
-GEMINI_API_KEY=
-TAVILY_API_KEY=
-HF_API_TOKEN=
-YELP_API_KEY=
-
-VITE_API_BASE_URL=http://localhost:8000
-```
-
-### 3. Database
+If you have existing Lab 1 data in MySQL:
 
 ```bash
-mysql -u <user> -p -e "CREATE DATABASE IF NOT EXISTS yelp_db;"
-mysql -u <user> -p yelp_db < backend/app/yelp_db.sql
+# Set MySQL connection vars
+export MYSQL_HOST=127.0.0.1 MYSQL_USER=root MYSQL_PASSWORD=yourpass MYSQL_DB=yelp_db
+
+# Set MongoDB target
+export MONGO_URI=mongodb://localhost:27017 MONGO_DB_NAME=yelp_db
+
+# Run migration
+pip install pymysql pymongo bcrypt
+python scripts/migrate_mysql_to_mongo.py
 ```
 
-Seed sample restaurants and reviews:
+## Kubernetes Deployment
 
 ```bash
-cd backend
-python -m app.seed_restaurants
+# Apply all manifests
+kubectl apply -f k8s/
+
+# Verify pods are running
+kubectl get pods
+
+# Check services
+kubectl get svc
+
+# Port-forward frontend to test
+kubectl port-forward svc/frontend 8080:80
 ```
 
-### 4. Backend
+## MongoDB Collections
 
-```bash
-cd backend
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
-```
+| Collection             | Description                                   | Indexes                                      |
+|------------------------|-----------------------------------------------|----------------------------------------------|
+| `users`                | User accounts with embedded preferences       | `email` (unique)                             |
+| `restaurants`          | Restaurant listings                           | `name`, `city`                               |
+| `reviews`              | User reviews for restaurants                  | `restaurant_id`, `(user_id, restaurant_id)` unique |
+| `favorites`            | User-restaurant favorites                     | `(user_id, restaurant_id)` unique            |
+| `sessions`             | User sessions with auto-expiry                | `token` (unique), `created_at` (TTL 24h)     |
+| `photos`               | Extracted photo references                    | `(entity_type, entity_id)`                   |
+| `activity_logs`        | Event log (populated by Kafka consumers)      | `user_id`, `created_at` (TTL 90d)            |
+| `conversation_messages`| AI assistant chat history                     | `(user_id, session_id)`                      |
 
-API docs available at [http://localhost:8000/docs](http://localhost:8000/docs) (Swagger UI).
+## Kafka Topics
 
-### 5. Frontend
+| Topic                | Producer                  | Consumer                   |
+|----------------------|---------------------------|----------------------------|
+| `review.created`     | Review API Service        | Review Worker Service      |
+| `review.updated`     | Review API Service        | Review Worker Service      |
+| `review.deleted`     | Review API Service        | Review Worker Service      |
+| `restaurant.created` | Restaurant API Service    | Restaurant Worker Service  |
+| `restaurant.updated` | Restaurant API Service    | Restaurant Worker Service  |
+| `restaurant.claimed` | Restaurant Owner Service  | Restaurant Worker Service  |
+| `user.created`       | User API Service          | User Worker Service        |
+| `user.updated`       | User API Service          | User Worker Service        |
+| `booking.status`     | Booking Service           | Frontend Service           |
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+## Environment Variables
 
-Open [http://localhost:5173](http://localhost:5173).
-
----
+| Variable           | Default                        | Used By          |
+|--------------------|--------------------------------|------------------|
+| `MONGO_URI`        | `mongodb://localhost:27017`    | All backends     |
+| `MONGO_DB_NAME`    | `yelp_db`                      | All backends     |
+| `JWT_SECRET_KEY`   | (must set in production)       | All backends     |
+| `KAFKA_BROKER`     | `kafka:9092`                   | All backends     |
+| `CORS_ORIGINS`     | `http://localhost:3000,...`     | All backends     |
+| `TAVILY_API_KEY`   | (optional)                     | User service     |
+| `GEMINI_API_KEY`   | (optional)                     | User service     |
+| `HF_API_TOKEN`     | (optional)                     | User service     |
 
 ## Project Structure
 
 ```
-.
-├── backend/
-│   └── app/
-│       ├── main.py                  # App entrypoint, router registration
-│       ├── models.py                # SQLAlchemy models
-│       ├── schemas.py               # Pydantic request/response schemas
-│       ├── routers/
-│       │   ├── auth.py              # Signup, login, logout
-│       │   ├── users.py             # Profile, preferences
-│       │   ├── restaurants.py       # CRUD, search, photos
-│       │   ├── reviews.py           # Review CRUD
-│       │   ├── favorites.py         # Favorites, activity history
-│       │   ├── owner.py             # Owner dashboard, analytics
-│       │   └── ai_assistant.py      # Chat, streaming, sessions
-│       ├── services/
-│       │   ├── assistant.py         # LangChain agent logic
-│       │   ├── tools.py             # Restaurant search + Tavily tools
-│       │   └── memory.py            # Conversation session management
-│       ├── yelp_db.sql              # Schema and seed SQL
-│       ├── seed_restaurants.py      # Data seeding script
-│       └── sync_restaurant_aggregates.py
-├── frontend/
-│   └── src/
-│       ├── pages/                   # Route-level page components
-│       ├── components/              # Shared UI components
-│       └── services/
-│           └── api.js               # Axios API integration layer
-├── .env
+project-root/
+├── docker-compose.yml
+├── k8s/                          # Kubernetes manifests
+│   ├── configmap.yaml
+│   ├── secrets.yaml
+│   ├── mongodb-*.yaml
+│   ├── kafka-*.yaml
+│   ├── zookeeper-*.yaml
+│   ├── user-service-*.yaml
+│   ├── restaurant-service-*.yaml
+│   ├── restaurant-owner-service-*.yaml
+│   ├── review-service-*.yaml
+│   └── frontend-*.yaml
+├── services/
+│   ├── user-service/             # Auth, profiles, favorites, AI assistant
+│   ├── restaurant-service/       # Restaurant CRUD and search
+│   ├── restaurant-owner-service/ # Owner dashboard and analytics
+│   ├── review-service/           # Review CRUD
+│   └── workers/                  # Kafka consumer stubs
+│       ├── review-worker/
+│       ├── restaurant-worker/
+│       └── user-worker/
+├── frontend/                     # React + Vite + TailwindCSS
+├── scripts/
+│   ├── migrate_mysql_to_mongo.py
+│   └── create_kafka_topics.sh
+├── backend/                      # Original Lab 1 monolith (reference)
 └── README.md
 ```
 
----
+## What's Done vs What's Left
 
-## API Reference
+### Completed (Solo Week)
+- Monolith decomposed into 4 microservices + frontend
+- All services migrated from SQLAlchemy/MySQL to motor/MongoDB
+- AI assistant carried forward in user-service
+- Dockerfiles for all 5 services with multi-stage builds
+- docker-compose.yml with MongoDB, Kafka, Zookeeper
+- MySQL-to-MongoDB migration script with index creation
+- Kafka topic creation script (9 topics)
+- Kafka producer stubs in each service
+- Worker service stubs (review-worker, restaurant-worker, user-worker)
+- Kubernetes manifests for all services + infrastructure
+- ConfigMap and Secrets for cluster configuration
 
-All protected routes require `Authorization: Bearer <token>`.
+### Remaining (Partner)
+- **Kafka wiring**: Implement actual producer/consumer code using confluent-kafka-python
+- **Redux**: Create Redux store with 4 slices (auth, restaurant, review, favourites)
+- **JMeter**: Performance tests at 100-500 concurrent users
+- **AWS**: Deploy to AWS (EKS or EC2-based K8s), take screenshots
 
-### Auth
+## Notes for Partner
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/auth/signup` | Register as a reviewer |
-| `POST` | `/auth/owner/signup` | Register as a restaurant owner |
-| `POST` | `/auth/login` | Returns JWT token |
-| `POST` | `/auth/logout` | Invalidate session |
-
-### Users & Preferences
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/users/me` | Current user profile |
-| `PUT` | `/users/me` | Update profile fields |
-| `PUT` | `/users/me/profile-pic` | Upload profile photo |
-| `POST` | `/users/me/preferences` | Create or update preferences |
-| `GET` | `/users/me/preferences` | Fetch saved preferences |
-
-### Restaurants
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/restaurants` | Create a restaurant |
-| `GET` | `/restaurants` | Search with filters, sort, pagination |
-| `GET` | `/restaurants/{id}` | Restaurant details |
-| `PUT` | `/restaurants/{id}` | Update restaurant |
-| `POST` | `/restaurants/{id}/photos` | Upload photos |
-| `POST` | `/restaurants/{id}/claim` | Owner claims a listing |
-
-### Reviews
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/restaurants/{id}/reviews` | Submit a review |
-| `GET` | `/restaurants/{id}/reviews` | List reviews for a restaurant |
-| `PUT` | `/reviews/{id}` | Edit a review |
-| `DELETE` | `/reviews/{id}` | Delete a review |
-
-### Favorites
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/favorites/{restaurant_id}` | Add to favorites |
-| `DELETE` | `/favorites/{restaurant_id}` | Remove from favorites |
-| `GET` | `/favorites` | List all favorites |
-| `GET` | `/favorites/me/history` | Activity/browsing history |
-
-### Owner Dashboard
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/owner/restaurants` | Owner's restaurant listings |
-| `GET` | `/owner/restaurants/{id}/reviews` | Reviews on owned restaurant |
-| `GET` | `/owner/restaurants/{id}/analytics` | Rating trends and review analytics |
-
-### AI Assistant
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/ai-assistant/chat` | Send a message, get recommendations |
-| `POST` | `/ai-assistant/chat/stream` | Streaming response variant |
-| `GET` | `/ai-assistant/chat/history` | Conversation history for a session |
-| `POST` | `/ai-assistant/chat/clear` | Clear a chat session |
-| `GET` | `/ai-assistant/sessions` | List all chat sessions |
-
-#### Chat Example
-
-**Request:**
-
-```json
-POST /ai-assistant/chat
-{
-  "message": "Find casual vegan restaurants in San Jose under $$",
-  "session_id": "default"
-}
-```
-
-**Response:**
-
-```json
-{
-  "response": "Here are a few casual vegan-friendly options in San Jose...",
-  "recommendations": [
-    {
-      "id": 12,
-      "name": "Green Leaf Cafe",
-      "rating": 4.4,
-      "pricing_tier": "$$",
-      "cuisines": "Vegan, Cafe"
-    }
-  ],
-  "session_id": "default"
-}
-```
-
----
-
-## AI Assistant — How It Works
-
-1. **Preferences Loader** — On each chat request, the user's saved preferences (cuisines, dietary needs, price range, location, ambiance) are pulled from the database and injected into the agent's system prompt.
-2. **ReAct Agent** — A LangChain ReAct agent powered by Gemini 2.5 Flash Lite interprets the natural-language query and decides which tools to invoke.
-3. **`search_restaurants` Tool** — Queries the MySQL database with structured filters derived from the user's message and preferences.
-4. **`tavily_search` Tool** — Fetches live information (hours, trending dishes, local events) to enrich recommendations.
-5. **Response Generation** — Gemini synthesizes tool outputs into a conversational reply with structured recommendation cards.
-6. **Conversation Manager** — Session memory and chat history are persisted per session, enabling follow-up questions and context-aware dialogue.
-
----
-
-## Maintenance Scripts
-
-**Recompute aggregate ratings** (sync `avg_rating` and `review_count` from review data):
-
-```bash
-cd backend
-python -m app.sync_restaurant_aggregates
-```
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|------------|
-| Frontend | React 18, Vite |
-| Backend | FastAPI, SQLAlchemy, Pydantic |
-| Database | MySQL 8.0 |
-| Auth | JWT (HS256), bcrypt via passlib |
-| AI/LLM | LangChain (ReAct Agent), Google Gemini 2.5 Flash Lite |
-| Web Search | Tavily API |
-| API Docs | Swagger UI (auto-generated) |
-
----
-
-## License
-
-MIT
+1. **Kafka stubs** are at `services/<name>/app/kafka_producer.py` and `services/workers/<name>/main.py`. Each stub has TODO comments explaining what to implement.
+2. **Redux** goes into `frontend/src/store/` -- create `index.js`, `authSlice.js`, `restaurantSlice.js`, `reviewSlice.js`, `favouritesSlice.js`.
+3. **All IDs are strings** (MongoDB ObjectId hex). The frontend `api.js` should continue to work since IDs are passed as URL path parameters.
+4. **Environment variables**: Copy `.env.example` or set them directly. The `JWT_SECRET_KEY` must match across all services.
+5. **Frontend API routing**: The nginx config proxies `/api/users/` to user-service, etc. For local dev without Docker, the frontend still hits `VITE_API_BASE_URL` directly.
