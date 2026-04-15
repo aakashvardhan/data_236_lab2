@@ -23,7 +23,7 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (!localStorage.getItem('token')) { navigate('/login'); return }
-  }, [])
+  }, [navigate])
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })

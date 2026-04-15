@@ -10,13 +10,13 @@ export default function FavoritesPage() {
   useEffect(() => {
     if (!localStorage.getItem('token')) { navigate('/login'); return }
     fetchFavorites()
-  }, [])
+  }, [navigate])
 
   const fetchFavorites = async () => {
     try {
       const res = await getFavorites()
       setFavorites(res.data)
-    } catch (err) {}
+    } catch { /* favorites fetch is best-effort */ }
     finally { setLoading(false) }
   }
 
@@ -24,7 +24,7 @@ export default function FavoritesPage() {
     try {
       await removeFavorite(restaurantId)
       setFavorites(favorites.filter(f => f.restaurant_id !== restaurantId))
-    } catch (err) {}
+    } catch { /* removal failure is non-critical */ }
   }
 
   return (

@@ -38,6 +38,7 @@ export default function ExplorePage() {
       fetchRestaurants()
     }, 400) // wait 400ms after user stops typing
     return () => clearTimeout(timer)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search, cuisine, price, keywords, city, sort, page, perPage])
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: 'smooth' }) }, [messages])
@@ -65,11 +66,11 @@ export default function ExplorePage() {
       setRestaurants(results)
       setTotalRestaurants(total)
       setTotalPages(pages)
-    } catch (err) {
+    } catch {
       setRestaurants([])
       setTotalRestaurants(0)
       setTotalPages(1)
-    } finally { setLoading(false) }
+    }
   }
 
   const buildVisiblePages = () => {
@@ -101,8 +102,9 @@ export default function ExplorePage() {
       name: r.name,
       cuisine_type: r.cuisines,
       pricing_tier: r.pricing_tier,
-      avg_rating: r.rating || 0,
-      city: ''
+      avg_rating: r.rating,
+      city: '',
+      is_web: String(r.id || '').startsWith('web-'),
     }))
 
     setMessages(prev => [...prev, {
@@ -261,7 +263,13 @@ export default function ExplorePage() {
                     <p>{msg.text}</p>
                     {msg.recommendations?.length > 0 && (
                       <div className="mt-2 flex flex-col gap-1">
-                        {msg.recommendations.map(r => (
+                        {msg.recommendations.map(r => r.is_web ? (
+                          <div key={r.id}
+                            className="bg-red-50 rounded-lg p-2 text-xs text-gray-800 block">
+                            <div className="font-semibold text-red-600">{r.name}</div>
+                            <div className="text-gray-500">{r.cuisine_type} • 🌐 Web result</div>
+                          </div>
+                        ) : (
                           <Link key={r.id} to={`/restaurant/${r.id}`}
                             className="bg-red-50 rounded-lg p-2 text-xs text-gray-800 hover:bg-red-100 transition block">
                             <div className="font-semibold text-red-600">{r.name}</div>

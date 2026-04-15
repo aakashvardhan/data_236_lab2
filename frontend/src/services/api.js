@@ -1,63 +1,88 @@
 
 import axios from 'axios'
-import { getApiBaseUrl } from '../utils/url'
+import { getApiConfig } from '../utils/url'
 
-const API = axios.create({
-  baseURL: getApiBaseUrl(),
-})
+const config = getApiConfig()
 
-API.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem('token')
-    if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`
-    }
-    return config
-  },
-  (error) => Promise.reject(error)
-)
+function attachAuth(instance) {
+  instance.interceptors.request.use(
+    (reqConfig) => {
+      const token = localStorage.getItem('token')
+      if (token) {
+        reqConfig.headers['Authorization'] = `Bearer ${token}`
+      }
+      return reqConfig
+    },
+    (error) => Promise.reject(error)
+  )
+  return instance
+}
+
+function create(baseURL) {
+  return attachAuth(axios.create({ baseURL }))
+}
+
+let userAPI
+let restaurantAPI
+let reviewAPI
+let ownerAPI
+let singleAPI
+
+if (config.mode === 'single') {
+  singleAPI = create(config.baseURL)
+  userAPI = restaurantAPI = reviewAPI = ownerAPI = singleAPI
+} else {
+  userAPI = create(config.user)
+  restaurantAPI = create(config.restaurant)
+  reviewAPI = create(config.review)
+  ownerAPI = create(config.owner)
+}
+
 // AUTH
-export const signup = (data) => API.post('/auth/signup', data)
-export const ownerSignup = (data) => API.post('/auth/owner/signup', data)
-export const login = (data) => API.post('/auth/login', data)
-export const logout = () => API.post('/auth/logout')
+export const signup = (data) => userAPI.post('/auth/signup', data)
+export const ownerSignup = (data) => userAPI.post('/auth/owner/signup', data)
+export const login = (data) => userAPI.post('/auth/login', data)
+export const logout = () => userAPI.post('/auth/logout')
 
 // USER
-export const getMe = () => API.get('/users/me')
+export const getMe = () => userAPI.get('/users/me')
 export const updateMe = (data) => {
   const cleaned = Object.fromEntries(
-    Object.entries(data).filter(([_, v]) => v !== '' && v !== null && v !== undefined)
+    Object.entries(data).filter(([, v]) => v !== '' && v !== null && v !== undefined)
   )
-  return API.put('/users/me', cleaned)
+  return userAPI.put('/users/me', cleaned)
 }
-export const getPreferences = () => API.get('/users/me/preferences')
-export const savePreferences = (data) => API.post('/users/me/preferences', data)
-export const getHistory = () => API.get('/favorites/me/history')
+export const getPreferences = () => userAPI.get('/users/me/preferences')
+export const savePreferences = (data) => userAPI.post('/users/me/preferences', data)
+export const getHistory = () => userAPI.get('/favorites/me/history')
 
 // RESTAURANTS
-export const getRestaurants = (params) => API.get('/restaurants', { params })
-export const getRestaurant = (id) => API.get(`/restaurants/${id}`)
-export const createRestaurant = (data) => API.post('/restaurants', data)
-export const updateRestaurant = (id, data) => API.put(`/restaurants/${id}`, data)
+export const getRestaurants = (params) => restaurantAPI.get('/restaurants', { params })
+export const getRestaurant = (id) => restaurantAPI.get(`/restaurants/${id}`)
+export const createRestaurant = (data) => restaurantAPI.post('/restaurants', data)
+export const updateRestaurant = (id, data) => restaurantAPI.put(`/restaurants/${id}`, data)
 
 // REVIEWS
-export const createReview = (restaurantId, data) => API.post(`/restaurants/${restaurantId}/reviews`, data)
-export const getReviews = (restaurantId) => API.get(`/restaurants/${restaurantId}/reviews`)
-export const updateReview = (reviewId, data) => API.put(`/reviews/${reviewId}`, data)
-export const deleteReview = (reviewId) => API.delete(`/reviews/${reviewId}`)
+export const createReview = (restaurantId, data) =>
+  reviewAPI.post(`/restaurants/${restaurantId}/reviews`, data)
+export const getReviews = (restaurantId) =>
+  reviewAPI.get(`/restaurants/${restaurantId}/reviews`)
+export const updateReview = (reviewId, data) => reviewAPI.put(`/reviews/${reviewId}`, data)
+export const deleteReview = (reviewId) => reviewAPI.delete(`/reviews/${reviewId}`)
 
 // FAVORITES
-export const addFavorite = (restaurantId) => API.post(`/favorites/${restaurantId}`)
-export const removeFavorite = (restaurantId) => API.delete(`/favorites/${restaurantId}`)
-export const getFavorites = () => API.get('/favorites')
+export const addFavorite = (restaurantId) => userAPI.post(`/favorites/${restaurantId}`)
+export const removeFavorite = (restaurantId) => userAPI.delete(`/favorites/${restaurantId}`)
+export const getFavorites = () => userAPI.get('/favorites')
 
 // OWNER
-export const getOwnerRestaurants = () => API.get('/owner/restaurants')
-export const getOwnerRestaurantReviews = (id) => API.get(`/owner/restaurants/${id}/reviews`)
-export const getOwnerAnalytics = (id) => API.get(`/owner/restaurants/${id}/analytics`)
+export const getOwnerRestaurants = () => ownerAPI.get('/owner/restaurants')
+export const getOwnerRestaurantReviews = (id) => ownerAPI.get(`/owner/restaurants/${id}/reviews`)
+export const getOwnerAnalytics = (id) => ownerAPI.get(`/owner/restaurants/${id}/analytics`)
 
 // AI ASSISTANT
-export const chatWithAI = (data) => API.post('/ai-assistant/chat', {
-  message: data.message,
-  session_id: data.session_id || 'default'
-})
+export const chatWithAI = (data) =>
+  userAPI.post('/ai-assistant/chat', {
+    message: data.message,
+    session_id: data.session_id || 'default',
+  })

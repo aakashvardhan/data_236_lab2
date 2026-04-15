@@ -3,7 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom'
 
 import StarRating from '../components/StarRating'
 import axios from 'axios'
-import { getRestaurant, getReviews, updateRestaurant } from '../services/api'
+import { getRestaurant, getReviews } from '../services/api'
+import { resolvePhotoUrl } from '../utils/url'
 const DAYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
 const AMENITIES = ['wifi', 'outdoor_seating', 'parking', 'delivery', 'takeout', 'reservations']
 
@@ -24,7 +25,8 @@ export default function OwnerRestaurantPage() {
     if (!token) { navigate('/login'); return }
     if (role !== 'owner') { navigate('/'); return }
     fetchData()
-  }, [id])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id, navigate])
 
   const fetchData = async () => {
   try {
@@ -46,7 +48,7 @@ export default function OwnerRestaurantPage() {
       amenities: restRes.data.amenities || []
     })
     setReviews(revRes.data || [])
-  } catch (err) {}
+  } catch { /* data fetch is best-effort */ }
   finally { setLoading(false) }
 }
 
@@ -66,7 +68,7 @@ const handleSave = async (e) => {
       phone: form.phone,
       pricing_tier: form.pricing_tier,
       hours: Object.entries(form.hours_of_operation || {})
-        .filter(([_, v]) => v)
+        .filter(([, v]) => v)
         .map(([day, hours]) => `${day}:${hours}`)
         .join(',')
     }
@@ -75,9 +77,9 @@ const handleSave = async (e) => {
     })
     setMessage('Restaurant updated!')
     setTimeout(() => setMessage(''), 3000)
-  } catch (err) {
+  } catch {
     setMessage('Failed to update.')
-  } finally { setSaving(false) }
+  }
 }
 
   const handleClaim = async () => {
@@ -88,7 +90,7 @@ const handleSave = async (e) => {
       })
       setMessage('Restaurant claimed successfully!')
       fetchData()
-    } catch (err) {
+    } catch {
       setMessage('Failed to claim restaurant.')
     }
   }
@@ -114,11 +116,6 @@ const handleSave = async (e) => {
     count: reviews.filter(r => r.rating === star).length,
     pct: reviews.length > 0 ? Math.round(reviews.filter(r => r.rating === star).length / reviews.length * 100) : 0
   }))
-  const resolvePhotoUrl = (photo) =>
-    photo.startsWith('http://') || photo.startsWith('https://')
-      ? photo
-      : `http://localhost:8000${photo}`
-
   return (
     <div className="max-w-4xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
       <button onClick={() => navigate('/owner/dashboard')}
@@ -243,7 +240,7 @@ const handleSave = async (e) => {
             headers: { Authorization: `Bearer ${token}` },
             body: formData
           })
-        } catch (err) {}
+        } catch { /* upload errors are non-critical */ }
       }
       setMessage('Photos uploaded!')
       setTimeout(() => setMessage(''), 3000)

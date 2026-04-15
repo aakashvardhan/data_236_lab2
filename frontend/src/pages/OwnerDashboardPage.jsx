@@ -14,13 +14,13 @@ export default function OwnerDashboardPage() {
     if (!token) { navigate('/login'); return }
     if (role !== 'owner') { navigate('/'); return }
     fetchMyRestaurants()
-  }, [])
+  }, [navigate])
 
   const fetchMyRestaurants = async () => {
     try {
       const res = await getOwnerRestaurants()
       setRestaurants(res.data || [])
-    } catch (err) {}
+    } catch { /* restaurant fetch is best-effort */ }
     finally { setLoading(false) }
   }
 

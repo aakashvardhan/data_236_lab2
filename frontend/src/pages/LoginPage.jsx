@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { login } from '../services/api'
+import { login, getMe } from '../services/api'
 
 export default function LoginPage() {
   const navigate = useNavigate()
@@ -19,10 +19,8 @@ export default function LoginPage() {
     try {
       const res = await login(form)
       localStorage.setItem('token', res.data.access_token)
-      const userRes = await fetch('http://localhost:8000/users/me', {
-        headers: { Authorization: `Bearer ${res.data.access_token}` }
-      })
-      const user = await userRes.json()
+      const userRes = await getMe()
+      const user = userRes.data
       localStorage.setItem('userName', user.name)
       localStorage.setItem('userRole', user.role)
       localStorage.setItem('userId', String(user.id))
@@ -31,7 +29,7 @@ export default function LoginPage() {
       } else {
         navigate('/')
       }
-    } catch (err) {
+    } catch {
       setError('Invalid email or password. Please try again.')
     } finally {
       setLoading(false)

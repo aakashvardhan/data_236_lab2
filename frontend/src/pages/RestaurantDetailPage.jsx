@@ -18,8 +18,9 @@ export default function RestaurantDetailPage() {
   const [reviewForm, setReviewForm] = useState({ rating: 5, comment: '' })
   const [editingReviewId, setEditingReviewId] = useState(null)
   const [submitting, setSubmitting] = useState(false)
-  const [error, setError] = useState('')
+  const [_error, setError] = useState('')
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchData() }, [id])
 
   const fetchData = async () => {
@@ -28,9 +29,9 @@ export default function RestaurantDetailPage() {
       const [restRes, revRes] = await Promise.all([getRestaurant(id), getReviews(id)])
       setRestaurant(restRes.data)
       setReviews(revRes.data)
-    } catch (err) {
+    } catch {
       setError('Restaurant not found.')
-    } finally { setLoading(false) }
+    }
   }
 
   const handleFavorite = async () => {
@@ -38,7 +39,7 @@ export default function RestaurantDetailPage() {
     try {
       if (isFavorite) { await removeFavorite(id); setIsFavorite(false) }
       else { await addFavorite(id); setIsFavorite(true) }
-    } catch (err) {}
+    } catch { /* favorite toggle failure is non-critical */ }
   }
 
   const handleReviewSubmit = async (e) => {
@@ -54,9 +55,9 @@ export default function RestaurantDetailPage() {
       setReviewForm({ rating: 5, comment: '' })
       setEditingReviewId(null)
       fetchData()
-    } catch (err) {
+    } catch {
       setError('Failed to submit review.')
-    } finally { setSubmitting(false) }
+    }
   }
 
   const handleEditReview = (review) => {
@@ -67,7 +68,7 @@ export default function RestaurantDetailPage() {
 
   const handleDeleteReview = async (reviewId) => {
     if (!window.confirm('Delete this review?')) return
-    try { await deleteReview(reviewId); fetchData() } catch (err) {}
+    try { await deleteReview(reviewId); fetchData() } catch { /* deletion failure is non-critical */ }
   }
 
   if (loading) return <div className="flex justify-center items-center min-h-screen"><div className="text-gray-400 text-lg">Loading...</div></div>

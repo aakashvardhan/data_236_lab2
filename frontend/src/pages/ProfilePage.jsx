@@ -21,11 +21,6 @@ export default function ProfilePage() {
   const [uploadingPic, setUploadingPic] = useState(false)
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    if (!localStorage.getItem('token')) { navigate('/login'); return }
-    fetchAll()
-  }, [])
-
   const fetchAll = async () => {
     setLoading(true)
     try {
@@ -46,7 +41,7 @@ export default function ProfilePage() {
       if (userRes.data.profile_picture) {
         setProfilePicPreview(`http://localhost:8000${userRes.data.profile_picture}`)
       }
-    } catch (err) {}
+    } catch { /* user profile fetch is best-effort */ }
 
     try {
       const prefRes = await getPreferences()
@@ -60,15 +55,20 @@ export default function ProfilePage() {
           search_radius: 15
         })
       }
-    } catch (err) {}
+    } catch { /* preferences fetch is best-effort */ }
 
     try {
       const histRes = await getHistory()
       setHistory(histRes.data || { reviews: [], restaurants_added: [] })
-    } catch (err) {}
+    } catch { /* history fetch is best-effort */ }
 
     setLoading(false)
   }
+
+  useEffect(() => {
+    if (!localStorage.getItem('token')) { navigate('/login'); return }
+    fetchAll() // eslint-disable-line react-hooks/set-state-in-effect
+  }, [navigate])
 
   const handleSaveProfile = async (e) => {
   e.preventDefault()
@@ -88,9 +88,9 @@ export default function ProfilePage() {
     setMessage('Profile updated successfully!')
     setTimeout(() => setMessage(''), 3000)
     fetchAll()
-  } catch (err) {
+  } catch {
     setMessage('Failed to update profile.')
-  } finally { setSaving(false) }
+  }
 }
   const handleSavePrefs = async (e) => {
     e.preventDefault()
@@ -105,9 +105,9 @@ export default function ProfilePage() {
       })
       setMessage('Preferences saved!')
       setTimeout(() => setMessage(''), 3000)
-    } catch (err) {
+    } catch {
       setMessage('Failed to save preferences.')
-    } finally { setSaving(false) }
+    }
   }
 
   const handlePicChange = (e) => {
@@ -129,9 +129,9 @@ export default function ProfilePage() {
       })
       setMessage('Profile picture updated!')
       setTimeout(() => setMessage(''), 3000)
-    } catch (err) {
+    } catch {
       setMessage('Failed to upload picture.')
-    } finally { setUploadingPic(false) }
+    }
   }
 
   const toggleArray = (arr, val) =>

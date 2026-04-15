@@ -63,7 +63,7 @@ export default function AddRestaurantPage() {
         if (!/^\d{5}(-\d{4})?$/.test(value.trim())) return 'Enter a valid zip code (e.g. 95112)'
         return ''
       case 'phone':
-        if (value && !/^[\d\s\-\+\(\)]{7,15}$/.test(value)) return 'Enter a valid phone number'
+        if (value && !/^[\d\s\-+()]{7,15}$/.test(value)) return 'Enter a valid phone number'
         return ''
       case 'pricing_tier':
         if (!value) return 'Please select a price tier'
@@ -176,7 +176,7 @@ export default function AddRestaurantPage() {
         phone: form.phone.trim(),
         pricing_tier: form.pricing_tier,
         hours: Object.entries(form.hours_of_operation)
-          .filter(([_, v]) => v.trim())
+          .filter(([, v]) => v.trim())
           .map(([day, hours]) => `${day}:${hours}`)
           .join(',')
       }

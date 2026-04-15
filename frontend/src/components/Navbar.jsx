@@ -10,7 +10,7 @@ function Navbar() {
   const userRole = localStorage.getItem('userRole')
 
   const handleLogout = async () => {
-    try { await logout() } catch (e) {}
+    try { await logout() } catch { /* logout failure is non-critical */ }
     localStorage.removeItem('token')
     localStorage.removeItem('userName')
     localStorage.removeItem('userRole')
