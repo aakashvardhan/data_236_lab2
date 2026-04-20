@@ -6,3 +6,4 @@ frontend/.env
 .venv/
 venv/
 __pycache__/
+k8s/secrets.yaml
