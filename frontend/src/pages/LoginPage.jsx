@@ -50,14 +50,14 @@ export default function LoginPage() {
         )}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-            <input type="email" name="email" value={form.email} onChange={handleChange} required
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input id="email" type="email" name="email" value={form.email} onChange={handleChange} required
               placeholder="you@example.com"
               className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-red-400" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
-            <input type="password" name="password" value={form.password} onChange={handleChange} required
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <input id="password" type="password" name="password" value={form.password} onChange={handleChange} required
               placeholder="••••••••"
               className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-red-400" />
           </div>

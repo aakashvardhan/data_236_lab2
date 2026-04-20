@@ -32,8 +32,8 @@ function renderLogin() {
 describe('LoginPage — rendering', () => {
   it('renders email and password fields', () => {
     renderLogin()
-    expect(screen.getByPlaceholderText(/email/i)).toBeInTheDocument()
-    expect(screen.getByPlaceholderText(/password/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/email/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/password/i)).toBeInTheDocument()
   })
 
   it('renders submit button', () => {
@@ -63,24 +63,24 @@ describe('LoginPage — successful login (regular user)', () => {
 
   it('stores token in localStorage', async () => {
     renderLogin()
-    await userEvent.type(screen.getByPlaceholderText(/email/i), 'alice@test.com')
-    await userEvent.type(screen.getByPlaceholderText(/password/i), 'password')
+    await userEvent.type(screen.getByLabelText(/email/i), 'alice@test.com')
+    await userEvent.type(screen.getByLabelText(/password/i), 'password')
     fireEvent.click(screen.getByRole('button', { name: /log in/i }))
     await waitFor(() => expect(localStorage.getItem('token')).toBe('tok-123'))
   })
 
   it('stores userName in localStorage', async () => {
     renderLogin()
-    await userEvent.type(screen.getByPlaceholderText(/email/i), 'alice@test.com')
-    await userEvent.type(screen.getByPlaceholderText(/password/i), 'password')
+    await userEvent.type(screen.getByLabelText(/email/i), 'alice@test.com')
+    await userEvent.type(screen.getByLabelText(/password/i), 'password')
     fireEvent.click(screen.getByRole('button', { name: /log in/i }))
     await waitFor(() => expect(localStorage.getItem('userName')).toBe('Alice'))
   })
 
   it('redirects regular user to /', async () => {
     renderLogin()
-    await userEvent.type(screen.getByPlaceholderText(/email/i), 'alice@test.com')
-    await userEvent.type(screen.getByPlaceholderText(/password/i), 'password')
+    await userEvent.type(screen.getByLabelText(/email/i), 'alice@test.com')
+    await userEvent.type(screen.getByLabelText(/password/i), 'password')
     fireEvent.click(screen.getByRole('button', { name: /log in/i }))
     await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith('/'))
   })
@@ -97,8 +97,8 @@ describe('LoginPage — successful login (owner)', () => {
 
   it('redirects owner to /owner/dashboard', async () => {
     renderLogin()
-    await userEvent.type(screen.getByPlaceholderText(/email/i), 'bob@test.com')
-    await userEvent.type(screen.getByPlaceholderText(/password/i), 'password')
+    await userEvent.type(screen.getByLabelText(/email/i), 'bob@test.com')
+    await userEvent.type(screen.getByLabelText(/password/i), 'password')
     fireEvent.click(screen.getByRole('button', { name: /log in/i }))
     await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith('/owner/dashboard'))
   })
@@ -112,8 +112,8 @@ describe('LoginPage — failed login', () => {
 
   it('shows error message on failed login', async () => {
     renderLogin()
-    await userEvent.type(screen.getByPlaceholderText(/email/i), 'bad@test.com')
-    await userEvent.type(screen.getByPlaceholderText(/password/i), 'wrong')
+    await userEvent.type(screen.getByLabelText(/email/i), 'bad@test.com')
+    await userEvent.type(screen.getByLabelText(/password/i), 'wrong')
     fireEvent.click(screen.getByRole('button', { name: /log in/i }))
     await waitFor(() =>
       expect(screen.getByText(/invalid email or password/i)).toBeInTheDocument()
@@ -122,8 +122,8 @@ describe('LoginPage — failed login', () => {
 
   it('does not navigate on failed login', async () => {
     renderLogin()
-    await userEvent.type(screen.getByPlaceholderText(/email/i), 'bad@test.com')
-    await userEvent.type(screen.getByPlaceholderText(/password/i), 'wrong')
+    await userEvent.type(screen.getByLabelText(/email/i), 'bad@test.com')
+    await userEvent.type(screen.getByLabelText(/password/i), 'wrong')
     fireEvent.click(screen.getByRole('button', { name: /log in/i }))
     await waitFor(() => screen.getByText(/invalid email or password/i))
     expect(mockNavigate).not.toHaveBeenCalled()
@@ -132,8 +132,8 @@ describe('LoginPage — failed login', () => {
   it('does not store token on failed login', async () => {
     localStorage.clear()
     renderLogin()
-    await userEvent.type(screen.getByPlaceholderText(/email/i), 'bad@test.com')
-    await userEvent.type(screen.getByPlaceholderText(/password/i), 'wrong')
+    await userEvent.type(screen.getByLabelText(/email/i), 'bad@test.com')
+    await userEvent.type(screen.getByLabelText(/password/i), 'wrong')
     fireEvent.click(screen.getByRole('button', { name: /log in/i }))
     await waitFor(() => screen.getByText(/invalid email or password/i))
     expect(localStorage.getItem('token')).toBeNull()
@@ -144,11 +144,11 @@ describe('LoginPage — loading state', () => {
   it('disables button while submitting', async () => {
     mockLogin.mockImplementation(() => new Promise(() => {})) // never resolves
     renderLogin()
-    await userEvent.type(screen.getByPlaceholderText(/email/i), 'alice@test.com')
-    await userEvent.type(screen.getByPlaceholderText(/password/i), 'password')
+    await userEvent.type(screen.getByLabelText(/email/i), 'alice@test.com')
+    await userEvent.type(screen.getByLabelText(/password/i), 'password')
     fireEvent.click(screen.getByRole('button', { name: /log in/i }))
     await waitFor(() =>
-      expect(screen.getByRole('button', { name: /logging in/i })).toBeDisabled()
+      expect(screen.getByRole('button', { name: /signing in/i })).toBeDisabled()
     )
   })
 })

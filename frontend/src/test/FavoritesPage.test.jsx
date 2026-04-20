@@ -21,8 +21,8 @@ vi.mock('../services/api', () => ({
 import FavoritesPage from '../pages/FavoritesPage'
 
 const FAVORITES = [
-  { restaurant_id: 'r1', name: 'Pasta Palace', cuisine_type: 'Italian', avg_rating: 4.5, pricing_tier: '$$', city: 'San Jose', photos: '' },
-  { restaurant_id: 'r2', name: 'Sushi World', cuisine_type: 'Japanese', avg_rating: 4.8, pricing_tier: '$$$', city: 'Sunnyvale', photos: '' },
+  { id: 'f1', restaurant_id: 'r1', restaurant_name: 'Pasta Palace', cuisine_type: 'Italian', avg_rating: 4.5, pricing_tier: '$$', city: 'San Jose', photos: '', created_at: '2026-01-01T00:00:00Z' },
+  { id: 'f2', restaurant_id: 'r2', restaurant_name: 'Sushi World', cuisine_type: 'Japanese', avg_rating: 4.8, pricing_tier: '$$$', city: 'Sunnyvale', photos: '', created_at: '2026-01-02T00:00:00Z' },
 ]
 
 function renderPage() {
