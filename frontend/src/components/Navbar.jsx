@@ -1,13 +1,47 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { logout } from '../services/api'
+import { logout, getMe } from '../services/api'
+import { resolvePhotoUrl } from '../utils/url'
+import { USER_PROFILE_UPDATED_EVENT } from '../utils/userEvents'
 
 function Navbar() {
   const navigate = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false)
+  /** Name + avatar from API so the bar matches the profile after saves. */
+  const [navUser, setNavUser] = useState(null)
   const token = localStorage.getItem('token')
   const userName = localStorage.getItem('userName')
   const userRole = localStorage.getItem('userRole')
+  const greetingName = token ? (navUser?.name || userName || 'there') : ''
+  const navInitial = (greetingName === 'there' ? '?' : greetingName).charAt(0).toUpperCase()
+
+  useEffect(() => {
+    if (!token) {
+      setNavUser(null)
+      return
+    }
+    const loadNavUser = () => {
+      getMe()
+        .then((res) => {
+          setNavUser({
+            name: res.data.name || '',
+            avatarUrl: res.data.profile_picture
+              ? resolvePhotoUrl(res.data.profile_picture)
+              : null,
+          })
+        })
+        .catch(() => {
+          setNavUser({
+            name: localStorage.getItem('userName') || '',
+            avatarUrl: null,
+          })
+        })
+    }
+    loadNavUser()
+    const onProfileUpdated = () => loadNavUser()
+    window.addEventListener(USER_PROFILE_UPDATED_EVENT, onProfileUpdated)
+    return () => window.removeEventListener(USER_PROFILE_UPDATED_EVENT, onProfileUpdated)
+  }, [token])
 
   const handleLogout = async () => {
     try { await logout() } catch (e) {}
@@ -15,6 +49,7 @@ function Navbar() {
     localStorage.removeItem('userName')
     localStorage.removeItem('userRole')
     localStorage.removeItem('userId')
+    setNavUser(null)
     setMenuOpen(false)
     navigate('/login')
   }
@@ -50,8 +85,24 @@ function Navbar() {
                   <Link to="/add-restaurant" className="hover:text-red-200 transition">+ Add</Link>
                 </>
               )}
-              <Link to="/profile" className="hover:text-red-200 transition">Profile</Link>
-              <span className="text-red-200 break-words">Hi, {userName}!</span>
+              <Link
+                to="/profile"
+                className="flex items-center gap-2.5 rounded-full sm:rounded-lg pl-1 pr-2 py-1 hover:bg-red-500/40 transition max-w-[min(100%,14rem)] sm:max-w-xs"
+                title="My profile"
+              >
+                {navUser?.avatarUrl ? (
+                  <img
+                    src={navUser.avatarUrl}
+                    alt={greetingName}
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-red-200 shadow-sm shrink-0"
+                  />
+                ) : (
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-red-400 flex items-center justify-center text-white text-sm font-bold border-2 border-red-200 shrink-0">
+                    {navInitial}
+                  </div>
+                )}
+                <span className="text-red-50 font-semibold text-sm truncate">Hi, {greetingName}!</span>
+              </Link>
               <button
                 onClick={handleLogout}
                 className="bg-white text-red-600 px-3 py-1 rounded-full font-semibold hover:bg-red-100 transition">

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import { getMe, updateMe, getPreferences, savePreferences, getHistory } from '../services/api'
+import { getMe, updateMe, uploadProfilePic, getPreferences, savePreferences, getHistory } from '../services/api'
 import { useNavigate, Link } from 'react-router-dom'
-import axios from 'axios'
+import { resolvePhotoUrl } from '../utils/url'
+import { notifyUserProfileUpdated } from '../utils/userEvents'
 
 const CUISINES = ['Italian', 'Chinese', 'Mexican', 'Indian', 'Japanese', 'American', 'Vegan', 'Mediterranean']
 const DIETARY = ['vegetarian', 'vegan', 'halal', 'gluten-free', 'kosher']
@@ -44,7 +45,9 @@ export default function ProfilePage() {
       })
       localStorage.setItem('userId', userRes.data.id)
       if (userRes.data.profile_picture) {
-        setProfilePicPreview(`http://localhost:8000${userRes.data.profile_picture}`)
+        setProfilePicPreview(resolvePhotoUrl(userRes.data.profile_picture))
+      } else {
+        setProfilePicPreview(null)
       }
     } catch (err) {}
 
@@ -71,27 +74,35 @@ export default function ProfilePage() {
   }
 
   const handleSaveProfile = async (e) => {
-  e.preventDefault()
-  setSaving(true)
-  try {
-    await updateMe({
-      name: form.name,
-      phone: form.phone,
-      about_me: form.about_me,
-      city: form.city,
-      state: form.state,
-      country: form.country,
-      languages: form.languages,
-      gender: form.gender,
-    })
-    localStorage.setItem('userName', form.name)
-    setMessage('Profile updated successfully!')
-    setTimeout(() => setMessage(''), 3000)
-    fetchAll()
-  } catch (err) {
-    setMessage('Failed to update profile.')
-  } finally { setSaving(false) }
-}
+    e.preventDefault()
+    setSaving(true)
+    try {
+      const pendingPic = profilePic
+      await updateMe({
+        name: form.name,
+        phone: form.phone,
+        about_me: form.about_me,
+        city: form.city,
+        state: form.state,
+        country: form.country,
+        languages: form.languages,
+        gender: form.gender,
+      })
+      if (pendingPic) {
+        await uploadProfilePic(pendingPic)
+        setProfilePic(null)
+      }
+      localStorage.setItem('userName', form.name)
+      setMessage(pendingPic ? 'Profile and picture updated!' : 'Profile updated successfully!')
+      setTimeout(() => setMessage(''), 3000)
+      await fetchAll()
+      notifyUserProfileUpdated()
+    } catch (err) {
+      setMessage('Failed to update profile or picture.')
+    } finally {
+      setSaving(false)
+    }
+  }
   const handleSavePrefs = async (e) => {
     e.preventDefault()
     setSaving(true)
@@ -121,17 +132,17 @@ export default function ProfilePage() {
     if (!profilePic) return
     setUploadingPic(true)
     try {
-      const formData = new FormData()
-      formData.append('file', profilePic)
-      const token = localStorage.getItem('token')
-      await axios.put('http://localhost:8000/users/me/profile-pic', formData, {
-        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'multipart/form-data' }
-      })
+      await uploadProfilePic(profilePic)
+      setProfilePic(null)
       setMessage('Profile picture updated!')
       setTimeout(() => setMessage(''), 3000)
+      await fetchAll()
+      notifyUserProfileUpdated()
     } catch (err) {
       setMessage('Failed to upload picture.')
-    } finally { setUploadingPic(false) }
+    } finally {
+      setUploadingPic(false)
+    }
   }
 
   const toggleArray = (arr, val) =>
@@ -176,28 +187,36 @@ export default function ProfilePage() {
       {/* Profile Tab */}
       {tab === 'profile' && (
         <form onSubmit={handleSaveProfile} className="bg-white rounded-2xl shadow p-4 sm:p-6 flex flex-col gap-4">
-          {/* Profile Picture */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pb-4 border-b border-gray-100">
-            <div className="w-20 h-20 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
+
+          {/* Profile Picture Upload */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 pb-4 border-b border-gray-100">
+            <div className="w-20 h-20 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center flex-shrink-0">
               {profilePicPreview ? (
                 <img src={profilePicPreview} alt="Profile" className="w-full h-full object-cover" />
               ) : (
-                <span className="text-3xl text-gray-400">👤</span>
+                <span className="text-4xl text-gray-400">👤</span>
               )}
             </div>
-            <div className="flex flex-col gap-2">
-              <label className="text-sm font-medium text-gray-700">Profile Picture</label>
-              <input type="file" accept="image/*" onChange={handlePicChange}
-                className="text-sm text-gray-500 file:mr-2 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-sm file:bg-red-50 file:text-red-600 hover:file:bg-red-100" />
+            <div className="flex flex-col gap-2 w-full sm:w-auto">
+              <label className="block text-sm font-medium text-gray-700">Profile Picture</label>
+              <input
+                type="file"
+                accept="image/jpeg,image/png,image/webp"
+                onChange={handlePicChange}
+                className="text-sm text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-red-50 file:text-red-600 hover:file:bg-red-100 cursor-pointer"
+              />
               {profilePic && (
-                <button type="button" onClick={handlePicUpload} disabled={uploadingPic}
-                  className="bg-red-600 text-white px-3 py-1 rounded-lg text-sm hover:bg-red-700 disabled:opacity-50 w-fit">
-                  {uploadingPic ? 'Uploading...' : 'Upload Photo'}
+                <button
+                  type="button"
+                  onClick={handlePicUpload}
+                  disabled={uploadingPic}
+                  className="bg-red-600 text-white text-sm py-1.5 px-4 rounded-lg font-medium hover:bg-red-700 transition disabled:opacity-50 w-fit"
+                >
+                  {uploadingPic ? 'Uploading...' : 'Upload Picture'}
                 </button>
               )}
             </div>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { label: 'Full Name', name: 'name', type: 'text' },

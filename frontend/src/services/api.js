@@ -30,6 +30,13 @@ export const updateMe = (data) => {
   )
   return API.put('/users/me', cleaned)
 }
+
+/** Do not set Content-Type manually — the browser must add the multipart boundary. */
+export const uploadProfilePic = (file) => {
+  const formData = new FormData()
+  formData.append('file', file)
+  return API.put('/users/me/profile-pic', formData)
+}
 export const getPreferences = () => API.get('/users/me/preferences')
 export const savePreferences = (data) => API.post('/users/me/preferences', data)
 export const getHistory = () => API.get('/favorites/me/history')

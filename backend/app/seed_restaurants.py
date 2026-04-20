@@ -35,7 +35,7 @@ engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(bind=engine)
 db = SessionLocal()
 
-UPLOAD_DIR = "uploads/restaurant_photos"
+UPLOAD_DIR = "./uploads/restaurant_photos"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # Free Unsplash food images (no API key needed - direct URLs)

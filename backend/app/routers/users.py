@@ -27,7 +27,8 @@ def update_profile(
     db.refresh(current_user)
     return current_user
 
-UPLOAD_DIR = "uploads/profile_pics"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+UPLOAD_DIR = os.path.join(BASE_DIR, "uploads", "profile_pics")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
 MAX_FILE_SIZE = 5 * 1024 * 1024
@@ -55,10 +56,11 @@ async def upload_profile_pic(
     with open(filepath, "wb") as f:
         f.write(contents)
     if current_user.profile_picture is not None:
-        old_path = current_user.profile_picture.lstrip("/")
+        old_filename = os.path.basename(current_user.profile_picture)
+        old_path = os.path.join(UPLOAD_DIR, old_filename)
         if os.path.exists(old_path):
             os.remove(old_path)
-    current_user.profile_picture = f"/{filepath}"
+    current_user.profile_picture = f"/uploads/profile_pics/{filename}"
     db.commit()
     return {"profile_picture": current_user.profile_picture}
 
