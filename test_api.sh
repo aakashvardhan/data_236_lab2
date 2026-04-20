@@ -114,6 +114,15 @@ CODE=$(echo "$RESP" | tail -1)
 BODY=$(echo "$RESP" | sed '$d')
 check "POST /auth/logout (no token → 401)" 401 "$CODE" "$BODY"
 
+# Re-login to get a fresh session for subsequent tests
+RESP=$(curl -s -w "\n%{http_code}" -X POST "$BASE_USER/auth/login" \
+  -H "Content-Type: application/json" \
+  -d "{\"email\":\"$TEST_USER_EMAIL\",\"password\":\"$TEST_PASSWORD\"}")
+CODE=$(echo "$RESP" | tail -1)
+BODY=$(echo "$RESP" | sed '$d')
+check "POST /auth/login (re-login after logout)" 200 "$CODE" "$BODY"
+USER_TOKEN=$(echo "$BODY" | python3 -c "import sys,json; print(json.load(sys.stdin).get('access_token',''))" 2>/dev/null)
+
 echo ""
 echo "========================================"
 echo " 3. USER SERVICE — Profile"
