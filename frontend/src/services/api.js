@@ -55,6 +55,7 @@ export const updateMe = (data) => {
 export const getPreferences = () => userAPI.get('/users/me/preferences')
 export const savePreferences = (data) => userAPI.post('/users/me/preferences', data)
 export const getHistory = () => userAPI.get('/favorites/me/history')
+export const uploadProfilePic = (formData) => userAPI.put('/users/me/profile-pic', formData)
 
 // RESTAURANTS
 export const getRestaurants = (params) => restaurantAPI.get('/restaurants', { params })
@@ -79,6 +80,9 @@ export const getFavorites = () => userAPI.get('/favorites')
 export const getOwnerRestaurants = () => ownerAPI.get('/owner/restaurants')
 export const getOwnerRestaurantReviews = (id) => ownerAPI.get(`/owner/restaurants/${id}/reviews`)
 export const getOwnerAnalytics = (id) => ownerAPI.get(`/owner/restaurants/${id}/analytics`)
+export const claimRestaurant = (id) => ownerAPI.post(`/owner/restaurants/${id}/claim`)
+export const uploadRestaurantPhoto = (id, formData) =>
+  restaurantAPI.post(`/restaurants/${id}/photos`, formData)
 
 // AI ASSISTANT
 export const chatWithAI = (data) =>
