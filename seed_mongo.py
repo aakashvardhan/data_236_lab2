@@ -9,13 +9,20 @@ generates 3-8 fake reviews per restaurant from seeded reviewer accounts.
 Existing seed data (matched by name + address) is updated in place.
 """
 
+import os
 import random
 from datetime import datetime, timezone
 
+from dotenv import load_dotenv
+from passlib.context import CryptContext
 from pymongo import MongoClient
 
-MONGO_URI = "mongodb://localhost:27017"
-DB_NAME = "yelp_db"
+load_dotenv()
+
+_pwd_context = CryptContext(schemes=["bcrypt"])
+MONGO_URI = os.environ["MONGO_URI"]
+DB_NAME = os.environ["MONGO_DB_NAME"]
+SEED_USER_PASSWORD = os.environ["SEED_USER_PASSWORD"]
 
 SEED_REVIEWER_COUNT = 20
 
@@ -105,7 +112,7 @@ def seed():
             result = db.users.insert_one({
                 "name": f"Seed Reviewer {idx}",
                 "email": email,
-                "password_hash": f"seeded_hash_{idx}",
+                "password_hash": _pwd_context.hash(SEED_USER_PASSWORD),
                 "role": "user",
                 "phone": None,
                 "about_me": None,
