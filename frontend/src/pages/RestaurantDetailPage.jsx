@@ -18,7 +18,7 @@ export default function RestaurantDetailPage() {
   const [reviewForm, setReviewForm] = useState({ rating: 5, comment: '' })
   const [editingReviewId, setEditingReviewId] = useState(null)
   const [submitting, setSubmitting] = useState(false)
-  const [_error, setError] = useState('')
+  const [error, setError] = useState('')
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchData() }, [id])
@@ -31,6 +31,8 @@ export default function RestaurantDetailPage() {
       setReviews(revRes.data)
     } catch {
       setError('Restaurant not found.')
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -57,6 +59,8 @@ export default function RestaurantDetailPage() {
       fetchData()
     } catch {
       setError('Failed to submit review.')
+    } finally {
+      setSubmitting(false)
     }
   }
 
@@ -72,7 +76,7 @@ export default function RestaurantDetailPage() {
   }
 
   if (loading) return <div className="flex justify-center items-center min-h-screen"><div className="text-gray-400 text-lg">Loading...</div></div>
-  if (!restaurant) return <div className="text-center py-20 text-gray-400">Restaurant not found.</div>
+  if (!restaurant) return <div className="text-center py-20 text-gray-400">{error || 'Restaurant not found.'}</div>
 
   const photos = restaurant.photos
     ? restaurant.photos.split(',').map((p) => p.trim()).filter(Boolean)

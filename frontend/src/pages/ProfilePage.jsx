@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { getMe, updateMe, getPreferences, savePreferences, getHistory } from '../services/api'
+import { getMe, updateMe, getPreferences, savePreferences, getHistory, uploadProfilePic } from '../services/api'
+import { resolvePhotoUrl } from '../utils/url'
 import { useNavigate, Link } from 'react-router-dom'
-import axios from 'axios'
 
 const CUISINES = ['Italian', 'Chinese', 'Mexican', 'Indian', 'Japanese', 'American', 'Vegan', 'Mediterranean']
 const DIETARY = ['vegetarian', 'vegan', 'halal', 'gluten-free', 'kosher']
@@ -39,7 +39,7 @@ export default function ProfilePage() {
       })
       localStorage.setItem('userId', userRes.data.id)
       if (userRes.data.profile_picture) {
-        setProfilePicPreview(`http://localhost:8000${userRes.data.profile_picture}`)
+        setProfilePicPreview(resolvePhotoUrl(userRes.data.profile_picture))
       }
     } catch { /* user profile fetch is best-effort */ }
 
@@ -67,7 +67,7 @@ export default function ProfilePage() {
 
   useEffect(() => {
     if (!localStorage.getItem('token')) { navigate('/login'); return }
-    fetchAll() // eslint-disable-line react-hooks/set-state-in-effect
+    fetchAll()
   }, [navigate])
 
   const handleSaveProfile = async (e) => {
@@ -90,6 +90,8 @@ export default function ProfilePage() {
     fetchAll()
   } catch {
     setMessage('Failed to update profile.')
+  } finally {
+    setSaving(false)
   }
 }
   const handleSavePrefs = async (e) => {
@@ -107,6 +109,8 @@ export default function ProfilePage() {
       setTimeout(() => setMessage(''), 3000)
     } catch {
       setMessage('Failed to save preferences.')
+    } finally {
+      setSaving(false)
     }
   }
 
@@ -123,14 +127,13 @@ export default function ProfilePage() {
     try {
       const formData = new FormData()
       formData.append('file', profilePic)
-      const token = localStorage.getItem('token')
-      await axios.put('http://localhost:8000/users/me/profile-pic', formData, {
-        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'multipart/form-data' }
-      })
+      await uploadProfilePic(formData)
       setMessage('Profile picture updated!')
       setTimeout(() => setMessage(''), 3000)
     } catch {
       setMessage('Failed to upload picture.')
+    } finally {
+      setUploadingPic(false)
     }
   }
 

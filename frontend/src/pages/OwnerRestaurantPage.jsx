@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
 import StarRating from '../components/StarRating'
-import axios from 'axios'
-import { getRestaurant, getReviews } from '../services/api'
+import { getRestaurant, getReviews, updateRestaurant, claimRestaurant, uploadRestaurantPhoto } from '../services/api'
 import { resolvePhotoUrl } from '../utils/url'
 const DAYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
 const AMENITIES = ['wifi', 'outdoor_seating', 'parking', 'delivery', 'takeout', 'reservations']
@@ -56,7 +55,6 @@ const handleSave = async (e) => {
   e.preventDefault()
   setSaving(true)
   try {
-    const token = localStorage.getItem('token')
     const payload = {
       name: form.name,
       cuisine_type: form.cuisine_type,
@@ -72,22 +70,19 @@ const handleSave = async (e) => {
         .map(([day, hours]) => `${day}:${hours}`)
         .join(',')
     }
-    await axios.put(`http://localhost:8000/restaurants/${id}`, payload, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
+    await updateRestaurant(id, payload)
     setMessage('Restaurant updated!')
     setTimeout(() => setMessage(''), 3000)
   } catch {
     setMessage('Failed to update.')
+  } finally {
+    setSaving(false)
   }
 }
 
   const handleClaim = async () => {
     try {
-      const token = localStorage.getItem('token')
-      await axios.post(`http://localhost:8000/restaurants/${id}/claim`, {}, {
-        headers: { Authorization: `Bearer ${token}` }
-      })
+      await claimRestaurant(id)
       setMessage('Restaurant claimed successfully!')
       fetchData()
     } catch {
@@ -230,16 +225,11 @@ const handleSave = async (e) => {
     onChange={async (e) => {
       const files = Array.from(e.target.files)
       if (files.length === 0) return
-      const token = localStorage.getItem('token')
       for (const file of files) {
         const formData = new FormData()
         formData.append('file', file)
         try {
-          await fetch(`http://localhost:8000/restaurants/${id}/photos`, {
-            method: 'POST',
-            headers: { Authorization: `Bearer ${token}` },
-            body: formData
-          })
+          await uploadRestaurantPhoto(id, formData)
         } catch { /* upload errors are non-critical */ }
       }
       setMessage('Photos uploaded!')

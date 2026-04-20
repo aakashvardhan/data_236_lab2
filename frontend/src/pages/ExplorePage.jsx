@@ -70,6 +70,8 @@ export default function ExplorePage() {
       setRestaurants([])
       setTotalRestaurants(0)
       setTotalPages(1)
+    } finally {
+      setLoading(false)
     }
   }
 
