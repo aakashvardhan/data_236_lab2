@@ -3,6 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from bson import ObjectId
 from bson.errors import InvalidId
 from app.database import get_db
+from app.kafka_producer import publish_review_event
 from app.schemas import ReviewCreate, ReviewUpdate, ReviewResponse
 from app.utils.security import get_current_user
 
@@ -114,6 +115,13 @@ async def create_review(
     review_doc["_id"] = result.inserted_id
 
     await _recalculate_rating(mongo, restaurant_id)
+    await publish_review_event("review.created", {
+        "review_id": str(result.inserted_id),
+        "user_id": current_user["id"],
+        "restaurant_id": restaurant_id,
+        "rating": request.rating,
+        "comment": request.comment,
+    })
 
     return _review_to_response(review_doc, user_name=current_user.get("name"))
 
@@ -185,6 +193,13 @@ async def update_review(
         await _recalculate_rating(mongo, review["restaurant_id"])
 
     updated = await mongo.reviews.find_one({"_id": review["_id"]})
+    await publish_review_event("review.updated", {
+        "review_id": review_id,
+        "user_id": current_user["id"],
+        "restaurant_id": review["restaurant_id"],
+        **update_data,
+    })
+
     return _review_to_response(updated, user_name=current_user.get("name"))
 
 
@@ -199,5 +214,10 @@ async def delete_review(
 
     await mongo.reviews.delete_one({"_id": review["_id"]})
     await _recalculate_rating(mongo, restaurant_id)
+    await publish_review_event("review.deleted", {
+        "review_id": review_id,
+        "user_id": current_user["id"],
+        "restaurant_id": restaurant_id,
+    })
 
     return {"message": "Review deleted successfully"}

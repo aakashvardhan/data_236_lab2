@@ -4,6 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 
 from app.database import get_db
+from app.kafka_producer import publish_user_event
 from app.schemas import TokenResponse, UserLogin, UserProfileResponse, UserSignup
 from app.utils.security import (
     create_access_token,
@@ -50,6 +51,13 @@ async def signup(request: UserSignup):
 
     result = await mongo.users.insert_one(user_doc)
     user_doc["id"] = str(result.inserted_id)
+    await publish_user_event("user.created", {
+        "user_id": user_doc["id"],
+        "name": user_doc["name"],
+        "email": user_doc["email"],
+        "role": user_doc["role"],
+    })
+
     return UserProfileResponse(**user_doc)
 
 
@@ -134,6 +142,13 @@ async def owner_signup(request: UserSignup):
 
     result = await mongo.users.insert_one(user_doc)
     user_doc["id"] = str(result.inserted_id)
+    await publish_user_event("user.created", {
+        "user_id": user_doc["id"],
+        "name": user_doc["name"],
+        "email": user_doc["email"],
+        "role": user_doc["role"],
+    })
+
     return UserProfileResponse(**user_doc)
 
 

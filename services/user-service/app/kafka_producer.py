@@ -1,16 +1,44 @@
-"""
-Kafka producer stub for user-service.
-
-TODO (partner): Wire up confluent-kafka-python to publish events
-to user.created, user.updated topics after signup / profile updates.
-"""
-
+import asyncio
+import json
 import os
+import uuid
+from datetime import datetime, timezone
+from functools import partial
+
+from confluent_kafka import Producer
 
 KAFKA_BROKER = os.environ.get("KAFKA_BROKER", "kafka:9092")
 
+_producer: Producer | None = None
+
+
+def _get_producer() -> Producer:
+    global _producer
+    if _producer is None:
+        _producer = Producer({"bootstrap.servers": KAFKA_BROKER})
+    return _producer
+
+
+def _delivery_callback(err, msg):
+    if err:
+        print(f"[user-producer] delivery failed {msg.topic()}: {err}")
+    else:
+        print(f"[user-producer] delivered to {msg.topic()} [{msg.partition()}]")
+
+
+def _sync_publish(topic: str, payload: str) -> None:
+    producer = _get_producer()
+    producer.produce(topic, value=payload.encode(), callback=_delivery_callback)
+    producer.poll(0)
+
 
 async def publish_user_event(topic: str, data: dict) -> None:
-    """Publish a user event to the given Kafka topic."""
-    # TODO: Implement with confluent-kafka-python
-    pass
+    """Fire-and-forget publish so the API response is not blocked."""
+    payload = json.dumps({
+        "correlation_id": uuid.uuid4().hex,
+        "event": topic,
+        "data": data,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    })
+    loop = asyncio.get_event_loop()
+    await loop.run_in_executor(None, partial(_sync_publish, topic, payload))

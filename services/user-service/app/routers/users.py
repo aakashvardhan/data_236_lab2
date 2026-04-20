@@ -5,6 +5,7 @@ from bson import ObjectId
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status
 
 from app.database import get_db
+from app.kafka_producer import publish_user_event
 from app.schemas import (
     UserPreferenceCreate,
     UserPreferencesResponse,
@@ -58,6 +59,11 @@ async def update_profile(
 
     updated = await mongo.users.find_one({"_id": ObjectId(current_user["id"])})
     updated["id"] = str(updated["_id"])
+    await publish_user_event("user.updated", {
+        "user_id": updated["id"],
+        **{k: v for k, v in update_data.items()},
+    })
+
     return UserProfileResponse(
         id=updated["id"],
         name=updated["name"],
