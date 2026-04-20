@@ -10,4 +10,5 @@ WORKDIR /app
 COPY --from=builder /install /usr/local
 COPY . .
 
+ENV PYTHONUNBUFFERED=1
 CMD ["python", "main.py"]

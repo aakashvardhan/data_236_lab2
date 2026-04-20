@@ -197,7 +197,7 @@ async def update_review(
         "review_id": review_id,
         "user_id": current_user["id"],
         "restaurant_id": review["restaurant_id"],
-        **update_data,
+        **{k: str(v) if hasattr(v, "isoformat") else v for k, v in update_data.items()},
     })
 
     return _review_to_response(updated, user_name=current_user.get("name"))
