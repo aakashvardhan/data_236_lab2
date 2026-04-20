@@ -7,3 +7,4 @@ pydantic-settings==2.13.1
 python-jose==3.3.0
 python-multipart==0.0.18
 python-dotenv==1.2.2
+confluent-kafka==2.8.0

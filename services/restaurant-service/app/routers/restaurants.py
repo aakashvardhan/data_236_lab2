@@ -15,6 +15,7 @@ from fastapi import (
 )
 
 from app.database import get_db
+from app.kafka_producer import publish_restaurant_event
 from app.schemas import RestaurantCreate, RestaurantResponse, RestaurantUpdate
 from app.utils.security import get_current_user
 
@@ -97,6 +98,14 @@ async def create_restaurant(
 
     result = await mongo.restaurants.insert_one(doc)
     doc["_id"] = result.inserted_id
+    await publish_restaurant_event("restaurant.created", {
+        "restaurant_id": str(result.inserted_id),
+        "owner_id": doc.get("owner_id"),
+        "name": doc["name"],
+        "cuisine_type": doc.get("cuisine_type"),
+        "city": doc.get("city"),
+    })
+
     return _to_response(doc)
 
 
@@ -231,6 +240,12 @@ async def update_restaurant(
         await mongo.restaurants.update_one({"_id": oid}, {"$set": updates})
 
     updated = await mongo.restaurants.find_one({"_id": oid})
+    await publish_restaurant_event("restaurant.updated", {
+        "restaurant_id": restaurant_id,
+        "owner_id": current_user["id"],
+        **{k: v for k, v in updates.items() if k != "updated_at"},
+    })
+
     return _to_response(updated)
 
 
@@ -331,4 +346,10 @@ async def claim_restaurant(
     )
 
     updated = await mongo.restaurants.find_one({"_id": oid})
+    await publish_restaurant_event("restaurant.claimed", {
+        "restaurant_id": restaurant_id,
+        "owner_id": current_user["id"],
+        "name": updated.get("name"),
+    })
+
     return _to_response(updated)
