@@ -8,6 +8,7 @@ and writes the changes to MongoDB.
 import json
 import os
 import signal
+import time
 from datetime import datetime, timezone
 
 from bson import ObjectId
@@ -115,7 +116,9 @@ def main():
             if msg is None:
                 continue
             if msg.error():
-                if msg.error().code() == KafkaError._PARTITION_EOF:
+                code = msg.error().code()
+                if code in (KafkaError._PARTITION_EOF, KafkaError.UNKNOWN_TOPIC_OR_PART):
+                    time.sleep(2)
                     continue
                 raise KafkaException(msg.error())
 
