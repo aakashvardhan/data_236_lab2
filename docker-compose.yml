@@ -108,6 +108,45 @@ services:
       mongodb:
         condition: service_healthy
 
+  review-worker:
+    build: ./services/workers/review-worker
+    environment:
+      KAFKA_BROKER: kafka:9092
+      MONGO_URI: mongodb://mongodb:27017
+      MONGO_DB_NAME: yelp_db
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    restart: on-failure
+
+  restaurant-worker:
+    build: ./services/workers/restaurant-worker
+    environment:
+      KAFKA_BROKER: kafka:9092
+      MONGO_URI: mongodb://mongodb:27017
+      MONGO_DB_NAME: yelp_db
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    restart: on-failure
+
+  user-worker:
+    build: ./services/workers/user-worker
+    environment:
+      KAFKA_BROKER: kafka:9092
+      MONGO_URI: mongodb://mongodb:27017
+      MONGO_DB_NAME: yelp_db
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    restart: on-failure
+
   frontend:
     build: ./frontend
     ports:
