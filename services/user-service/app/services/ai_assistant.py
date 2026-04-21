@@ -165,7 +165,6 @@ def _parse_web_recommendations(response_text: str) -> list[dict]:
             continue
         name = match.group("name").strip().strip("*")
         cuisine = match.group("cuisine").strip()
-        desc = match.group("desc").strip().rstrip(".")
         restaurants.append({
             "id": f"web-{hash(name) % 100000}",
             "name": name,
