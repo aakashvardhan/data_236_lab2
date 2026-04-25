@@ -3,8 +3,9 @@
  * and that logout clears localStorage and redirects.
  */
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { screen, fireEvent } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
+import { renderWithProviders } from './test-utils'
 
 // Mock api module so logout doesn't make real HTTP requests
 vi.mock('../services/api', () => ({
@@ -21,7 +22,7 @@ vi.mock('react-router-dom', async () => {
 import Navbar from '../components/Navbar'
 
 function renderNavbar() {
-  return render(
+  return renderWithProviders(
     <MemoryRouter>
       <Navbar />
     </MemoryRouter>
