@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { login, getMe } from '../services/api'
+import { useDispatch, useSelector } from 'react-redux'
+import { loginUser, selectAuth } from '../store/authSlice'
 
 export default function LoginPage() {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const { status } = useSelector(selectAuth)
   const [form, setForm] = useState({ email: '', password: '' })
   const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -14,16 +16,14 @@ export default function LoginPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setLoading(true)
     setError('')
     try {
-      const res = await login(form)
-      localStorage.setItem('token', res.data.access_token)
-      const userRes = await getMe()
-      const user = userRes.data
-      localStorage.setItem('userName', user.name)
-      localStorage.setItem('userRole', user.role)
-      localStorage.setItem('userId', String(user.id))
+      const resultAction = await dispatch(loginUser(form))
+      if (loginUser.rejected.match(resultAction)) {
+        setError('Invalid email or password. Please try again.')
+        return
+      }
+      const user = resultAction.payload.user
       if (user.role === 'owner') {
         navigate('/owner/dashboard')
       } else {
@@ -31,10 +31,10 @@ export default function LoginPage() {
       }
     } catch {
       setError('Invalid email or password. Please try again.')
-    } finally {
-      setLoading(false)
     }
   }
+
+  const loading = status === 'loading'
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-3 py-6 sm:px-4 sm:py-10">

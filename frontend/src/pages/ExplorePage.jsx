@@ -1,15 +1,25 @@
 import { useState, useEffect, useRef } from 'react'
-import { getRestaurants, chatWithAI } from '../services/api'
+import { useDispatch, useSelector } from 'react-redux'
+import { chatWithAI } from '../services/api'
 import RestaurantCard from '../components/RestaurantCard'
 import { Link } from 'react-router-dom'
+import {
+  fetchRestaurants,
+  selectRestaurantListStatus,
+  selectRestaurants,
+  selectRestaurantsMeta,
+} from '../store/restaurantSlice'
+import { selectIsAuthenticated } from '../store/authSlice'
 
 export default function ExplorePage() {
-  const [restaurants, setRestaurants] = useState([])
-  const [totalRestaurants, setTotalRestaurants] = useState(0)
+  const dispatch = useDispatch()
+  const restaurants = useSelector(selectRestaurants)
+  const { total: totalRestaurants, totalPages } = useSelector(selectRestaurantsMeta)
+  const listStatus = useSelector(selectRestaurantListStatus)
+  const isAuthenticated = useSelector(selectIsAuthenticated)
+
   const [page, setPage] = useState(1)
-  const [totalPages, setTotalPages] = useState(1)
   const [perPage] = useState(12)
-  const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
   const [cuisine, setCuisine] = useState('')
   const [price, setPrice] = useState('')
@@ -35,7 +45,7 @@ export default function ExplorePage() {
   // Real-time search — fires on filter/sort/page changes with debounce.
   useEffect(() => {
     const timer = setTimeout(() => {
-      fetchRestaurants()
+      loadRestaurants()
     }, 400) // wait 400ms after user stops typing
     return () => clearTimeout(timer)
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -43,36 +53,20 @@ export default function ExplorePage() {
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: 'smooth' }) }, [messages])
 
-  const fetchRestaurants = async () => {
-    setLoading(true)
-    try {
-      const params = {}
-      params.page = page
-      params.per_page = perPage
-      if (sort === 'rating') { params.sort_by = 'rating'; params.sort_order = 'desc' }
-      else if (sort === 'reviews') { params.sort_by = 'reviews'; params.sort_order = 'desc' }
-      else if (sort === 'price_low') { params.sort_by = 'price'; params.sort_order = 'asc' }
-      else if (sort === 'price_high') { params.sort_by = 'price'; params.sort_order = 'desc' }
-      if (search) params.name = search
-      if (cuisine) params.cuisine_type = cuisine
-      if (keywords) params.keywords = keywords
-      if (city) params.city = city
-      if (price) params.pricing_tier = price  // fixed: use pricing_tier not price_tier
-      const res = await getRestaurants(params)
-      const results = res.data.items || []
-      const total = Number(res.data.total) || results.length
-      const pages = Number(res.data.total_pages) || Math.max(1, Math.ceil(total / perPage))
-
-      setRestaurants(results)
-      setTotalRestaurants(total)
-      setTotalPages(pages)
-    } catch {
-      setRestaurants([])
-      setTotalRestaurants(0)
-      setTotalPages(1)
-    } finally {
-      setLoading(false)
-    }
+  const loadRestaurants = async () => {
+    const params = {}
+    params.page = page
+    params.per_page = perPage
+    if (sort === 'rating') { params.sort_by = 'rating'; params.sort_order = 'desc' }
+    else if (sort === 'reviews') { params.sort_by = 'reviews'; params.sort_order = 'desc' }
+    else if (sort === 'price_low') { params.sort_by = 'price'; params.sort_order = 'asc' }
+    else if (sort === 'price_high') { params.sort_by = 'price'; params.sort_order = 'desc' }
+    if (search) params.name = search
+    if (cuisine) params.cuisine_type = cuisine
+    if (keywords) params.keywords = keywords
+    if (city) params.city = city
+    if (price) params.pricing_tier = price
+    dispatch(fetchRestaurants(params))
   }
 
   const buildVisiblePages = () => {
@@ -90,8 +84,7 @@ export default function ExplorePage() {
   setMessages(prev => [...prev, { role: 'user', text: userText }])
   setChatLoading(true)
   try {
-    const token = localStorage.getItem('token')
-    if (!token) {
+    if (!isAuthenticated) {
       setMessages(prev => [...prev, { role: 'assistant', text: 'Please log in to use the AI assistant! 😊' }])
       setChatLoading(false)
       return
@@ -171,7 +164,7 @@ export default function ExplorePage() {
         <div className="flex-1">
           <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
             <h2 className="text-xl font-bold text-gray-800">
-              {loading ? 'Searching...' : `${totalRestaurants} Restaurants Found`}
+              {listStatus === 'loading' ? 'Searching...' : `${totalRestaurants} Restaurants Found`}
             </h2>
             <div className="flex w-full sm:w-auto flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
               <select value={sort} onChange={e => setSort(e.target.value)}
@@ -188,7 +181,7 @@ export default function ExplorePage() {
             </div>
           </div>
 
-          {loading ? (
+          {listStatus === 'loading' ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
               {[...Array(6)].map((_, i) => (
                 <div key={i} className="bg-white rounded-xl shadow p-4 animate-pulse">

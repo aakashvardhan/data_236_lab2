@@ -3,9 +3,10 @@
  * data rendering, review flow, and favorite toggle.
  */
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { screen, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
+import { renderWithProviders } from './test-utils'
 
 const mockNavigate = vi.fn()
 vi.mock('react-router-dom', async () => {
@@ -61,7 +62,7 @@ const REVIEWS = [
 ]
 
 function renderPage(restaurantId = '1') {
-  return render(
+  return renderWithProviders(
     <MemoryRouter initialEntries={[`/restaurant/${restaurantId}`]}>
       <Routes>
         <Route path="/restaurant/:id" element={<RestaurantDetailPage />} />

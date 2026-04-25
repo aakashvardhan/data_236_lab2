@@ -1,18 +1,40 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { getRestaurant, getReviews, createReview, updateReview, deleteReview, addFavorite, removeFavorite } from '../services/api'
+import { useDispatch, useSelector } from 'react-redux'
 import StarRating from '../components/StarRating'
 import { resolvePhotoUrl } from '../utils/url'
+import { selectCurrentUserWithFallback, selectIsAuthenticated } from '../store/authSlice'
+import {
+  fetchRestaurantById,
+  selectRestaurantDetailsStatus,
+  selectSelectedRestaurant,
+} from '../store/restaurantSlice'
+import {
+  createReviewAsync,
+  deleteReviewAsync,
+  fetchReviewsByRestaurant,
+  selectReviewsByRestaurant,
+  updateReviewAsync,
+} from '../store/reviewSlice'
+import {
+  addFavouriteAsync,
+  fetchFavourites,
+  removeFavouriteAsync,
+  selectFavourites,
+} from '../store/favouritesSlice'
 
 export default function RestaurantDetailPage() {
   const { id } = useParams()
   const navigate = useNavigate()
-  const token = localStorage.getItem('token')
-  const userId = localStorage.getItem('userId')
+  const dispatch = useDispatch()
+  const token = useSelector(selectIsAuthenticated)
+  const user = useSelector(selectCurrentUserWithFallback)
+  const userId = user?.id
+  const restaurant = useSelector(selectSelectedRestaurant)
+  const reviews = useSelector(selectReviewsByRestaurant(id))
+  const detailsStatus = useSelector(selectRestaurantDetailsStatus)
+  const favourites = useSelector(selectFavourites)
 
-  const [restaurant, setRestaurant] = useState(null)
-  const [reviews, setReviews] = useState([])
-  const [loading, setLoading] = useState(true)
   const [isFavorite, setIsFavorite] = useState(false)
   const [showReviewForm, setShowReviewForm] = useState(false)
   const [reviewForm, setReviewForm] = useState({ rating: 5, comment: '' })
@@ -23,24 +45,28 @@ export default function RestaurantDetailPage() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchData() }, [id])
 
-  const fetchData = async () => {
-    setLoading(true)
-    try {
-      const [restRes, revRes] = await Promise.all([getRestaurant(id), getReviews(id)])
-      setRestaurant(restRes.data)
-      setReviews(revRes.data)
-    } catch {
-      setError('Restaurant not found.')
-    } finally {
-      setLoading(false)
+  useEffect(() => {
+    if (token) {
+      dispatch(fetchFavourites())
     }
+  }, [dispatch, token])
+
+  useEffect(() => {
+    setIsFavorite(favourites.some((f) => String(f.restaurant_id) === String(id)))
+  }, [favourites, id])
+
+  const fetchData = async () => {
+    await Promise.all([
+      dispatch(fetchRestaurantById(id)),
+      dispatch(fetchReviewsByRestaurant(id)),
+    ])
   }
 
   const handleFavorite = async () => {
     if (!token) { navigate('/login'); return }
     try {
-      if (isFavorite) { await removeFavorite(id); setIsFavorite(false) }
-      else { await addFavorite(id); setIsFavorite(true) }
+      if (isFavorite) { await dispatch(removeFavouriteAsync(id)); setIsFavorite(false) }
+      else { await dispatch(addFavouriteAsync(id)); setIsFavorite(true) }
     } catch { /* favorite toggle failure is non-critical */ }
   }
 
@@ -49,9 +75,9 @@ export default function RestaurantDetailPage() {
     setSubmitting(true)
     try {
       if (editingReviewId) {
-        await updateReview(editingReviewId, reviewForm)
+        await dispatch(updateReviewAsync({ restaurantId: id, reviewId: editingReviewId, payload: reviewForm }))
       } else {
-        await createReview(id, reviewForm)
+        await dispatch(createReviewAsync({ restaurantId: id, payload: reviewForm }))
       }
       setShowReviewForm(false)
       setReviewForm({ rating: 5, comment: '' })
@@ -72,10 +98,10 @@ export default function RestaurantDetailPage() {
 
   const handleDeleteReview = async (reviewId) => {
     if (!window.confirm('Delete this review?')) return
-    try { await deleteReview(reviewId); fetchData() } catch { /* deletion failure is non-critical */ }
+    try { await dispatch(deleteReviewAsync({ restaurantId: id, reviewId })); fetchData() } catch { /* deletion failure is non-critical */ }
   }
 
-  if (loading) return <div className="flex justify-center items-center min-h-screen"><div className="text-gray-400 text-lg">Loading...</div></div>
+  if (detailsStatus === 'loading' || detailsStatus === 'idle') return <div className="flex justify-center items-center min-h-screen"><div className="text-gray-400 text-lg">Loading...</div></div>
   if (!restaurant) return <div className="text-center py-20 text-gray-400">{error || 'Restaurant not found.'}</div>
 
   const photos = restaurant.photos

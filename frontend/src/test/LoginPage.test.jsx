@@ -2,9 +2,10 @@
  * LoginPage UI/UX tests — form rendering, submission, error handling, redirect.
  */
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { screen, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
+import { renderWithProviders } from './test-utils'
 
 const mockNavigate = vi.fn()
 vi.mock('react-router-dom', async () => {
@@ -22,7 +23,7 @@ vi.mock('../services/api', () => ({
 import LoginPage from '../pages/LoginPage'
 
 function renderLogin() {
-  return render(
+  return renderWithProviders(
     <MemoryRouter>
       <LoginPage />
     </MemoryRouter>

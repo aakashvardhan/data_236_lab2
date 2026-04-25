@@ -1,20 +1,19 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { logout } from '../services/api'
+import { useDispatch, useSelector } from 'react-redux'
+import { logoutUser, selectCurrentUserWithFallback, selectIsAuthenticated } from '../store/authSlice'
 
 function Navbar() {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const [menuOpen, setMenuOpen] = useState(false)
-  const token = localStorage.getItem('token')
-  const userName = localStorage.getItem('userName')
-  const userRole = localStorage.getItem('userRole')
+  const token = useSelector(selectIsAuthenticated)
+  const user = useSelector(selectCurrentUserWithFallback)
+  const userName = user?.name
+  const userRole = user?.role
 
   const handleLogout = async () => {
-    try { await logout() } catch { /* logout failure is non-critical */ }
-    localStorage.removeItem('token')
-    localStorage.removeItem('userName')
-    localStorage.removeItem('userRole')
-    localStorage.removeItem('userId')
+    await dispatch(logoutUser())
     setMenuOpen(false)
     navigate('/login')
   }
