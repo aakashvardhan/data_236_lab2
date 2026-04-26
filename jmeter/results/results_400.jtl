@@ -1,0 +1,1201 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1777169457933,31289,User Login,200,OK,Lab2 Concurrency Group 1-15,text,true,,390,287,147,147,http://localhost:8001/auth/login,31289,0,96
+1777169457958,31266,User Login,200,OK,Lab2 Concurrency Group 1-2,text,true,,390,287,147,147,http://localhost:8001/auth/login,31266,0,62
+1777169457904,31318,User Login,200,OK,Lab2 Concurrency Group 1-16,text,true,,390,287,147,147,http://localhost:8001/auth/login,31316,0,114
+1777169489321,172,Restaurant Search,200,OK,Lab2 Concurrency Group 1-16,text,true,,5305,426,148,148,http://localhost:8002/restaurants?page=1&per_page=10,172,0,1
+1777169489321,172,Restaurant Search,200,OK,Lab2 Concurrency Group 1-2,text,true,,5305,426,148,148,http://localhost:8002/restaurants?page=1&per_page=10,172,0,1
+1777169489321,174,Restaurant Search,200,OK,Lab2 Concurrency Group 1-15,text,true,,5305,426,148,148,http://localhost:8002/restaurants?page=1&per_page=10,174,0,1
+1777169489496,89,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-15,text,false,,188,514,148,148,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,89,0,7
+1777169489494,93,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-16,text,false,,188,514,148,148,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,93,0,9
+1777169489494,93,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-2,text,false,,188,513,148,148,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,93,0,10
+1777169457615,34789,User Login,200,OK,Lab2 Concurrency Group 1-3,text,true,,390,287,157,157,http://localhost:8001/auth/login,34789,0,409
+1777169457670,34745,User Login,200,OK,Lab2 Concurrency Group 1-4,text,true,,390,287,157,157,http://localhost:8001/auth/login,34745,0,364
+1777169457674,34743,User Login,200,OK,Lab2 Concurrency Group 1-19,text,true,,390,287,157,157,http://localhost:8001/auth/login,34743,0,385
+1777169457699,34719,User Login,200,OK,Lab2 Concurrency Group 1-1,text,true,,390,287,157,157,http://localhost:8001/auth/login,34719,0,340
+1777169457954,34468,User Login,200,OK,Lab2 Concurrency Group 1-7,text,true,,390,287,157,157,http://localhost:8001/auth/login,34468,0,92
+1777169457703,34719,User Login,200,OK,Lab2 Concurrency Group 1-11,text,true,,390,287,157,157,http://localhost:8001/auth/login,34719,0,352
+1777169457728,34708,User Login,200,OK,Lab2 Concurrency Group 1-17,text,true,,390,287,157,157,http://localhost:8001/auth/login,34708,0,325
+1777169457676,34819,User Login,200,OK,Lab2 Concurrency Group 1-18,text,true,,390,287,157,157,http://localhost:8001/auth/login,34819,0,389
+1777169457666,34829,User Login,200,OK,Lab2 Concurrency Group 1-8,text,true,,390,287,157,157,http://localhost:8001/auth/login,34829,0,408
+1777169457933,34563,User Login,200,OK,Lab2 Concurrency Group 1-6,text,true,,390,287,157,157,http://localhost:8001/auth/login,34563,0,101
+1777169457772,34727,User Login,200,OK,Lab2 Concurrency Group 1-20,text,true,,390,287,157,157,http://localhost:8001/auth/login,34727,0,278
+1777169457900,34599,User Login,200,OK,Lab2 Concurrency Group 1-14,text,true,,390,287,157,157,http://localhost:8001/auth/login,34599,0,186
+1777169457704,34795,User Login,200,OK,Lab2 Concurrency Group 1-9,text,true,,390,287,157,157,http://localhost:8001/auth/login,34795,0,511
+1777169457728,34771,User Login,200,OK,Lab2 Concurrency Group 1-12,text,true,,390,287,157,157,http://localhost:8001/auth/login,34771,0,331
+1777169457935,34567,User Login,200,OK,Lab2 Concurrency Group 1-5,text,true,,390,287,157,157,http://localhost:8001/auth/login,34567,0,105
+1777169457607,34900,User Login,200,OK,Lab2 Concurrency Group 1-13,text,true,,390,287,157,157,http://localhost:8001/auth/login,34900,0,465
+1777169458437,34070,User Login,200,OK,Lab2 Concurrency Group 1-23,text,true,,390,287,157,157,http://localhost:8001/auth/login,34070,0,11
+1777169457699,34811,User Login,200,OK,Lab2 Concurrency Group 1-10,text,true,,390,287,157,157,http://localhost:8001/auth/login,34811,0,358
+1777169458213,34297,User Login,200,OK,Lab2 Concurrency Group 1-22,text,true,,390,287,157,157,http://localhost:8001/auth/login,34297,0,1
+1777169458202,34308,User Login,200,OK,Lab2 Concurrency Group 1-21,text,true,,390,287,157,157,http://localhost:8001/auth/login,34308,0,14
+1777169458584,33931,User Login,200,OK,Lab2 Concurrency Group 1-24,text,true,,390,287,157,157,http://localhost:8001/auth/login,33930,0,24
+1777169459451,33107,User Login,200,OK,Lab2 Concurrency Group 1-27,text,true,,390,287,157,157,http://localhost:8001/auth/login,33107,0,28
+1777169458818,33765,User Login,200,OK,Lab2 Concurrency Group 1-25,text,true,,390,287,157,157,http://localhost:8001/auth/login,33765,0,4
+1777169459799,32784,User Login,200,OK,Lab2 Concurrency Group 1-28,text,true,,390,287,157,157,http://localhost:8001/auth/login,32783,0,161
+1777169459021,33562,User Login,200,OK,Lab2 Concurrency Group 1-26,text,true,,390,287,157,157,http://localhost:8001/auth/login,33562,0,4
+1777169460167,32419,User Login,200,OK,Lab2 Concurrency Group 1-31,text,true,,390,287,157,157,http://localhost:8001/auth/login,32419,0,9
+1777169459936,32650,User Login,200,OK,Lab2 Concurrency Group 1-29,text,true,,390,287,157,157,http://localhost:8001/auth/login,32650,0,51
+1777169460119,32468,User Login,200,OK,Lab2 Concurrency Group 1-30,text,true,,390,287,157,157,http://localhost:8001/auth/login,32467,0,18
+1777169492417,488,Restaurant Search,200,OK,Lab2 Concurrency Group 1-4,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,486,0,2
+1777169492418,487,Restaurant Search,200,OK,Lab2 Concurrency Group 1-19,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,487,0,1
+1777169492426,479,Restaurant Search,200,OK,Lab2 Concurrency Group 1-11,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,479,0,2
+1777169492439,466,Restaurant Search,200,OK,Lab2 Concurrency Group 1-17,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,466,0,2
+1777169492427,490,Restaurant Search,200,OK,Lab2 Concurrency Group 1-7,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,490,0,1
+1777169492418,511,Restaurant Search,200,OK,Lab2 Concurrency Group 1-3,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,511,0,1
+1777169492420,510,Restaurant Search,200,OK,Lab2 Concurrency Group 1-1,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,510,0,0
+1777169492497,441,Restaurant Search,200,OK,Lab2 Concurrency Group 1-6,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,441,0,1
+1777169492497,441,Restaurant Search,200,OK,Lab2 Concurrency Group 1-8,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,441,0,1
+1777169492509,429,Restaurant Search,200,OK,Lab2 Concurrency Group 1-23,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,429,0,0
+1777169492500,438,Restaurant Search,200,OK,Lab2 Concurrency Group 1-12,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,438,0,0
+1777169492500,438,Restaurant Search,200,OK,Lab2 Concurrency Group 1-14,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,438,0,0
+1777169492500,494,Restaurant Search,200,OK,Lab2 Concurrency Group 1-20,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,494,0,0
+1777169492497,497,Restaurant Search,200,OK,Lab2 Concurrency Group 1-18,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,441,0,0
+1777169492503,492,Restaurant Search,200,OK,Lab2 Concurrency Group 1-5,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,492,0,0
+1777169492499,497,Restaurant Search,200,OK,Lab2 Concurrency Group 1-9,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,497,0,1
+1777169492512,491,Restaurant Search,200,OK,Lab2 Concurrency Group 1-22,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,491,0,1
+1777169492513,502,Restaurant Search,200,OK,Lab2 Concurrency Group 1-21,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,502,0,0
+1777169492585,431,Restaurant Search,200,OK,Lab2 Concurrency Group 1-26,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,430,0,1
+1777169492562,492,Restaurant Search,200,OK,Lab2 Concurrency Group 1-27,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,492,0,1
+1777169492511,549,Restaurant Search,200,OK,Lab2 Concurrency Group 1-10,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,549,0,1
+1777169492589,471,Restaurant Search,200,OK,Lab2 Concurrency Group 1-29,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,471,0,1
+1777169492585,476,Restaurant Search,200,OK,Lab2 Concurrency Group 1-28,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,476,0,1
+1777169492585,476,Restaurant Search,200,OK,Lab2 Concurrency Group 1-25,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,476,0,1
+1777169492509,553,Restaurant Search,200,OK,Lab2 Concurrency Group 1-13,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,553,0,0
+1777169492590,474,Restaurant Search,200,OK,Lab2 Concurrency Group 1-30,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,474,0,0
+1777169492518,554,Restaurant Search,200,OK,Lab2 Concurrency Group 1-24,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,554,0,2
+1777169492587,484,Restaurant Search,200,OK,Lab2 Concurrency Group 1-31,text,true,,5305,426,159,159,http://localhost:8002/restaurants?page=1&per_page=10,484,0,1
+1777169492994,968,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-12,text,false,,188,514,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,968,0,1
+1777169492906,1055,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-19,text,false,,188,514,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,1055,0,1
+1777169492931,1031,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-1,text,false,,188,513,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,1031,0,2
+1777169492995,967,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-5,text,false,,188,513,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,967,0,2
+1777169492906,1058,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-11,text,false,,188,514,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,1058,0,1
+1777169492995,969,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-23,text,false,,188,514,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,969,0,2
+1777169492997,967,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-9,text,false,,188,513,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,967,0,1
+1777169492919,1046,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-7,text,false,,188,513,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,1046,0,0
+1777169492930,1035,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-3,text,false,,188,513,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,1035,0,0
+1777169493016,949,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-26,text,false,,188,514,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,949,0,2
+1777169492906,1056,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-4,text,false,,188,513,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,1056,0,1
+1777169492997,968,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-8,text,false,,188,513,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,968,0,1
+1777169492995,970,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-18,text,false,,188,514,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,970,0,1
+1777169493004,964,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-22,text,false,,188,514,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,963,0,1
+1777169492995,974,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-20,text,false,,188,514,163,163,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,971,0,2
+1777169492906,1069,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-17,text,false,,188,514,161,161,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,1068,0,1
+1777169492994,978,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-6,text,false,,188,513,161,161,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,978,0,3
+1777169493016,971,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-21,text,false,,188,514,146,146,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,971,0,2
+1777169492995,997,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-14,text,false,,188,514,145,145,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,997,0,2
+1777169493061,934,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-29,text,false,,188,514,144,144,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,934,0,1
+1777169493061,935,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-10,text,false,,188,514,144,144,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,935,0,2
+1777169493062,981,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-25,text,false,,188,514,142,142,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,981,0,1
+1777169493065,981,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-30,text,false,,188,514,141,141,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,981,0,2
+1777169493063,983,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-13,text,false,,188,514,141,141,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,983,0,0
+1777169493054,994,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-27,text,false,,188,514,141,141,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,993,0,1
+1777169493073,974,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-31,text,false,,188,514,141,141,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,974,0,2
+1777169493073,977,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-24,text,false,,188,514,141,141,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,977,0,2
+1777169493061,989,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-28,text,false,,188,514,141,141,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,989,0,2
+1777169461140,33810,User Login,200,OK,Lab2 Concurrency Group 1-35,text,true,,390,287,139,139,http://localhost:8001/auth/login,33810,0,4
+1777169460820,34130,User Login,200,OK,Lab2 Concurrency Group 1-33,text,true,,390,287,139,139,http://localhost:8001/auth/login,34130,0,32
+1777169460820,34130,User Login,200,OK,Lab2 Concurrency Group 1-32,text,true,,390,287,139,139,http://localhost:8001/auth/login,34130,0,23
+1777169461424,33528,User Login,200,OK,Lab2 Concurrency Group 1-36,text,true,,390,287,139,139,http://localhost:8001/auth/login,33528,0,4
+1777169460867,34085,User Login,200,OK,Lab2 Concurrency Group 1-34,text,true,,390,287,139,139,http://localhost:8001/auth/login,34085,0,1
+1777169461651,33301,User Login,200,OK,Lab2 Concurrency Group 1-37,text,true,,390,287,139,139,http://localhost:8001/auth/login,33301,0,6
+1777169461895,33056,User Login,200,OK,Lab2 Concurrency Group 1-38,text,true,,390,287,139,139,http://localhost:8001/auth/login,33056,0,1
+1777169494953,196,Restaurant Search,200,OK,Lab2 Concurrency Group 1-38,text,true,,5305,426,139,139,http://localhost:8002/restaurants?page=1&per_page=10,196,0,2
+1777169494953,203,Restaurant Search,200,OK,Lab2 Concurrency Group 1-35,text,true,,5305,426,140,140,http://localhost:8002/restaurants?page=1&per_page=10,203,0,1
+1777169494955,204,Restaurant Search,200,OK,Lab2 Concurrency Group 1-36,text,true,,5305,426,140,140,http://localhost:8002/restaurants?page=1&per_page=10,204,0,0
+1777169494954,205,Restaurant Search,200,OK,Lab2 Concurrency Group 1-32,text,true,,5305,426,140,140,http://localhost:8002/restaurants?page=1&per_page=10,205,0,1
+1777169494954,206,Restaurant Search,200,OK,Lab2 Concurrency Group 1-37,text,true,,5305,426,140,140,http://localhost:8002/restaurants?page=1&per_page=10,206,0,1
+1777169494954,217,Restaurant Search,200,OK,Lab2 Concurrency Group 1-33,text,true,,5305,426,140,140,http://localhost:8002/restaurants?page=1&per_page=10,217,0,0
+1777169494955,216,Restaurant Search,200,OK,Lab2 Concurrency Group 1-34,text,true,,5305,426,140,140,http://localhost:8002/restaurants?page=1&per_page=10,216,0,0
+1777169495157,310,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-35,text,false,,188,514,141,141,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,310,0,0
+1777169495151,316,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-38,text,false,,188,514,141,141,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,316,0,2
+1777169495160,313,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-37,text,false,,188,514,139,139,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,313,0,1
+1777169495173,307,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-34,text,false,,188,514,138,138,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,307,0,1
+1777169495173,308,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-33,text,false,,188,514,138,138,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,307,0,1
+1777169495160,334,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-32,text,false,,188,514,136,136,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,334,0,2
+1777169495160,338,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-36,text,false,,188,514,135,135,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,338,0,1
+1777169463853,72667,User Login,200,OK,Lab2 Concurrency Group 1-39,text,true,,390,287,298,298,http://localhost:8001/auth/login,72667,0,206
+1777169463823,72697,User Login,200,OK,Lab2 Concurrency Group 1-45,text,true,,390,287,298,298,http://localhost:8001/auth/login,72697,0,232
+1777169464955,71565,User Login,200,OK,Lab2 Concurrency Group 1-49,text,true,,390,287,298,298,http://localhost:8001/auth/login,71565,0,20
+1777169463860,72660,User Login,200,OK,Lab2 Concurrency Group 1-44,text,true,,390,287,298,298,http://localhost:8001/auth/login,72660,0,204
+1777169464960,71561,User Login,200,OK,Lab2 Concurrency Group 1-48,text,true,,390,287,298,298,http://localhost:8001/auth/login,71561,0,19
+1777169463955,72563,User Login,200,OK,Lab2 Concurrency Group 1-42,text,true,,390,287,298,298,http://localhost:8001/auth/login,72563,0,103
+1777169463885,72633,User Login,200,OK,Lab2 Concurrency Group 1-41,text,true,,390,287,298,298,http://localhost:8001/auth/login,72633,0,177
+1777169463890,72632,User Login,200,OK,Lab2 Concurrency Group 1-40,text,true,,390,287,298,298,http://localhost:8001/auth/login,72632,0,171
+1777169466261,70263,User Login,200,OK,Lab2 Concurrency Group 1-54,text,true,,390,287,298,298,http://localhost:8001/auth/login,70263,0,9
+1777169466258,70266,User Login,200,OK,Lab2 Concurrency Group 1-55,text,true,,390,287,298,298,http://localhost:8001/auth/login,70266,0,16
+1777169465700,70827,User Login,200,OK,Lab2 Concurrency Group 1-53,text,true,,390,287,298,298,http://localhost:8001/auth/login,70827,0,22
+1777169465380,71147,User Login,200,OK,Lab2 Concurrency Group 1-52,text,true,,390,287,298,298,http://localhost:8001/auth/login,71147,0,3
+1777169466695,69831,User Login,200,OK,Lab2 Concurrency Group 1-57,text,true,,390,287,298,298,http://localhost:8001/auth/login,69831,0,11
+1777169465132,71396,User Login,200,OK,Lab2 Concurrency Group 1-51,text,true,,390,287,298,298,http://localhost:8001/auth/login,71396,0,3
+1777169466410,70119,User Login,200,OK,Lab2 Concurrency Group 1-56,text,true,,390,287,298,298,http://localhost:8001/auth/login,70119,0,3
+1777169467645,68883,User Login,200,OK,Lab2 Concurrency Group 1-61,text,true,,390,287,298,298,http://localhost:8001/auth/login,68883,0,17
+1777169467035,69494,User Login,200,OK,Lab2 Concurrency Group 1-58,text,true,,390,287,298,298,http://localhost:8001/auth/login,69494,0,20
+1777169463851,72677,User Login,200,OK,Lab2 Concurrency Group 1-43,text,true,,390,287,298,298,http://localhost:8001/auth/login,72677,0,210
+1777169467114,69419,User Login,200,OK,Lab2 Concurrency Group 1-59,text,true,,390,287,298,298,http://localhost:8001/auth/login,69419,0,1
+1777169464961,71572,User Login,200,OK,Lab2 Concurrency Group 1-46,text,true,,390,287,298,298,http://localhost:8001/auth/login,71572,0,19
+1777169468914,67619,User Login,200,OK,Lab2 Concurrency Group 1-66,text,true,,390,287,298,298,http://localhost:8001/auth/login,67619,0,116
+1777169470492,66041,User Login,200,OK,Lab2 Concurrency Group 1-71,text,true,,390,287,298,298,http://localhost:8001/auth/login,66041,0,4
+1777169467370,69165,User Login,200,OK,Lab2 Concurrency Group 1-60,text,true,,390,287,298,298,http://localhost:8001/auth/login,69164,0,2
+1777169468112,68423,User Login,200,OK,Lab2 Concurrency Group 1-63,text,true,,390,287,298,298,http://localhost:8001/auth/login,68422,0,3
+1777169470670,65867,User Login,200,OK,Lab2 Concurrency Group 1-73,text,true,,390,287,298,298,http://localhost:8001/auth/login,65867,0,1
+1777169469377,67160,User Login,200,OK,Lab2 Concurrency Group 1-68,text,true,,390,287,298,298,http://localhost:8001/auth/login,67160,0,1
+1777169472874,63663,User Login,200,OK,Lab2 Concurrency Group 1-82,text,true,,390,287,298,298,http://localhost:8001/auth/login,63663,0,1
+1777169471353,65184,User Login,200,OK,Lab2 Concurrency Group 1-76,text,true,,390,287,298,298,http://localhost:8001/auth/login,65184,0,2
+1777169472112,64425,User Login,200,OK,Lab2 Concurrency Group 1-79,text,true,,390,287,298,298,http://localhost:8001/auth/login,64425,0,1
+1777169464956,71582,User Login,200,OK,Lab2 Concurrency Group 1-50,text,true,,390,287,298,298,http://localhost:8001/auth/login,71582,0,19
+1777169471891,64646,User Login,200,OK,Lab2 Concurrency Group 1-77,text,true,,390,287,298,298,http://localhost:8001/auth/login,64646,0,6
+1777169470494,66044,User Login,200,OK,Lab2 Concurrency Group 1-72,text,true,,390,287,298,298,http://localhost:8001/auth/login,66044,0,2
+1777169469147,67392,User Login,200,OK,Lab2 Concurrency Group 1-67,text,true,,390,287,298,298,http://localhost:8001/auth/login,67392,0,1
+1777169467901,68638,User Login,200,OK,Lab2 Concurrency Group 1-62,text,true,,390,287,298,298,http://localhost:8001/auth/login,68638,0,27
+1777169473362,63178,User Login,200,OK,Lab2 Concurrency Group 1-84,text,true,,390,287,298,298,http://localhost:8001/auth/login,63178,0,1
+1777169468359,68181,User Login,200,OK,Lab2 Concurrency Group 1-64,text,true,,390,287,298,298,http://localhost:8001/auth/login,68181,0,4
+1777169469634,66907,User Login,200,OK,Lab2 Concurrency Group 1-69,text,true,,390,287,298,298,http://localhost:8001/auth/login,66907,0,4
+1777169470859,65684,User Login,200,OK,Lab2 Concurrency Group 1-74,text,true,,390,287,298,298,http://localhost:8001/auth/login,65684,0,0
+1777169468911,67632,User Login,200,OK,Lab2 Concurrency Group 1-65,text,true,,390,287,298,298,http://localhost:8001/auth/login,67632,0,119
+1777169473120,63424,User Login,200,OK,Lab2 Concurrency Group 1-83,text,true,,390,287,298,298,http://localhost:8001/auth/login,63424,0,1
+1777169472362,64182,User Login,200,OK,Lab2 Concurrency Group 1-80,text,true,,390,287,298,298,http://localhost:8001/auth/login,64182,0,1
+1777169464948,71596,User Login,200,OK,Lab2 Concurrency Group 1-47,text,true,,390,287,298,298,http://localhost:8001/auth/login,71596,0,27
+1777169473613,62933,User Login,200,OK,Lab2 Concurrency Group 1-85,text,true,,390,287,298,298,http://localhost:8001/auth/login,62933,0,1
+1777169471891,64655,User Login,200,OK,Lab2 Concurrency Group 1-78,text,true,,390,287,298,298,http://localhost:8001/auth/login,64655,0,10
+1777169473860,62688,User Login,200,OK,Lab2 Concurrency Group 1-86,text,true,,390,287,298,298,http://localhost:8001/auth/login,62687,0,1
+1777169536522,235,Restaurant Search,200,OK,Lab2 Concurrency Group 1-49,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,234,0,1
+1777169536523,234,Restaurant Search,200,OK,Lab2 Concurrency Group 1-44,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,234,0,0
+1777169536522,263,Restaurant Search,200,OK,Lab2 Concurrency Group 1-41,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,263,0,1
+1777169536523,273,Restaurant Search,200,OK,Lab2 Concurrency Group 1-40,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,273,0,1
+1777169536529,287,Restaurant Search,200,OK,Lab2 Concurrency Group 1-52,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,287,0,0
+1777169536525,300,Restaurant Search,200,OK,Lab2 Concurrency Group 1-55,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,300,0,0
+1777169536530,295,Restaurant Search,200,OK,Lab2 Concurrency Group 1-43,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,295,0,0
+1777169536536,302,Restaurant Search,200,OK,Lab2 Concurrency Group 1-60,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,302,0,0
+1777169536529,309,Restaurant Search,200,OK,Lab2 Concurrency Group 1-57,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,309,0,1
+1777169536529,309,Restaurant Search,200,OK,Lab2 Concurrency Group 1-53,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,309,0,1
+1777169536523,334,Restaurant Search,200,OK,Lab2 Concurrency Group 1-42,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,334,0,0
+1777169536530,329,Restaurant Search,200,OK,Lab2 Concurrency Group 1-56,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,328,0,0
+1777169536539,320,Restaurant Search,200,OK,Lab2 Concurrency Group 1-76,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,320,0,0
+1777169536540,322,Restaurant Search,200,OK,Lab2 Concurrency Group 1-67,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,322,0,1
+1777169536522,341,Restaurant Search,200,OK,Lab2 Concurrency Group 1-48,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,341,0,1
+1777169536534,329,Restaurant Search,200,OK,Lab2 Concurrency Group 1-71,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,329,0,2
+1777169536546,317,Restaurant Search,200,OK,Lab2 Concurrency Group 1-47,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,317,0,1
+1777169536529,340,Restaurant Search,200,OK,Lab2 Concurrency Group 1-51,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,340,0,1
+1777169536538,331,Restaurant Search,200,OK,Lab2 Concurrency Group 1-82,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,331,0,1
+1777169536522,347,Restaurant Search,200,OK,Lab2 Concurrency Group 1-39,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,347,0,1
+1777169536535,334,Restaurant Search,200,OK,Lab2 Concurrency Group 1-63,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,334,0,1
+1777169536534,336,Restaurant Search,200,OK,Lab2 Concurrency Group 1-66,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,336,0,0
+1777169536529,341,Restaurant Search,200,OK,Lab2 Concurrency Group 1-61,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,341,0,1
+1777169536539,331,Restaurant Search,200,OK,Lab2 Concurrency Group 1-72,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,331,0,0
+1777169536548,322,Restaurant Search,200,OK,Lab2 Concurrency Group 1-85,text,true,,5305,426,299,299,http://localhost:8002/restaurants?page=1&per_page=10,322,0,1
+1777169536530,349,Restaurant Search,200,OK,Lab2 Concurrency Group 1-58,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,349,0,0
+1777169536534,346,Restaurant Search,200,OK,Lab2 Concurrency Group 1-46,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,346,0,2
+1777169536542,338,Restaurant Search,200,OK,Lab2 Concurrency Group 1-84,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,337,0,1
+1777169536543,337,Restaurant Search,200,OK,Lab2 Concurrency Group 1-74,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,337,0,1
+1777169536539,341,Restaurant Search,200,OK,Lab2 Concurrency Group 1-73,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,341,0,0
+1777169536545,335,Restaurant Search,200,OK,Lab2 Concurrency Group 1-83,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,335,0,1
+1777169536538,345,Restaurant Search,200,OK,Lab2 Concurrency Group 1-79,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,345,0,0
+1777169536540,343,Restaurant Search,200,OK,Lab2 Concurrency Group 1-62,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,343,0,0
+1777169536525,360,Restaurant Search,200,OK,Lab2 Concurrency Group 1-54,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,360,0,0
+1777169536545,340,Restaurant Search,200,OK,Lab2 Concurrency Group 1-65,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,340,0,1
+1777169536543,342,Restaurant Search,200,OK,Lab2 Concurrency Group 1-69,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,342,0,0
+1777169536522,364,Restaurant Search,200,OK,Lab2 Concurrency Group 1-45,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,364,0,1
+1777169536542,343,Restaurant Search,200,OK,Lab2 Concurrency Group 1-64,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,343,0,1
+1777169536538,348,Restaurant Search,200,OK,Lab2 Concurrency Group 1-50,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,347,0,1
+1777169536545,341,Restaurant Search,200,OK,Lab2 Concurrency Group 1-80,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,341,0,1
+1777169536538,350,Restaurant Search,200,OK,Lab2 Concurrency Group 1-68,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,350,0,1
+1777169536534,355,Restaurant Search,200,OK,Lab2 Concurrency Group 1-59,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,355,0,2
+1777169536547,342,Restaurant Search,200,OK,Lab2 Concurrency Group 1-78,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,342,0,1
+1777169536538,351,Restaurant Search,200,OK,Lab2 Concurrency Group 1-77,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,351,0,1
+1777169536550,341,Restaurant Search,200,OK,Lab2 Concurrency Group 1-86,text,true,,5305,426,300,300,http://localhost:8002/restaurants?page=1&per_page=10,341,0,0
+1777169536758,151,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-44,text,false,,188,514,300,300,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,151,0,3
+1777169536786,144,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-41,text,false,,188,514,299,299,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,144,0,0
+1777169536758,185,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-49,text,false,,188,514,298,298,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,185,0,3
+1777169536797,149,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-40,text,false,,188,514,297,297,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,149,0,1
+1777169536817,148,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-52,text,false,,188,514,296,296,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,148,0,1
+1777169536826,143,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-43,text,false,,188,514,295,295,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,143,0,1
+1777169536826,143,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-55,text,false,,188,514,295,295,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,143,0,1
+1777169536839,171,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-53,text,false,,188,514,293,293,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,171,0,0
+1777169536839,182,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-57,text,false,,188,514,292,292,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,182,0,0
+1777169536839,182,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-60,text,false,,188,514,291,291,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,182,0,1
+1777169536882,169,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-58,text,false,,188,514,290,290,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,169,0,0
+1777169536890,202,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-77,text,false,,188,514,289,289,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,202,0,0
+1777169536863,229,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-71,text,false,,188,514,289,289,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,229,0,2
+1777169536863,229,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-67,text,false,,188,514,289,289,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,229,0,1
+1777169536870,223,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-85,text,false,,188,514,286,286,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,223,0,1
+1777169536890,203,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-59,text,false,,188,514,286,286,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,203,0,0
+1777169536863,230,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-48,text,false,,188,514,286,286,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,230,0,1
+1777169536887,206,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-64,text,false,,188,514,286,286,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,206,0,1
+1777169536883,210,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-73,text,false,,188,514,284,284,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,210,0,0
+1777169536870,223,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-66,text,false,,188,514,284,284,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,223,0,0
+1777169536881,212,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-46,text,false,,188,514,284,284,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,212,0,1
+1777169536891,203,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-86,text,false,,188,514,280,280,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,203,0,1
+1777169536888,206,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-68,text,false,,188,514,279,279,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,206,0,0
+1777169536885,215,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-79,text,false,,188,514,277,277,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,215,0,1
+1777169536859,241,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-56,text,false,,188,514,277,277,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,241,0,1
+1777169536890,211,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-78,text,false,,188,514,277,277,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,211,0,0
+1777169536858,250,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-42,text,false,,188,514,274,274,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,250,0,2
+1777169536869,239,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-51,text,false,,188,514,274,274,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,239,0,1
+1777169536870,238,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-82,text,false,,188,514,274,274,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,238,0,0
+1777169536882,226,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-83,text,false,,188,514,274,274,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,226,0,0
+1777169536870,238,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-61,text,false,,188,514,274,274,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,238,0,0
+1777169536882,226,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-74,text,false,,188,514,274,274,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,226,0,1
+1777169536887,222,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-54,text,false,,188,514,270,270,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,222,0,1
+1777169536870,241,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-72,text,false,,188,514,267,267,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,241,0,1
+1777169536882,230,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-84,text,false,,188,514,266,266,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,230,0,1
+1777169536861,251,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-76,text,false,,188,514,266,266,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,251,0,0
+1777169536888,224,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-80,text,false,,188,514,265,265,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,224,0,0
+1777169536888,231,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-69,text,false,,188,514,263,263,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,230,0,0
+1777169536870,249,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-39,text,false,,188,514,263,263,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,249,0,0
+1777169536887,232,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-45,text,false,,188,514,263,263,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,232,0,1
+1777169536865,254,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-47,text,false,,188,514,260,260,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,254,0,0
+1777169536885,234,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-62,text,false,,188,514,260,260,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,234,0,1
+1777169536888,231,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-50,text,false,,188,514,260,260,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,231,0,0
+1777169536870,256,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-63,text,false,,188,514,257,257,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,256,0,0
+1777169536886,240,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-65,text,false,,188,514,257,257,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,240,0,2
+1777169472618,69636,User Login,200,OK,Lab2 Concurrency Group 1-81,text,true,,390,287,276,276,http://localhost:8001/auth/login,69635,0,1
+1777169469880,72422,User Login,200,OK,Lab2 Concurrency Group 1-70,text,true,,390,287,276,276,http://localhost:8001/auth/login,72422,0,2
+1777169471111,71219,User Login,200,OK,Lab2 Concurrency Group 1-75,text,true,,390,287,276,276,http://localhost:8001/auth/login,71219,0,1
+1777169542261,115,Restaurant Search,200,OK,Lab2 Concurrency Group 1-81,text,true,,5305,426,277,277,http://localhost:8002/restaurants?page=1&per_page=10,115,0,2
+1777169542331,52,Restaurant Search,200,OK,Lab2 Concurrency Group 1-75,text,true,,5305,426,277,277,http://localhost:8002/restaurants?page=1&per_page=10,52,0,2
+1777169542303,80,Restaurant Search,200,OK,Lab2 Concurrency Group 1-70,text,true,,5305,426,277,277,http://localhost:8002/restaurants?page=1&per_page=10,80,0,0
+1777169475616,66800,User Login,200,OK,Lab2 Concurrency Group 1-93,text,true,,390,287,277,277,http://localhost:8001/auth/login,66800,0,2
+1777169475112,67304,User Login,200,OK,Lab2 Concurrency Group 1-91,text,true,,390,287,277,277,http://localhost:8001/auth/login,67304,0,1
+1777169474490,67927,User Login,200,OK,Lab2 Concurrency Group 1-88,text,true,,390,287,277,277,http://localhost:8001/auth/login,67927,0,16
+1777169474861,67556,User Login,200,OK,Lab2 Concurrency Group 1-90,text,true,,390,287,277,277,http://localhost:8001/auth/login,67556,0,1
+1777169479213,63208,User Login,200,OK,Lab2 Concurrency Group 1-107,text,true,,390,287,277,277,http://localhost:8001/auth/login,63208,0,1
+1777169474623,67798,User Login,200,OK,Lab2 Concurrency Group 1-89,text,true,,390,287,277,277,http://localhost:8001/auth/login,67797,0,4
+1777169479068,63354,User Login,200,OK,Lab2 Concurrency Group 1-106,text,true,,390,287,277,277,http://localhost:8001/auth/login,63352,0,9
+1777169476869,65552,User Login,200,OK,Lab2 Concurrency Group 1-98,text,true,,390,287,277,277,http://localhost:8001/auth/login,65551,0,2
+1777169477396,65026,User Login,200,OK,Lab2 Concurrency Group 1-100,text,true,,390,287,277,277,http://localhost:8001/auth/login,65024,0,3
+1777169475859,66562,User Login,200,OK,Lab2 Concurrency Group 1-94,text,true,,390,287,277,277,http://localhost:8001/auth/login,66561,0,2
+1777169474117,68304,User Login,200,OK,Lab2 Concurrency Group 1-87,text,true,,390,287,277,277,http://localhost:8001/auth/login,68303,0,2
+1777169477865,64556,User Login,200,OK,Lab2 Concurrency Group 1-102,text,true,,390,287,277,277,http://localhost:8001/auth/login,64555,0,1
+1777169476109,66314,User Login,200,OK,Lab2 Concurrency Group 1-95,text,true,,390,287,277,277,http://localhost:8001/auth/login,66311,0,1
+1777169477613,64810,User Login,200,OK,Lab2 Concurrency Group 1-101,text,true,,390,287,277,277,http://localhost:8001/auth/login,64807,0,1
+1777169478819,63601,User Login,200,OK,Lab2 Concurrency Group 1-103,text,true,,390,287,277,277,http://localhost:8001/auth/login,63601,0,6
+1777169475360,67060,User Login,200,OK,Lab2 Concurrency Group 1-92,text,true,,390,287,277,277,http://localhost:8001/auth/login,67060,0,0
+1777169476611,65812,User Login,200,OK,Lab2 Concurrency Group 1-97,text,true,,390,287,277,277,http://localhost:8001/auth/login,65812,0,1
+1777169477110,65313,User Login,200,OK,Lab2 Concurrency Group 1-99,text,true,,390,287,277,277,http://localhost:8001/auth/login,65310,0,2
+1777169478823,63600,User Login,200,OK,Lab2 Concurrency Group 1-105,text,true,,390,287,277,277,http://localhost:8001/auth/login,63600,0,2
+1777169478819,63605,User Login,200,OK,Lab2 Concurrency Group 1-104,text,true,,390,287,277,277,http://localhost:8001/auth/login,63601,0,6
+1777169476357,66072,User Login,200,OK,Lab2 Concurrency Group 1-96,text,true,,390,287,277,277,http://localhost:8001/auth/login,66072,0,1
+1777169482872,59562,User Login,200,OK,Lab2 Concurrency Group 1-122,text,true,,390,287,277,277,http://localhost:8001/auth/login,59561,0,2
+1777169479944,62490,User Login,200,OK,Lab2 Concurrency Group 1-110,text,true,,390,287,277,277,http://localhost:8001/auth/login,62490,0,2
+1777169487883,54551,User Login,200,OK,Lab2 Concurrency Group 1-142,text,true,,390,287,277,277,http://localhost:8001/auth/login,54551,0,0
+1777169487126,55308,User Login,200,OK,Lab2 Concurrency Group 1-139,text,true,,390,287,277,277,http://localhost:8001/auth/login,55308,0,0
+1777169485193,57241,User Login,200,OK,Lab2 Concurrency Group 1-130,text,true,,390,287,277,277,http://localhost:8001/auth/login,57241,0,0
+1777169484170,58265,User Login,200,OK,Lab2 Concurrency Group 1-127,text,true,,390,287,277,277,http://localhost:8001/auth/login,58265,0,2
+1777169483629,58806,User Login,200,OK,Lab2 Concurrency Group 1-125,text,true,,390,287,277,277,http://localhost:8001/auth/login,58806,0,1
+1777169486618,55817,User Login,200,OK,Lab2 Concurrency Group 1-137,text,true,,390,287,277,277,http://localhost:8001/auth/login,55817,0,1
+1777169485005,57430,User Login,200,OK,Lab2 Concurrency Group 1-128,text,true,,390,287,277,277,http://localhost:8001/auth/login,57430,0,3
+1777169482613,59823,User Login,200,OK,Lab2 Concurrency Group 1-121,text,true,,390,287,277,277,http://localhost:8001/auth/login,59823,0,1
+1777169479815,62621,User Login,200,OK,Lab2 Concurrency Group 1-109,text,true,,390,287,277,277,http://localhost:8001/auth/login,62621,0,18
+1777169481128,61308,User Login,200,OK,Lab2 Concurrency Group 1-115,text,true,,390,287,277,277,http://localhost:8001/auth/login,61308,0,1
+1777169481364,61072,User Login,200,OK,Lab2 Concurrency Group 1-116,text,true,,390,287,277,277,http://localhost:8001/auth/login,61072,0,2
+1777169480610,61826,User Login,200,OK,Lab2 Concurrency Group 1-113,text,true,,390,287,277,277,http://localhost:8001/auth/login,61826,0,1
+1777169481868,60569,User Login,200,OK,Lab2 Concurrency Group 1-118,text,true,,390,287,277,277,http://localhost:8001/auth/login,60569,0,1
+1777169480891,61546,User Login,200,OK,Lab2 Concurrency Group 1-114,text,true,,390,287,277,277,http://localhost:8001/auth/login,61546,0,2
+1777169484164,58273,User Login,200,OK,Lab2 Concurrency Group 1-126,text,true,,390,287,277,277,http://localhost:8001/auth/login,58273,0,4
+1777169483110,59327,User Login,200,OK,Lab2 Concurrency Group 1-123,text,true,,390,287,277,277,http://localhost:8001/auth/login,59327,0,2
+1777169485389,57047,User Login,200,OK,Lab2 Concurrency Group 1-132,text,true,,390,287,277,277,http://localhost:8001/auth/login,57047,0,0
+1777169483368,59068,User Login,200,OK,Lab2 Concurrency Group 1-124,text,true,,390,287,277,277,http://localhost:8001/auth/login,59068,0,0
+1777169480456,61981,User Login,200,OK,Lab2 Concurrency Group 1-112,text,true,,390,287,277,277,http://localhost:8001/auth/login,61981,0,0
+1777169485005,57432,User Login,200,OK,Lab2 Concurrency Group 1-129,text,true,,390,287,277,277,http://localhost:8001/auth/login,57432,0,3
+1777169480179,62257,User Login,200,OK,Lab2 Concurrency Group 1-111,text,true,,390,287,277,277,http://localhost:8001/auth/login,62257,0,1
+1777169481615,60822,User Login,200,OK,Lab2 Concurrency Group 1-117,text,true,,390,287,277,277,http://localhost:8001/auth/login,60822,0,3
+1777169487635,54802,User Login,200,OK,Lab2 Concurrency Group 1-141,text,true,,390,287,277,277,http://localhost:8001/auth/login,54802,0,0
+1777169486394,56043,User Login,200,OK,Lab2 Concurrency Group 1-135,text,true,,390,287,277,277,http://localhost:8001/auth/login,56043,0,0
+1777169486394,56043,User Login,200,OK,Lab2 Concurrency Group 1-136,text,true,,390,287,277,277,http://localhost:8001/auth/login,56043,0,0
+1777169482118,60319,User Login,200,OK,Lab2 Concurrency Group 1-119,text,true,,390,287,277,277,http://localhost:8001/auth/login,60319,0,1
+1777169485434,57002,User Login,200,OK,Lab2 Concurrency Group 1-131,text,true,,390,287,277,277,http://localhost:8001/auth/login,57002,0,1
+1777169479447,62989,User Login,200,OK,Lab2 Concurrency Group 1-108,text,true,,390,287,277,277,http://localhost:8001/auth/login,62989,0,1
+1777169485646,56791,User Login,200,OK,Lab2 Concurrency Group 1-133,text,true,,390,287,277,277,http://localhost:8001/auth/login,56791,0,1
+1777169482368,60068,User Login,200,OK,Lab2 Concurrency Group 1-120,text,true,,390,287,277,277,http://localhost:8001/auth/login,60068,0,3
+1777169485892,56544,User Login,200,OK,Lab2 Concurrency Group 1-134,text,true,,390,287,277,277,http://localhost:8001/auth/login,56544,0,11
+1777169486879,55557,User Login,200,OK,Lab2 Concurrency Group 1-138,text,true,,390,287,277,277,http://localhost:8001/auth/login,55557,0,1
+1777169487377,55060,User Login,200,OK,Lab2 Concurrency Group 1-140,text,true,,390,287,277,277,http://localhost:8001/auth/login,55060,0,1
+1777169488617,53838,User Login,200,OK,Lab2 Concurrency Group 1-145,text,true,,390,287,277,277,http://localhost:8001/auth/login,53838,0,1
+1777169488106,54350,User Login,200,OK,Lab2 Concurrency Group 1-143,text,true,,390,287,277,277,http://localhost:8001/auth/login,54350,0,1
+1777169488357,54099,User Login,200,OK,Lab2 Concurrency Group 1-144,text,true,,390,287,277,277,http://localhost:8001/auth/login,54099,0,2
+1777169542377,178,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-81,text,false,,188,514,277,277,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,178,0,5
+1777169542384,171,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-75,text,false,,188,514,277,277,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,171,0,0
+1777169542384,177,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-70,text,false,,188,514,275,275,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,177,0,0
+1777169542419,308,Restaurant Search,200,OK,Lab2 Concurrency Group 1-90,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,308,0,0
+1777169542418,309,Restaurant Search,200,OK,Lab2 Concurrency Group 1-93,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,309,0,1
+1777169542423,304,Restaurant Search,200,OK,Lab2 Concurrency Group 1-107,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,304,0,2
+1777169542423,304,Restaurant Search,200,OK,Lab2 Concurrency Group 1-101,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,304,0,0
+1777169542423,304,Restaurant Search,200,OK,Lab2 Concurrency Group 1-103,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,304,0,0
+1777169542422,330,Restaurant Search,200,OK,Lab2 Concurrency Group 1-100,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,330,0,2
+1777169542424,331,Restaurant Search,200,OK,Lab2 Concurrency Group 1-89,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,331,0,1
+1777169542423,342,Restaurant Search,200,OK,Lab2 Concurrency Group 1-95,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,341,0,1
+1777169542422,357,Restaurant Search,200,OK,Lab2 Concurrency Group 1-98,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,357,0,2
+1777169542419,367,Restaurant Search,200,OK,Lab2 Concurrency Group 1-88,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,367,0,0
+1777169542424,362,Restaurant Search,200,OK,Lab2 Concurrency Group 1-106,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,362,0,0
+1777169542419,369,Restaurant Search,200,OK,Lab2 Concurrency Group 1-91,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,369,0,0
+1777169542424,364,Restaurant Search,200,OK,Lab2 Concurrency Group 1-94,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,364,0,1
+1777169542422,366,Restaurant Search,200,OK,Lab2 Concurrency Group 1-87,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,366,0,2
+1777169542430,358,Restaurant Search,200,OK,Lab2 Concurrency Group 1-96,text,true,,5305,426,275,275,http://localhost:8002/restaurants?page=1&per_page=10,358,0,1
+1777169542728,88,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-101,text,false,,188,515,275,275,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,88,0,1
+1777169542728,88,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-93,text,false,,188,514,275,275,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,88,0,1
+1777169542728,90,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-90,text,false,,188,514,273,273,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,90,0,1
+1777169542728,91,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-103,text,false,,188,515,272,272,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,91,0,1
+1777169542728,94,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-107,text,false,,188,515,271,271,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,94,0,1
+1777169542442,382,Restaurant Search,200,OK,Lab2 Concurrency Group 1-118,text,true,,5305,426,270,270,http://localhost:8002/restaurants?page=1&per_page=10,382,0,1
+1777169542753,91,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-100,text,false,,188,515,270,270,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,91,0,1
+1777169542424,420,Restaurant Search,200,OK,Lab2 Concurrency Group 1-97,text,true,,5305,426,270,270,http://localhost:8002/restaurants?page=1&per_page=10,420,0,0
+1777169542438,407,Restaurant Search,200,OK,Lab2 Concurrency Group 1-109,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,407,0,2
+1777169542442,404,Restaurant Search,200,OK,Lab2 Concurrency Group 1-120,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,404,0,1
+1777169542446,400,Restaurant Search,200,OK,Lab2 Concurrency Group 1-131,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,400,0,0
+1777169542434,412,Restaurant Search,200,OK,Lab2 Concurrency Group 1-142,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,412,0,1
+1777169542424,422,Restaurant Search,200,OK,Lab2 Concurrency Group 1-104,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,422,0,1
+1777169542457,389,Restaurant Search,200,OK,Lab2 Concurrency Group 1-143,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,389,0,1
+1777169542446,401,Restaurant Search,200,OK,Lab2 Concurrency Group 1-117,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,401,0,0
+1777169542436,414,Restaurant Search,200,OK,Lab2 Concurrency Group 1-127,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,414,0,1
+1777169542443,407,Restaurant Search,200,OK,Lab2 Concurrency Group 1-119,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,407,0,0
+1777169542456,394,Restaurant Search,200,OK,Lab2 Concurrency Group 1-145,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,394,0,1
+1777169542445,406,Restaurant Search,200,OK,Lab2 Concurrency Group 1-126,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,406,0,1
+1777169542441,409,Restaurant Search,200,OK,Lab2 Concurrency Group 1-111,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,409,0,3
+1777169542436,416,Restaurant Search,200,OK,Lab2 Concurrency Group 1-128,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,416,0,1
+1777169542434,420,Restaurant Search,200,OK,Lab2 Concurrency Group 1-139,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,420,0,1
+1777169542442,412,Restaurant Search,200,OK,Lab2 Concurrency Group 1-140,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,411,0,2
+1777169542437,417,Restaurant Search,200,OK,Lab2 Concurrency Group 1-125,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,417,0,3
+1777169542423,432,Restaurant Search,200,OK,Lab2 Concurrency Group 1-92,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,432,0,1
+1777169542443,412,Restaurant Search,200,OK,Lab2 Concurrency Group 1-134,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,412,0,0
+1777169542435,420,Restaurant Search,200,OK,Lab2 Concurrency Group 1-130,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,420,0,0
+1777169542445,461,Restaurant Search,200,OK,Lab2 Concurrency Group 1-116,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,461,0,0
+1777169542443,464,Restaurant Search,200,OK,Lab2 Concurrency Group 1-121,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,463,0,1
+1777169542457,450,Restaurant Search,200,OK,Lab2 Concurrency Group 1-144,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,450,0,2
+1777169542766,141,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-95,text,false,,188,514,269,269,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,141,0,1
+1777169542440,466,Restaurant Search,200,OK,Lab2 Concurrency Group 1-124,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,466,0,1
+1777169542424,431,Restaurant Search,200,OK,Lab2 Concurrency Group 1-99,text,true,,5305,426,269,269,http://localhost:8002/restaurants?page=1&per_page=10,431,0,0
+1777169542756,158,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-89,text,false,,188,514,269,269,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,157,0,1
+1777169542436,481,Restaurant Search,200,OK,Lab2 Concurrency Group 1-137,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,481,0,0
+1777169542444,473,Restaurant Search,200,OK,Lab2 Concurrency Group 1-132,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,473,0,1
+1777169542440,477,Restaurant Search,200,OK,Lab2 Concurrency Group 1-114,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,477,0,1
+1777169542444,477,Restaurant Search,200,OK,Lab2 Concurrency Group 1-138,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,477,0,0
+1777169542446,475,Restaurant Search,200,OK,Lab2 Concurrency Group 1-129,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,475,0,0
+1777169542443,478,Restaurant Search,200,OK,Lab2 Concurrency Group 1-115,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,478,0,1
+1777169542441,480,Restaurant Search,200,OK,Lab2 Concurrency Group 1-113,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,480,0,1
+1777169542434,487,Restaurant Search,200,OK,Lab2 Concurrency Group 1-110,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,487,0,1
+1777169542442,480,Restaurant Search,200,OK,Lab2 Concurrency Group 1-108,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,480,0,2
+1777169542424,498,Restaurant Search,200,OK,Lab2 Concurrency Group 1-105,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,498,0,1
+1777169542446,476,Restaurant Search,200,OK,Lab2 Concurrency Group 1-112,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,476,0,0
+1777169542422,500,Restaurant Search,200,OK,Lab2 Concurrency Group 1-102,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,500,0,3
+1777169542444,478,Restaurant Search,200,OK,Lab2 Concurrency Group 1-135,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,478,0,0
+1777169542446,476,Restaurant Search,200,OK,Lab2 Concurrency Group 1-133,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,476,0,0
+1777169542445,480,Restaurant Search,200,OK,Lab2 Concurrency Group 1-123,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,480,0,1
+1777169542446,482,Restaurant Search,200,OK,Lab2 Concurrency Group 1-136,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,482,0,0
+1777169542435,494,Restaurant Search,200,OK,Lab2 Concurrency Group 1-122,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,493,0,0
+1777169542444,485,Restaurant Search,200,OK,Lab2 Concurrency Group 1-141,text,true,,5305,426,268,268,http://localhost:8002/restaurants?page=1&per_page=10,485,0,2
+1777169542780,182,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-98,text,false,,188,514,268,268,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,182,0,0
+1777169542789,173,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-87,text,false,,188,514,268,268,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,173,0,0
+1777169542825,188,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-118,text,false,,188,515,266,266,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,188,0,1
+1777169542788,225,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-94,text,false,,188,514,266,266,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,225,0,1
+1777169542789,227,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-96,text,false,,188,514,264,264,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,227,0,0
+1777169542788,229,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-91,text,false,,188,514,264,264,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,229,0,1
+1777169542786,236,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-106,text,false,,188,515,262,262,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,236,0,1
+1777169542787,255,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-88,text,false,,188,514,261,261,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,255,0,0
+1777169542846,292,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-131,text,false,,188,515,261,261,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,292,0,2
+1777169542851,289,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-119,text,false,,188,515,260,260,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,289,0,1
+1777169542846,301,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-109,text,false,,188,515,259,259,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,301,0,1
+1777169542852,295,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-128,text,false,,188,515,259,259,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,295,0,1
+1777169542851,304,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-111,text,false,,188,515,257,257,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,304,0,1
+1777169542845,311,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-97,text,false,,188,514,257,257,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,311,0,2
+1777169542847,309,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-104,text,false,,188,515,257,257,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,309,0,1
+1777169542855,309,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-134,text,false,,188,515,254,254,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,309,0,1
+1777169542854,312,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-140,text,false,,188,515,254,254,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,312,0,0
+1777169542848,321,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-143,text,false,,188,515,252,252,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,321,0,1
+1777169542846,323,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-142,text,false,,188,515,251,251,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,323,0,3
+1777169542846,363,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-120,text,false,,188,515,250,250,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,363,0,2
+1777169542854,355,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-125,text,false,,188,515,250,250,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,355,0,0
+1777169542851,361,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-126,text,false,,188,515,248,248,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,361,0,1
+1777169542854,359,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-139,text,false,,188,515,247,247,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,359,0,1
+1777169542851,362,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-127,text,false,,188,515,247,247,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,362,0,1
+1777169542908,310,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-124,text,false,,188,515,245,245,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,310,0,1
+1777169542848,370,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-117,text,false,,188,515,245,245,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,370,0,1
+1777169542918,300,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-132,text,false,,188,515,245,245,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,300,0,0
+1777169542851,368,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-145,text,false,,188,515,242,242,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,368,0,1
+1777169542922,314,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-115,text,false,,188,515,241,241,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,314,0,2
+1777169542922,314,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-113,text,false,,188,515,241,241,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,314,0,2
+1777169542922,318,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-129,text,false,,188,515,239,239,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,318,0,2
+1777169542908,332,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-99,text,false,,188,514,239,239,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,332,0,1
+1777169542923,317,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-105,text,false,,188,515,239,239,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,317,0,1
+1777169542922,319,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-110,text,false,,188,515,238,238,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,319,0,2
+1777169542923,320,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-112,text,false,,188,515,235,235,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,320,0,1
+1777169542907,336,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-121,text,false,,188,515,235,235,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,336,0,2
+1777169542855,388,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-92,text,false,,188,514,235,235,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,388,0,54
+1777169542918,325,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-114,text,false,,188,515,235,235,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,325,0,0
+1777169542922,322,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-102,text,false,,188,515,232,232,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,322,0,1
+1777169542929,315,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-136,text,false,,188,515,232,232,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,315,0,1
+1777169542855,414,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-130,text,false,,188,515,229,229,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,414,0,54
+1777169542929,340,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-141,text,false,,188,515,229,229,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,340,0,1
+1777169542926,343,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-123,text,false,,188,515,229,229,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,343,0,1
+1777169542929,340,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-122,text,false,,188,515,229,229,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,340,0,1
+1777169542908,361,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-116,text,false,,188,515,229,229,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,361,0,1
+1777169542923,346,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-133,text,false,,188,515,228,228,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,346,0,1
+1777169542923,347,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-135,text,false,,188,515,226,226,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,347,0,1
+1777169542923,345,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-138,text,false,,188,515,224,224,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,345,0,1
+1777169542907,364,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-144,text,false,,188,515,221,221,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,364,0,2
+1777169542918,353,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-137,text,false,,188,515,221,221,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,353,0,0
+1777169542922,349,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-108,text,false,,188,515,219,219,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,349,0,2
+1777169489605,57046,User Login,200,OK,Lab2 Concurrency Group 1-149,text,true,,390,287,232,232,http://localhost:8001/auth/login,57046,0,1
+1777169490121,56530,User Login,200,OK,Lab2 Concurrency Group 1-151,text,true,,390,287,232,232,http://localhost:8001/auth/login,56530,0,1
+1777169491118,55534,User Login,200,OK,Lab2 Concurrency Group 1-155,text,true,,390,287,232,232,http://localhost:8001/auth/login,55534,0,1
+1777169490363,56288,User Login,200,OK,Lab2 Concurrency Group 1-152,text,true,,390,287,232,232,http://localhost:8001/auth/login,56288,0,1
+1777169489366,57284,User Login,200,OK,Lab2 Concurrency Group 1-148,text,true,,390,287,232,232,http://localhost:8001/auth/login,57284,0,3
+1777169489186,57466,User Login,200,OK,Lab2 Concurrency Group 1-147,text,true,,390,287,232,232,http://localhost:8001/auth/login,57466,0,7
+1777169489861,56789,User Login,200,OK,Lab2 Concurrency Group 1-150,text,true,,390,287,232,232,http://localhost:8001/auth/login,56789,0,1
+1777169488883,57769,User Login,200,OK,Lab2 Concurrency Group 1-146,text,true,,390,287,232,232,http://localhost:8001/auth/login,57769,0,0
+1777169492378,54275,User Login,200,OK,Lab2 Concurrency Group 1-160,text,true,,390,287,232,232,http://localhost:8001/auth/login,54275,0,1
+1777169491363,55290,User Login,200,OK,Lab2 Concurrency Group 1-156,text,true,,390,287,232,232,http://localhost:8001/auth/login,55290,0,0
+1777169491614,55040,User Login,200,OK,Lab2 Concurrency Group 1-157,text,true,,390,287,232,232,http://localhost:8001/auth/login,55040,0,2
+1777169490868,55787,User Login,200,OK,Lab2 Concurrency Group 1-154,text,true,,390,287,232,232,http://localhost:8001/auth/login,55787,0,1
+1777169490623,56032,User Login,200,OK,Lab2 Concurrency Group 1-153,text,true,,390,287,232,232,http://localhost:8001/auth/login,56032,0,2
+1777169491877,54778,User Login,200,OK,Lab2 Concurrency Group 1-158,text,true,,390,287,232,232,http://localhost:8001/auth/login,54778,0,2
+1777169492147,54508,User Login,200,OK,Lab2 Concurrency Group 1-159,text,true,,390,287,232,232,http://localhost:8001/auth/login,54508,0,2
+1777169546653,138,Restaurant Search,200,OK,Lab2 Concurrency Group 1-148,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,138,0,0
+1777169546653,149,Restaurant Search,200,OK,Lab2 Concurrency Group 1-150,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,149,0,0
+1777169546653,149,Restaurant Search,200,OK,Lab2 Concurrency Group 1-155,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,149,0,0
+1777169546653,149,Restaurant Search,200,OK,Lab2 Concurrency Group 1-149,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,149,0,0
+1777169546653,154,Restaurant Search,200,OK,Lab2 Concurrency Group 1-151,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,154,0,0
+1777169546656,152,Restaurant Search,200,OK,Lab2 Concurrency Group 1-158,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,152,0,1
+1777169546653,155,Restaurant Search,200,OK,Lab2 Concurrency Group 1-152,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,155,0,0
+1777169546655,153,Restaurant Search,200,OK,Lab2 Concurrency Group 1-154,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,153,0,1
+1777169546653,155,Restaurant Search,200,OK,Lab2 Concurrency Group 1-147,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,155,0,0
+1777169546655,154,Restaurant Search,200,OK,Lab2 Concurrency Group 1-156,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,154,0,0
+1777169546653,156,Restaurant Search,200,OK,Lab2 Concurrency Group 1-146,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,156,0,0
+1777169546655,154,Restaurant Search,200,OK,Lab2 Concurrency Group 1-160,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,154,0,0
+1777169546655,154,Restaurant Search,200,OK,Lab2 Concurrency Group 1-157,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,154,0,1
+1777169546657,152,Restaurant Search,200,OK,Lab2 Concurrency Group 1-153,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,152,0,0
+1777169546656,161,Restaurant Search,200,OK,Lab2 Concurrency Group 1-159,text,true,,5305,426,232,232,http://localhost:8002/restaurants?page=1&per_page=10,161,0,1
+1777169546802,136,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-155,text,false,,188,515,233,233,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,136,0,1
+1777169546809,129,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-156,text,false,,188,515,233,233,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,129,0,1
+1777169546809,132,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-152,text,false,,188,515,231,231,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,132,0,1
+1777169546808,133,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-151,text,false,,188,515,231,231,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,133,0,1
+1777169546809,132,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-147,text,false,,188,515,231,231,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,132,0,1
+1777169546793,150,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-148,text,false,,188,515,228,228,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,150,0,2
+1777169546803,140,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-149,text,false,,188,515,228,228,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,140,0,0
+1777169546811,132,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-153,text,false,,188,515,228,228,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,132,0,0
+1777169546810,133,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-154,text,false,,188,515,227,227,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,133,0,1
+1777169546809,137,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-158,text,false,,188,515,224,224,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,137,0,1
+1777169546809,143,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-160,text,false,,188,515,223,223,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,143,0,1
+1777169546810,142,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-146,text,false,,188,515,223,223,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,142,0,0
+1777169546803,149,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-150,text,false,,188,515,223,223,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,149,0,0
+1777169546818,134,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-159,text,false,,188,515,223,223,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,134,0,1
+1777169546810,142,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-157,text,false,,188,515,223,223,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,142,0,1
+1777169494898,80324,User Login,200,OK,Lab2 Concurrency Group 1-170,text,true,,390,287,240,240,http://localhost:8001/auth/login,80322,0,2
+1777169493622,81601,User Login,200,OK,Lab2 Concurrency Group 1-165,text,true,,390,287,240,240,http://localhost:8001/auth/login,81597,0,2
+1777169492899,82325,User Login,200,OK,Lab2 Concurrency Group 1-162,text,true,,390,287,240,240,http://localhost:8001/auth/login,82325,0,1
+1777169494377,80847,User Login,200,OK,Lab2 Concurrency Group 1-168,text,true,,390,287,240,240,http://localhost:8001/auth/login,80847,0,1
+1777169493379,81843,User Login,200,OK,Lab2 Concurrency Group 1-164,text,true,,390,287,240,240,http://localhost:8001/auth/login,81840,0,2
+1777169493144,82078,User Login,200,OK,Lab2 Concurrency Group 1-163,text,true,,390,287,240,240,http://localhost:8001/auth/login,82076,0,2
+1777169494681,80542,User Login,200,OK,Lab2 Concurrency Group 1-169,text,true,,390,287,240,240,http://localhost:8001/auth/login,80542,0,5
+1777169493911,81312,User Login,200,OK,Lab2 Concurrency Group 1-166,text,true,,390,287,240,240,http://localhost:8001/auth/login,81312,0,1
+1777169492616,82607,User Login,200,OK,Lab2 Concurrency Group 1-161,text,true,,390,287,240,240,http://localhost:8001/auth/login,82605,0,1
+1777169494231,80992,User Login,200,OK,Lab2 Concurrency Group 1-167,text,true,,390,287,240,240,http://localhost:8001/auth/login,80988,0,2
+1777169575243,112,Restaurant Search,200,OK,Lab2 Concurrency Group 1-169,text,true,,5305,426,240,240,http://localhost:8002/restaurants?page=1&per_page=10,112,0,2
+1777169575243,112,Restaurant Search,200,OK,Lab2 Concurrency Group 1-165,text,true,,5305,426,240,240,http://localhost:8002/restaurants?page=1&per_page=10,112,0,2
+1777169575243,112,Restaurant Search,200,OK,Lab2 Concurrency Group 1-164,text,true,,5305,426,240,240,http://localhost:8002/restaurants?page=1&per_page=10,112,0,2
+1777169575243,113,Restaurant Search,200,OK,Lab2 Concurrency Group 1-166,text,true,,5305,426,240,240,http://localhost:8002/restaurants?page=1&per_page=10,113,0,2
+1777169575243,115,Restaurant Search,200,OK,Lab2 Concurrency Group 1-163,text,true,,5305,426,240,240,http://localhost:8002/restaurants?page=1&per_page=10,114,0,2
+1777169575243,115,Restaurant Search,200,OK,Lab2 Concurrency Group 1-161,text,true,,5305,426,240,240,http://localhost:8002/restaurants?page=1&per_page=10,115,0,2
+1777169575243,117,Restaurant Search,200,OK,Lab2 Concurrency Group 1-170,text,true,,5305,426,240,240,http://localhost:8002/restaurants?page=1&per_page=10,117,0,2
+1777169575243,117,Restaurant Search,200,OK,Lab2 Concurrency Group 1-167,text,true,,5305,426,240,240,http://localhost:8002/restaurants?page=1&per_page=10,117,0,2
+1777169575243,117,Restaurant Search,200,OK,Lab2 Concurrency Group 1-168,text,true,,5305,426,240,240,http://localhost:8002/restaurants?page=1&per_page=10,117,0,2
+1777169575243,117,Restaurant Search,200,OK,Lab2 Concurrency Group 1-162,text,true,,5305,426,240,240,http://localhost:8002/restaurants?page=1&per_page=10,117,0,2
+1777169575361,89,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-162,text,false,,188,515,240,240,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,89,0,1
+1777169575357,95,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-165,text,false,,188,515,240,240,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,95,0,2
+1777169575358,96,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-163,text,false,,188,515,238,238,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,96,0,1
+1777169575361,97,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-167,text,false,,188,515,237,237,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,97,0,0
+1777169575357,101,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-164,text,false,,188,515,237,237,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,101,0,2
+1777169575359,100,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-161,text,false,,188,515,235,235,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,100,0,0
+1777169575361,98,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-170,text,false,,188,515,235,235,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,98,0,0
+1777169575357,104,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-169,text,false,,188,515,233,233,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,104,0,2
+1777169575357,109,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-166,text,false,,188,515,232,232,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,109,0,2
+1777169575361,105,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-168,text,false,,188,515,232,232,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,105,0,0
+1777169495155,114634,User Login,200,OK,Lab2 Concurrency Group 1-171,text,true,,390,287,230,230,http://localhost:8001/auth/login,114632,0,1
+1777169495627,114162,User Login,200,OK,Lab2 Concurrency Group 1-173,text,true,,390,287,230,230,http://localhost:8001/auth/login,114160,0,1
+1777169496112,113677,User Login,200,OK,Lab2 Concurrency Group 1-175,text,true,,390,287,230,230,http://localhost:8001/auth/login,113675,0,1
+1777169495854,113939,User Login,200,OK,Lab2 Concurrency Group 1-174,text,true,,390,287,230,230,http://localhost:8001/auth/login,113939,0,0
+1777169495400,114389,User Login,200,OK,Lab2 Concurrency Group 1-172,text,true,,390,287,230,230,http://localhost:8001/auth/login,114387,0,1
+1777169496377,113417,User Login,200,OK,Lab2 Concurrency Group 1-176,text,true,,390,287,230,230,http://localhost:8001/auth/login,113417,0,1
+1777169498108,111688,User Login,200,OK,Lab2 Concurrency Group 1-183,text,true,,390,287,230,230,http://localhost:8001/auth/login,111688,0,1
+1777169497622,112174,User Login,200,OK,Lab2 Concurrency Group 1-181,text,true,,390,287,230,230,http://localhost:8001/auth/login,112174,0,0
+1777169496637,113157,User Login,200,OK,Lab2 Concurrency Group 1-177,text,true,,390,287,230,230,http://localhost:8001/auth/login,113157,0,1
+1777169496887,112909,User Login,200,OK,Lab2 Concurrency Group 1-178,text,true,,390,287,230,230,http://localhost:8001/auth/login,112909,0,1
+1777169497179,112617,User Login,200,OK,Lab2 Concurrency Group 1-179,text,true,,390,287,230,230,http://localhost:8001/auth/login,112617,0,1
+1777169497402,112392,User Login,200,OK,Lab2 Concurrency Group 1-180,text,true,,390,287,230,230,http://localhost:8001/auth/login,112392,0,2
+1777169497887,111910,User Login,200,OK,Lab2 Concurrency Group 1-182,text,true,,390,287,230,230,http://localhost:8001/auth/login,111910,0,1
+1777169500634,109162,User Login,200,OK,Lab2 Concurrency Group 1-193,text,true,,390,287,230,230,http://localhost:8001/auth/login,109162,0,0
+1777169499119,110678,User Login,200,OK,Lab2 Concurrency Group 1-187,text,true,,390,287,230,230,http://localhost:8001/auth/login,110678,0,2
+1777169498616,111181,User Login,200,OK,Lab2 Concurrency Group 1-185,text,true,,390,287,230,230,http://localhost:8001/auth/login,111181,0,1
+1777169501119,108677,User Login,200,OK,Lab2 Concurrency Group 1-195,text,true,,390,287,230,230,http://localhost:8001/auth/login,108677,0,0
+1777169500875,108921,User Login,200,OK,Lab2 Concurrency Group 1-194,text,true,,390,287,230,230,http://localhost:8001/auth/login,108921,0,1
+1777169499887,109910,User Login,200,OK,Lab2 Concurrency Group 1-190,text,true,,390,287,230,230,http://localhost:8001/auth/login,109910,0,1
+1777169498387,111410,User Login,200,OK,Lab2 Concurrency Group 1-184,text,true,,390,287,230,230,http://localhost:8001/auth/login,111410,0,1
+1777169501876,107920,User Login,200,OK,Lab2 Concurrency Group 1-198,text,true,,390,287,230,230,http://localhost:8001/auth/login,107920,0,1
+1777169499375,110422,User Login,200,OK,Lab2 Concurrency Group 1-188,text,true,,390,287,230,230,http://localhost:8001/auth/login,110422,0,1
+1777169500403,109398,User Login,200,OK,Lab2 Concurrency Group 1-192,text,true,,390,287,230,230,http://localhost:8001/auth/login,109398,0,1
+1777169505112,104689,User Login,200,OK,Lab2 Concurrency Group 1-211,text,true,,390,287,230,230,http://localhost:8001/auth/login,104689,0,1
+1777169501385,108416,User Login,200,OK,Lab2 Concurrency Group 1-196,text,true,,390,287,230,230,http://localhost:8001/auth/login,108416,0,2
+1777169499637,110165,User Login,200,OK,Lab2 Concurrency Group 1-189,text,true,,390,287,230,230,http://localhost:8001/auth/login,110165,0,2
+1777169503113,106689,User Login,200,OK,Lab2 Concurrency Group 1-203,text,true,,390,287,230,230,http://localhost:8001/auth/login,106689,0,2
+1777169502877,106925,User Login,200,OK,Lab2 Concurrency Group 1-202,text,true,,390,287,230,230,http://localhost:8001/auth/login,106925,0,1
+1777169500287,109515,User Login,200,OK,Lab2 Concurrency Group 1-191,text,true,,390,287,230,230,http://localhost:8001/auth/login,109515,0,1
+1777169503871,105931,User Login,200,OK,Lab2 Concurrency Group 1-206,text,true,,390,287,230,230,http://localhost:8001/auth/login,105931,0,0
+1777169503619,106183,User Login,200,OK,Lab2 Concurrency Group 1-205,text,true,,390,287,230,230,http://localhost:8001/auth/login,106183,0,1
+1777169503364,106437,User Login,200,OK,Lab2 Concurrency Group 1-204,text,true,,390,287,230,230,http://localhost:8001/auth/login,106437,0,1
+1777169502124,107677,User Login,200,OK,Lab2 Concurrency Group 1-199,text,true,,390,287,230,230,http://localhost:8001/auth/login,107677,0,8
+1777169501622,108180,User Login,200,OK,Lab2 Concurrency Group 1-197,text,true,,390,287,230,230,http://localhost:8001/auth/login,108180,0,0
+1777169506368,103435,User Login,200,OK,Lab2 Concurrency Group 1-216,text,true,,390,287,230,230,http://localhost:8001/auth/login,103435,0,1
+1777169504872,104930,User Login,200,OK,Lab2 Concurrency Group 1-210,text,true,,390,287,230,230,http://localhost:8001/auth/login,104930,0,2
+1777169504116,105686,User Login,200,OK,Lab2 Concurrency Group 1-207,text,true,,390,287,230,230,http://localhost:8001/auth/login,105686,0,1
+1777169506864,102939,User Login,200,OK,Lab2 Concurrency Group 1-218,text,true,,390,287,230,230,http://localhost:8001/auth/login,102939,0,3
+1777169504618,105207,User Login,200,OK,Lab2 Concurrency Group 1-209,text,true,,390,287,230,230,http://localhost:8001/auth/login,105207,0,0
+1777169506134,103692,User Login,200,OK,Lab2 Concurrency Group 1-215,text,true,,390,287,230,230,http://localhost:8001/auth/login,103692,0,1
+1777169502614,107211,User Login,200,OK,Lab2 Concurrency Group 1-201,text,true,,390,287,230,230,http://localhost:8001/auth/login,107211,0,1
+1777169507857,101972,User Login,200,OK,Lab2 Concurrency Group 1-222,text,true,,390,287,230,230,http://localhost:8001/auth/login,101972,0,1
+1777169508104,101725,User Login,200,OK,Lab2 Concurrency Group 1-223,text,true,,390,287,230,230,http://localhost:8001/auth/login,101725,0,0
+1777169506625,103204,User Login,200,OK,Lab2 Concurrency Group 1-217,text,true,,390,287,230,230,http://localhost:8001/auth/login,103204,0,3
+1777169507112,102717,User Login,200,OK,Lab2 Concurrency Group 1-219,text,true,,390,287,230,230,http://localhost:8001/auth/login,102717,0,2
+1777169504368,105460,User Login,200,OK,Lab2 Concurrency Group 1-208,text,true,,390,287,230,230,http://localhost:8001/auth/login,105460,0,1
+1777169511380,98452,User Login,200,OK,Lab2 Concurrency Group 1-236,text,true,,390,287,230,230,http://localhost:8001/auth/login,98452,0,4
+1777169510110,99722,User Login,200,OK,Lab2 Concurrency Group 1-231,text,true,,390,287,230,230,http://localhost:8001/auth/login,99722,0,2
+1777169513122,96711,User Login,200,OK,Lab2 Concurrency Group 1-243,text,true,,390,287,230,230,http://localhost:8001/auth/login,96711,0,2
+1777169508613,101220,User Login,200,OK,Lab2 Concurrency Group 1-225,text,true,,390,287,230,230,http://localhost:8001/auth/login,101220,0,1
+1777169509622,100211,User Login,200,OK,Lab2 Concurrency Group 1-229,text,true,,390,287,230,230,http://localhost:8001/auth/login,100211,0,1
+1777169512616,97217,User Login,200,OK,Lab2 Concurrency Group 1-241,text,true,,390,287,230,230,http://localhost:8001/auth/login,97217,0,0
+1777169505355,104477,User Login,200,OK,Lab2 Concurrency Group 1-212,text,true,,390,287,230,230,http://localhost:8001/auth/login,104477,0,1
+1777169509112,100721,User Login,200,OK,Lab2 Concurrency Group 1-227,text,true,,390,287,230,230,http://localhost:8001/auth/login,100721,0,5
+1777169508366,101467,User Login,200,OK,Lab2 Concurrency Group 1-224,text,true,,390,287,230,230,http://localhost:8001/auth/login,101467,0,1
+1777169502358,107474,User Login,200,OK,Lab2 Concurrency Group 1-200,text,true,,390,287,230,230,http://localhost:8001/auth/login,107474,0,0
+1777169511113,98723,User Login,200,OK,Lab2 Concurrency Group 1-235,text,true,,390,287,230,230,http://localhost:8001/auth/login,98722,0,1
+1777169509861,99975,User Login,200,OK,Lab2 Concurrency Group 1-230,text,true,,390,287,230,230,http://localhost:8001/auth/login,99975,0,1
+1777169511619,98217,User Login,200,OK,Lab2 Concurrency Group 1-237,text,true,,390,287,230,230,http://localhost:8001/auth/login,98217,0,1
+1777169510612,99225,User Login,200,OK,Lab2 Concurrency Group 1-233,text,true,,390,287,230,230,http://localhost:8001/auth/login,99224,0,4
+1777169509376,100460,User Login,200,OK,Lab2 Concurrency Group 1-228,text,true,,390,287,230,230,http://localhost:8001/auth/login,100460,0,2
+1777169508876,100961,User Login,200,OK,Lab2 Concurrency Group 1-226,text,true,,390,287,230,230,http://localhost:8001/auth/login,100961,0,1
+1777169507364,102473,User Login,200,OK,Lab2 Concurrency Group 1-220,text,true,,390,287,230,230,http://localhost:8001/auth/login,102473,0,0
+1777169498869,110967,User Login,200,OK,Lab2 Concurrency Group 1-186,text,true,,390,287,230,230,http://localhost:8001/auth/login,110967,0,1
+1777169510362,99475,User Login,200,OK,Lab2 Concurrency Group 1-232,text,true,,390,287,230,230,http://localhost:8001/auth/login,99475,0,1
+1777169511866,97971,User Login,200,OK,Lab2 Concurrency Group 1-238,text,true,,390,287,230,230,http://localhost:8001/auth/login,97971,0,0
+1777169507620,102217,User Login,200,OK,Lab2 Concurrency Group 1-221,text,true,,390,287,230,230,http://localhost:8001/auth/login,102217,0,1
+1777169512859,96978,User Login,200,OK,Lab2 Concurrency Group 1-242,text,true,,390,287,230,230,http://localhost:8001/auth/login,96978,0,1
+1777169513619,96218,User Login,200,OK,Lab2 Concurrency Group 1-245,text,true,,390,287,230,230,http://localhost:8001/auth/login,96218,0,1
+1777169513857,95981,User Login,200,OK,Lab2 Concurrency Group 1-246,text,true,,390,287,230,230,http://localhost:8001/auth/login,95981,0,0
+1777169513359,96479,User Login,200,OK,Lab2 Concurrency Group 1-244,text,true,,390,287,230,230,http://localhost:8001/auth/login,96479,0,0
+1777169512117,97721,User Login,200,OK,Lab2 Concurrency Group 1-239,text,true,,390,287,230,230,http://localhost:8001/auth/login,97721,0,1
+1777169510858,98980,User Login,200,OK,Lab2 Concurrency Group 1-234,text,true,,390,287,230,230,http://localhost:8001/auth/login,98980,0,1
+1777169512370,97468,User Login,200,OK,Lab2 Concurrency Group 1-240,text,true,,390,287,230,230,http://localhost:8001/auth/login,97468,0,1
+1777169505869,103969,User Login,200,OK,Lab2 Concurrency Group 1-214,text,true,,390,287,230,230,http://localhost:8001/auth/login,103969,0,1
+1777169505627,104211,User Login,200,OK,Lab2 Concurrency Group 1-213,text,true,,390,287,230,230,http://localhost:8001/auth/login,104211,0,1
+1777169609812,246,Restaurant Search,200,OK,Lab2 Concurrency Group 1-176,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,246,0,3
+1777169609810,248,Restaurant Search,200,OK,Lab2 Concurrency Group 1-205,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,248,0,1
+1777169609811,253,Restaurant Search,200,OK,Lab2 Concurrency Group 1-189,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,253,0,0
+1777169609811,260,Restaurant Search,200,OK,Lab2 Concurrency Group 1-196,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,260,0,2
+1777169609815,258,Restaurant Search,200,OK,Lab2 Concurrency Group 1-199,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,258,0,1
+1777169609811,270,Restaurant Search,200,OK,Lab2 Concurrency Group 1-206,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,270,0,0
+1777169609810,272,Restaurant Search,200,OK,Lab2 Concurrency Group 1-198,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,272,0,1
+1777169609812,348,Restaurant Search,200,OK,Lab2 Concurrency Group 1-181,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,348,0,1
+1777169609811,350,Restaurant Search,200,OK,Lab2 Concurrency Group 1-191,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,350,0,0
+1777169609816,346,Restaurant Search,200,OK,Lab2 Concurrency Group 1-188,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,345,0,1
+1777169609811,351,Restaurant Search,200,OK,Lab2 Concurrency Group 1-203,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,350,0,2
+1777169609811,353,Restaurant Search,200,OK,Lab2 Concurrency Group 1-202,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,352,0,0
+1777169609807,361,Restaurant Search,200,OK,Lab2 Concurrency Group 1-216,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,361,0,14
+1777169609807,364,Restaurant Search,200,OK,Lab2 Concurrency Group 1-195,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,364,0,15
+1777169609816,356,Restaurant Search,200,OK,Lab2 Concurrency Group 1-177,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,356,0,1
+1777169609816,356,Restaurant Search,200,OK,Lab2 Concurrency Group 1-171,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,356,0,1
+1777169609807,365,Restaurant Search,200,OK,Lab2 Concurrency Group 1-180,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,365,0,14
+1777169609812,360,Restaurant Search,200,OK,Lab2 Concurrency Group 1-211,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,360,0,5
+1777169609810,362,Restaurant Search,200,OK,Lab2 Concurrency Group 1-204,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,362,0,1
+1777169609805,367,Restaurant Search,200,OK,Lab2 Concurrency Group 1-187,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,367,0,16
+1777169609807,393,Restaurant Search,200,OK,Lab2 Concurrency Group 1-173,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,393,0,15
+1777169609829,375,Restaurant Search,200,OK,Lab2 Concurrency Group 1-219,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,375,0,1
+1777169609829,377,Restaurant Search,200,OK,Lab2 Concurrency Group 1-223,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,377,0,0
+1777169609807,399,Restaurant Search,200,OK,Lab2 Concurrency Group 1-172,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,399,0,14
+1777169609833,373,Restaurant Search,200,OK,Lab2 Concurrency Group 1-241,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,373,0,0
+1777169609806,403,Restaurant Search,200,OK,Lab2 Concurrency Group 1-182,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,403,0,16
+1777169609807,402,Restaurant Search,200,OK,Lab2 Concurrency Group 1-207,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,400,0,14
+1777169609806,403,Restaurant Search,200,OK,Lab2 Concurrency Group 1-184,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,403,0,15
+1777169609805,411,Restaurant Search,200,OK,Lab2 Concurrency Group 1-197,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,410,0,16
+1777169609810,405,Restaurant Search,200,OK,Lab2 Concurrency Group 1-192,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,405,0,13
+1777169609833,382,Restaurant Search,200,OK,Lab2 Concurrency Group 1-212,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,382,0,1
+1777169609834,409,Restaurant Search,200,OK,Lab2 Concurrency Group 1-224,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,409,0,0
+1777169609829,421,Restaurant Search,200,OK,Lab2 Concurrency Group 1-217,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,421,0,0
+1777169609836,417,Restaurant Search,200,OK,Lab2 Concurrency Group 1-228,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,415,0,1
+1777169609833,420,Restaurant Search,200,OK,Lab2 Concurrency Group 1-243,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,418,0,1
+1777169609833,420,Restaurant Search,200,OK,Lab2 Concurrency Group 1-236,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,418,0,1
+1777169609836,417,Restaurant Search,200,OK,Lab2 Concurrency Group 1-220,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,414,0,0
+1777169609807,446,Restaurant Search,200,OK,Lab2 Concurrency Group 1-174,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,443,0,15
+1777169609806,447,Restaurant Search,200,OK,Lab2 Concurrency Group 1-183,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,444,0,16
+1777169609808,445,Restaurant Search,200,OK,Lab2 Concurrency Group 1-210,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,442,0,14
+1777169609807,446,Restaurant Search,200,OK,Lab2 Concurrency Group 1-218,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,444,0,14
+1777169609827,426,Restaurant Search,200,OK,Lab2 Concurrency Group 1-209,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,424,0,0
+1777169609806,447,Restaurant Search,200,OK,Lab2 Concurrency Group 1-194,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,444,0,15
+1777169609810,452,Restaurant Search,200,OK,Lab2 Concurrency Group 1-179,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,452,0,13
+1777169609836,427,Restaurant Search,200,OK,Lab2 Concurrency Group 1-186,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,427,0,1
+1777169609833,432,Restaurant Search,200,OK,Lab2 Concurrency Group 1-225,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,432,0,1
+1777169609805,460,Restaurant Search,200,OK,Lab2 Concurrency Group 1-190,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,460,0,17
+1777169609839,428,Restaurant Search,200,OK,Lab2 Concurrency Group 1-214,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,427,0,1
+1777169609830,435,Restaurant Search,200,OK,Lab2 Concurrency Group 1-208,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,432,0,1
+1777169609828,439,Restaurant Search,200,OK,Lab2 Concurrency Group 1-222,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,437,0,1
+1777169609827,440,Restaurant Search,200,OK,Lab2 Concurrency Group 1-215,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,438,0,0
+1777169609839,428,Restaurant Search,200,OK,Lab2 Concurrency Group 1-239,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,426,0,1
+1777169609809,458,Restaurant Search,200,OK,Lab2 Concurrency Group 1-175,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,456,0,14
+1777169609808,459,Restaurant Search,200,OK,Lab2 Concurrency Group 1-185,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,457,0,14
+1777169609836,431,Restaurant Search,200,OK,Lab2 Concurrency Group 1-237,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,429,0,0
+1777169609834,433,Restaurant Search,200,OK,Lab2 Concurrency Group 1-229,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,432,0,0
+1777169609835,432,Restaurant Search,200,OK,Lab2 Concurrency Group 1-230,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,430,0,0
+1777169609835,432,Restaurant Search,200,OK,Lab2 Concurrency Group 1-235,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,430,0,0
+1777169609826,441,Restaurant Search,200,OK,Lab2 Concurrency Group 1-201,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,439,0,1
+1777169609834,433,Restaurant Search,200,OK,Lab2 Concurrency Group 1-231,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,431,0,0
+1777169609836,435,Restaurant Search,200,OK,Lab2 Concurrency Group 1-233,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,432,0,0
+1777169609837,430,Restaurant Search,200,OK,Lab2 Concurrency Group 1-242,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,428,0,0
+1777169609839,432,Restaurant Search,200,OK,Lab2 Concurrency Group 1-244,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,430,0,0
+1777169609836,435,Restaurant Search,200,OK,Lab2 Concurrency Group 1-232,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,432,0,0
+1777169609836,438,Restaurant Search,200,OK,Lab2 Concurrency Group 1-226,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,436,0,0
+1777169609840,442,Restaurant Search,200,OK,Lab2 Concurrency Group 1-213,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,442,0,0
+1777169609808,477,Restaurant Search,200,OK,Lab2 Concurrency Group 1-178,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,475,0,14
+1777169609833,452,Restaurant Search,200,OK,Lab2 Concurrency Group 1-200,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,450,0,1
+1777169609834,451,Restaurant Search,200,OK,Lab2 Concurrency Group 1-227,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,449,0,0
+1777169609837,453,Restaurant Search,200,OK,Lab2 Concurrency Group 1-238,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,453,0,0
+1777169609808,487,Restaurant Search,200,OK,Lab2 Concurrency Group 1-193,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,487,0,14
+1777169609840,455,Restaurant Search,200,OK,Lab2 Concurrency Group 1-240,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,455,0,1
+1777169609837,458,Restaurant Search,200,OK,Lab2 Concurrency Group 1-245,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,458,0,2
+1777169609837,458,Restaurant Search,200,OK,Lab2 Concurrency Group 1-246,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,458,0,3
+1777169609837,458,Restaurant Search,200,OK,Lab2 Concurrency Group 1-221,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,458,0,0
+1777169609840,456,Restaurant Search,200,OK,Lab2 Concurrency Group 1-234,text,true,,5305,426,230,230,http://localhost:8002/restaurants?page=1&per_page=10,455,0,0
+1777169610065,316,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-189,text,false,,188,515,230,230,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,316,0,0
+1777169610071,315,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-196,text,false,,188,515,229,229,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,315,0,1
+1777169610066,321,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-176,text,false,,188,515,228,228,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,321,0,1
+1777169610075,313,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-199,text,false,,188,515,227,227,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,313,0,1
+1777169610082,459,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-206,text,false,,188,515,226,226,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,459,0,1
+1777169610082,460,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-198,text,false,,188,515,226,226,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,460,0,1
+1777169610059,485,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-205,text,false,,188,515,224,224,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,485,0,5
+1777169610165,459,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-203,text,false,,188,515,223,223,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,459,0,0
+1777169610169,477,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-216,text,false,,188,515,222,222,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,477,0,0
+1777169610162,501,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-181,text,false,,188,515,221,221,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,501,0,2
+1777169610173,511,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-177,text,false,,188,515,220,220,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,511,0,1
+1777169610173,511,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-187,text,false,,188,515,220,220,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,511,0,1
+1777169610254,430,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-236,text,false,,188,515,218,218,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,430,0,0
+1777169610165,519,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-202,text,false,,188,515,218,218,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,519,0,1
+1777169610209,476,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-207,text,false,,188,515,216,216,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,476,0,0
+1777169610201,489,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-173,text,false,,188,515,215,215,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,489,0,1
+1777169610276,417,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-222,text,false,,188,515,214,214,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,417,0,2
+1777169610165,529,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-191,text,false,,188,515,213,213,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,529,0,1
+1777169610172,538,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-195,text,false,,188,515,212,212,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,538,0,1
+1777169610208,502,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-241,text,false,,188,515,212,212,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,502,0,0
+1777169610205,507,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-219,text,false,,188,515,210,210,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,507,0,0
+1777169610218,494,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-197,text,false,,188,515,210,210,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,494,0,2
+1777169610254,458,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-174,text,false,,188,515,210,210,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,458,0,0
+1777169610173,539,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-180,text,false,,188,515,210,210,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,539,0,1
+1777169610255,457,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-218,text,false,,188,515,210,210,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,457,0,1
+1777169610292,420,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-238,text,false,,188,515,210,210,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,420,0,0
+1777169610274,438,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-242,text,false,,188,515,210,210,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,438,0,1
+1777169610253,459,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-243,text,false,,188,515,210,210,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,459,0,1
+1777169610245,467,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-224,text,false,,188,515,210,210,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,467,0,0
+1777169610275,437,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-208,text,false,,188,515,210,210,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,437,0,1
+1777169610273,439,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-230,text,false,,188,515,209,209,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,439,0,2
+1777169610210,502,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-184,text,false,,188,515,208,208,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,502,0,0
+1777169610264,449,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-179,text,false,,188,515,207,207,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,449,0,1
+1777169610209,504,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-182,text,false,,188,515,206,206,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,504,0,1
+1777169610276,437,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-237,text,false,,188,515,206,206,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,437,0,2
+1777169610278,443,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-232,text,false,,188,515,195,195,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,443,0,1
+1777169610297,425,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-240,text,false,,188,515,194,194,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,425,0,3
+1777169610256,466,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-228,text,false,,188,515,193,193,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,466,0,0
+1777169610173,550,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-171,text,false,,188,515,192,192,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,550,0,1
+1777169610172,551,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-204,text,false,,188,515,192,192,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,551,0,2
+1777169610174,549,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-211,text,false,,188,515,192,192,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,549,0,0
+1777169610258,469,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-209,text,false,,188,515,189,189,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,469,0,1
+1777169610286,441,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-200,text,false,,188,515,189,189,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,441,0,0
+1777169610278,449,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-175,text,false,,188,515,189,189,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,449,0,0
+1777169610254,474,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-183,text,false,,188,515,187,187,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,474,0,2
+1777169610279,449,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-233,text,false,,188,515,187,187,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,449,0,1
+1777169610279,450,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-225,text,false,,188,515,184,184,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,450,0,3
+1777169610280,449,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-231,text,false,,188,515,184,184,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,449,0,2
+1777169610254,475,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-220,text,false,,188,515,184,184,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,475,0,0
+1777169610270,459,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-190,text,false,,188,515,184,184,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,459,0,1
+1777169610257,472,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-194,text,false,,188,515,184,184,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,472,0,2
+1777169610164,565,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-188,text,false,,188,515,184,184,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,565,0,1
+1777169610278,455,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-185,text,false,,188,515,178,178,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,455,0,1
+1777169610254,479,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-217,text,false,,188,515,178,178,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,479,0,3
+1777169610273,460,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-215,text,false,,188,515,178,178,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,460,0,2
+1777169610296,437,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-245,text,false,,188,515,178,178,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,437,0,1
+1777169610218,515,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-192,text,false,,188,515,178,178,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,515,0,1
+1777169610274,459,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-235,text,false,,188,515,178,178,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,459,0,2
+1777169610219,516,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-212,text,false,,188,515,172,172,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,516,0,1
+1777169610273,462,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-214,text,false,,188,515,171,171,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,462,0,3
+1777169610286,449,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-227,text,false,,188,515,171,171,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,449,0,2
+1777169610264,471,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-186,text,false,,188,515,171,171,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,471,0,1
+1777169610208,528,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-223,text,false,,188,515,168,168,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,528,0,0
+1777169610297,439,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-246,text,false,,188,515,168,168,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,439,0,0
+1777169610279,463,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-244,text,false,,188,515,166,166,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,463,0,1
+1777169610279,465,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-201,text,false,,188,515,165,165,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,465,0,2
+1777169610275,469,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-226,text,false,,188,515,165,165,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,469,0,2
+1777169610276,468,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-229,text,false,,188,515,165,165,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,468,0,0
+1777169610285,459,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-213,text,false,,188,515,165,165,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,459,0,1
+1777169610297,447,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-221,text,false,,188,515,162,162,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,447,0,1
+1777169610286,459,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-178,text,false,,188,515,160,160,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,459,0,0
+1777169610279,466,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-239,text,false,,188,515,160,160,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,466,0,0
+1777169610296,449,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-193,text,false,,188,515,160,160,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,449,0,1
+1777169610207,538,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-172,text,false,,188,515,160,160,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,538,0,2
+1777169610297,448,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-234,text,false,,188,515,160,160,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,448,0,1
+1777169610259,491,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-210,text,false,,188,515,155,155,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,491,0,0
+1777169517624,101836,User Login,200,OK,Lab2 Concurrency Group 1-261,text,true,,390,287,154,154,http://localhost:8001/auth/login,101836,0,1
+1777169533360,86117,User Login,200,OK,Lab2 Concurrency Group 1-324,text,true,,390,287,154,154,http://localhost:8001/auth/login,86117,0,0
+1777169530607,88869,User Login,200,OK,Lab2 Concurrency Group 1-313,text,true,,390,287,154,154,http://localhost:8001/auth/login,88869,0,1
+1777169532858,86619,User Login,200,OK,Lab2 Concurrency Group 1-322,text,true,,390,287,154,154,http://localhost:8001/auth/login,86619,0,0
+1777169530859,88619,User Login,200,OK,Lab2 Concurrency Group 1-314,text,true,,390,287,154,154,http://localhost:8001/auth/login,88619,0,1
+1777169532605,86874,User Login,200,OK,Lab2 Concurrency Group 1-321,text,true,,390,287,154,154,http://localhost:8001/auth/login,86874,0,1
+1777169535144,84332,User Login,200,OK,Lab2 Concurrency Group 1-331,text,true,,390,287,154,154,http://localhost:8001/auth/login,84332,0,0
+1777169535368,84106,User Login,200,OK,Lab2 Concurrency Group 1-332,text,true,,390,287,154,154,http://localhost:8001/auth/login,84106,0,1
+1777169529649,89824,User Login,200,OK,Lab2 Concurrency Group 1-309,text,true,,390,287,154,154,http://localhost:8001/auth/login,89824,0,0
+1777169527356,92115,User Login,200,OK,Lab2 Concurrency Group 1-300,text,true,,390,287,154,154,http://localhost:8001/auth/login,92115,0,3
+1777169526363,93113,User Login,200,OK,Lab2 Concurrency Group 1-296,text,true,,390,287,154,154,http://localhost:8001/auth/login,93113,0,2
+1777169535030,84444,User Login,200,OK,Lab2 Concurrency Group 1-330,text,true,,390,287,154,154,http://localhost:8001/auth/login,84444,0,1
+1777169525860,93614,User Login,200,OK,Lab2 Concurrency Group 1-294,text,true,,390,287,154,154,http://localhost:8001/auth/login,93614,0,1
+1777169527111,92363,User Login,200,OK,Lab2 Concurrency Group 1-299,text,true,,390,287,154,154,http://localhost:8001/auth/login,92363,0,1
+1777169535897,83574,User Login,200,OK,Lab2 Concurrency Group 1-334,text,true,,390,287,154,154,http://localhost:8001/auth/login,83574,0,1
+1777169526110,93359,User Login,200,OK,Lab2 Concurrency Group 1-295,text,true,,390,287,154,154,http://localhost:8001/auth/login,93359,0,1
+1777169522112,97358,User Login,200,OK,Lab2 Concurrency Group 1-279,text,true,,390,287,154,154,http://localhost:8001/auth/login,97358,0,0
+1777169533905,85568,User Login,200,OK,Lab2 Concurrency Group 1-326,text,true,,390,287,154,154,http://localhost:8001/auth/login,85568,0,1
+1777169523615,95859,User Login,200,OK,Lab2 Concurrency Group 1-285,text,true,,390,287,154,154,http://localhost:8001/auth/login,95859,0,3
+1777169531105,88368,User Login,200,OK,Lab2 Concurrency Group 1-315,text,true,,390,287,154,154,http://localhost:8001/auth/login,88368,0,1
+1777169533108,86365,User Login,200,OK,Lab2 Concurrency Group 1-323,text,true,,390,287,154,154,http://localhost:8001/auth/login,86365,0,1
+1777169531357,88116,User Login,200,OK,Lab2 Concurrency Group 1-316,text,true,,390,287,154,154,http://localhost:8001/auth/login,88116,0,1
+1777169528616,90857,User Login,200,OK,Lab2 Concurrency Group 1-305,text,true,,390,287,154,154,http://localhost:8001/auth/login,90857,0,0
+1777169526609,92863,User Login,200,OK,Lab2 Concurrency Group 1-297,text,true,,390,287,154,154,http://localhost:8001/auth/login,92863,0,1
+1777169532110,87362,User Login,200,OK,Lab2 Concurrency Group 1-319,text,true,,390,287,154,154,http://localhost:8001/auth/login,87362,0,1
+1777169534164,85308,User Login,200,OK,Lab2 Concurrency Group 1-327,text,true,,390,287,154,154,http://localhost:8001/auth/login,85308,0,1
+1777169523863,95610,User Login,200,OK,Lab2 Concurrency Group 1-286,text,true,,390,287,154,154,http://localhost:8001/auth/login,95610,0,1
+1777169529382,90090,User Login,200,OK,Lab2 Concurrency Group 1-308,text,true,,390,287,154,154,http://localhost:8001/auth/login,90090,0,0
+1777169524633,94840,User Login,200,OK,Lab2 Concurrency Group 1-289,text,true,,390,287,154,154,http://localhost:8001/auth/login,94840,0,1
+1777169527858,91614,User Login,200,OK,Lab2 Concurrency Group 1-302,text,true,,390,287,154,154,http://localhost:8001/auth/login,91614,0,0
+1777169525617,93856,User Login,200,OK,Lab2 Concurrency Group 1-293,text,true,,390,287,154,154,http://localhost:8001/auth/login,93856,0,1
+1777169525122,94351,User Login,200,OK,Lab2 Concurrency Group 1-291,text,true,,390,287,154,154,http://localhost:8001/auth/login,94351,0,1
+1777169528864,90608,User Login,200,OK,Lab2 Concurrency Group 1-306,text,true,,390,287,154,154,http://localhost:8001/auth/login,90608,0,1
+1777169522612,96861,User Login,200,OK,Lab2 Concurrency Group 1-281,text,true,,390,287,154,154,http://localhost:8001/auth/login,96861,0,5
+1777169536105,83368,User Login,200,OK,Lab2 Concurrency Group 1-335,text,true,,390,287,154,154,http://localhost:8001/auth/login,83368,0,0
+1777169530205,89267,User Login,200,OK,Lab2 Concurrency Group 1-311,text,true,,390,287,154,154,http://localhost:8001/auth/login,89267,0,0
+1777169519868,99601,User Login,200,OK,Lab2 Concurrency Group 1-270,text,true,,390,287,154,154,http://localhost:8001/auth/login,99595,0,1
+1777169529880,89591,User Login,200,OK,Lab2 Concurrency Group 1-310,text,true,,390,287,154,154,http://localhost:8001/auth/login,89591,0,1
+1777169528111,91360,User Login,200,OK,Lab2 Concurrency Group 1-303,text,true,,390,287,154,154,http://localhost:8001/auth/login,91360,0,1
+1777169526856,92613,User Login,200,OK,Lab2 Concurrency Group 1-298,text,true,,390,287,154,154,http://localhost:8001/auth/login,92613,0,1
+1777169524379,95091,User Login,200,OK,Lab2 Concurrency Group 1-288,text,true,,390,287,154,154,http://localhost:8001/auth/login,95091,0,1
+1777169522870,96600,User Login,200,OK,Lab2 Concurrency Group 1-282,text,true,,390,287,154,154,http://localhost:8001/auth/login,96600,0,1
+1777169518619,100851,User Login,200,OK,Lab2 Concurrency Group 1-265,text,true,,390,287,154,154,http://localhost:8001/auth/login,100851,0,1
+1777169514110,105346,User Login,200,OK,Lab2 Concurrency Group 1-247,text,true,,390,287,154,154,http://localhost:8001/auth/login,105346,0,1
+1777169516612,102850,User Login,200,OK,Lab2 Concurrency Group 1-257,text,true,,390,287,154,154,http://localhost:8001/auth/login,102848,0,1
+1777169515113,104345,User Login,200,OK,Lab2 Concurrency Group 1-251,text,true,,390,287,154,154,http://localhost:8001/auth/login,104345,0,1
+1777169514609,104847,User Login,200,OK,Lab2 Concurrency Group 1-249,text,true,,390,287,154,154,http://localhost:8001/auth/login,104847,0,1
+1777169519359,100107,User Login,200,OK,Lab2 Concurrency Group 1-268,text,true,,390,287,154,154,http://localhost:8001/auth/login,100107,0,2
+1777169514358,105100,User Login,200,OK,Lab2 Concurrency Group 1-248,text,true,,390,287,154,154,http://localhost:8001/auth/login,105100,0,2
+1777169520371,99088,User Login,200,OK,Lab2 Concurrency Group 1-272,text,true,,390,287,154,154,http://localhost:8001/auth/login,99088,0,1
+1777169514872,104584,User Login,200,OK,Lab2 Concurrency Group 1-250,text,true,,390,287,154,154,http://localhost:8001/auth/login,104584,0,1
+1777169516363,103096,User Login,200,OK,Lab2 Concurrency Group 1-256,text,true,,390,287,154,154,http://localhost:8001/auth/login,103096,0,0
+1777169517871,101598,User Login,200,OK,Lab2 Concurrency Group 1-262,text,true,,390,287,154,154,http://localhost:8001/auth/login,101598,0,1
+1777169519111,100358,User Login,200,OK,Lab2 Concurrency Group 1-267,text,true,,390,287,154,154,http://localhost:8001/auth/login,100358,0,0
+1777169517357,102111,User Login,200,OK,Lab2 Concurrency Group 1-260,text,true,,390,287,154,154,http://localhost:8001/auth/login,102111,0,1
+1777169520863,98599,User Login,200,OK,Lab2 Concurrency Group 1-274,text,true,,390,287,154,154,http://localhost:8001/auth/login,98599,0,1
+1777169520123,99336,User Login,200,OK,Lab2 Concurrency Group 1-271,text,true,,390,287,154,154,http://localhost:8001/auth/login,99336,0,1
+1777169518132,101331,User Login,200,OK,Lab2 Concurrency Group 1-263,text,true,,390,287,154,154,http://localhost:8001/auth/login,101331,0,1
+1777169519617,99845,User Login,200,OK,Lab2 Concurrency Group 1-269,text,true,,390,287,154,154,http://localhost:8001/auth/login,99845,0,1
+1777169517110,102349,User Login,200,OK,Lab2 Concurrency Group 1-259,text,true,,390,287,154,154,http://localhost:8001/auth/login,102349,0,1
+1777169516859,102599,User Login,200,OK,Lab2 Concurrency Group 1-258,text,true,,390,287,154,154,http://localhost:8001/auth/login,102599,0,0
+1777169515856,103601,User Login,200,OK,Lab2 Concurrency Group 1-254,text,true,,390,287,154,154,http://localhost:8001/auth/login,103601,0,1
+1777169516110,103352,User Login,200,OK,Lab2 Concurrency Group 1-255,text,true,,390,287,154,154,http://localhost:8001/auth/login,103352,0,2
+1777169518372,101087,User Login,200,OK,Lab2 Concurrency Group 1-264,text,true,,390,287,154,154,http://localhost:8001/auth/login,101087,0,1
+1777169521869,97589,User Login,200,OK,Lab2 Concurrency Group 1-278,text,true,,390,287,154,154,http://localhost:8001/auth/login,97589,0,1
+1777169515356,104103,User Login,200,OK,Lab2 Concurrency Group 1-252,text,true,,390,287,154,154,http://localhost:8001/auth/login,104103,0,3
+1777169522358,97105,User Login,200,OK,Lab2 Concurrency Group 1-280,text,true,,390,287,154,154,http://localhost:8001/auth/login,97105,0,1
+1777169515607,103850,User Login,200,OK,Lab2 Concurrency Group 1-253,text,true,,390,287,154,154,http://localhost:8001/auth/login,103850,0,1
+1777169521633,97830,User Login,200,OK,Lab2 Concurrency Group 1-277,text,true,,390,287,154,154,http://localhost:8001/auth/login,97830,0,1
+1777169520617,98843,User Login,200,OK,Lab2 Concurrency Group 1-273,text,true,,390,287,154,154,http://localhost:8001/auth/login,98843,0,1
+1777169521122,98341,User Login,200,OK,Lab2 Concurrency Group 1-275,text,true,,390,287,154,154,http://localhost:8001/auth/login,98341,0,1
+1777169518878,100584,User Login,200,OK,Lab2 Concurrency Group 1-266,text,true,,390,287,154,154,http://localhost:8001/auth/login,100584,0,1
+1777169521360,98100,User Login,200,OK,Lab2 Concurrency Group 1-276,text,true,,390,287,154,154,http://localhost:8001/auth/login,98100,0,1
+1777169535615,83866,User Login,200,OK,Lab2 Concurrency Group 1-333,text,true,,390,287,154,154,http://localhost:8001/auth/login,83865,0,2
+1777169531610,87871,User Login,200,OK,Lab2 Concurrency Group 1-317,text,true,,390,287,154,154,http://localhost:8001/auth/login,87871,0,1
+1777169534419,85062,User Login,200,OK,Lab2 Concurrency Group 1-328,text,true,,390,287,154,154,http://localhost:8001/auth/login,85062,0,1
+1777169527605,91876,User Login,200,OK,Lab2 Concurrency Group 1-301,text,true,,390,287,154,154,http://localhost:8001/auth/login,91876,0,1
+1777169530421,89060,User Login,200,OK,Lab2 Concurrency Group 1-312,text,true,,390,287,154,154,http://localhost:8001/auth/login,89060,0,1
+1777169533612,85869,User Login,200,OK,Lab2 Concurrency Group 1-325,text,true,,390,287,154,154,http://localhost:8001/auth/login,85864,0,1
+1777169524107,95368,User Login,200,OK,Lab2 Concurrency Group 1-287,text,true,,390,287,154,154,http://localhost:8001/auth/login,95366,0,0
+1777169536380,83102,User Login,200,OK,Lab2 Concurrency Group 1-336,text,true,,390,287,154,154,http://localhost:8001/auth/login,83102,0,0
+1777169532355,87119,User Login,200,OK,Lab2 Concurrency Group 1-320,text,true,,390,287,154,154,http://localhost:8001/auth/login,87118,0,1
+1777169523372,96105,User Login,200,OK,Lab2 Concurrency Group 1-284,text,true,,390,287,154,154,http://localhost:8001/auth/login,96105,0,7
+1777169528367,91109,User Login,200,OK,Lab2 Concurrency Group 1-304,text,true,,390,287,154,154,http://localhost:8001/auth/login,91109,0,1
+1777169525379,94098,User Login,200,OK,Lab2 Concurrency Group 1-292,text,true,,390,287,154,154,http://localhost:8001/auth/login,94098,0,1
+1777169534702,84778,User Login,200,OK,Lab2 Concurrency Group 1-329,text,true,,390,287,154,154,http://localhost:8001/auth/login,84778,0,1
+1777169531860,87620,User Login,200,OK,Lab2 Concurrency Group 1-318,text,true,,390,287,154,154,http://localhost:8001/auth/login,87620,0,1
+1777169524870,94611,User Login,200,OK,Lab2 Concurrency Group 1-290,text,true,,390,287,154,154,http://localhost:8001/auth/login,94611,0,1
+1777169523129,96346,User Login,200,OK,Lab2 Concurrency Group 1-283,text,true,,390,287,154,154,http://localhost:8001/auth/login,96346,0,1
+1777169529121,90356,User Login,200,OK,Lab2 Concurrency Group 1-307,text,true,,390,287,154,154,http://localhost:8001/auth/login,90356,0,1
+1777169619490,382,Restaurant Search,200,OK,Lab2 Concurrency Group 1-311,text,true,,5305,426,154,154,http://localhost:8002/restaurants?page=1&per_page=10,382,0,1
+1777169619503,370,Restaurant Search,200,OK,Lab2 Concurrency Group 1-253,text,true,,5305,426,154,154,http://localhost:8002/restaurants?page=1&per_page=10,370,0,0
+1777169619873,32,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-253,text,false,,188,515,154,154,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,32,0,1
+1777169619503,420,Restaurant Search,200,OK,Lab2 Concurrency Group 1-273,text,true,,5305,426,153,153,http://localhost:8002/restaurants?page=1&per_page=10,420,0,0
+1777169619502,426,Restaurant Search,200,OK,Lab2 Concurrency Group 1-325,text,true,,5305,426,153,153,http://localhost:8002/restaurants?page=1&per_page=10,426,0,0
+1777169619494,434,Restaurant Search,200,OK,Lab2 Concurrency Group 1-316,text,true,,5305,426,153,153,http://localhost:8002/restaurants?page=1&per_page=10,434,0,1
+1777169619873,55,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-311,text,true,,420,515,153,153,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,55,0,1
+1777169619924,37,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-273,text,false,,188,515,152,152,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,37,0,0
+1777169619502,459,Restaurant Search,200,OK,Lab2 Concurrency Group 1-295,text,true,,5305,426,152,152,http://localhost:8002/restaurants?page=1&per_page=10,459,0,0
+1777169619489,472,Restaurant Search,200,OK,Lab2 Concurrency Group 1-301,text,true,,5305,426,152,152,http://localhost:8002/restaurants?page=1&per_page=10,472,0,4
+1777169619496,466,Restaurant Search,200,OK,Lab2 Concurrency Group 1-294,text,true,,5305,426,152,152,http://localhost:8002/restaurants?page=1&per_page=10,466,0,0
+1777169619489,472,Restaurant Search,200,OK,Lab2 Concurrency Group 1-250,text,true,,5305,426,152,152,http://localhost:8002/restaurants?page=1&per_page=10,472,0,5
+1777169619489,473,Restaurant Search,200,OK,Lab2 Concurrency Group 1-320,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,473,0,2
+1777169619493,469,Restaurant Search,200,OK,Lab2 Concurrency Group 1-288,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,469,0,0
+1777169619489,473,Restaurant Search,200,OK,Lab2 Concurrency Group 1-264,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,473,0,2
+1777169619495,467,Restaurant Search,200,OK,Lab2 Concurrency Group 1-324,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,467,0,1
+1777169619492,471,Restaurant Search,200,OK,Lab2 Concurrency Group 1-249,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,470,0,1
+1777169619494,469,Restaurant Search,200,OK,Lab2 Concurrency Group 1-279,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,469,0,0
+1777169619490,475,Restaurant Search,200,OK,Lab2 Concurrency Group 1-270,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,475,0,1
+1777169619500,478,Restaurant Search,200,OK,Lab2 Concurrency Group 1-255,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,478,0,1
+1777169619491,488,Restaurant Search,200,OK,Lab2 Concurrency Group 1-277,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,488,0,0
+1777169619496,483,Restaurant Search,200,OK,Lab2 Concurrency Group 1-300,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,483,0,0
+1777169619494,485,Restaurant Search,200,OK,Lab2 Concurrency Group 1-323,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,485,0,1
+1777169619490,489,Restaurant Search,200,OK,Lab2 Concurrency Group 1-276,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,489,0,1
+1777169619489,490,Restaurant Search,200,OK,Lab2 Concurrency Group 1-267,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,490,0,2
+1777169619494,485,Restaurant Search,200,OK,Lab2 Concurrency Group 1-332,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,485,0,0
+1777169619496,482,Restaurant Search,200,OK,Lab2 Concurrency Group 1-310,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,482,0,1
+1777169619494,485,Restaurant Search,200,OK,Lab2 Concurrency Group 1-304,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,485,0,0
+1777169619503,481,Restaurant Search,200,OK,Lab2 Concurrency Group 1-280,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,479,0,0
+1777169619495,489,Restaurant Search,200,OK,Lab2 Concurrency Group 1-296,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,487,0,0
+1777169619501,483,Restaurant Search,200,OK,Lab2 Concurrency Group 1-284,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,481,0,0
+1777169619503,481,Restaurant Search,200,OK,Lab2 Concurrency Group 1-303,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,479,0,0
+1777169619497,488,Restaurant Search,200,OK,Lab2 Concurrency Group 1-319,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,485,0,0
+1777169619495,490,Restaurant Search,200,OK,Lab2 Concurrency Group 1-285,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,487,0,0
+1777169619491,494,Restaurant Search,200,OK,Lab2 Concurrency Group 1-261,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,491,0,2
+1777169619489,496,Restaurant Search,200,OK,Lab2 Concurrency Group 1-272,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,493,0,4
+1777169619502,483,Restaurant Search,200,OK,Lab2 Concurrency Group 1-292,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,480,0,0
+1777169619490,495,Restaurant Search,200,OK,Lab2 Concurrency Group 1-278,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,492,0,1
+1777169619501,486,Restaurant Search,200,OK,Lab2 Concurrency Group 1-317,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,486,0,0
+1777169619493,492,Restaurant Search,200,OK,Lab2 Concurrency Group 1-269,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,489,0,0
+1777169619501,487,Restaurant Search,200,OK,Lab2 Concurrency Group 1-266,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,487,0,1
+1777169619500,488,Restaurant Search,200,OK,Lab2 Concurrency Group 1-256,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,488,0,1
+1777169619501,487,Restaurant Search,200,OK,Lab2 Concurrency Group 1-306,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,487,0,1
+1777169619503,486,Restaurant Search,200,OK,Lab2 Concurrency Group 1-268,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,486,0,0
+1777169619503,499,Restaurant Search,200,OK,Lab2 Concurrency Group 1-271,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,499,0,0
+1777169619490,512,Restaurant Search,200,OK,Lab2 Concurrency Group 1-260,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,512,0,1
+1777169619489,514,Restaurant Search,200,OK,Lab2 Concurrency Group 1-275,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,514,0,2
+1777169619494,508,Restaurant Search,200,OK,Lab2 Concurrency Group 1-258,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,508,0,0
+1777169619491,512,Restaurant Search,200,OK,Lab2 Concurrency Group 1-318,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,512,0,0
+1777169619501,502,Restaurant Search,200,OK,Lab2 Concurrency Group 1-259,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,502,0,0
+1777169619496,507,Restaurant Search,200,OK,Lab2 Concurrency Group 1-330,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,507,0,0
+1777169619501,506,Restaurant Search,200,OK,Lab2 Concurrency Group 1-286,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,506,0,1
+1777169619502,505,Restaurant Search,200,OK,Lab2 Concurrency Group 1-336,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,505,0,0
+1777169619495,512,Restaurant Search,200,OK,Lab2 Concurrency Group 1-322,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,512,0,1
+1777169619494,513,Restaurant Search,200,OK,Lab2 Concurrency Group 1-302,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,513,0,1
+1777169619495,512,Restaurant Search,200,OK,Lab2 Concurrency Group 1-289,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,511,0,0
+1777169619502,505,Restaurant Search,200,OK,Lab2 Concurrency Group 1-298,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,505,0,0
+1777169619503,508,Restaurant Search,200,OK,Lab2 Concurrency Group 1-248,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,508,0,0
+1777169619494,518,Restaurant Search,200,OK,Lab2 Concurrency Group 1-308,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,518,0,0
+1777169619502,518,Restaurant Search,200,OK,Lab2 Concurrency Group 1-287,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,518,0,0
+1777169619495,526,Restaurant Search,200,OK,Lab2 Concurrency Group 1-309,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,526,0,1
+1777169619497,553,Restaurant Search,200,OK,Lab2 Concurrency Group 1-299,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,553,0,0
+1777169619495,555,Restaurant Search,200,OK,Lab2 Concurrency Group 1-297,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,555,0,0
+1777169619496,554,Restaurant Search,200,OK,Lab2 Concurrency Group 1-293,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,554,0,1
+1777169619497,553,Restaurant Search,200,OK,Lab2 Concurrency Group 1-315,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,553,0,0
+1777169619502,548,Restaurant Search,200,OK,Lab2 Concurrency Group 1-312,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,548,0,0
+1777169619501,549,Restaurant Search,200,OK,Lab2 Concurrency Group 1-335,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,549,0,0
+1777169619496,554,Restaurant Search,200,OK,Lab2 Concurrency Group 1-313,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,554,0,0
+1777169619503,547,Restaurant Search,200,OK,Lab2 Concurrency Group 1-263,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,547,0,0
+1777169619495,556,Restaurant Search,200,OK,Lab2 Concurrency Group 1-314,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,556,0,1
+1777169619490,561,Restaurant Search,200,OK,Lab2 Concurrency Group 1-329,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,561,0,1
+1777169619503,548,Restaurant Search,200,OK,Lab2 Concurrency Group 1-247,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,548,0,0
+1777169619495,556,Restaurant Search,200,OK,Lab2 Concurrency Group 1-307,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,556,0,0
+1777169619502,549,Restaurant Search,200,OK,Lab2 Concurrency Group 1-290,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,549,0,1
+1777169619503,548,Restaurant Search,200,OK,Lab2 Concurrency Group 1-305,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,548,0,0
+1777169619503,548,Restaurant Search,200,OK,Lab2 Concurrency Group 1-291,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,548,0,0
+1777169619502,549,Restaurant Search,200,OK,Lab2 Concurrency Group 1-257,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,549,0,0
+1777169619502,549,Restaurant Search,200,OK,Lab2 Concurrency Group 1-333,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,549,0,0
+1777169619489,561,Restaurant Search,200,OK,Lab2 Concurrency Group 1-251,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,561,0,4
+1777169619502,549,Restaurant Search,200,OK,Lab2 Concurrency Group 1-282,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,549,0,1
+1777169619497,554,Restaurant Search,200,OK,Lab2 Concurrency Group 1-254,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,554,0,0
+1777169619496,555,Restaurant Search,200,OK,Lab2 Concurrency Group 1-326,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,555,0,0
+1777169619496,555,Restaurant Search,200,OK,Lab2 Concurrency Group 1-321,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,555,0,0
+1777169619495,556,Restaurant Search,200,OK,Lab2 Concurrency Group 1-283,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,556,0,0
+1777169619489,562,Restaurant Search,200,OK,Lab2 Concurrency Group 1-252,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,562,0,2
+1777169619497,555,Restaurant Search,200,OK,Lab2 Concurrency Group 1-334,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,554,0,0
+1777169619497,555,Restaurant Search,200,OK,Lab2 Concurrency Group 1-265,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,554,0,0
+1777169619503,549,Restaurant Search,200,OK,Lab2 Concurrency Group 1-262,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,548,0,0
+1777169619494,558,Restaurant Search,200,OK,Lab2 Concurrency Group 1-327,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,557,0,1
+1777169619497,555,Restaurant Search,200,OK,Lab2 Concurrency Group 1-274,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,554,0,0
+1777169619496,556,Restaurant Search,200,OK,Lab2 Concurrency Group 1-281,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,555,0,0
+1777169619495,558,Restaurant Search,200,OK,Lab2 Concurrency Group 1-331,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,556,0,1
+1777169619493,560,Restaurant Search,200,OK,Lab2 Concurrency Group 1-328,text,true,,5305,426,151,151,http://localhost:8002/restaurants?page=1&per_page=10,558,0,0
+1777169619929,224,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-325,text,true,,420,515,151,151,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,224,0,0
+1777169619963,190,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-249,text,false,,188,515,151,151,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,190,0,0
+1777169619962,191,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-295,text,false,,188,515,151,151,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,191,0,0
+1777169619967,186,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-270,text,false,,188,515,151,151,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,186,0,0
+1777169619963,190,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-279,text,false,,188,515,151,151,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,190,0,1
+1777169619963,190,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-264,text,false,,188,515,151,151,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,190,0,0
+1777169619962,199,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-250,text,false,,188,515,145,145,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,199,0,1
+1777169619962,199,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-288,text,false,,188,515,145,145,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,199,0,1
+1777169619962,257,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-294,text,false,,188,515,143,143,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,257,0,1
+1777169619929,295,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-316,text,true,,420,515,142,142,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,295,0,0
+1777169619963,324,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-324,text,true,,420,515,141,141,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,324,0,0
+1777169619963,324,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-320,text,true,,420,515,141,141,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,324,0,0
+1777169619980,351,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-267,text,false,,188,515,139,139,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,351,0,0
+1777169619979,352,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-276,text,false,,188,515,139,139,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,352,0,1
+1777169619987,349,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-272,text,false,,188,515,137,137,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,349,0,0
+1777169619988,356,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-256,text,false,,188,515,136,136,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,356,0,1
+1777169619986,360,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-296,text,false,,188,515,135,135,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,360,0,0
+1777169620007,339,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-286,text,false,,188,515,134,134,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,339,0,1
+1777169619988,364,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-266,text,false,,188,515,133,133,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,364,0,1
+1777169619987,366,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-278,text,false,,188,515,133,133,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,366,0,0
+1777169619980,374,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-277,text,false,,188,515,132,132,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,373,0,0
+1777169620052,302,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-281,text,false,,188,515,130,130,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,302,0,1
+1777169619979,375,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-255,text,false,,188,515,129,129,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,375,0,1
+1777169619987,368,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-269,text,false,,188,515,128,128,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,368,0,0
+1777169620003,354,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-260,text,false,,188,515,127,127,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,354,0,1
+1777169619987,371,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-285,text,false,,188,515,127,127,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,371,0,0
+1777169619989,369,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-268,text,false,,188,515,125,125,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,369,0,0
+1777169619987,371,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-292,text,false,,188,515,125,125,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,371,0,0
+1777169619979,398,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-300,text,false,,188,515,123,123,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,398,0,1
+1777169620012,365,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-248,text,false,,188,515,123,123,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,365,0,0
+1777169619985,395,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-284,text,false,,188,515,121,121,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,395,0,1
+1777169619962,418,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-301,text,true,,420,515,121,121,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,418,0,1
+1777169620055,325,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-274,text,false,,188,515,121,121,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,325,0,0
+1777169620008,375,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-298,text,false,,188,515,118,118,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,375,0,0
+1777169619985,398,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-280,text,false,,188,515,118,118,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,398,0,1
+1777169620008,375,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-289,text,false,,188,515,118,118,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,375,0,0
+1777169620003,380,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-275,text,false,,188,515,118,118,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,380,0,0
+1777169620053,332,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-265,text,false,,188,515,114,114,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,332,0,2
+1777169620003,385,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-258,text,false,,188,515,113,113,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,385,0,0
+1777169620051,337,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-247,text,false,,188,515,113,113,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,337,0,0
+1777169620052,336,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-257,text,false,,188,515,113,113,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,336,0,1
+1777169620051,338,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-251,text,false,,188,515,113,113,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,338,0,0
+1777169619987,403,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-261,text,false,,188,515,109,109,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,403,0,0
+1777169620055,335,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-262,text,false,,188,515,109,109,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,335,0,0
+1777169620051,340,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-282,text,false,,188,515,108,108,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,340,0,1
+1777169620004,387,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-259,text,false,,188,515,106,106,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,387,0,0
+1777169620003,387,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-271,text,false,,188,515,109,109,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,387,0,0
+1777169620050,341,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-299,text,false,,188,515,104,104,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,341,0,1
+1777169620051,339,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-263,text,false,,188,515,109,109,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,339,0,0
+1777169620051,339,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-283,text,false,,188,515,109,109,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,339,0,1
+1777169620052,360,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-252,text,false,,188,515,101,101,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,360,0,0
+1777169620051,362,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-293,text,false,,188,515,101,101,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,362,0,0
+1777169620052,361,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-291,text,false,,188,515,101,101,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,361,0,1
+1777169620051,362,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-254,text,false,,188,515,101,101,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,362,0,1
+1777169620051,363,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-287,text,false,,188,515,97,97,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,363,0,0
+1777169620051,363,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-290,text,false,,188,515,97,97,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,363,0,1
+1777169620050,364,Create Review (Kafka Flow),400,Bad Request,Lab2 Concurrency Group 1-297,text,false,,188,515,97,97,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,364,0,1
+1777169620003,439,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-318,text,true,,420,515,94,94,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,439,0,0
+1777169619985,459,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-303,text,true,,420,515,93,93,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,459,0,1
+1777169620050,408,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-312,text,true,,420,515,92,92,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,408,0,1
+1777169620013,445,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-308,text,true,,420,515,92,92,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,445,0,0
+1777169619980,478,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-310,text,true,,420,515,92,92,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,478,0,0
+1777169620050,408,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-335,text,true,,420,515,92,92,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,408,0,1
+1777169620007,451,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-302,text,true,,420,515,92,92,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,451,0,1
+1777169620050,408,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-315,text,true,,420,515,92,92,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,408,0,1
+1777169620051,407,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-313,text,true,,420,515,92,92,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,407,0,0
+1777169619987,476,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-317,text,true,,420,515,85,85,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,476,0,0
+1777169620051,412,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-314,text,true,,420,515,85,85,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,412,0,0
+1777169619979,485,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-323,text,true,,420,515,83,83,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,485,0,1
+1777169620055,410,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-331,text,true,,420,515,83,83,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,410,0,0
+1777169619979,486,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-332,text,true,,420,515,83,83,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,486,0,1
+1777169620052,416,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-326,text,true,,420,515,80,80,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,416,0,0
+1777169620021,447,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-309,text,true,,420,515,80,80,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,447,0,0
+1777169619986,484,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-319,text,true,,420,515,78,78,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,484,0,1
+1777169619980,498,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-304,text,true,,420,515,77,77,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,498,0,0
+1777169620052,426,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-333,text,true,,420,515,77,77,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,426,0,0
+1777169620008,470,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-322,text,true,,420,515,77,77,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,470,0,0
+1777169619989,489,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-306,text,true,,420,515,77,77,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,489,0,0
+1777169620052,426,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-334,text,true,,420,515,77,77,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,426,0,0
+1777169620007,471,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-336,text,true,,420,515,77,77,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,471,0,1
+1777169620055,425,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-328,text,true,,420,515,71,71,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,425,0,0
+1777169620051,430,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-329,text,true,,420,515,70,70,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,430,0,1
+1777169620004,477,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-330,text,true,,420,515,70,70,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,477,0,0
+1777169620051,430,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-307,text,true,,420,515,70,70,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,430,0,1
+1777169620052,429,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-321,text,true,,420,515,70,70,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,429,0,3
+1777169620055,429,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-327,text,true,,420,515,66,66,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,429,0,0
+1777169620052,434,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-305,text,true,,420,515,65,65,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,434,0,1
+1777169536638,89250,User Login,200,OK,Lab2 Concurrency Group 1-337,text,true,,390,287,64,64,http://localhost:8001/auth/login,89249,0,1
+1777169537637,88261,User Login,200,OK,Lab2 Concurrency Group 1-341,text,true,,390,287,64,64,http://localhost:8001/auth/login,88261,0,1
+1777169536871,89077,User Login,200,OK,Lab2 Concurrency Group 1-338,text,true,,390,287,64,64,http://localhost:8001/auth/login,89077,0,0
+1777169537399,88550,User Login,200,OK,Lab2 Concurrency Group 1-340,text,true,,390,287,64,64,http://localhost:8001/auth/login,88550,0,1
+1777169537874,88076,User Login,200,OK,Lab2 Concurrency Group 1-342,text,true,,390,287,64,64,http://localhost:8001/auth/login,88076,0,1
+1777169541109,84841,User Login,200,OK,Lab2 Concurrency Group 1-355,text,true,,390,287,64,64,http://localhost:8001/auth/login,84841,0,1
+1777169542356,83594,User Login,200,OK,Lab2 Concurrency Group 1-360,text,true,,390,287,64,64,http://localhost:8001/auth/login,83594,0,1
+1777169539625,86325,User Login,200,OK,Lab2 Concurrency Group 1-349,text,true,,390,287,64,64,http://localhost:8001/auth/login,86325,0,1
+1777169540862,85088,User Login,200,OK,Lab2 Concurrency Group 1-354,text,true,,390,287,64,64,http://localhost:8001/auth/login,85088,0,1
+1777169540616,85334,User Login,200,OK,Lab2 Concurrency Group 1-353,text,true,,390,287,64,64,http://localhost:8001/auth/login,85334,0,6
+1777169540111,85839,User Login,200,OK,Lab2 Concurrency Group 1-351,text,true,,390,287,64,64,http://localhost:8001/auth/login,85839,0,3
+1777169541364,84586,User Login,200,OK,Lab2 Concurrency Group 1-356,text,true,,390,287,64,64,http://localhost:8001/auth/login,84586,0,1
+1777169539371,86580,User Login,200,OK,Lab2 Concurrency Group 1-348,text,true,,390,287,64,64,http://localhost:8001/auth/login,86580,0,1
+1777169541614,84337,User Login,200,OK,Lab2 Concurrency Group 1-357,text,true,,390,287,64,64,http://localhost:8001/auth/login,84337,0,0
+1777169538643,87308,User Login,200,OK,Lab2 Concurrency Group 1-345,text,true,,390,287,64,64,http://localhost:8001/auth/login,87308,0,1
+1777169539863,86088,User Login,200,OK,Lab2 Concurrency Group 1-350,text,true,,390,287,64,64,http://localhost:8001/auth/login,86088,0,2
+1777169538378,87573,User Login,200,OK,Lab2 Concurrency Group 1-344,text,true,,390,287,64,64,http://localhost:8001/auth/login,87573,0,1
+1777169542112,83838,User Login,200,OK,Lab2 Concurrency Group 1-359,text,true,,390,287,64,64,http://localhost:8001/auth/login,83838,0,11
+1777169540365,85586,User Login,200,OK,Lab2 Concurrency Group 1-352,text,true,,390,287,64,64,http://localhost:8001/auth/login,85586,0,1
+1777169538869,87082,User Login,200,OK,Lab2 Concurrency Group 1-346,text,true,,390,287,64,64,http://localhost:8001/auth/login,87082,0,1
+1777169537129,88820,User Login,200,OK,Lab2 Concurrency Group 1-339,text,true,,390,287,64,64,http://localhost:8001/auth/login,88820,0,1
+1777169538116,87837,User Login,200,OK,Lab2 Concurrency Group 1-343,text,true,,390,287,64,64,http://localhost:8001/auth/login,87837,0,1
+1777169539117,86836,User Login,200,OK,Lab2 Concurrency Group 1-347,text,true,,390,287,64,64,http://localhost:8001/auth/login,86836,0,9
+1777169541862,84091,User Login,200,OK,Lab2 Concurrency Group 1-358,text,true,,390,287,64,64,http://localhost:8001/auth/login,84091,0,3
+1777169625904,191,Restaurant Search,200,OK,Lab2 Concurrency Group 1-337,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,191,0,2
+1777169625904,193,Restaurant Search,200,OK,Lab2 Concurrency Group 1-341,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,193,0,2
+1777169625950,162,Restaurant Search,200,OK,Lab2 Concurrency Group 1-338,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,162,0,1
+1777169625951,162,Restaurant Search,200,OK,Lab2 Concurrency Group 1-349,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,161,0,0
+1777169625951,162,Restaurant Search,200,OK,Lab2 Concurrency Group 1-353,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,161,0,2
+1777169625951,162,Restaurant Search,200,OK,Lab2 Concurrency Group 1-360,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,162,0,0
+1777169625950,227,Restaurant Search,200,OK,Lab2 Concurrency Group 1-340,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,227,0,1
+1777169625952,225,Restaurant Search,200,OK,Lab2 Concurrency Group 1-357,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,225,0,1
+1777169625955,236,Restaurant Search,200,OK,Lab2 Concurrency Group 1-342,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,236,0,0
+1777169625953,244,Restaurant Search,200,OK,Lab2 Concurrency Group 1-356,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,244,0,1
+1777169625955,242,Restaurant Search,200,OK,Lab2 Concurrency Group 1-350,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,242,0,0
+1777169625955,242,Restaurant Search,200,OK,Lab2 Concurrency Group 1-348,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,242,0,0
+1777169625954,243,Restaurant Search,200,OK,Lab2 Concurrency Group 1-343,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,243,0,1
+1777169625954,260,Restaurant Search,200,OK,Lab2 Concurrency Group 1-358,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,259,0,0
+1777169625955,259,Restaurant Search,200,OK,Lab2 Concurrency Group 1-344,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,258,0,0
+1777169625955,260,Restaurant Search,200,OK,Lab2 Concurrency Group 1-346,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,260,0,0
+1777169625954,261,Restaurant Search,200,OK,Lab2 Concurrency Group 1-339,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,261,0,0
+1777169625954,266,Restaurant Search,200,OK,Lab2 Concurrency Group 1-355,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,266,0,0
+1777169625955,265,Restaurant Search,200,OK,Lab2 Concurrency Group 1-351,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,265,0,0
+1777169625955,265,Restaurant Search,200,OK,Lab2 Concurrency Group 1-359,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,265,0,0
+1777169625955,265,Restaurant Search,200,OK,Lab2 Concurrency Group 1-352,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,265,0,0
+1777169625954,266,Restaurant Search,200,OK,Lab2 Concurrency Group 1-354,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,266,0,1
+1777169625954,266,Restaurant Search,200,OK,Lab2 Concurrency Group 1-347,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,266,0,0
+1777169625952,268,Restaurant Search,200,OK,Lab2 Concurrency Group 1-345,text,true,,5305,426,64,64,http://localhost:8002/restaurants?page=1&per_page=10,268,0,2
+1777169626117,324,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-338,text,true,,420,515,64,64,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,324,0,0
+1777169626222,229,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-347,text,true,,420,515,63,63,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,229,0,0
+1777169626198,255,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-350,text,true,,420,515,62,62,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,253,0,1
+1777169626217,237,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-358,text,true,,420,515,61,61,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,237,0,0
+1777169626217,248,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-346,text,true,,420,515,60,60,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,248,0,0
+1777169626095,377,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-337,text,true,,420,515,59,59,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,377,0,4
+1777169626178,294,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-357,text,true,,420,515,59,59,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,294,0,1
+1777169626221,251,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-359,text,true,,420,515,59,59,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,251,0,0
+1777169626217,255,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-344,text,true,,420,515,59,59,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,255,0,0
+1777169626221,251,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-355,text,true,,420,515,59,59,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,251,0,0
+1777169626114,359,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-360,text,true,,420,515,54,54,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,359,0,3
+1777169626115,359,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-349,text,true,,420,515,53,53,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,359,0,2
+1777169626178,296,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-340,text,true,,420,515,53,53,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,296,0,1
+1777169626198,276,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-343,text,true,,420,515,53,53,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,276,0,1
+1777169626193,281,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-342,text,true,,420,515,52,52,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,281,0,1
+1777169626217,258,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-339,text,true,,420,515,49,49,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,258,0,0
+1777169626221,261,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-345,text,true,,420,515,48,48,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,261,0,1
+1777169626099,383,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-341,text,true,,420,515,48,48,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,383,0,1
+1777169626199,286,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-356,text,true,,420,515,46,46,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,286,0,0
+1777169626117,368,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-353,text,true,,420,515,45,45,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,368,0,0
+1777169626199,287,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-348,text,true,,420,515,44,44,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,287,0,0
+1777169626221,265,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-354,text,true,,420,515,44,44,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,265,0,1
+1777169626221,266,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-352,text,true,,420,515,42,42,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,266,0,0
+1777169626221,270,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-351,text,true,,420,515,41,41,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,270,0,0
+1777169543607,90020,User Login,200,OK,Lab2 Concurrency Group 1-365,text,true,,390,287,40,40,http://localhost:8001/auth/login,90018,0,1
+1777169544620,89010,User Login,200,OK,Lab2 Concurrency Group 1-369,text,true,,390,287,40,40,http://localhost:8001/auth/login,89009,0,1
+1777169545619,88019,User Login,200,OK,Lab2 Concurrency Group 1-373,text,true,,390,287,40,40,http://localhost:8001/auth/login,88019,0,0
+1777169542909,90718,User Login,200,OK,Lab2 Concurrency Group 1-362,text,true,,390,287,40,40,http://localhost:8001/auth/login,90716,0,0
+1777169544105,89525,User Login,200,OK,Lab2 Concurrency Group 1-367,text,true,,390,287,40,40,http://localhost:8001/auth/login,89524,0,1
+1777169544863,88767,User Login,200,OK,Lab2 Concurrency Group 1-370,text,true,,390,287,40,40,http://localhost:8001/auth/login,88766,0,0
+1777169543862,89766,User Login,200,OK,Lab2 Concurrency Group 1-366,text,true,,390,287,40,40,http://localhost:8001/auth/login,89766,0,1
+1777169542608,91019,User Login,200,OK,Lab2 Concurrency Group 1-361,text,true,,390,287,40,40,http://localhost:8001/auth/login,91018,0,1
+1777169543111,90516,User Login,200,OK,Lab2 Concurrency Group 1-363,text,true,,390,287,40,40,http://localhost:8001/auth/login,90514,0,1
+1777169546361,87280,User Login,200,OK,Lab2 Concurrency Group 1-376,text,true,,390,287,40,40,http://localhost:8001/auth/login,87280,0,0
+1777169546125,87516,User Login,200,OK,Lab2 Concurrency Group 1-375,text,true,,390,287,40,40,http://localhost:8001/auth/login,87516,0,1
+1777169545366,88276,User Login,200,OK,Lab2 Concurrency Group 1-372,text,true,,390,287,40,40,http://localhost:8001/auth/login,88276,0,3
+1777169545112,88530,User Login,200,OK,Lab2 Concurrency Group 1-371,text,true,,390,287,40,40,http://localhost:8001/auth/login,88529,0,1
+1777169545877,87767,User Login,200,OK,Lab2 Concurrency Group 1-374,text,true,,390,287,40,40,http://localhost:8001/auth/login,87767,0,1
+1777169543366,90287,User Login,200,OK,Lab2 Concurrency Group 1-364,text,true,,390,287,40,40,http://localhost:8001/auth/login,90287,0,0
+1777169544366,89287,User Login,200,OK,Lab2 Concurrency Group 1-368,text,true,,390,287,40,40,http://localhost:8001/auth/login,89287,0,1
+1777169546613,87042,User Login,200,OK,Lab2 Concurrency Group 1-377,text,true,,390,287,40,40,http://localhost:8001/auth/login,87042,0,1
+1777169633645,124,Restaurant Search,200,OK,Lab2 Concurrency Group 1-375,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,124,0,6
+1777169633653,128,Restaurant Search,200,OK,Lab2 Concurrency Group 1-368,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,128,0,0
+1777169633645,146,Restaurant Search,200,OK,Lab2 Concurrency Group 1-365,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,146,0,6
+1777169633645,150,Restaurant Search,200,OK,Lab2 Concurrency Group 1-363,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,150,0,6
+1777169633645,150,Restaurant Search,200,OK,Lab2 Concurrency Group 1-366,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,150,0,6
+1777169633645,150,Restaurant Search,200,OK,Lab2 Concurrency Group 1-369,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,150,0,6
+1777169633645,150,Restaurant Search,200,OK,Lab2 Concurrency Group 1-362,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,150,0,6
+1777169633645,151,Restaurant Search,200,OK,Lab2 Concurrency Group 1-367,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,151,0,6
+1777169633645,151,Restaurant Search,200,OK,Lab2 Concurrency Group 1-370,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,151,0,6
+1777169633645,151,Restaurant Search,200,OK,Lab2 Concurrency Group 1-373,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,151,0,6
+1777169633645,151,Restaurant Search,200,OK,Lab2 Concurrency Group 1-374,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,151,0,6
+1777169633653,149,Restaurant Search,200,OK,Lab2 Concurrency Group 1-364,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,149,0,0
+1777169633656,146,Restaurant Search,200,OK,Lab2 Concurrency Group 1-377,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,146,0,0
+1777169633645,157,Restaurant Search,200,OK,Lab2 Concurrency Group 1-361,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,157,0,6
+1777169633645,157,Restaurant Search,200,OK,Lab2 Concurrency Group 1-371,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,157,0,6
+1777169633645,158,Restaurant Search,200,OK,Lab2 Concurrency Group 1-372,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,158,0,6
+1777169633645,159,Restaurant Search,200,OK,Lab2 Concurrency Group 1-376,text,true,,5305,426,40,40,http://localhost:8002/restaurants?page=1&per_page=10,159,0,6
+1777169633796,122,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-369,text,true,,420,515,40,40,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,122,0,0
+1777169633796,122,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-362,text,true,,420,515,40,40,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,122,0,0
+1777169633782,152,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-368,text,true,,420,515,38,38,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,152,0,0
+1777169633803,134,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-371,text,true,,420,515,37,37,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,134,0,0
+1777169633796,141,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-374,text,true,,420,515,37,37,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,141,0,1
+1777169633796,143,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-367,text,true,,420,515,35,35,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,143,0,1
+1777169633803,136,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-372,text,true,,420,515,35,35,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,136,0,0
+1777169633792,148,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-365,text,true,,420,515,33,33,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,148,0,0
+1777169633795,145,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-363,text,true,,420,515,33,33,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,145,0,1
+1777169633803,137,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-361,text,true,,420,515,33,33,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,137,0,0
+1777169633796,147,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-366,text,true,,420,515,30,30,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,147,0,0
+1777169633797,146,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-370,text,true,,420,515,30,30,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,146,0,0
+1777169633803,140,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-377,text,true,,420,515,30,30,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,140,0,0
+1777169633803,149,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-364,text,true,,420,515,27,27,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,149,0,0
+1777169633804,148,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-376,text,true,,420,515,26,26,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,148,0,0
+1777169633771,183,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-375,text,true,,420,515,25,25,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,183,0,3
+1777169633797,157,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-373,text,true,,420,515,25,25,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,157,0,0
+1777169547623,86459,User Login,200,OK,Lab2 Concurrency Group 1-381,text,true,,390,287,23,23,http://localhost:8001/auth/login,86459,0,0
+1777169547125,86959,User Login,200,OK,Lab2 Concurrency Group 1-379,text,true,,390,287,23,23,http://localhost:8001/auth/login,86959,0,8
+1777169548867,85217,User Login,200,OK,Lab2 Concurrency Group 1-386,text,true,,390,287,23,23,http://localhost:8001/auth/login,85217,0,1
+1777169551362,82722,User Login,200,OK,Lab2 Concurrency Group 1-396,text,true,,390,287,23,23,http://localhost:8001/auth/login,82722,0,1
+1777169549362,84722,User Login,200,OK,Lab2 Concurrency Group 1-388,text,true,,390,287,23,23,http://localhost:8001/auth/login,84722,0,1
+1777169548409,85674,User Login,200,OK,Lab2 Concurrency Group 1-384,text,true,,390,287,23,23,http://localhost:8001/auth/login,85674,0,0
+1777169550112,83972,User Login,200,OK,Lab2 Concurrency Group 1-391,text,true,,390,287,23,23,http://localhost:8001/auth/login,83972,0,1
+1777169550361,83723,User Login,200,OK,Lab2 Concurrency Group 1-392,text,true,,390,287,23,23,http://localhost:8001/auth/login,83723,0,1
+1777169552358,81726,User Login,200,OK,Lab2 Concurrency Group 1-400,text,true,,390,287,23,23,http://localhost:8001/auth/login,81726,0,1
+1777169549109,84975,User Login,200,OK,Lab2 Concurrency Group 1-387,text,true,,390,287,23,23,http://localhost:8001/auth/login,84975,0,0
+1777169550616,83468,User Login,200,OK,Lab2 Concurrency Group 1-393,text,true,,390,287,23,23,http://localhost:8001/auth/login,83468,0,1
+1777169550867,83217,User Login,200,OK,Lab2 Concurrency Group 1-394,text,true,,390,287,23,23,http://localhost:8001/auth/login,83217,0,1
+1777169551117,82967,User Login,200,OK,Lab2 Concurrency Group 1-395,text,true,,390,287,23,23,http://localhost:8001/auth/login,82967,0,0
+1777169546864,87223,User Login,200,OK,Lab2 Concurrency Group 1-378,text,true,,390,287,23,23,http://localhost:8001/auth/login,87223,0,2
+1777169547369,86720,User Login,200,OK,Lab2 Concurrency Group 1-380,text,true,,390,287,23,23,http://localhost:8001/auth/login,86720,0,1
+1777169547892,86192,User Login,200,OK,Lab2 Concurrency Group 1-382,text,true,,390,287,23,23,http://localhost:8001/auth/login,86192,0,2
+1777169548617,85467,User Login,200,OK,Lab2 Concurrency Group 1-385,text,true,,390,287,23,23,http://localhost:8001/auth/login,85467,0,1
+1777169548152,85932,User Login,200,OK,Lab2 Concurrency Group 1-383,text,true,,390,287,23,23,http://localhost:8001/auth/login,85932,0,1
+1777169549612,84472,User Login,200,OK,Lab2 Concurrency Group 1-389,text,true,,390,287,23,23,http://localhost:8001/auth/login,84472,0,1
+1777169551608,82476,User Login,200,OK,Lab2 Concurrency Group 1-397,text,true,,390,287,23,23,http://localhost:8001/auth/login,82476,0,1
+1777169549859,84225,User Login,200,OK,Lab2 Concurrency Group 1-390,text,true,,390,287,23,23,http://localhost:8001/auth/login,84225,0,0
+1777169552104,81980,User Login,200,OK,Lab2 Concurrency Group 1-399,text,true,,390,287,23,23,http://localhost:8001/auth/login,81980,0,2
+1777169551859,82234,User Login,200,OK,Lab2 Concurrency Group 1-398,text,true,,390,287,23,23,http://localhost:8001/auth/login,82234,0,2
+1777169634083,10,Restaurant Search,200,OK,Lab2 Concurrency Group 1-381,text,true,,5305,426,23,23,http://localhost:8002/restaurants?page=1&per_page=10,10,0,2
+1777169634094,28,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-381,text,true,,420,515,23,23,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,28,0,0
+1777169634087,49,Restaurant Search,200,OK,Lab2 Concurrency Group 1-378,text,true,,5305,426,22,22,http://localhost:8002/restaurants?page=1&per_page=10,49,0,5
+1777169634136,15,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-378,text,true,,420,515,22,22,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,15,0,1
+1777169634091,61,Restaurant Search,200,OK,Lab2 Concurrency Group 1-380,text,true,,5305,426,21,21,http://localhost:8002/restaurants?page=1&per_page=10,61,0,1
+1777169634091,77,Restaurant Search,200,OK,Lab2 Concurrency Group 1-388,text,true,,5305,426,21,21,http://localhost:8002/restaurants?page=1&per_page=10,77,0,1
+1777169634090,78,Restaurant Search,200,OK,Lab2 Concurrency Group 1-384,text,true,,5305,426,21,21,http://localhost:8002/restaurants?page=1&per_page=10,78,0,2
+1777169634091,78,Restaurant Search,200,OK,Lab2 Concurrency Group 1-386,text,true,,5305,426,21,21,http://localhost:8002/restaurants?page=1&per_page=10,78,0,2
+1777169634153,16,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-380,text,true,,420,515,21,21,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,16,0,0
+1777169634093,76,Restaurant Search,200,OK,Lab2 Concurrency Group 1-394,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,76,0,0
+1777169634093,83,Restaurant Search,200,OK,Lab2 Concurrency Group 1-398,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,83,0,0
+1777169634092,85,Restaurant Search,200,OK,Lab2 Concurrency Group 1-379,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,85,0,1
+1777169634093,84,Restaurant Search,200,OK,Lab2 Concurrency Group 1-390,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,84,0,0
+1777169634092,85,Restaurant Search,200,OK,Lab2 Concurrency Group 1-399,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,85,0,1
+1777169634091,86,Restaurant Search,200,OK,Lab2 Concurrency Group 1-392,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,86,0,2
+1777169634093,97,Restaurant Search,200,OK,Lab2 Concurrency Group 1-400,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,97,0,0
+1777169634093,100,Restaurant Search,200,OK,Lab2 Concurrency Group 1-397,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,100,0,0
+1777169634091,102,Restaurant Search,200,OK,Lab2 Concurrency Group 1-382,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,102,0,2
+1777169634093,100,Restaurant Search,200,OK,Lab2 Concurrency Group 1-391,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,100,0,0
+1777169634091,102,Restaurant Search,200,OK,Lab2 Concurrency Group 1-396,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,102,0,2
+1777169634091,102,Restaurant Search,200,OK,Lab2 Concurrency Group 1-387,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,102,0,2
+1777169634093,100,Restaurant Search,200,OK,Lab2 Concurrency Group 1-383,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,100,0,1
+1777169634092,101,Restaurant Search,200,OK,Lab2 Concurrency Group 1-385,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,101,0,1
+1777169634092,101,Restaurant Search,200,OK,Lab2 Concurrency Group 1-389,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,101,0,1
+1777169634093,101,Restaurant Search,200,OK,Lab2 Concurrency Group 1-393,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,101,0,0
+1777169634092,108,Restaurant Search,200,OK,Lab2 Concurrency Group 1-395,text,true,,5305,426,20,20,http://localhost:8002/restaurants?page=1&per_page=10,108,0,1
+1777169634169,94,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-388,text,true,,420,515,20,20,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,94,0,0
+1777169634169,96,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-386,text,true,,420,515,19,19,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,96,0,0
+1777169634169,109,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-384,text,true,,420,515,18,18,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,109,0,0
+1777169634169,110,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-394,text,true,,420,515,17,17,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,110,0,0
+1777169634194,97,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-391,text,true,,420,515,16,16,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,97,0,0
+1777169634194,97,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-396,text,true,,420,515,15,15,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,97,0,0
+1777169634177,117,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-379,text,true,,420,515,14,14,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,117,0,1
+1777169634201,94,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-395,text,true,,420,515,13,13,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,94,0,0
+1777169634194,101,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-397,text,true,,420,515,12,12,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,101,0,0
+1777169634177,123,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-399,text,true,,420,515,11,11,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,123,0,1
+1777169634195,105,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-393,text,true,,420,515,11,11,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,105,0,3
+1777169634177,123,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-390,text,true,,420,515,11,11,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,123,0,0
+1777169634177,127,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-398,text,true,,420,515,8,8,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,127,0,1
+1777169634194,110,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-383,text,true,,420,515,7,7,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,110,0,0
+1777169634194,110,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-382,text,true,,420,515,7,7,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,110,0,0
+1777169634194,110,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-387,text,true,,420,515,7,7,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,110,0,0
+1777169634194,111,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-389,text,true,,420,515,4,4,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,111,0,0
+1777169634178,128,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-392,text,true,,420,515,3,3,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,128,0,1
+1777169634190,119,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-400,text,true,,420,515,2,2,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,119,0,1
+1777169634194,117,Create Review (Kafka Flow),201,Created,Lab2 Concurrency Group 1-385,text,true,,420,515,1,1,http://localhost:8004/restaurants/69ec6de3075c31ac77a4fecc/reviews,117,0,0
