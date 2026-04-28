@@ -1,6 +1,20 @@
 import { useState, useEffect, useRef } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom'
-import { getRestaurant, getReviews, createReview, updateReview, deleteReview, addFavorite, removeFavorite } from '../services/api'
+import {
+  fetchRestaurantById,
+  selectSelectedRestaurant,
+  selectRestaurantDetailsStatus,
+} from '../store/restaurantSlice'
+import {
+  fetchReviewsByRestaurant,
+  createReviewAsync,
+  updateReviewAsync,
+  deleteReviewAsync,
+  selectReviewsByRestaurant,
+  selectReviewSubmitStatus,
+} from '../store/reviewSlice'
+import { addFavorite, removeFavorite } from '../services/api'
 import StarRating from '../components/StarRating'
 import { resolvePhotoUrl } from '../utils/url'
 
@@ -134,18 +148,23 @@ function MapWidget({ address, city, state }) {
 export default function RestaurantDetailPage() {
   const { id } = useParams()
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const token = localStorage.getItem('token')
   const userId = localStorage.getItem('userId')
 
-  const [restaurant, setRestaurant] = useState(null)
-  const [reviews, setReviews] = useState([])
-  const [loading, setLoading] = useState(true)
+  const restaurant = useSelector(selectSelectedRestaurant)
+  const detailsStatus = useSelector(selectRestaurantDetailsStatus)
+  const reviews = useSelector(selectReviewsByRestaurant(id))
+  const submitStatus = useSelector(selectReviewSubmitStatus)
+
+  const loading = detailsStatus === 'loading' || (detailsStatus === 'idle')
+  const submitting = submitStatus === 'loading'
+
   const [isFavorite, setIsFavorite] = useState(false)
   const [tab, setTab] = useState('overview')
   const [showReviewForm, setShowReviewForm] = useState(false)
   const [reviewForm, setReviewForm] = useState({ rating: 5, comment: '' })
   const [editingReviewId, setEditingReviewId] = useState(null)
-  const [submitting, setSubmitting] = useState(false)
   const [confirmDeleteId, setConfirmDeleteId] = useState(null)
   const [error, setError] = useState('')
 
@@ -153,17 +172,10 @@ export default function RestaurantDetailPage() {
   const photosRef = useRef(null)
   const reviewsRef = useRef(null)
 
-  useEffect(() => { fetchData() }, [id])
-
-  const fetchData = async () => {
-    setLoading(true)
-    try {
-      const [restRes, revRes] = await Promise.all([getRestaurant(id), getReviews(id)])
-      setRestaurant(restRes.data)
-      setReviews(revRes.data)
-    } catch { setError('Restaurant not found.') }
-    finally { setLoading(false) }
-  }
+  useEffect(() => {
+    dispatch(fetchRestaurantById(id))
+    dispatch(fetchReviewsByRestaurant(id))
+  }, [id])
 
   const scrollTo = (ref, tabName) => {
     setTab(tabName)
@@ -179,14 +191,17 @@ export default function RestaurantDetailPage() {
   }
 
   const handleReviewSubmit = async (e) => {
-    e.preventDefault(); setSubmitting(true)
+    e.preventDefault()
     try {
-      if (editingReviewId) await updateReview(editingReviewId, reviewForm)
-      else await createReview(id, reviewForm)
+      if (editingReviewId) {
+        await dispatch(updateReviewAsync({ restaurantId: id, reviewId: editingReviewId, payload: reviewForm })).unwrap()
+      } else {
+        await dispatch(createReviewAsync({ restaurantId: id, payload: reviewForm })).unwrap()
+      }
       setShowReviewForm(false); setReviewForm({ rating: 5, comment: '' }); setEditingReviewId(null)
-      fetchData()
-    } catch { setError('Failed to submit review.') }
-    finally { setSubmitting(false) }
+    } catch {
+      setError('Failed to submit review.')
+    }
   }
 
   const handleEditReview = (review) => {
@@ -195,8 +210,12 @@ export default function RestaurantDetailPage() {
   }
 
   const handleDeleteReview = async (reviewId) => {
-    try { await deleteReview(reviewId); setConfirmDeleteId(null); fetchData() }
-    catch { setError('Failed to delete review.'); setConfirmDeleteId(null) }
+    try {
+      await dispatch(deleteReviewAsync({ restaurantId: id, reviewId })).unwrap()
+      setConfirmDeleteId(null)
+    } catch {
+      setError('Failed to delete review.'); setConfirmDeleteId(null)
+    }
   }
 
   if (loading) return (
