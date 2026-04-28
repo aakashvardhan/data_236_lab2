@@ -15,7 +15,7 @@ export default function FavoritesPage() {
   useEffect(() => {
     if (!localStorage.getItem('token')) { navigate('/login'); return }
     dispatch(fetchFavourites())
-  }, [])
+  }, [dispatch, navigate])
 
   useEffect(() => {
     if (favorites.length === 0) { setEnriched([]); return }

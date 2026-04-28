@@ -14,7 +14,12 @@ import {
   selectReviewsByRestaurant,
   selectReviewSubmitStatus,
 } from '../store/reviewSlice'
-import { addFavorite, removeFavorite } from '../services/api'
+import {
+  addFavouriteAsync,
+  removeFavouriteAsync,
+  fetchFavourites,
+  selectFavourites,
+} from '../store/favouritesSlice'
 import StarRating from '../components/StarRating'
 import { resolvePhotoUrl } from '../utils/url'
 
@@ -156,11 +161,11 @@ export default function RestaurantDetailPage() {
   const detailsStatus = useSelector(selectRestaurantDetailsStatus)
   const reviews = useSelector(selectReviewsByRestaurant(id))
   const submitStatus = useSelector(selectReviewSubmitStatus)
+  const favourites = useSelector(selectFavourites)
 
-  const loading = detailsStatus === 'loading' || (detailsStatus === 'idle')
+  const loading = detailsStatus === 'loading' || (!restaurant && detailsStatus !== 'failed')
   const submitting = submitStatus === 'loading'
-
-  const [isFavorite, setIsFavorite] = useState(false)
+  const isFavorite = favourites.some(f => String(f.restaurant_id) === String(id))
   const [tab, setTab] = useState('overview')
   const [showReviewForm, setShowReviewForm] = useState(false)
   const [reviewForm, setReviewForm] = useState({ rating: 5, comment: '' })
@@ -175,6 +180,7 @@ export default function RestaurantDetailPage() {
   useEffect(() => {
     dispatch(fetchRestaurantById(id))
     dispatch(fetchReviewsByRestaurant(id))
+    dispatch(fetchFavourites())
   }, [id])
 
   const scrollTo = (ref, tabName) => {
@@ -184,14 +190,21 @@ export default function RestaurantDetailPage() {
 
   const handleFavorite = async () => {
     if (!token) { navigate('/login'); return }
-    try {
-      if (isFavorite) { await removeFavorite(id); setIsFavorite(false) }
-      else { await addFavorite(id); setIsFavorite(true) }
-    } catch {}
+    if (isFavorite) {
+      dispatch(removeFavouriteAsync(id))
+    } else {
+      dispatch(addFavouriteAsync(id))
+    }
   }
 
   const handleReviewSubmit = async (e) => {
     e.preventDefault()
+    if (!reviewForm.rating || reviewForm.rating < 1 || reviewForm.rating > 5) {
+      setError('Please select a rating between 1 and 5.'); return
+    }
+    if (reviewForm.comment && reviewForm.comment.length > 2000) {
+      setError('Comment must be under 2000 characters.'); return
+    }
     try {
       if (editingReviewId) {
         await dispatch(updateReviewAsync({ restaurantId: id, reviewId: editingReviewId, payload: reviewForm })).unwrap()

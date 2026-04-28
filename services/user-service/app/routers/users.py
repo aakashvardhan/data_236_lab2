@@ -52,12 +52,19 @@ async def update_profile(
         update_data["gender"] = update_data["gender"].value
 
     mongo = get_db()
-    await mongo.users.update_one(
-        {"_id": ObjectId(current_user["id"])},
-        {"$set": update_data},
-    )
-
-    updated = await mongo.users.find_one({"_id": ObjectId(current_user["id"])})
+    try:
+        await mongo.users.update_one(
+            {"_id": ObjectId(current_user["id"])},
+            {"$set": update_data},
+        )
+        updated = await mongo.users.find_one({"_id": ObjectId(current_user["id"])})
+    except Exception:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to update profile. Please try again.",
+        )
+    if not updated:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found.")
     updated["id"] = str(updated["_id"])
     await publish_user_event("user.updated", {
         "user_id": updated["id"],
@@ -108,21 +115,36 @@ async def upload_profile_pic(
 
     filename = f"{current_user['id']}_{uuid.uuid4().hex}{ext}"
     filepath = os.path.join(UPLOAD_DIR, filename)
-    with open(filepath, "wb") as f:
-        f.write(contents)
+    try:
+        with open(filepath, "wb") as f:
+            f.write(contents)
+    except OSError:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to save file. Please try again.",
+        )
 
     old_pic = current_user.get("profile_picture")
     if old_pic:
         old_path = old_pic.lstrip("/")
         if os.path.exists(old_path):
-            os.remove(old_path)
+            try:
+                os.remove(old_path)
+            except OSError:
+                pass
 
     new_path = f"/{filepath}"
     mongo = get_db()
-    await mongo.users.update_one(
-        {"_id": ObjectId(current_user["id"])},
-        {"$set": {"profile_picture": new_path}},
-    )
+    try:
+        await mongo.users.update_one(
+            {"_id": ObjectId(current_user["id"])},
+            {"$set": {"profile_picture": new_path}},
+        )
+    except Exception:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="File saved but profile update failed. Please try again.",
+        )
 
     return {"profile_picture": new_path}
 

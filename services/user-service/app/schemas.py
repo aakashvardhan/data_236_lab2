@@ -61,11 +61,11 @@ class TokenResponse(BaseModel):
 class UserProfileUpdate(BaseModel):
     name: Optional[str] = Field(None, max_length=100)
     phone: Optional[str] = Field(None, max_length=20)
-    about_me: Optional[str] = None
-    city: Optional[str] = None
+    about_me: Optional[str] = Field(None, max_length=1000)
+    city: Optional[str] = Field(None, max_length=100)
     state: Optional[str] = Field(None, max_length=10)
-    country: Optional[str] = None
-    languages: Optional[str] = None
+    country: Optional[str] = Field(None, max_length=100)
+    languages: Optional[str] = Field(None, max_length=200)
     gender: Optional[GenderEnum] = None
 
 
@@ -157,8 +157,8 @@ class ReviewResponse(BaseModel):
 
 
 class ChatRequest(BaseModel):
-    message: str
-    session_id: str = "default"
+    message: str = Field(..., min_length=1, max_length=2000)
+    session_id: str = Field("default", max_length=100)
 
 
 class RestaurantRecommendation(BaseModel):

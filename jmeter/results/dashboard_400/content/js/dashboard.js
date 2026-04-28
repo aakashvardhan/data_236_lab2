@@ -173,7 +173,7 @@ $(document).ready(function() {
     });
 
     // Creates APDEX table
-    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.39416666666666667, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.9325, 500, 1500, "Restaurant Search"], "isController": false}, {"data": [0.25, 500, 1500, "Create Review (Kafka Flow)"], "isController": false}, {"data": [0.0, 500, 1500, "User Login"], "isController": false}]}, function(index, item){
+    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.75, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [1.0, 500, 1500, "Restaurant Search"], "isController": false}, {"data": [0.25, 500, 1500, "Create Review (Kafka Flow)"], "isController": false}, {"data": [1.0, 500, 1500, "User Login"], "isController": false}]}, function(index, item){
         switch(index){
             case 0:
                 item = item.toFixed(3);
@@ -187,7 +187,7 @@ $(document).ready(function() {
     }, [[0, 0]], 3);
 
     // Create statistics table
-    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 1200, 300, 25.0, 26779.50500000002, 10, 114634, 466.0, 94585.00000000003, 102711.1, 111907.78, 6.791017747193046, 13.133280089867801, 2.7140417378780333], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["Restaurant Search", 400, 0, 0.0, 362.40250000000003, 10, 562, 405.5, 512.9000000000001, 553.95, 559.98, 2.7609246336598128, 14.30342302887237, 1.148587787049883], "isController": false}, {"data": ["Create Review (Kafka Flow)", 400, 300, 75.0, 349.68750000000006, 15, 1069, 332.0, 514.6000000000001, 968.95, 1054.91, 2.7621066587486274, 0.6635529668478148, 1.388417148884454], "isController": false}, {"data": ["User Login", 400, 0, 0.0, 79626.42499999999, 31266, 114634, 85152.5, 105196.3, 109890.25, 113936.38, 2.26646872839772, 0.8632058633546004, 0.6352309814942829], "isController": false}]}, function(index, item){
+    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 1200, 300, 25.0, 65.16166666666675, 2, 257, 4.0, 189.0, 196.0, 206.0, 12.014056446041868, 21.591668502147513, 4.789705517956008], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["Restaurant Search", 400, 0, 0.0, 3.3775000000000013, 2, 29, 3.0, 4.0, 4.0, 9.970000000000027, 4.014008891029694, 19.148860774101614, 1.6659704869996288], "isController": false}, {"data": ["Create Review (Kafka Flow)", 400, 300, 75.0, 3.7925000000000013, 2, 42, 3.0, 5.0, 6.0, 10.990000000000009, 4.014089453983482, 0.964322271171813, 2.013826342963803], "isController": false}, {"data": ["User Login", 400, 0, 0.0, 188.315, 179, 257, 186.0, 197.0, 200.95, 215.98000000000002, 4.005046358411599, 1.5253594529106675, 1.1185969321344895], "isController": false}]}, function(index, item){
         switch(index){
             // Errors pct
             case 3:

@@ -17,6 +17,8 @@ export default function ProfilePage() {
   const [tab, setTab] = useState('profile')
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState('')
+  const [messageType, setMessageType] = useState('success')
+  const [loadError, setLoadError] = useState(false)
   const [profilePic, setProfilePic] = useState(null)
   const [profilePicPreview, setProfilePicPreview] = useState(null)
   const [uploadingPic, setUploadingPic] = useState(false)
@@ -29,6 +31,7 @@ export default function ProfilePage() {
 
   const fetchAll = async () => {
     setLoading(true)
+    setLoadError(false)
     try {
       const userRes = await getMe()
       setUser(userRes.data)
@@ -49,7 +52,11 @@ export default function ProfilePage() {
       } else {
         setProfilePicPreview(null)
       }
-    } catch (err) {}
+    } catch {
+      setLoadError(true)
+      setLoading(false)
+      return
+    }
 
     try {
       const prefRes = await getPreferences()
@@ -63,12 +70,12 @@ export default function ProfilePage() {
           search_radius: 15
         })
       }
-    } catch (err) {}
+    } catch { /* preferences are non-critical, proceed without them */ }
 
     try {
       const histRes = await getHistory()
       setHistory(histRes.data || { reviews: [], restaurants_added: [] })
-    } catch (err) {}
+    } catch { /* history is non-critical, proceed without it */ }
 
     setLoading(false)
   }
@@ -93,11 +100,13 @@ export default function ProfilePage() {
         setProfilePic(null)
       }
       localStorage.setItem('userName', form.name)
+      setMessageType('success')
       setMessage(pendingPic ? 'Profile and picture updated!' : 'Profile updated successfully!')
       setTimeout(() => setMessage(''), 3000)
       await fetchAll()
       notifyUserProfileUpdated()
     } catch (err) {
+      setMessageType('error')
       setMessage('Failed to update profile or picture.')
     } finally {
       setSaving(false)
@@ -114,9 +123,11 @@ export default function ProfilePage() {
         ambience: prefs.ambiance.join(','),
         sort_preference: prefs.sort_preference,
       })
+      setMessageType('success')
       setMessage('Preferences saved!')
       setTimeout(() => setMessage(''), 3000)
     } catch (err) {
+      setMessageType('error')
       setMessage('Failed to save preferences.')
     } finally { setSaving(false) }
   }
@@ -134,12 +145,15 @@ export default function ProfilePage() {
     try {
       await uploadProfilePic(profilePic)
       setProfilePic(null)
+      setMessageType('success')
       setMessage('Profile picture updated!')
       setTimeout(() => setMessage(''), 3000)
       await fetchAll()
       notifyUserProfileUpdated()
     } catch (err) {
-      setMessage('Failed to upload picture.')
+      setMessageType('error')
+      setMessage('Failed to upload picture. Check the file is under 5MB and is a JPG, PNG, or WebP.')
+      setTimeout(() => setMessage(''), 5000)
     } finally {
       setUploadingPic(false)
     }
@@ -149,6 +163,12 @@ export default function ProfilePage() {
     arr.includes(val) ? arr.filter(x => x !== val) : [...arr, val]
 
   if (loading) return <div className="text-center py-20 text-gray-400">Loading...</div>
+  if (loadError) return (
+    <div className="text-center py-20">
+      <p className="text-red-500 font-medium mb-2">Failed to load profile.</p>
+      <button onClick={fetchAll} className="text-sm text-red-600 hover:underline">Try again</button>
+    </div>
+  )
 
   return (
     <div className="max-w-3xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
@@ -179,8 +199,12 @@ export default function ProfilePage() {
       </div>
 
       {message && (
-        <div className="bg-green-50 text-green-700 border border-green-200 rounded-lg px-4 py-3 mb-4 text-sm">
-          ✓ {message}
+        <div className={`rounded-lg px-4 py-3 mb-4 text-sm ${
+          messageType === 'error'
+            ? 'bg-red-50 text-red-700 border border-red-200'
+            : 'bg-green-50 text-green-700 border border-green-200'
+        }`}>
+          {messageType === 'error' ? '✕' : '✓'} {message}
         </div>
       )}
 

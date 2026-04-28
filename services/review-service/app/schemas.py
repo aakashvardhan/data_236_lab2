@@ -5,12 +5,12 @@ from datetime import datetime
 
 class ReviewCreate(BaseModel):
     rating: int = Field(..., ge=1, le=5)
-    comment: Optional[str] = None
+    comment: Optional[str] = Field(None, max_length=2000)
 
 
 class ReviewUpdate(BaseModel):
     rating: Optional[int] = Field(None, ge=1, le=5)
-    comment: Optional[str] = None
+    comment: Optional[str] = Field(None, max_length=2000)
 
 
 class ReviewResponse(BaseModel):

@@ -42,7 +42,7 @@ async def chat_endpoint(
                 session_id=req.session_id,
             )
         raise HTTPException(
-            status_code=500, detail=f"AI Assistant error: {exc}"
+            status_code=500, detail="AI Assistant is temporarily unavailable. Please try again later."
         )
 
 

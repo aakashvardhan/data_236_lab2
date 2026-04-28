@@ -8,6 +8,7 @@ import json
 import os
 import signal
 import time
+import traceback
 from datetime import datetime, timezone
 
 from bson import ObjectId
@@ -111,6 +112,7 @@ def main():
                     print(f"[user-worker] no handler for topic: {topic}")
             except Exception as exc:
                 print(f"[user-worker] error processing message: {exc}")
+                traceback.print_exc()
     finally:
         consumer.close()
         mongo.close()
