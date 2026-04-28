@@ -1,0 +1,1645 @@
+2026-04-25 19:14:09,503 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2026-04-25 19:14:09,927 INFO o.a.j.JMeter: Loading user properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/user.properties
+2026-04-25 19:14:09,928 INFO o.a.j.JMeter: Loading system properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/system.properties
+2026-04-25 19:14:09,932 INFO o.a.j.JMeter: Setting JMeter property: users=500
+2026-04-25 19:14:09,936 INFO o.a.j.JMeter: Setting JMeter property: ramp=125
+2026-04-25 19:14:09,936 INFO o.a.j.JMeter: Setting JMeter property: loops=1
+2026-04-25 19:14:09,936 INFO o.a.j.JMeter: Setting JMeter property: host=localhost
+2026-04-25 19:14:09,936 INFO o.a.j.JMeter: Setting JMeter property: port=5173
+2026-04-25 19:14:09,936 INFO o.a.j.JMeter: Setting JMeter property: user_port=8001
+2026-04-25 19:14:09,936 INFO o.a.j.JMeter: Setting JMeter property: restaurant_port=8002
+2026-04-25 19:14:09,936 INFO o.a.j.JMeter: Setting JMeter property: review_port=8004
+2026-04-25 19:14:09,936 INFO o.a.j.JMeter: Setting JMeter property: restaurant_id=69ec6de3075c31ac77a4fecc
+2026-04-25 19:14:10,228 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-04-25 19:14:10,229 INFO o.a.j.JMeter: Version 5.6.3
+2026-04-25 19:14:10,229 INFO o.a.j.JMeter: java.version=21.0.11
+2026-04-25 19:14:10,229 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2026-04-25 19:14:10,229 INFO o.a.j.JMeter: os.name=Mac OS X
+2026-04-25 19:14:10,229 INFO o.a.j.JMeter: os.arch=aarch64
+2026-04-25 19:14:10,229 INFO o.a.j.JMeter: os.version=26.3.1
+2026-04-25 19:14:10,229 INFO o.a.j.JMeter: file.encoding=UTF-8
+2026-04-25 19:14:10,234 INFO o.a.j.JMeter: java.awt.headless=true
+2026-04-25 19:14:10,236 INFO o.a.j.JMeter: Max memory     =1073741824
+2026-04-25 19:14:10,237 INFO o.a.j.JMeter: Available Processors =10
+2026-04-25 19:14:10,452 INFO o.a.j.JMeter: Default Locale=English (EN)
+2026-04-25 19:14:10,455 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2026-04-25 19:14:10,455 INFO o.a.j.JMeter: JMeterHome=/opt/homebrew/Cellar/jmeter/5.6.3/libexec
+2026-04-25 19:14:10,455 INFO o.a.j.JMeter: user.dir  =/Users/khushidonda/Documents/semester-2/distrubuted systems/homeworks/data_236_lab2
+2026-04-25 19:14:10,457 INFO o.a.j.JMeter: PWD       =/Users/khushidonda/Documents/semester-2/distrubuted systems/homeworks/data_236_lab2
+2026-04-25 19:14:10,507 INFO o.a.j.JMeter: IP: 127.0.0.1 Name: Khushis-MacBook-Air.local FullName: localhost
+2026-04-25 19:14:10,661 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'/Users/khushidonda/Documents/semester-2/distrubuted systems/homeworks/data_236_lab2/jmeter/results/dashboard_500'
+2026-04-25 19:14:10,673 INFO o.a.j.s.FileServer: Default base='/Users/khushidonda/Documents/semester-2/distrubuted systems/homeworks/data_236_lab2'
+2026-04-25 19:14:10,695 INFO o.a.j.s.FileServer: Set new base='/Users/khushidonda/Documents/semester-2/distrubuted systems/homeworks/data_236_lab2/jmeter'
+2026-04-25 19:14:12,450 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2026-04-25 19:14:12,526 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2026-04-25 19:14:12,533 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2026-04-25 19:14:12,539 INFO o.a.j.s.SaveService: Loading file: /Users/khushidonda/Documents/semester-2/distrubuted systems/homeworks/data_236_lab2/jmeter/test-plan.jmx
+2026-04-25 19:14:12,713 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-04-25 19:14:12,713 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-04-25 19:14:12,713 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-04-25 19:14:12,713 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-04-25 19:14:12,713 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2026-04-25 19:14:12,714 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2026-04-25 19:14:12,794 INFO o.a.j.JMeter: Creating summariser <summary>
+2026-04-25 19:14:12,843 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
+2026-04-25 19:14:12,844 INFO o.a.j.r.d.ReportGenerator: Will generate report at end of test from  results file: /Users/khushidonda/Documents/semester-2/distrubuted systems/homeworks/data_236_lab2/jmeter/results/results_500.jtl
+2026-04-25 19:14:12,844 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/reportgenerator.properties
+2026-04-25 19:14:12,846 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
+2026-04-25 19:14:12,865 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
+2026-04-25 19:14:12,898 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
+2026-04-25 19:14:12,911 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
+2026-04-25 19:14:12,915 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
+2026-04-25 19:14:12,915 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
+2026-04-25 19:14:12,916 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
+2026-04-25 19:14:12,916 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
+2026-04-25 19:14:12,921 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
+2026-04-25 19:14:12,930 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
+2026-04-25 19:14:12,962 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
+2026-04-25 19:14:12,969 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-04-25 19:14:12,969 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
+2026-04-25 19:14:12,969 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
+2026-04-25 19:14:12,969 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
+2026-04-25 19:14:12,970 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
+2026-04-25 19:14:12,974 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-04-25 19:14:12,974 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-04-25 19:14:12,975 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-04-25 19:14:12,975 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-04-25 19:14:13,000 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
+2026-04-25 19:14:13,000 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
+2026-04-25 19:14:13,001 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
+2026-04-25 19:14:13,002 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
+2026-04-25 19:14:13,002 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
+2026-04-25 19:14:13,002 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
+2026-04-25 19:14:13,081 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2026-04-25 19:14:13,084 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-04-25 19:14:13,085 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-04-25 19:14:13,116 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2026-04-25 19:14:13,116 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2026-04-25 19:14:13,670 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.functions.Function], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2026-04-25 19:14:14,278 INFO o.a.j.JMeter: Running test (1777169654278)
+2026-04-25 19:14:14,367 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Lab2 Concurrency Group
+2026-04-25 19:14:14,367 INFO o.a.j.e.StandardJMeterEngine: Starting 500 threads for group Lab2 Concurrency Group.
+2026-04-25 19:14:14,367 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-04-25 19:14:14,367 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=500 ramp-up=125 delayedStart=false
+2026-04-25 19:14:14,555 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-1
+2026-04-25 19:14:14,561 INFO o.a.j.s.FileServer: Stored: jmeter/data/user_credentials.csv
+2026-04-25 19:14:14,732 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = Khushis-MacBook-Air.local
+2026-04-25 19:14:14,778 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2026-04-25 19:14:14,783 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2026-04-25 19:14:14,784 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2026-04-25 19:14:14,784 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2026-04-25 19:14:14,785 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2026-04-25 19:14:14,803 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-2
+2026-04-25 19:14:15,044 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-3
+2026-04-25 19:14:15,321 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-4
+2026-04-25 19:14:15,569 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-5
+2026-04-25 19:14:15,797 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-6
+2026-04-25 19:14:16,040 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-7
+2026-04-25 19:14:16,454 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-8
+2026-04-25 19:14:16,512 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-9
+2026-04-25 19:14:16,773 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-10
+2026-04-25 19:14:17,019 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-11
+2026-04-25 19:14:17,248 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2026-04-25 19:14:17,254 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-12
+2026-04-25 19:14:17,257 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2026-04-25 19:14:17,492 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-13
+2026-04-25 19:14:17,746 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-14
+2026-04-25 19:14:17,983 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-15
+2026-04-25 19:14:18,525 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-16
+2026-04-25 19:14:18,526 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-17
+2026-04-25 19:14:18,705 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-18
+2026-04-25 19:14:18,954 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-19
+2026-04-25 19:14:19,209 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-20
+2026-04-25 19:14:19,440 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-21
+2026-04-25 19:14:19,678 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-22
+2026-04-25 19:14:20,005 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-23
+2026-04-25 19:14:20,186 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-24
+2026-04-25 19:14:20,417 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-25
+2026-04-25 19:14:20,636 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-4
+2026-04-25 19:14:20,637 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-4
+2026-04-25 19:14:20,636 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-2
+2026-04-25 19:14:20,637 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-2
+2026-04-25 19:14:20,638 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-1
+2026-04-25 19:14:20,642 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-1
+2026-04-25 19:14:20,660 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-26
+2026-04-25 19:14:20,661 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-3
+2026-04-25 19:14:20,661 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-3
+2026-04-25 19:14:20,908 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-27
+2026-04-25 19:14:21,156 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-28
+2026-04-25 19:14:21,400 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-29
+2026-04-25 19:14:21,645 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-30
+2026-04-25 19:14:21,893 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-31
+2026-04-25 19:14:22,138 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-32
+2026-04-25 19:14:22,503 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-33
+2026-04-25 19:14:22,631 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-34
+2026-04-25 19:14:22,890 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-35
+2026-04-25 19:14:23,128 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-36
+2026-04-25 19:14:23,388 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-37
+2026-04-25 19:14:23,620 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-38
+2026-04-25 19:14:23,898 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-39
+2026-04-25 19:14:24,123 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-40
+2026-04-25 19:14:24,380 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-41
+2026-04-25 19:14:24,625 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-42
+2026-04-25 19:14:24,874 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-43
+2026-04-25 19:14:25,122 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-44
+2026-04-25 19:14:25,369 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-45
+2026-04-25 19:14:25,728 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-46
+2026-04-25 19:14:25,878 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-47
+2026-04-25 19:14:26,127 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-48
+2026-04-25 19:14:26,372 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-49
+2026-04-25 19:14:26,632 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-50
+2026-04-25 19:14:26,872 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-51
+2026-04-25 19:14:27,121 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-52
+2026-04-25 19:14:27,377 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-53
+2026-04-25 19:14:27,623 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-54
+2026-04-25 19:14:27,875 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-55
+2026-04-25 19:14:28,133 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-56
+2026-04-25 19:14:28,401 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-57
+2026-04-25 19:14:28,645 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-58
+2026-04-25 19:14:28,884 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-59
+2026-04-25 19:14:29,136 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-60
+2026-04-25 19:14:29,380 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-61
+2026-04-25 19:14:29,632 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-62
+2026-04-25 19:14:29,892 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-63
+2026-04-25 19:14:30,139 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-64
+2026-04-25 19:14:30,395 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-65
+2026-04-25 19:14:30,654 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-66
+2026-04-25 19:14:30,884 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-67
+2026-04-25 19:14:31,132 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-68
+2026-04-25 19:14:31,376 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-69
+2026-04-25 19:14:31,622 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-70
+2026-04-25 19:14:31,881 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-71
+2026-04-25 19:14:32,147 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-72
+2026-04-25 19:14:32,377 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-73
+2026-04-25 19:14:32,651 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-74
+2026-04-25 19:14:32,887 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-75
+2026-04-25 19:14:33,094 INFO o.a.j.r.Summariser: summary +     13 in 00:00:19 =    0.7/s Avg:  2871 Min:    98 Max: 16062 Err:     4 (30.77%) Active: 71 Started: 75 Finished: 4
+2026-04-25 19:14:33,128 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-76
+2026-04-25 19:14:33,375 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-77
+2026-04-25 19:14:33,623 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-78
+2026-04-25 19:14:33,631 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-23
+2026-04-25 19:14:33,632 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-23
+2026-04-25 19:14:33,631 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-22
+2026-04-25 19:14:33,632 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-22
+2026-04-25 19:14:33,648 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-9
+2026-04-25 19:14:33,648 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-8
+2026-04-25 19:14:33,648 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-15
+2026-04-25 19:14:33,648 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-15
+2026-04-25 19:14:33,648 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-5
+2026-04-25 19:14:33,649 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-5
+2026-04-25 19:14:33,648 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-17
+2026-04-25 19:14:33,650 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-17
+2026-04-25 19:14:33,649 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-6
+2026-04-25 19:14:33,651 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-6
+2026-04-25 19:14:33,649 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-9
+2026-04-25 19:14:33,651 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-10
+2026-04-25 19:14:33,651 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-10
+2026-04-25 19:14:33,649 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-8
+2026-04-25 19:14:33,652 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-18
+2026-04-25 19:14:33,652 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-18
+2026-04-25 19:14:33,665 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-21
+2026-04-25 19:14:33,665 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-21
+2026-04-25 19:14:33,665 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-13
+2026-04-25 19:14:33,665 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-13
+2026-04-25 19:14:33,666 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-14
+2026-04-25 19:14:33,666 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-14
+2026-04-25 19:14:33,665 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-7
+2026-04-25 19:14:33,668 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-7
+2026-04-25 19:14:33,668 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-12
+2026-04-25 19:14:33,668 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-16
+2026-04-25 19:14:33,668 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-16
+2026-04-25 19:14:33,668 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-11
+2026-04-25 19:14:33,667 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-20
+2026-04-25 19:14:33,668 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-19
+2026-04-25 19:14:33,670 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-20
+2026-04-25 19:14:33,670 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-12
+2026-04-25 19:14:33,670 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-11
+2026-04-25 19:14:33,670 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-19
+2026-04-25 19:14:33,679 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-24
+2026-04-25 19:14:33,680 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-24
+2026-04-25 19:14:33,874 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-79
+2026-04-25 19:14:34,133 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-80
+2026-04-25 19:14:34,389 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-81
+2026-04-25 19:14:34,630 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-82
+2026-04-25 19:14:34,874 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-83
+2026-04-25 19:14:35,123 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-84
+2026-04-25 19:14:35,369 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-85
+2026-04-25 19:14:35,622 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-86
+2026-04-25 19:14:35,869 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-87
+2026-04-25 19:14:36,126 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-88
+2026-04-25 19:14:36,373 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-89
+2026-04-25 19:14:36,625 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-90
+2026-04-25 19:14:36,894 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-91
+2026-04-25 19:14:37,223 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-92
+2026-04-25 19:14:37,398 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-93
+2026-04-25 19:14:37,631 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-94
+2026-04-25 19:14:37,880 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-95
+2026-04-25 19:14:38,131 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-96
+2026-04-25 19:14:38,376 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-97
+2026-04-25 19:14:38,654 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-98
+2026-04-25 19:14:38,883 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-99
+2026-04-25 19:14:39,125 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-100
+2026-04-25 19:14:39,377 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-101
+2026-04-25 19:14:39,637 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-102
+2026-04-25 19:14:39,877 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-103
+2026-04-25 19:14:40,135 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-104
+2026-04-25 19:14:40,398 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-105
+2026-04-25 19:14:40,642 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-106
+2026-04-25 19:14:40,882 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-107
+2026-04-25 19:14:41,155 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-108
+2026-04-25 19:14:41,383 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-109
+2026-04-25 19:14:41,639 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-110
+2026-04-25 19:14:41,883 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-111
+2026-04-25 19:14:42,135 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-112
+2026-04-25 19:14:42,377 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-113
+2026-04-25 19:14:42,641 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-114
+2026-04-25 19:14:42,897 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-115
+2026-04-25 19:14:43,141 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-116
+2026-04-25 19:14:43,379 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-117
+2026-04-25 19:14:43,632 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-118
+2026-04-25 19:14:43,882 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-119
+2026-04-25 19:14:44,332 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-120
+2026-04-25 19:14:44,394 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-121
+2026-04-25 19:14:44,629 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-122
+2026-04-25 19:14:44,888 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-123
+2026-04-25 19:14:45,133 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-124
+2026-04-25 19:14:45,422 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-125
+2026-04-25 19:14:45,650 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-126
+2026-04-25 19:14:45,904 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-127
+2026-04-25 19:14:46,143 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-128
+2026-04-25 19:14:46,434 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-129
+2026-04-25 19:14:46,681 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-130
+2026-04-25 19:14:46,934 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-131
+2026-04-25 19:14:47,133 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-132
+2026-04-25 19:14:47,379 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-133
+2026-04-25 19:14:47,633 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-134
+2026-04-25 19:14:47,874 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-135
+2026-04-25 19:14:48,121 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-136
+2026-04-25 19:14:48,384 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-137
+2026-04-25 19:14:48,622 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-138
+2026-04-25 19:14:48,877 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-139
+2026-04-25 19:14:49,126 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-140
+2026-04-25 19:14:49,371 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-141
+2026-04-25 19:14:49,624 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-142
+2026-04-25 19:14:49,883 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-143
+2026-04-25 19:14:50,128 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-144
+2026-04-25 19:14:50,373 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-145
+2026-04-25 19:14:50,626 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-146
+2026-04-25 19:14:50,876 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-147
+2026-04-25 19:14:51,122 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-148
+2026-04-25 19:14:51,388 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-149
+2026-04-25 19:14:51,623 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-150
+2026-04-25 19:14:51,881 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-151
+2026-04-25 19:14:52,134 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-152
+2026-04-25 19:14:52,372 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-153
+2026-04-25 19:14:52,626 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-154
+2026-04-25 19:14:52,878 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-155
+2026-04-25 19:14:53,123 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-156
+2026-04-25 19:14:53,376 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-157
+2026-04-25 19:14:53,628 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-158
+2026-04-25 19:14:53,873 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-159
+2026-04-25 19:14:54,126 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-160
+2026-04-25 19:14:54,373 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-161
+2026-04-25 19:14:54,629 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-162
+2026-04-25 19:14:54,873 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-163
+2026-04-25 19:14:55,124 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-164
+2026-04-25 19:14:55,377 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-165
+2026-04-25 19:14:55,646 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-166
+2026-04-25 19:14:55,728 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-34
+2026-04-25 19:14:55,728 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-34
+2026-04-25 19:14:55,739 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-32
+2026-04-25 19:14:55,739 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-32
+2026-04-25 19:14:55,740 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-35
+2026-04-25 19:14:55,740 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-35
+2026-04-25 19:14:55,741 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-29
+2026-04-25 19:14:55,741 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-29
+2026-04-25 19:14:55,741 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-33
+2026-04-25 19:14:55,741 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-33
+2026-04-25 19:14:55,740 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-25
+2026-04-25 19:14:55,742 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-25
+2026-04-25 19:14:55,741 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-42
+2026-04-25 19:14:55,742 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-37
+2026-04-25 19:14:55,742 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-37
+2026-04-25 19:14:55,741 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-40
+2026-04-25 19:14:55,743 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-40
+2026-04-25 19:14:55,743 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-42
+2026-04-25 19:14:55,749 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-41
+2026-04-25 19:14:55,749 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-39
+2026-04-25 19:14:55,750 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-41
+2026-04-25 19:14:55,750 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-39
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-26
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-30
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-30
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-45
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-38
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-38
+2026-04-25 19:14:55,751 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-43
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-43
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-44
+2026-04-25 19:14:55,751 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-47
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-47
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-44
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-31
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-31
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-45
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-26
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-28
+2026-04-25 19:14:55,752 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-28
+2026-04-25 19:14:55,755 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-27
+2026-04-25 19:14:55,755 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-27
+2026-04-25 19:14:55,910 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-167
+2026-04-25 19:14:55,976 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-64
+2026-04-25 19:14:55,976 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-64
+2026-04-25 19:14:55,982 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-57
+2026-04-25 19:14:55,982 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-57
+2026-04-25 19:14:56,051 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-63
+2026-04-25 19:14:56,051 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-63
+2026-04-25 19:14:56,051 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-71
+2026-04-25 19:14:56,052 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-71
+2026-04-25 19:14:56,058 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-53
+2026-04-25 19:14:56,058 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-53
+2026-04-25 19:14:56,076 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-75
+2026-04-25 19:14:56,076 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-75
+2026-04-25 19:14:56,077 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-60
+2026-04-25 19:14:56,077 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-60
+2026-04-25 19:14:56,077 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-49
+2026-04-25 19:14:56,077 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-49
+2026-04-25 19:14:56,096 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-50
+2026-04-25 19:14:56,097 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-50
+2026-04-25 19:14:56,122 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-59
+2026-04-25 19:14:56,123 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-59
+2026-04-25 19:14:56,123 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-54
+2026-04-25 19:14:56,123 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-54
+2026-04-25 19:14:56,126 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-73
+2026-04-25 19:14:56,126 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-73
+2026-04-25 19:14:56,126 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-74
+2026-04-25 19:14:56,126 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-74
+2026-04-25 19:14:56,129 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-168
+2026-04-25 19:14:56,136 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-51
+2026-04-25 19:14:56,136 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-58
+2026-04-25 19:14:56,136 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-61
+2026-04-25 19:14:56,136 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-51
+2026-04-25 19:14:56,136 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-58
+2026-04-25 19:14:56,136 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-61
+2026-04-25 19:14:56,140 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-62
+2026-04-25 19:14:56,140 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-70
+2026-04-25 19:14:56,140 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-70
+2026-04-25 19:14:56,140 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-62
+2026-04-25 19:14:56,140 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-72
+2026-04-25 19:14:56,140 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-72
+2026-04-25 19:14:56,140 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-52
+2026-04-25 19:14:56,140 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-52
+2026-04-25 19:14:56,140 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-67
+2026-04-25 19:14:56,140 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-67
+2026-04-25 19:14:56,141 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-56
+2026-04-25 19:14:56,141 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-66
+2026-04-25 19:14:56,141 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-66
+2026-04-25 19:14:56,142 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-56
+2026-04-25 19:14:56,142 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-48
+2026-04-25 19:14:56,142 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-68
+2026-04-25 19:14:56,143 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-48
+2026-04-25 19:14:56,143 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-68
+2026-04-25 19:14:56,149 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-46
+2026-04-25 19:14:56,149 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-46
+2026-04-25 19:14:56,149 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-65
+2026-04-25 19:14:56,149 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-65
+2026-04-25 19:14:56,149 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-36
+2026-04-25 19:14:56,149 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-55
+2026-04-25 19:14:56,149 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-36
+2026-04-25 19:14:56,149 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-55
+2026-04-25 19:14:56,150 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-69
+2026-04-25 19:14:56,150 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-69
+2026-04-25 19:14:56,383 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-169
+2026-04-25 19:14:56,624 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-170
+2026-04-25 19:14:56,882 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-171
+2026-04-25 19:14:57,128 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-172
+2026-04-25 19:14:57,381 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-173
+2026-04-25 19:14:57,626 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-174
+2026-04-25 19:14:57,884 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-175
+2026-04-25 19:14:58,134 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-176
+2026-04-25 19:14:58,381 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-177
+2026-04-25 19:14:58,626 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-178
+2026-04-25 19:14:58,883 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-179
+2026-04-25 19:14:59,130 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-180
+2026-04-25 19:14:59,375 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-181
+2026-04-25 19:14:59,629 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-182
+2026-04-25 19:14:59,878 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-183
+2026-04-25 19:15:00,124 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-184
+2026-04-25 19:15:00,376 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-185
+2026-04-25 19:15:00,634 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-186
+2026-04-25 19:15:00,884 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-187
+2026-04-25 19:15:01,126 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-188
+2026-04-25 19:15:01,377 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-189
+2026-04-25 19:15:01,632 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-190
+2026-04-25 19:15:01,878 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-191
+2026-04-25 19:15:02,125 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-192
+2026-04-25 19:15:02,375 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-193
+2026-04-25 19:15:02,630 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-194
+2026-04-25 19:15:02,877 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-195
+2026-04-25 19:15:03,143 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-196
+2026-04-25 19:15:03,371 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-197
+2026-04-25 19:15:03,622 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-198
+2026-04-25 19:15:03,872 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-199
+2026-04-25 19:15:04,123 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-200
+2026-04-25 19:15:04,378 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-201
+2026-04-25 19:15:04,633 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-202
+2026-04-25 19:15:04,880 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-203
+2026-04-25 19:15:05,131 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-204
+2026-04-25 19:15:05,377 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-205
+2026-04-25 19:15:05,629 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-206
+2026-04-25 19:15:05,869 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-207
+2026-04-25 19:15:06,121 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-208
+2026-04-25 19:15:06,378 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-209
+2026-04-25 19:15:06,621 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-210
+2026-04-25 19:15:06,875 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-211
+2026-04-25 19:15:07,122 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-212
+2026-04-25 19:15:07,369 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-213
+2026-04-25 19:15:07,620 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-214
+2026-04-25 19:15:07,871 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-215
+2026-04-25 19:15:08,125 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-216
+2026-04-25 19:15:08,371 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-217
+2026-04-25 19:15:08,623 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-218
+2026-04-25 19:15:08,880 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-219
+2026-04-25 19:15:09,125 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-220
+2026-04-25 19:15:09,376 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-221
+2026-04-25 19:15:09,625 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-222
+2026-04-25 19:15:09,875 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-223
+2026-04-25 19:15:10,121 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-224
+2026-04-25 19:15:10,378 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-225
+2026-04-25 19:15:10,623 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-226
+2026-04-25 19:15:10,874 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-227
+2026-04-25 19:15:11,122 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-228
+2026-04-25 19:15:11,373 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-229
+2026-04-25 19:15:11,619 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-76
+2026-04-25 19:15:11,619 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-76
+2026-04-25 19:15:11,624 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-230
+2026-04-25 19:15:11,967 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-231
+2026-04-25 19:15:12,135 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-232
+2026-04-25 19:15:12,381 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-233
+2026-04-25 19:15:12,641 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-234
+2026-04-25 19:15:12,884 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-235
+2026-04-25 19:15:13,151 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-236
+2026-04-25 19:15:13,387 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-237
+2026-04-25 19:15:13,625 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-238
+2026-04-25 19:15:13,875 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-239
+2026-04-25 19:15:14,128 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-240
+2026-04-25 19:15:14,381 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-241
+2026-04-25 19:15:14,629 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-242
+2026-04-25 19:15:14,876 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-243
+2026-04-25 19:15:15,125 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-244
+2026-04-25 19:15:15,373 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-245
+2026-04-25 19:15:15,632 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-246
+2026-04-25 19:15:15,874 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-247
+2026-04-25 19:15:16,129 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-248
+2026-04-25 19:15:16,384 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-249
+2026-04-25 19:15:16,621 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-250
+2026-04-25 19:15:16,875 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-251
+2026-04-25 19:15:17,126 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-252
+2026-04-25 19:15:17,377 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-253
+2026-04-25 19:15:17,621 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-254
+2026-04-25 19:15:17,878 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-255
+2026-04-25 19:15:18,124 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-256
+2026-04-25 19:15:18,372 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-257
+2026-04-25 19:15:18,626 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-258
+2026-04-25 19:15:18,870 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-259
+2026-04-25 19:15:19,122 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-260
+2026-04-25 19:15:19,373 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-261
+2026-04-25 19:15:19,621 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-262
+2026-04-25 19:15:19,879 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-263
+2026-04-25 19:15:20,126 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-264
+2026-04-25 19:15:20,376 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-265
+2026-04-25 19:15:20,638 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-266
+2026-04-25 19:15:20,894 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-267
+2026-04-25 19:15:21,136 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-268
+2026-04-25 19:15:21,382 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-269
+2026-04-25 19:15:21,627 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-270
+2026-04-25 19:15:21,870 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-271
+2026-04-25 19:15:22,125 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-272
+2026-04-25 19:15:22,373 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-273
+2026-04-25 19:15:22,622 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-274
+2026-04-25 19:15:22,872 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-275
+2026-04-25 19:15:23,121 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-276
+2026-04-25 19:15:23,371 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-277
+2026-04-25 19:15:23,622 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-278
+2026-04-25 19:15:23,873 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-279
+2026-04-25 19:15:24,125 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-280
+2026-04-25 19:15:24,371 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-281
+2026-04-25 19:15:24,621 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-282
+2026-04-25 19:15:24,876 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-283
+2026-04-25 19:15:25,109 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-77
+2026-04-25 19:15:25,109 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-77
+2026-04-25 19:15:25,127 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-284
+2026-04-25 19:15:25,310 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-98
+2026-04-25 19:15:25,310 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-98
+2026-04-25 19:15:25,329 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-87
+2026-04-25 19:15:25,329 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-87
+2026-04-25 19:15:25,332 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-100
+2026-04-25 19:15:25,332 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-100
+2026-04-25 19:15:25,336 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-81
+2026-04-25 19:15:25,336 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-114
+2026-04-25 19:15:25,336 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-90
+2026-04-25 19:15:25,336 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-81
+2026-04-25 19:15:25,336 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-114
+2026-04-25 19:15:25,336 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-90
+2026-04-25 19:15:25,344 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-112
+2026-04-25 19:15:25,344 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-112
+2026-04-25 19:15:25,355 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-121
+2026-04-25 19:15:25,355 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-94
+2026-04-25 19:15:25,355 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-94
+2026-04-25 19:15:25,355 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-121
+2026-04-25 19:15:25,358 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-93
+2026-04-25 19:15:25,358 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-93
+2026-04-25 19:15:25,358 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-82
+2026-04-25 19:15:25,358 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-82
+2026-04-25 19:15:25,359 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-97
+2026-04-25 19:15:25,359 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-97
+2026-04-25 19:15:25,359 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-79
+2026-04-25 19:15:25,359 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-79
+2026-04-25 19:15:25,359 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-117
+2026-04-25 19:15:25,359 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-86
+2026-04-25 19:15:25,359 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-119
+2026-04-25 19:15:25,359 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-119
+2026-04-25 19:15:25,359 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-86
+2026-04-25 19:15:25,359 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-117
+2026-04-25 19:15:25,359 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-78
+2026-04-25 19:15:25,359 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-78
+2026-04-25 19:15:25,373 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-83
+2026-04-25 19:15:25,373 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-83
+2026-04-25 19:15:25,373 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-115
+2026-04-25 19:15:25,373 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-88
+2026-04-25 19:15:25,373 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-88
+2026-04-25 19:15:25,373 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-115
+2026-04-25 19:15:25,374 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-96
+2026-04-25 19:15:25,374 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-116
+2026-04-25 19:15:25,374 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-113
+2026-04-25 19:15:25,374 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-116
+2026-04-25 19:15:25,374 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-123
+2026-04-25 19:15:25,374 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-123
+2026-04-25 19:15:25,374 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-96
+2026-04-25 19:15:25,374 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-113
+2026-04-25 19:15:25,376 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-108
+2026-04-25 19:15:25,376 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-108
+2026-04-25 19:15:25,377 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-106
+2026-04-25 19:15:25,377 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-106
+2026-04-25 19:15:25,378 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-285
+2026-04-25 19:15:25,380 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-89
+2026-04-25 19:15:25,380 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-89
+2026-04-25 19:15:25,383 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-84
+2026-04-25 19:15:25,384 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-84
+2026-04-25 19:15:25,385 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-111
+2026-04-25 19:15:25,385 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-109
+2026-04-25 19:15:25,385 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-91
+2026-04-25 19:15:25,385 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-91
+2026-04-25 19:15:25,385 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-109
+2026-04-25 19:15:25,385 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-103
+2026-04-25 19:15:25,385 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-103
+2026-04-25 19:15:25,385 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-111
+2026-04-25 19:15:25,385 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-95
+2026-04-25 19:15:25,386 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-95
+2026-04-25 19:15:25,385 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-118
+2026-04-25 19:15:25,386 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-118
+2026-04-25 19:15:25,393 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-120
+2026-04-25 19:15:25,393 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-120
+2026-04-25 19:15:25,393 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-107
+2026-04-25 19:15:25,393 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-122
+2026-04-25 19:15:25,393 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-107
+2026-04-25 19:15:25,393 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-122
+2026-04-25 19:15:25,400 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-85
+2026-04-25 19:15:25,400 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-85
+2026-04-25 19:15:25,400 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-80
+2026-04-25 19:15:25,400 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-80
+2026-04-25 19:15:25,403 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-105
+2026-04-25 19:15:25,403 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-102
+2026-04-25 19:15:25,403 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-105
+2026-04-25 19:15:25,403 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-102
+2026-04-25 19:15:25,403 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-101
+2026-04-25 19:15:25,403 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-101
+2026-04-25 19:15:25,403 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-110
+2026-04-25 19:15:25,403 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-110
+2026-04-25 19:15:25,403 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-99
+2026-04-25 19:15:25,403 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-99
+2026-04-25 19:15:25,404 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-92
+2026-04-25 19:15:25,404 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-92
+2026-04-25 19:15:25,408 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-104
+2026-04-25 19:15:25,409 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-104
+2026-04-25 19:15:25,634 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-286
+2026-04-25 19:15:25,874 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-287
+2026-04-25 19:15:26,122 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-288
+2026-04-25 19:15:26,266 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-151
+2026-04-25 19:15:26,267 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-151
+2026-04-25 19:15:26,300 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-126
+2026-04-25 19:15:26,300 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-156
+2026-04-25 19:15:26,300 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-124
+2026-04-25 19:15:26,300 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-124
+2026-04-25 19:15:26,300 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-126
+2026-04-25 19:15:26,300 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-156
+2026-04-25 19:15:26,301 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-144
+2026-04-25 19:15:26,301 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-145
+2026-04-25 19:15:26,301 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-145
+2026-04-25 19:15:26,301 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-144
+2026-04-25 19:15:26,301 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-132
+2026-04-25 19:15:26,301 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-132
+2026-04-25 19:15:26,320 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-135
+2026-04-25 19:15:26,320 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-135
+2026-04-25 19:15:26,320 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-137
+2026-04-25 19:15:26,320 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-137
+2026-04-25 19:15:26,320 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-153
+2026-04-25 19:15:26,320 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-133
+2026-04-25 19:15:26,320 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-125
+2026-04-25 19:15:26,320 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-153
+2026-04-25 19:15:26,320 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-133
+2026-04-25 19:15:26,320 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-125
+2026-04-25 19:15:26,325 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-128
+2026-04-25 19:15:26,325 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-150
+2026-04-25 19:15:26,325 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-128
+2026-04-25 19:15:26,326 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-150
+2026-04-25 19:15:26,326 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-141
+2026-04-25 19:15:26,326 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-160
+2026-04-25 19:15:26,326 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-160
+2026-04-25 19:15:26,326 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-159
+2026-04-25 19:15:26,326 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-159
+2026-04-25 19:15:26,326 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-158
+2026-04-25 19:15:26,326 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-141
+2026-04-25 19:15:26,326 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-158
+2026-04-25 19:15:26,336 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-152
+2026-04-25 19:15:26,336 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-152
+2026-04-25 19:15:26,336 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-127
+2026-04-25 19:15:26,336 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-127
+2026-04-25 19:15:26,337 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-164
+2026-04-25 19:15:26,337 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-164
+2026-04-25 19:15:26,337 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-143
+2026-04-25 19:15:26,337 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-143
+2026-04-25 19:15:26,337 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-146
+2026-04-25 19:15:26,337 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-134
+2026-04-25 19:15:26,337 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-134
+2026-04-25 19:15:26,337 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-154
+2026-04-25 19:15:26,337 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-154
+2026-04-25 19:15:26,337 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-146
+2026-04-25 19:15:26,337 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-140
+2026-04-25 19:15:26,337 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-140
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-148
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-148
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-139
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-139
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-149
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-161
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-162
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-138
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-161
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-131
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-131
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-138
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-155
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-155
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-162
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-130
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-129
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-130
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-149
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-129
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-142
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-147
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-157
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-163
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-142
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-157
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-147
+2026-04-25 19:15:26,338 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-163
+2026-04-25 19:15:26,348 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-136
+2026-04-25 19:15:26,348 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-136
+2026-04-25 19:15:26,370 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-289
+2026-04-25 19:15:26,627 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-290
+2026-04-25 19:15:26,876 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-291
+2026-04-25 19:15:27,137 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-292
+2026-04-25 19:15:27,376 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-293
+2026-04-25 19:15:27,456 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-166
+2026-04-25 19:15:27,457 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-166
+2026-04-25 19:15:27,459 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-165
+2026-04-25 19:15:27,459 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-165
+2026-04-25 19:15:27,622 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-294
+2026-04-25 19:15:27,879 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-295
+2026-04-25 19:15:28,130 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-296
+2026-04-25 19:15:28,394 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-297
+2026-04-25 19:15:28,642 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-298
+2026-04-25 19:15:28,879 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-299
+2026-04-25 19:15:29,122 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-300
+2026-04-25 19:15:29,389 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-301
+2026-04-25 19:15:29,625 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-302
+2026-04-25 19:15:29,871 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-303
+2026-04-25 19:15:30,140 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-304
+2026-04-25 19:15:30,382 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-305
+2026-04-25 19:15:30,631 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-306
+2026-04-25 19:15:30,881 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-307
+2026-04-25 19:15:31,132 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-308
+2026-04-25 19:15:31,388 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-309
+2026-04-25 19:15:31,635 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-310
+2026-04-25 19:15:31,897 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-311
+2026-04-25 19:15:32,151 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-312
+2026-04-25 19:15:32,380 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-313
+2026-04-25 19:15:32,648 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-314
+2026-04-25 19:15:32,870 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-315
+2026-04-25 19:15:33,124 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-316
+2026-04-25 19:15:33,399 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-317
+2026-04-25 19:15:33,634 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-318
+2026-04-25 19:15:33,881 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-319
+2026-04-25 19:15:34,131 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-320
+2026-04-25 19:15:34,376 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-321
+2026-04-25 19:15:34,623 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-322
+2026-04-25 19:15:34,874 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-323
+2026-04-25 19:15:35,121 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-324
+2026-04-25 19:15:35,372 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-325
+2026-04-25 19:15:35,624 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-326
+2026-04-25 19:15:35,871 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-327
+2026-04-25 19:15:36,121 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-328
+2026-04-25 19:15:36,371 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-329
+2026-04-25 19:15:36,623 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-330
+2026-04-25 19:15:36,870 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-331
+2026-04-25 19:15:37,121 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-332
+2026-04-25 19:15:37,372 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-333
+2026-04-25 19:15:37,623 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-334
+2026-04-25 19:15:37,875 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-335
+2026-04-25 19:15:38,126 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-336
+2026-04-25 19:15:38,372 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-337
+2026-04-25 19:15:38,618 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-338
+2026-04-25 19:15:38,869 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-339
+2026-04-25 19:15:39,119 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-340
+2026-04-25 19:15:39,371 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-341
+2026-04-25 19:15:39,625 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-342
+2026-04-25 19:15:39,872 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-343
+2026-04-25 19:15:40,123 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-344
+2026-04-25 19:15:40,374 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-345
+2026-04-25 19:15:40,622 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-346
+2026-04-25 19:15:40,874 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-347
+2026-04-25 19:15:41,124 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-348
+2026-04-25 19:15:41,372 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-349
+2026-04-25 19:15:41,623 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-350
+2026-04-25 19:15:41,876 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-351
+2026-04-25 19:15:42,121 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-352
+2026-04-25 19:15:42,371 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-353
+2026-04-25 19:15:42,625 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-354
+2026-04-25 19:15:42,877 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-355
+2026-04-25 19:15:43,121 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-356
+2026-04-25 19:15:43,373 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-357
+2026-04-25 19:15:43,619 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-358
+2026-04-25 19:15:43,869 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-359
+2026-04-25 19:15:44,123 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-360
+2026-04-25 19:15:44,369 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-361
+2026-04-25 19:15:44,603 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-168
+2026-04-25 19:15:44,603 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-168
+2026-04-25 19:15:44,604 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-167
+2026-04-25 19:15:44,604 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-167
+2026-04-25 19:15:44,619 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-362
+2026-04-25 19:15:44,872 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-363
+2026-04-25 19:15:45,124 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-364
+2026-04-25 19:15:45,371 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-365
+2026-04-25 19:15:45,623 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-366
+2026-04-25 19:15:45,873 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-367
+2026-04-25 19:15:46,121 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-368
+2026-04-25 19:15:46,371 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-369
+2026-04-25 19:15:46,620 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-370
+2026-04-25 19:15:46,869 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-371
+2026-04-25 19:15:47,123 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-372
+2026-04-25 19:15:47,374 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-373
+2026-04-25 19:15:47,621 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-374
+2026-04-25 19:15:47,871 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-375
+2026-04-25 19:15:48,125 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-376
+2026-04-25 19:15:48,371 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-377
+2026-04-25 19:15:48,623 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-378
+2026-04-25 19:15:48,869 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-379
+2026-04-25 19:15:49,119 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-380
+2026-04-25 19:15:49,373 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-381
+2026-04-25 19:15:49,620 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-382
+2026-04-25 19:15:49,873 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-383
+2026-04-25 19:15:50,155 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-384
+2026-04-25 19:15:50,377 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-385
+2026-04-25 19:15:50,623 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-386
+2026-04-25 19:15:50,879 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-387
+2026-04-25 19:15:51,396 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-388
+2026-04-25 19:15:51,650 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-390
+2026-04-25 19:15:51,651 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-389
+2026-04-25 19:15:51,878 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-391
+2026-04-25 19:15:52,134 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-392
+2026-04-25 19:15:52,380 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-393
+2026-04-25 19:15:52,635 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-394
+2026-04-25 19:15:52,914 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-395
+2026-04-25 19:15:53,159 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-396
+2026-04-25 19:15:53,373 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-397
+2026-04-25 19:15:53,631 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-398
+2026-04-25 19:15:53,892 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-399
+2026-04-25 19:15:54,124 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-400
+2026-04-25 19:15:54,377 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-401
+2026-04-25 19:15:54,624 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-402
+2026-04-25 19:15:54,886 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-403
+2026-04-25 19:15:55,134 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-404
+2026-04-25 19:15:55,378 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-405
+2026-04-25 19:15:55,651 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-406
+2026-04-25 19:15:55,874 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-407
+2026-04-25 19:15:56,131 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-408
+2026-04-25 19:15:56,373 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-409
+2026-04-25 19:15:56,627 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-410
+2026-04-25 19:15:56,882 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-411
+2026-04-25 19:15:57,130 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-412
+2026-04-25 19:15:57,376 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-413
+2026-04-25 19:15:57,623 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-414
+2026-04-25 19:15:57,875 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-415
+2026-04-25 19:15:58,123 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-416
+2026-04-25 19:15:58,377 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-417
+2026-04-25 19:15:58,625 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-418
+2026-04-25 19:15:58,873 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-419
+2026-04-25 19:15:59,122 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-420
+2026-04-25 19:15:59,379 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-421
+2026-04-25 19:15:59,626 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-422
+2026-04-25 19:15:59,876 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-423
+2026-04-25 19:16:00,126 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-424
+2026-04-25 19:16:00,378 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-425
+2026-04-25 19:16:00,624 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-426
+2026-04-25 19:16:00,874 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-427
+2026-04-25 19:16:01,120 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-428
+2026-04-25 19:16:01,371 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-429
+2026-04-25 19:16:01,624 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-430
+2026-04-25 19:16:01,873 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-431
+2026-04-25 19:16:02,121 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-432
+2026-04-25 19:16:02,370 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-433
+2026-04-25 19:16:02,622 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-434
+2026-04-25 19:16:02,872 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-435
+2026-04-25 19:16:03,121 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-436
+2026-04-25 19:16:03,207 INFO o.a.j.r.Summariser: summary +    492 in 00:01:30 =    5.5/s Avg: 11615 Min:    19 Max: 66814 Err:   164 (33.33%) Active: 268 Started: 436 Finished: 168
+2026-04-25 19:16:03,208 INFO o.a.j.r.Summariser: summary =    505 in 00:01:49 =    4.6/s Avg: 11390 Min:    19 Max: 66814 Err:   168 (33.27%)
+2026-04-25 19:16:03,374 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-437
+2026-04-25 19:16:03,625 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-438
+2026-04-25 19:16:03,757 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-169
+2026-04-25 19:16:03,757 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-169
+2026-04-25 19:16:03,873 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-439
+2026-04-25 19:16:03,883 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-183
+2026-04-25 19:16:03,883 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-183
+2026-04-25 19:16:03,899 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-174
+2026-04-25 19:16:03,899 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-174
+2026-04-25 19:16:03,901 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-171
+2026-04-25 19:16:03,901 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-171
+2026-04-25 19:16:03,934 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-178
+2026-04-25 19:16:03,934 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-178
+2026-04-25 19:16:04,122 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-440
+2026-04-25 19:16:04,157 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-177
+2026-04-25 19:16:04,157 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-177
+2026-04-25 19:16:04,159 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-190
+2026-04-25 19:16:04,159 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-190
+2026-04-25 19:16:04,168 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-199
+2026-04-25 19:16:04,168 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-173
+2026-04-25 19:16:04,168 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-199
+2026-04-25 19:16:04,168 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-173
+2026-04-25 19:16:04,171 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-170
+2026-04-25 19:16:04,171 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-170
+2026-04-25 19:16:04,177 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-186
+2026-04-25 19:16:04,177 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-186
+2026-04-25 19:16:04,184 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-187
+2026-04-25 19:16:04,184 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-187
+2026-04-25 19:16:04,184 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-181
+2026-04-25 19:16:04,184 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-181
+2026-04-25 19:16:04,187 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-172
+2026-04-25 19:16:04,187 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-172
+2026-04-25 19:16:04,189 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-196
+2026-04-25 19:16:04,189 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-196
+2026-04-25 19:16:04,218 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-176
+2026-04-25 19:16:04,218 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-211
+2026-04-25 19:16:04,218 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-176
+2026-04-25 19:16:04,218 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-211
+2026-04-25 19:16:04,218 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-205
+2026-04-25 19:16:04,218 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-205
+2026-04-25 19:16:04,223 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-175
+2026-04-25 19:16:04,223 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-175
+2026-04-25 19:16:04,223 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-179
+2026-04-25 19:16:04,223 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-179
+2026-04-25 19:16:04,238 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-227
+2026-04-25 19:16:04,238 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-227
+2026-04-25 19:16:04,245 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-195
+2026-04-25 19:16:04,246 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-195
+2026-04-25 19:16:04,246 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-182
+2026-04-25 19:16:04,246 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-182
+2026-04-25 19:16:04,246 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-223
+2026-04-25 19:16:04,246 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-223
+2026-04-25 19:16:04,250 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-191
+2026-04-25 19:16:04,250 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-219
+2026-04-25 19:16:04,250 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-198
+2026-04-25 19:16:04,250 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-188
+2026-04-25 19:16:04,250 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-198
+2026-04-25 19:16:04,250 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-219
+2026-04-25 19:16:04,250 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-191
+2026-04-25 19:16:04,250 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-188
+2026-04-25 19:16:04,253 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-206
+2026-04-25 19:16:04,253 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-206
+2026-04-25 19:16:04,253 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-185
+2026-04-25 19:16:04,253 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-185
+2026-04-25 19:16:04,253 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-193
+2026-04-25 19:16:04,253 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-200
+2026-04-25 19:16:04,253 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-193
+2026-04-25 19:16:04,253 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-200
+2026-04-25 19:16:04,254 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-212
+2026-04-25 19:16:04,254 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-212
+2026-04-25 19:16:04,254 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-229
+2026-04-25 19:16:04,254 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-229
+2026-04-25 19:16:04,255 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-197
+2026-04-25 19:16:04,255 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-197
+2026-04-25 19:16:04,257 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-222
+2026-04-25 19:16:04,257 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-222
+2026-04-25 19:16:04,257 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-194
+2026-04-25 19:16:04,257 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-220
+2026-04-25 19:16:04,257 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-220
+2026-04-25 19:16:04,257 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-194
+2026-04-25 19:16:04,258 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-225
+2026-04-25 19:16:04,258 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-225
+2026-04-25 19:16:04,267 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-180
+2026-04-25 19:16:04,267 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-214
+2026-04-25 19:16:04,267 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-180
+2026-04-25 19:16:04,267 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-210
+2026-04-25 19:16:04,267 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-221
+2026-04-25 19:16:04,267 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-210
+2026-04-25 19:16:04,267 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-214
+2026-04-25 19:16:04,267 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-209
+2026-04-25 19:16:04,269 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-209
+2026-04-25 19:16:04,269 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-221
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-204
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-208
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-207
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-208
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-228
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-202
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-202
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-207
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-228
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-189
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-204
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-189
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-203
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-213
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-201
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-201
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-203
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-213
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-216
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-184
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-192
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-184
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-216
+2026-04-25 19:16:04,270 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-192
+2026-04-25 19:16:04,372 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-441
+2026-04-25 19:16:04,630 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-442
+2026-04-25 19:16:04,880 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-443
+2026-04-25 19:16:05,127 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-444
+2026-04-25 19:16:05,368 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-218
+2026-04-25 19:16:05,369 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-218
+2026-04-25 19:16:05,370 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-226
+2026-04-25 19:16:05,370 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-226
+2026-04-25 19:16:05,373 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-445
+2026-04-25 19:16:05,393 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-217
+2026-04-25 19:16:05,393 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-217
+2026-04-25 19:16:05,421 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-215
+2026-04-25 19:16:05,421 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-215
+2026-04-25 19:16:05,421 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-224
+2026-04-25 19:16:05,421 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-224
+2026-04-25 19:16:05,474 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-259
+2026-04-25 19:16:05,474 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-259
+2026-04-25 19:16:05,477 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-230
+2026-04-25 19:16:05,477 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-230
+2026-04-25 19:16:05,508 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-236
+2026-04-25 19:16:05,508 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-246
+2026-04-25 19:16:05,508 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-236
+2026-04-25 19:16:05,508 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-246
+2026-04-25 19:16:05,509 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-234
+2026-04-25 19:16:05,509 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-234
+2026-04-25 19:16:05,510 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-241
+2026-04-25 19:16:05,510 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-241
+2026-04-25 19:16:05,621 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-446
+2026-04-25 19:16:05,644 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-245
+2026-04-25 19:16:05,644 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-245
+2026-04-25 19:16:05,651 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-247
+2026-04-25 19:16:05,651 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-247
+2026-04-25 19:16:05,652 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-249
+2026-04-25 19:16:05,652 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-249
+2026-04-25 19:16:05,684 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-244
+2026-04-25 19:16:05,684 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-256
+2026-04-25 19:16:05,684 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-244
+2026-04-25 19:16:05,684 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-256
+2026-04-25 19:16:05,684 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-233
+2026-04-25 19:16:05,684 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-233
+2026-04-25 19:16:05,687 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-237
+2026-04-25 19:16:05,687 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-248
+2026-04-25 19:16:05,687 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-243
+2026-04-25 19:16:05,687 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-243
+2026-04-25 19:16:05,687 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-239
+2026-04-25 19:16:05,687 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-239
+2026-04-25 19:16:05,687 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-278
+2026-04-25 19:16:05,687 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-248
+2026-04-25 19:16:05,687 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-231
+2026-04-25 19:16:05,687 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-237
+2026-04-25 19:16:05,687 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-231
+2026-04-25 19:16:05,688 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-278
+2026-04-25 19:16:05,694 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-262
+2026-04-25 19:16:05,694 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-262
+2026-04-25 19:16:05,694 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-254
+2026-04-25 19:16:05,694 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-238
+2026-04-25 19:16:05,694 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-254
+2026-04-25 19:16:05,694 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-238
+2026-04-25 19:16:05,696 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-275
+2026-04-25 19:16:05,696 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-263
+2026-04-25 19:16:05,696 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-275
+2026-04-25 19:16:05,696 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-263
+2026-04-25 19:16:05,696 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-261
+2026-04-25 19:16:05,696 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-261
+2026-04-25 19:16:05,725 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-242
+2026-04-25 19:16:05,725 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-242
+2026-04-25 19:16:05,726 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-232
+2026-04-25 19:16:05,727 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-232
+2026-04-25 19:16:05,727 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-251
+2026-04-25 19:16:05,727 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-251
+2026-04-25 19:16:05,730 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-252
+2026-04-25 19:16:05,731 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-252
+2026-04-25 19:16:05,731 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-270
+2026-04-25 19:16:05,731 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-270
+2026-04-25 19:16:05,731 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-271
+2026-04-25 19:16:05,731 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-271
+2026-04-25 19:16:05,731 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-240
+2026-04-25 19:16:05,731 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-240
+2026-04-25 19:16:05,732 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-279
+2026-04-25 19:16:05,732 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-279
+2026-04-25 19:16:05,733 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-277
+2026-04-25 19:16:05,733 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-277
+2026-04-25 19:16:05,741 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-258
+2026-04-25 19:16:05,741 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-258
+2026-04-25 19:16:05,741 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-257
+2026-04-25 19:16:05,741 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-257
+2026-04-25 19:16:05,741 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-272
+2026-04-25 19:16:05,741 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-272
+2026-04-25 19:16:05,743 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-264
+2026-04-25 19:16:05,743 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-264
+2026-04-25 19:16:05,743 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-253
+2026-04-25 19:16:05,743 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-253
+2026-04-25 19:16:05,747 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-235
+2026-04-25 19:16:05,747 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-235
+2026-04-25 19:16:05,747 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-276
+2026-04-25 19:16:05,747 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-276
+2026-04-25 19:16:05,747 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-266
+2026-04-25 19:16:05,747 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-266
+2026-04-25 19:16:05,743 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-282
+2026-04-25 19:16:05,747 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-282
+2026-04-25 19:16:05,747 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-260
+2026-04-25 19:16:05,748 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-260
+2026-04-25 19:16:05,747 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-280
+2026-04-25 19:16:05,748 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-280
+2026-04-25 19:16:05,748 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-267
+2026-04-25 19:16:05,748 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-267
+2026-04-25 19:16:05,748 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-273
+2026-04-25 19:16:05,748 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-273
+2026-04-25 19:16:05,747 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-281
+2026-04-25 19:16:05,747 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-250
+2026-04-25 19:16:05,748 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-281
+2026-04-25 19:16:05,748 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-250
+2026-04-25 19:16:05,748 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-269
+2026-04-25 19:16:05,748 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-269
+2026-04-25 19:16:05,752 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-265
+2026-04-25 19:16:05,752 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-274
+2026-04-25 19:16:05,752 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-274
+2026-04-25 19:16:05,752 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-265
+2026-04-25 19:16:05,752 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-268
+2026-04-25 19:16:05,752 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-255
+2026-04-25 19:16:05,753 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-268
+2026-04-25 19:16:05,753 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-255
+2026-04-25 19:16:05,874 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-447
+2026-04-25 19:16:06,124 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-448
+2026-04-25 19:16:06,374 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-449
+2026-04-25 19:16:06,621 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-450
+2026-04-25 19:16:06,871 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-451
+2026-04-25 19:16:07,073 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-285
+2026-04-25 19:16:07,074 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-285
+2026-04-25 19:16:07,073 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-284
+2026-04-25 19:16:07,074 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-284
+2026-04-25 19:16:07,076 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-283
+2026-04-25 19:16:07,076 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-283
+2026-04-25 19:16:07,078 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-286
+2026-04-25 19:16:07,078 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-286
+2026-04-25 19:16:07,119 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-452
+2026-04-25 19:16:07,370 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-453
+2026-04-25 19:16:07,622 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-454
+2026-04-25 19:16:07,884 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-455
+2026-04-25 19:16:08,130 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-456
+2026-04-25 19:16:08,379 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-457
+2026-04-25 19:16:08,625 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-458
+2026-04-25 19:16:08,877 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-459
+2026-04-25 19:16:09,121 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-460
+2026-04-25 19:16:09,382 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-461
+2026-04-25 19:16:09,631 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-462
+2026-04-25 19:16:09,874 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-463
+2026-04-25 19:16:10,138 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-464
+2026-04-25 19:16:10,389 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-465
+2026-04-25 19:16:10,658 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-466
+2026-04-25 19:16:10,907 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-467
+2026-04-25 19:16:11,143 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-468
+2026-04-25 19:16:11,388 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-469
+2026-04-25 19:16:11,638 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-470
+2026-04-25 19:16:11,899 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-471
+2026-04-25 19:16:12,150 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-472
+2026-04-25 19:16:12,404 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-473
+2026-04-25 19:16:12,625 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-474
+2026-04-25 19:16:12,890 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-475
+2026-04-25 19:16:13,138 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-476
+2026-04-25 19:16:13,391 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-477
+2026-04-25 19:16:13,644 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-478
+2026-04-25 19:16:13,885 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-479
+2026-04-25 19:16:14,184 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-480
+2026-04-25 19:16:14,389 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-481
+2026-04-25 19:16:14,634 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-482
+2026-04-25 19:16:14,882 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-483
+2026-04-25 19:16:15,130 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-484
+2026-04-25 19:16:15,378 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-485
+2026-04-25 19:16:15,635 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-486
+2026-04-25 19:16:15,887 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-487
+2026-04-25 19:16:16,138 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-488
+2026-04-25 19:16:16,420 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-489
+2026-04-25 19:16:16,626 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-490
+2026-04-25 19:16:16,885 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-491
+2026-04-25 19:16:17,137 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-492
+2026-04-25 19:16:17,398 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-493
+2026-04-25 19:16:17,633 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-494
+2026-04-25 19:16:17,904 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-495
+2026-04-25 19:16:18,149 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-496
+2026-04-25 19:16:18,396 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-497
+2026-04-25 19:16:18,631 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-498
+2026-04-25 19:16:18,880 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-499
+2026-04-25 19:16:19,131 INFO o.a.j.t.JMeterThread: Thread started: Lab2 Concurrency Group 1-500
+2026-04-25 19:16:33,878 INFO o.a.j.r.Summariser: summary +    354 in 00:00:31 =   11.5/s Avg: 18006 Min:    14 Max: 67737 Err:   118 (33.33%) Active: 214 Started: 500 Finished: 286
+2026-04-25 19:16:33,883 INFO o.a.j.r.Summariser: summary =    859 in 00:02:20 =    6.2/s Avg: 14117 Min:    14 Max: 67737 Err:   286 (33.29%)
+2026-04-25 19:16:34,278 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-287
+2026-04-25 19:16:34,279 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-287
+2026-04-25 19:16:34,281 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-288
+2026-04-25 19:16:34,281 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-288
+2026-04-25 19:16:34,281 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-290
+2026-04-25 19:16:34,281 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-290
+2026-04-25 19:16:34,282 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-289
+2026-04-25 19:16:34,282 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-289
+2026-04-25 19:16:58,322 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-292
+2026-04-25 19:16:58,323 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-292
+2026-04-25 19:16:58,323 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-291
+2026-04-25 19:16:58,324 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-291
+2026-04-25 19:16:58,622 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-313
+2026-04-25 19:16:58,622 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-313
+2026-04-25 19:16:58,708 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-322
+2026-04-25 19:16:58,708 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-322
+2026-04-25 19:16:58,725 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-297
+2026-04-25 19:16:58,725 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-297
+2026-04-25 19:16:58,740 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-301
+2026-04-25 19:16:58,740 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-301
+2026-04-25 19:16:58,742 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-307
+2026-04-25 19:16:58,742 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-307
+2026-04-25 19:16:58,742 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-299
+2026-04-25 19:16:58,742 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-294
+2026-04-25 19:16:58,743 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-299
+2026-04-25 19:16:58,743 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-294
+2026-04-25 19:16:58,765 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-320
+2026-04-25 19:16:58,765 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-320
+2026-04-25 19:16:58,766 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-365
+2026-04-25 19:16:58,766 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-365
+2026-04-25 19:16:58,766 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-302
+2026-04-25 19:16:58,766 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-302
+2026-04-25 19:16:58,766 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-314
+2026-04-25 19:16:58,766 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-314
+2026-04-25 19:16:58,766 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-323
+2026-04-25 19:16:58,766 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-323
+2026-04-25 19:16:58,795 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-327
+2026-04-25 19:16:58,795 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-327
+2026-04-25 19:16:58,797 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-296
+2026-04-25 19:16:58,797 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-296
+2026-04-25 19:16:58,838 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-305
+2026-04-25 19:16:58,838 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-305
+2026-04-25 19:16:58,846 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-319
+2026-04-25 19:16:58,846 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-319
+2026-04-25 19:16:58,850 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-338
+2026-04-25 19:16:58,850 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-338
+2026-04-25 19:16:58,888 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-336
+2026-04-25 19:16:58,888 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-336
+2026-04-25 19:16:58,888 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-306
+2026-04-25 19:16:58,888 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-306
+2026-04-25 19:16:58,893 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-321
+2026-04-25 19:16:58,893 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-321
+2026-04-25 19:16:58,915 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-345
+2026-04-25 19:16:58,916 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-334
+2026-04-25 19:16:58,915 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-295
+2026-04-25 19:16:58,916 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-334
+2026-04-25 19:16:58,916 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-295
+2026-04-25 19:16:58,916 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-345
+2026-04-25 19:16:58,917 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-312
+2026-04-25 19:16:58,917 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-312
+2026-04-25 19:16:58,923 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-340
+2026-04-25 19:16:58,923 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-340
+2026-04-25 19:16:58,945 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-337
+2026-04-25 19:16:58,945 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-337
+2026-04-25 19:16:58,945 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-298
+2026-04-25 19:16:58,945 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-298
+2026-04-25 19:16:58,945 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-316
+2026-04-25 19:16:58,945 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-316
+2026-04-25 19:16:58,946 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-362
+2026-04-25 19:16:58,947 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-362
+2026-04-25 19:16:58,949 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-315
+2026-04-25 19:16:58,949 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-303
+2026-04-25 19:16:58,949 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-309
+2026-04-25 19:16:58,949 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-303
+2026-04-25 19:16:58,949 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-315
+2026-04-25 19:16:58,949 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-309
+2026-04-25 19:16:58,955 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-310
+2026-04-25 19:16:58,955 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-310
+2026-04-25 19:16:58,956 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-366
+2026-04-25 19:16:58,956 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-366
+2026-04-25 19:16:58,957 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-329
+2026-04-25 19:16:58,957 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-329
+2026-04-25 19:16:58,957 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-359
+2026-04-25 19:16:58,957 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-330
+2026-04-25 19:16:58,957 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-359
+2026-04-25 19:16:58,957 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-330
+2026-04-25 19:16:58,958 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-361
+2026-04-25 19:16:58,959 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-361
+2026-04-25 19:16:58,969 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-357
+2026-04-25 19:16:58,969 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-357
+2026-04-25 19:16:58,969 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-349
+2026-04-25 19:16:58,969 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-349
+2026-04-25 19:16:58,969 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-324
+2026-04-25 19:16:58,969 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-324
+2026-04-25 19:16:58,970 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-325
+2026-04-25 19:16:58,970 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-325
+2026-04-25 19:16:58,970 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-354
+2026-04-25 19:16:58,970 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-354
+2026-04-25 19:16:58,971 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-308
+2026-04-25 19:16:58,971 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-300
+2026-04-25 19:16:58,971 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-300
+2026-04-25 19:16:58,971 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-331
+2026-04-25 19:16:58,971 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-331
+2026-04-25 19:16:58,971 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-333
+2026-04-25 19:16:58,971 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-333
+2026-04-25 19:16:58,971 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-318
+2026-04-25 19:16:58,971 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-318
+2026-04-25 19:16:58,971 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-335
+2026-04-25 19:16:58,971 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-308
+2026-04-25 19:16:58,971 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-335
+2026-04-25 19:16:58,972 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-351
+2026-04-25 19:16:58,972 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-351
+2026-04-25 19:16:58,974 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-364
+2026-04-25 19:16:58,974 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-352
+2026-04-25 19:16:58,974 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-352
+2026-04-25 19:16:58,974 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-342
+2026-04-25 19:16:58,974 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-360
+2026-04-25 19:16:58,974 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-339
+2026-04-25 19:16:58,974 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-339
+2026-04-25 19:16:58,974 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-341
+2026-04-25 19:16:58,974 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-341
+2026-04-25 19:16:58,974 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-347
+2026-04-25 19:16:58,974 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-360
+2026-04-25 19:16:58,974 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-347
+2026-04-25 19:16:58,974 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-342
+2026-04-25 19:16:58,974 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-364
+2026-04-25 19:16:58,982 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-350
+2026-04-25 19:16:58,982 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-350
+2026-04-25 19:16:58,983 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-344
+2026-04-25 19:16:58,983 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-344
+2026-04-25 19:16:58,983 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-343
+2026-04-25 19:16:58,983 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-343
+2026-04-25 19:16:58,983 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-356
+2026-04-25 19:16:58,983 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-356
+2026-04-25 19:16:58,983 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-353
+2026-04-25 19:16:58,983 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-353
+2026-04-25 19:16:58,983 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-332
+2026-04-25 19:16:58,983 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-332
+2026-04-25 19:16:58,983 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-326
+2026-04-25 19:16:58,983 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-326
+2026-04-25 19:16:58,984 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-328
+2026-04-25 19:16:58,984 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-328
+2026-04-25 19:16:58,984 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-346
+2026-04-25 19:16:58,984 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-293
+2026-04-25 19:16:58,984 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-346
+2026-04-25 19:16:58,984 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-293
+2026-04-25 19:16:58,985 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-304
+2026-04-25 19:16:58,985 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-304
+2026-04-25 19:16:58,987 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-358
+2026-04-25 19:16:58,987 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-358
+2026-04-25 19:16:58,988 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-317
+2026-04-25 19:16:58,988 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-363
+2026-04-25 19:16:58,988 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-317
+2026-04-25 19:16:58,988 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-363
+2026-04-25 19:16:58,988 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-367
+2026-04-25 19:16:58,988 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-367
+2026-04-25 19:16:58,988 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-355
+2026-04-25 19:16:58,988 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-355
+2026-04-25 19:16:58,988 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-348
+2026-04-25 19:16:58,988 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-311
+2026-04-25 19:16:58,988 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-311
+2026-04-25 19:16:58,988 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-348
+2026-04-25 19:17:01,193 INFO o.a.j.r.Summariser: summary +    243 in 00:00:27 =    8.9/s Avg: 27293 Min:    53 Max: 91207 Err:    81 (33.33%) Active: 133 Started: 500 Finished: 367
+2026-04-25 19:17:01,194 INFO o.a.j.r.Summariser: summary =   1102 in 00:02:47 =    6.6/s Avg: 17022 Min:    14 Max: 91207 Err:   367 (33.30%)
+2026-04-25 19:17:01,754 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-375
+2026-04-25 19:17:01,754 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-375
+2026-04-25 19:17:01,757 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-395
+2026-04-25 19:17:01,757 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-374
+2026-04-25 19:17:01,757 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-374
+2026-04-25 19:17:01,757 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-395
+2026-04-25 19:17:01,821 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-378
+2026-04-25 19:17:01,821 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-390
+2026-04-25 19:17:01,821 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-378
+2026-04-25 19:17:01,821 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-390
+2026-04-25 19:17:01,821 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-387
+2026-04-25 19:17:01,821 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-387
+2026-04-25 19:17:01,821 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-385
+2026-04-25 19:17:01,821 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-385
+2026-04-25 19:17:01,822 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-380
+2026-04-25 19:17:01,822 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-380
+2026-04-25 19:17:01,822 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-396
+2026-04-25 19:17:01,822 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-396
+2026-04-25 19:17:01,836 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-393
+2026-04-25 19:17:01,836 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-393
+2026-04-25 19:17:01,844 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-377
+2026-04-25 19:17:01,844 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-377
+2026-04-25 19:17:01,874 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-369
+2026-04-25 19:17:01,874 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-369
+2026-04-25 19:17:01,884 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-370
+2026-04-25 19:17:01,884 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-370
+2026-04-25 19:17:01,884 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-383
+2026-04-25 19:17:01,884 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-383
+2026-04-25 19:17:01,885 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-397
+2026-04-25 19:17:01,885 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-386
+2026-04-25 19:17:01,885 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-397
+2026-04-25 19:17:01,885 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-386
+2026-04-25 19:17:01,886 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-399
+2026-04-25 19:17:01,886 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-399
+2026-04-25 19:17:01,888 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-371
+2026-04-25 19:17:01,888 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-371
+2026-04-25 19:17:01,888 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-372
+2026-04-25 19:17:01,888 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-372
+2026-04-25 19:17:01,888 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-384
+2026-04-25 19:17:01,888 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-384
+2026-04-25 19:17:01,888 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-389
+2026-04-25 19:17:01,888 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-389
+2026-04-25 19:17:01,888 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-392
+2026-04-25 19:17:01,888 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-392
+2026-04-25 19:17:01,904 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-391
+2026-04-25 19:17:01,904 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-391
+2026-04-25 19:17:01,905 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-382
+2026-04-25 19:17:01,905 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-382
+2026-04-25 19:17:01,905 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-368
+2026-04-25 19:17:01,905 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-368
+2026-04-25 19:17:01,906 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-373
+2026-04-25 19:17:01,906 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-373
+2026-04-25 19:17:01,906 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-398
+2026-04-25 19:17:01,906 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-398
+2026-04-25 19:17:01,907 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-381
+2026-04-25 19:17:01,907 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-381
+2026-04-25 19:17:01,907 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-400
+2026-04-25 19:17:01,907 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-400
+2026-04-25 19:17:01,908 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-394
+2026-04-25 19:17:01,908 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-394
+2026-04-25 19:17:01,908 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-379
+2026-04-25 19:17:01,908 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-379
+2026-04-25 19:17:01,908 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-388
+2026-04-25 19:17:01,909 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-388
+2026-04-25 19:17:01,922 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-376
+2026-04-25 19:17:01,922 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-376
+2026-04-25 19:17:01,936 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-418
+2026-04-25 19:17:01,936 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-418
+2026-04-25 19:17:01,941 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-419
+2026-04-25 19:17:01,941 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-419
+2026-04-25 19:17:01,962 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-413
+2026-04-25 19:17:01,962 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-417
+2026-04-25 19:17:01,962 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-429
+2026-04-25 19:17:01,962 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-413
+2026-04-25 19:17:01,962 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-417
+2026-04-25 19:17:01,962 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-429
+2026-04-25 19:17:01,962 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-401
+2026-04-25 19:17:01,962 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-401
+2026-04-25 19:17:01,971 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-411
+2026-04-25 19:17:01,971 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-411
+2026-04-25 19:17:01,971 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-402
+2026-04-25 19:17:01,971 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-423
+2026-04-25 19:17:01,971 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-414
+2026-04-25 19:17:01,971 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-402
+2026-04-25 19:17:01,971 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-423
+2026-04-25 19:17:01,971 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-414
+2026-04-25 19:17:01,971 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-432
+2026-04-25 19:17:01,971 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-406
+2026-04-25 19:17:01,971 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-432
+2026-04-25 19:17:01,971 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-406
+2026-04-25 19:17:01,972 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-435
+2026-04-25 19:17:01,972 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-435
+2026-04-25 19:17:01,972 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-408
+2026-04-25 19:17:01,972 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-408
+2026-04-25 19:17:01,975 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-433
+2026-04-25 19:17:01,975 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-433
+2026-04-25 19:17:01,975 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-420
+2026-04-25 19:17:01,975 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-420
+2026-04-25 19:17:01,975 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-422
+2026-04-25 19:17:01,975 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-422
+2026-04-25 19:17:01,976 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-427
+2026-04-25 19:17:01,976 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-427
+2026-04-25 19:17:01,977 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-421
+2026-04-25 19:17:01,977 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-421
+2026-04-25 19:17:01,977 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-424
+2026-04-25 19:17:01,977 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-424
+2026-04-25 19:17:01,984 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-426
+2026-04-25 19:17:01,984 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-403
+2026-04-25 19:17:01,984 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-403
+2026-04-25 19:17:01,984 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-426
+2026-04-25 19:17:01,984 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-434
+2026-04-25 19:17:01,984 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-434
+2026-04-25 19:17:01,985 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-415
+2026-04-25 19:17:01,985 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-415
+2026-04-25 19:17:01,985 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-428
+2026-04-25 19:17:01,985 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-428
+2026-04-25 19:17:01,985 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-412
+2026-04-25 19:17:01,985 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-412
+2026-04-25 19:17:01,985 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-425
+2026-04-25 19:17:01,985 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-436
+2026-04-25 19:17:01,986 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-436
+2026-04-25 19:17:01,985 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-407
+2026-04-25 19:17:01,986 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-407
+2026-04-25 19:17:01,985 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-416
+2026-04-25 19:17:01,986 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-416
+2026-04-25 19:17:01,986 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-409
+2026-04-25 19:17:01,986 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-430
+2026-04-25 19:17:01,986 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-430
+2026-04-25 19:17:01,985 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-425
+2026-04-25 19:17:01,986 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-409
+2026-04-25 19:17:01,988 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-431
+2026-04-25 19:17:01,988 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-431
+2026-04-25 19:17:01,988 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-405
+2026-04-25 19:17:01,988 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-405
+2026-04-25 19:17:01,988 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-404
+2026-04-25 19:17:01,988 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-404
+2026-04-25 19:17:01,989 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-410
+2026-04-25 19:17:01,989 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-410
+2026-04-25 19:17:03,768 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-439
+2026-04-25 19:17:03,768 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-439
+2026-04-25 19:17:03,772 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-437
+2026-04-25 19:17:03,772 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-437
+2026-04-25 19:17:03,772 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-443
+2026-04-25 19:17:03,772 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-443
+2026-04-25 19:17:03,781 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-438
+2026-04-25 19:17:03,781 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-442
+2026-04-25 19:17:03,781 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-444
+2026-04-25 19:17:03,781 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-444
+2026-04-25 19:17:03,781 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-441
+2026-04-25 19:17:03,781 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-440
+2026-04-25 19:17:03,781 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-440
+2026-04-25 19:17:03,781 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-441
+2026-04-25 19:17:03,781 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-438
+2026-04-25 19:17:03,781 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-442
+2026-04-25 19:17:20,943 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-446
+2026-04-25 19:17:20,944 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-446
+2026-04-25 19:17:20,944 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-445
+2026-04-25 19:17:20,944 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-445
+2026-04-25 19:17:20,972 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-491
+2026-04-25 19:17:20,972 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-491
+2026-04-25 19:17:20,973 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-449
+2026-04-25 19:17:20,973 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-449
+2026-04-25 19:17:20,998 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-453
+2026-04-25 19:17:20,998 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-453
+2026-04-25 19:17:21,005 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-474
+2026-04-25 19:17:21,005 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-474
+2026-04-25 19:17:21,023 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-448
+2026-04-25 19:17:21,023 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-448
+2026-04-25 19:17:21,025 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-447
+2026-04-25 19:17:21,025 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-447
+2026-04-25 19:17:21,057 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-451
+2026-04-25 19:17:21,057 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-451
+2026-04-25 19:17:21,071 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-492
+2026-04-25 19:17:21,071 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-450
+2026-04-25 19:17:21,071 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-492
+2026-04-25 19:17:21,071 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-450
+2026-04-25 19:17:21,091 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-489
+2026-04-25 19:17:21,091 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-489
+2026-04-25 19:17:21,096 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-452
+2026-04-25 19:17:21,096 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-452
+2026-04-25 19:17:21,098 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-495
+2026-04-25 19:17:21,098 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-486
+2026-04-25 19:17:21,098 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-478
+2026-04-25 19:17:21,098 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-495
+2026-04-25 19:17:21,098 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-478
+2026-04-25 19:17:21,098 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-486
+2026-04-25 19:17:21,100 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-482
+2026-04-25 19:17:21,100 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-479
+2026-04-25 19:17:21,100 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-482
+2026-04-25 19:17:21,100 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-479
+2026-04-25 19:17:21,108 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-476
+2026-04-25 19:17:21,108 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-477
+2026-04-25 19:17:21,108 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-476
+2026-04-25 19:17:21,108 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-477
+2026-04-25 19:17:21,108 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-488
+2026-04-25 19:17:21,108 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-500
+2026-04-25 19:17:21,109 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-488
+2026-04-25 19:17:21,109 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-500
+2026-04-25 19:17:21,109 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-494
+2026-04-25 19:17:21,109 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-496
+2026-04-25 19:17:21,109 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-494
+2026-04-25 19:17:21,109 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-496
+2026-04-25 19:17:21,112 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-461
+2026-04-25 19:17:21,112 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-484
+2026-04-25 19:17:21,112 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-481
+2026-04-25 19:17:21,112 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-461
+2026-04-25 19:17:21,113 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-481
+2026-04-25 19:17:21,113 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-484
+2026-04-25 19:17:21,125 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-485
+2026-04-25 19:17:21,125 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-456
+2026-04-25 19:17:21,125 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-456
+2026-04-25 19:17:21,125 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-454
+2026-04-25 19:17:21,125 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-485
+2026-04-25 19:17:21,127 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-454
+2026-04-25 19:17:21,129 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-490
+2026-04-25 19:17:21,130 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-490
+2026-04-25 19:17:21,140 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-498
+2026-04-25 19:17:21,140 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-487
+2026-04-25 19:17:21,140 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-498
+2026-04-25 19:17:21,140 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-497
+2026-04-25 19:17:21,140 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-497
+2026-04-25 19:17:21,141 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-475
+2026-04-25 19:17:21,141 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-475
+2026-04-25 19:17:21,141 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-499
+2026-04-25 19:17:21,141 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-499
+2026-04-25 19:17:21,141 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-480
+2026-04-25 19:17:21,140 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-493
+2026-04-25 19:17:21,141 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-480
+2026-04-25 19:17:21,141 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-493
+2026-04-25 19:17:21,141 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-487
+2026-04-25 19:17:21,141 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-483
+2026-04-25 19:17:21,141 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-483
+2026-04-25 19:17:21,157 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-458
+2026-04-25 19:17:21,157 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-458
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-467
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-459
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-466
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-466
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-457
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-465
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-472
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-471
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-472
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-460
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-459
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-460
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-465
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-462
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-462
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-457
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-463
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-463
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-455
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-467
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-471
+2026-04-25 19:17:21,165 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-455
+2026-04-25 19:17:21,171 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-464
+2026-04-25 19:17:21,171 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-464
+2026-04-25 19:17:21,171 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-468
+2026-04-25 19:17:21,171 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-468
+2026-04-25 19:17:21,171 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-470
+2026-04-25 19:17:21,171 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-470
+2026-04-25 19:17:21,171 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-469
+2026-04-25 19:17:21,172 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-469
+2026-04-25 19:17:21,174 INFO o.a.j.t.JMeterThread: Thread is done: Lab2 Concurrency Group 1-473
+2026-04-25 19:17:21,174 INFO o.a.j.t.JMeterThread: Thread finished: Lab2 Concurrency Group 1-473
+2026-04-25 19:17:21,175 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2026-04-25 19:17:21,175 INFO o.a.j.s.FileServer: Close: jmeter/data/user_credentials.csv
+2026-04-25 19:17:21,177 INFO o.a.j.r.Summariser: summary +    398 in 00:00:20 =   19.9/s Avg: 22358 Min:   122 Max: 75090 Err:    60 (15.08%) Active: 0 Started: 500 Finished: 500
+2026-04-25 19:17:21,177 INFO o.a.j.r.Summariser: summary =   1500 in 00:03:07 =    8.0/s Avg: 18438 Min:    14 Max: 91207 Err:   427 (28.47%)
+2026-04-25 19:17:21,180 INFO o.a.j.JMeter: Generating Dashboard
+2026-04-25 19:17:21,181 INFO o.a.j.r.d.ReportGenerator: Flushing result collector before report Generation
+2026-04-25 19:17:21,224 INFO o.a.j.r.p.NormalizerSampleConsumer: Using format, 'ms', to parse timeStamp field
+2026-04-25 19:17:21,552 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): beginDate produced 0 samples
+2026-04-25 19:17:21,552 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): endDate produced 0 samples
+2026-04-25 19:17:21,557 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ApdexSummaryConsumer#stopProducing(): apdexSummary produced 0 samples
+2026-04-25 19:17:21,557 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.RequestsSummaryConsumer#stopProducing(): requestsSummary produced 0 samples
+2026-04-25 19:17:21,564 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.StatisticsSummaryConsumer#stopProducing(): statisticsSummary produced 0 samples
+2026-04-25 19:17:21,569 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.Top5ErrorsBySamplerConsumer#stopProducing(): top5ErrorsBySampler produced 0 samples
+2026-04-25 19:17:21,570 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ErrorsSummaryConsumer#stopProducing(): errorsSummary produced 0 samples
+2026-04-25 19:17:21,570 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.HitsPerSecondGraphConsumer#stopProducing(): hitsPerSecond produced 0 samples
+2026-04-25 19:17:21,621 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyVSRequestGraphConsumer#stopProducing(): latencyVsRequest produced 0 samples
+2026-04-25 19:17:21,622 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.SyntheticResponseTimeDistributionGraphConsumer#stopProducing(): syntheticResponseTimeDistribution produced 0 samples
+2026-04-25 19:17:21,622 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.BytesThroughputGraphConsumer#stopProducing(): bytesThroughputOverTime produced 0 samples
+2026-04-25 19:17:21,622 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.CodesPerSecondGraphConsumer#stopProducing(): codesPerSecond produced 0 samples
+2026-04-25 19:17:21,650 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeVSRequestGraphConsumer#stopProducing(): responseTimeVsRequest produced 0 samples
+2026-04-25 19:17:21,651 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): startIntervalControlerFilter produced 10500 samples
+2026-04-25 19:17:21,651 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TotalTPSGraphConsumer#stopProducing(): totalTPS produced 0 samples
+2026-04-25 19:17:21,653 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ActiveThreadsGraphConsumer#stopProducing(): activeThreadsOverTime produced 0 samples
+2026-04-25 19:17:21,653 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TimeVSThreadGraphConsumer#stopProducing(): timeVsThreads produced 0 samples
+2026-04-25 19:17:21,654 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeDistributionGraphConsumer#stopProducing(): responseTimeDistribution produced 0 samples
+2026-04-25 19:17:21,655 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TransactionsPerSecondGraphConsumer#stopProducing(): transactionsPerSecond produced 0 samples
+2026-04-25 19:17:21,655 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesGraphConsumer#stopProducing(): responseTimePercentiles produced 0 samples
+2026-04-25 19:17:21,658 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesOverTimeGraphConsumer#stopProducing(): responseTimePercentilesOverTime produced 0 samples
+2026-04-25 19:17:21,658 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeOverTimeGraphConsumer#stopProducing(): responseTimesOverTime produced 0 samples
+2026-04-25 19:17:21,658 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ConnectTimeOverTimeGraphConsumer#stopProducing(): connectTimeOverTime produced 0 samples
+2026-04-25 19:17:21,658 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyOverTimeGraphConsumer#stopProducing(): latenciesOverTime produced 0 samples
+2026-04-25 19:17:21,658 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): nameFilter produced 22500 samples
+2026-04-25 19:17:21,658 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): dateRangeFilter produced 4500 samples
+2026-04-25 19:17:21,658 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.NormalizerSampleConsumer#stopProducing(): normalizer produced 1500 samples
+2026-04-25 19:17:21,659 INFO o.a.j.r.p.CsvFileSampleSource: produce(): 1500 samples produced in 380ms on channel 0
+2026-04-25 19:17:21,659 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'json' of className:'org.apache.jmeter.report.dashboard.JsonExporter'
+2026-04-25 19:17:21,849 INFO o.a.j.r.d.JsonExporter: Found data for consumer statisticsSummary in context
+2026-04-25 19:17:21,850 INFO o.a.j.r.d.JsonExporter: Creating statistics for overall
+2026-04-25 19:17:21,850 INFO o.a.j.r.d.JsonExporter: Creating statistics for other transactions
+2026-04-25 19:17:21,851 INFO o.a.j.r.d.JsonExporter: Checking output folder
+2026-04-25 19:17:21,853 INFO o.a.j.r.d.JsonExporter: Writing statistics JSON to /Users/khushidonda/Documents/semester-2/distrubuted systems/homeworks/data_236_lab2/jmeter/results/dashboard_500/statistics.json
+2026-04-25 19:17:21,966 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'html' of className:'org.apache.jmeter.report.dashboard.HtmlTemplateExporter'
+2026-04-25 19:17:21,974 INFO o.a.j.r.d.HtmlTemplateExporter: Will generate dashboard in folder: /Users/khushidonda/Documents/semester-2/distrubuted systems/homeworks/data_236_lab2/jmeter/results/dashboard_500
+2026-04-25 19:17:22,321 INFO o.a.j.r.d.HtmlTemplateExporter: Report will be generated in: /Users/khushidonda/Documents/semester-2/distrubuted systems/homeworks/data_236_lab2/jmeter/results/dashboard_500, creating folder structure
+2026-04-25 19:17:22,324 INFO o.a.j.r.d.TemplateVisitor: Copying folder from '/opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/report-template' to '/Users/khushidonda/Documents/semester-2/distrubuted systems/homeworks/data_236_lab2/jmeter/results/dashboard_500', got message: /Users/khushidonda/Documents/semester-2/distrubuted systems/homeworks/data_236_lab2/jmeter/results/dashboard_500, found non empty folder with following content [/Users/khushidonda/Documents/semester-2/distrubuted systems/homeworks/data_236_lab2/jmeter/results/dashboard_500/statistics.json], will be ignored
+2026-04-25 19:17:23,773 INFO o.a.j.JMeter: Dashboard generated
