@@ -14,10 +14,12 @@ spec:
       labels:
         app: frontend
     spec:
+      nodeSelector:
+        karpenter.sh/nodepool: general-purpose
       containers:
         - name: frontend
-          image: frontend:latest
-          imagePullPolicy: IfNotPresent
+          image: 463310123657.dkr.ecr.us-east-2.amazonaws.com/frontend:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           resources:

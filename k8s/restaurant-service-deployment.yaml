@@ -14,10 +14,12 @@ spec:
       labels:
         app: restaurant-service
     spec:
+      nodeSelector:
+        karpenter.sh/nodepool: general-purpose
       containers:
         - name: restaurant-service
-          image: restaurant-service:latest
-          imagePullPolicy: IfNotPresent
+          image: 463310123657.dkr.ecr.us-east-2.amazonaws.com/restaurant-service:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8002
           envFrom:

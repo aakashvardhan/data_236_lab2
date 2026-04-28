@@ -14,10 +14,12 @@ spec:
       labels:
         app: review-service
     spec:
+      nodeSelector:
+        karpenter.sh/nodepool: general-purpose
       containers:
         - name: review-service
-          image: review-service:latest
-          imagePullPolicy: IfNotPresent
+          image: 463310123657.dkr.ecr.us-east-2.amazonaws.com/review-service:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8004
           envFrom:
