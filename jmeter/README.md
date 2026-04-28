@@ -1,39 +1,54 @@
 # JMeter Performance Testing (Lab 2)
 
-This folder contains the Lab 2 JMeter artifacts.
+This folder contains reusable JMeter assets and result templates.
 
 ## Files
 
-- `test-plan.jmx` — base test plan with thread groups for 100/200/300/400/500 users.
-- `results/.gitkeep` — keeps the results folder in git.
-- `results/summary-template.csv` — fill this after running tests.
+- `test-plan.jmx` — parameterized test plan (login, restaurant search, review submit)
+- `data/user_credentials.csv` — credentials CSV used by the plan
+- `results/summary-template.csv` — rubric metrics table to fill automatically
+- `results/dashboard_*` — HTML dashboards generated per concurrency run
 
-## APIs to test (per lab rubric)
+## One-time setup
 
-1. `POST /api/users/auth/login` (user authentication)
-2. `GET /api/restaurants/restaurants` (restaurant search)
-3. `POST /api/reviews/restaurants/{restaurant_id}/reviews` (review submit / Kafka flow)
+1. Ensure your stack is running (`docker compose up -d`)
+2. Choose a valid `restaurant_id` for the review API
+3. The run script auto-prepares 500 load users and rewrites `jmeter/data/user_credentials.csv`
 
-The provided plan is a ready starting point for concurrency sweeps.
-If your endpoints or auth flow differ, adjust host, path, and payloads in JMeter UI.
-
-## Run in non-GUI mode
+## Recommended run flow
 
 From project root:
 
 ```bash
-jmeter -n \
-  -t jmeter/test-plan.jmx \
-  -l jmeter/results/lab2_results.jtl \
-  -e -o jmeter/results/dashboard
+chmod +x scripts/run_jmeter_suite.sh
+scripts/run_jmeter_suite.sh <restaurant_id> localhost 5173
+python3 scripts/summarize_jmeter_results.py
 ```
 
-## What to capture for submission
+This runs 5 passes at 100/200/300/400/500 users, auto-creates unique load users,
+and updates:
+- `jmeter/results/summary-template.csv`
 
-- Average response time
-- Throughput (requests/sec)
-- Error rate
-- Runs at 100, 200, 300, 400, 500 users
-- Graph of avg response time vs concurrency
-- Screenshots from JMeter dashboard/report
+## Direct JMeter CLI example
+
+```bash
+jmeter -n \
+  -t jmeter/test-plan.jmx \
+  -l jmeter/results/results_100.jtl \
+  -e -o jmeter/results/dashboard_100 \
+  -Jusers=100 -Jramp=25 -Jloops=1 \
+  -Jrestaurant_id=<restaurant_id> -Jhost=localhost -Jport=5173
+```
+
+## APIs covered (rubric)
+
+1. `POST /api/users/auth/login`
+2. `GET /api/restaurants/restaurants`
+3. `POST /api/reviews/restaurants/{restaurant_id}/reviews`
+
+## Submission evidence to capture
+
+- Average response time, throughput, error rate at each concurrency level
+- Graph: average response time (y) vs concurrency (x)
+- Screenshots from JMeter dashboard and summary output
 
