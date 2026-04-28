@@ -1,36 +1,36 @@
-import { useState, useEffect } from 'react'
-import { getFavorites, removeFavorite } from '../services/api'
+import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectIsAuthenticated } from '../store/authSlice'
+import {
+  fetchFavourites,
+  removeFavouriteAsync,
+  selectFavourites,
+  selectFavouritesStatus,
+} from '../store/favouritesSlice'
 
 export default function FavoritesPage() {
   const navigate = useNavigate()
-  const [favorites, setFavorites] = useState([])
-  const [loading, setLoading] = useState(true)
+  const dispatch = useDispatch()
+  const isAuthenticated = useSelector(selectIsAuthenticated)
+  const favorites = useSelector(selectFavourites)
+  const status = useSelector(selectFavouritesStatus)
 
   useEffect(() => {
-    if (!localStorage.getItem('token')) { navigate('/login'); return }
-    fetchFavorites()
-  }, [navigate])
-
-  const fetchFavorites = async () => {
-    try {
-      const res = await getFavorites()
-      setFavorites(res.data)
-    } catch { /* favorites fetch is best-effort */ }
-    finally { setLoading(false) }
-  }
+    if (!isAuthenticated) { navigate('/login'); return }
+    dispatch(fetchFavourites())
+  }, [dispatch, isAuthenticated, navigate])
 
   const handleRemove = async (restaurantId) => {
     try {
-      await removeFavorite(restaurantId)
-      setFavorites(favorites.filter(f => f.restaurant_id !== restaurantId))
+      await dispatch(removeFavouriteAsync(restaurantId))
     } catch { /* removal failure is non-critical */ }
   }
 
   return (
     <div className="max-w-3xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
       <h1 className="text-2xl font-bold text-gray-800 mb-6">My Favorites</h1>
-      {loading ? (
+      {status === 'loading' ? (
         <div className="text-gray-400 text-center py-20">Loading...</div>
       ) : favorites.length === 0 ? (
         <div className="text-center py-20 text-gray-400">

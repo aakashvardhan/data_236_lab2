@@ -2,8 +2,9 @@
  * FavoritesPage UI/UX tests — auth redirect, rendering favorites, remove flow.
  */
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { screen, fireEvent, waitFor } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
+import { renderWithProviders } from './test-utils'
 
 const mockNavigate = vi.fn()
 vi.mock('react-router-dom', async () => {
@@ -26,7 +27,7 @@ const FAVORITES = [
 ]
 
 function renderPage() {
-  return render(
+  return renderWithProviders(
     <MemoryRouter>
       <FavoritesPage />
     </MemoryRouter>

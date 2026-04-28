@@ -1,7 +1,7 @@
 /**
  * Tests for utils/url.js — API config routing and photo URL resolution.
  */
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
+import { describe, it, expect, afterEach, vi } from 'vitest'
 
 // We need to control import.meta.env — mock at module level via vi.stubEnv
 describe('getApiConfig', () => {
