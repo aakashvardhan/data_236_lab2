@@ -14,10 +14,12 @@ spec:
       labels:
         app: restaurant-worker
     spec:
+      nodeSelector:
+        karpenter.sh/nodepool: general-purpose
       containers:
         - name: restaurant-worker
-          image: restaurant-worker:latest
-          imagePullPolicy: IfNotPresent
+          image: 463310123657.dkr.ecr.us-east-2.amazonaws.com/restaurant-worker:latest
+          imagePullPolicy: Always
           envFrom:
             - configMapRef:
                 name: app-config

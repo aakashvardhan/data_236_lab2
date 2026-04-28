@@ -8,4 +8,4 @@ data:
   MONGO_URI: "mongodb://mongodb:27017"
   MONGO_DB_NAME: "yelp_db"
   KAFKA_BROKER: "kafka:9092"
-  CORS_ORIGINS: "http://localhost:3000,http://localhost:5173"
+  CORS_ORIGINS: "http://localhost:3000,http://localhost:5173,http://k8s-default-frontend-e675211652-e8dab1ef93946b63.elb.us-east-2.amazonaws.com"
