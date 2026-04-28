@@ -171,31 +171,27 @@ project-root/
 └── README.md
 ```
 
-## What's Done vs What's Left
+## Current Project Status
 
-### Completed (Solo Week)
-- Monolith decomposed into 4 microservices + frontend
-- All services migrated from SQLAlchemy/MySQL to motor/MongoDB
-- AI assistant carried forward in user-service
-- Dockerfiles for all 5 services with multi-stage builds
-- docker-compose.yml with MongoDB, Kafka, Zookeeper
-- MySQL-to-MongoDB migration script with index creation
-- Kafka topic creation script (9 topics)
-- Kafka producer stubs in each service
-- Worker service stubs (review-worker, restaurant-worker, user-worker)
-- Kubernetes manifests for all services + infrastructure
-- ConfigMap and Secrets for cluster configuration
+### Implemented
 
-### Remaining (Partner)
-- **Kafka wiring**: Implement actual producer/consumer code using confluent-kafka-python
-- **Redux**: Create Redux store with 4 slices (auth, restaurant, review, favourites)
-- **JMeter**: Performance tests at 100-500 concurrent users
-- **AWS**: Deploy to AWS (EKS or EC2-based K8s), take screenshots
+- Microservice split complete: user, restaurant, restaurant-owner, review, frontend
+- MongoDB migration + indexes + session handling + bcrypt password hashing
+- Kafka producers and worker consumers (review/restaurant/user events)
+- Dockerfiles + docker-compose + Kubernetes manifests
+- Redux integration with 4 slices:
+  - `authSlice`
+  - `restaurantSlice`
+  - `reviewSlice`
+  - `favouritesSlice`
+- Frontend tests and lint passing locally
+- JMeter baseline artifacts added in `jmeter/`
 
-## Notes for Partner
+### Remaining Manual Deliverables
 
-1. **Kafka stubs** are at `services/<name>/app/kafka_producer.py` and `services/workers/<name>/main.py`. Each stub has TODO comments explaining what to implement.
-2. **Redux** goes into `frontend/src/store/` -- create `index.js`, `authSlice.js`, `restaurantSlice.js`, `reviewSlice.js`, `favouritesSlice.js`.
-3. **All IDs are strings** (MongoDB ObjectId hex). The frontend `api.js` should continue to work since IDs are passed as URL path parameters.
-4. **Environment variables**: Copy `.env.example` or set them directly. The `JWT_SECRET_KEY` must match across all services.
-5. **Frontend API routing**: The nginx config proxies `/api/users/` to user-service, etc. For local dev without Docker, the frontend still hits `VITE_API_BASE_URL` directly.
+- Run JMeter load tests for 100/200/300/400/500 users and collect metrics/screenshots
+- Deploy and verify services on AWS and capture evidence screenshots
+- Add Redux DevTools screenshots to report
+- Finalize architecture diagram and submit final report PDF
+
+See `docs/lab2-submission-checklist.md` for an actionable checklist.

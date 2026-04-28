@@ -1,0 +1,6 @@
+concurrency,avg_response_time_ms,throughput_rps,error_rate_percent,notes
+100,,,,baseline
+200,,,,
+300,,,,
+400,,,,
+500,,,,peak
