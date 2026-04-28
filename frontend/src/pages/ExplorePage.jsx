@@ -1,22 +1,25 @@
 import { useState, useEffect, useRef } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchRestaurants as fetchRestaurantsThunk, selectRestaurants, selectRestaurantsMeta, selectRestaurantListStatus } from '../store/restaurantSlice'
 import { getRestaurants, chatWithAI } from '../services/api'
 import RestaurantCard from '../components/RestaurantCard'
 import { Link } from 'react-router-dom'
-import { resolvePhotoUrl } from '../utils/url'
 
 const CUISINES = ['Italian','Chinese','Mexican','Indian','Japanese','American','Vegan','Mediterranean']
 const CUISINE_ICONS = { Italian:'🍝', Chinese:'🥡', Mexican:'🌮', Indian:'🍛', Japanese:'🍣', American:'🍔', Vegan:'🥗', Mediterranean:'🫒' }
 const QUICK_ACTIONS = ['Best rated near me ⭐', 'Vegan options 🌱', 'Something romantic 🕯️', 'Cheap eats 💰']
 
 export default function ExplorePage() {
-  const [restaurants, setRestaurants] = useState([])
+  const dispatch = useDispatch()
+  const restaurants = useSelector(selectRestaurants)
+  const { total: totalRestaurants, totalPages } = useSelector(selectRestaurantsMeta)
+  const listStatus = useSelector(selectRestaurantListStatus)
+
   const [topRated, setTopRated] = useState([])
   const [newest, setNewest] = useState([])
-  const [totalRestaurants, setTotalRestaurants] = useState(0)
   const [page, setPage] = useState(1)
-  const [totalPages, setTotalPages] = useState(1)
-  const [perPage] = useState(12)
-  const [loading, setLoading] = useState(true)
+  const perPage = 12
+  const loading = listStatus === 'loading'
   const [search, setSearch] = useState('')
   const [cuisine, setCuisine] = useState('')
   const [price, setPrice] = useState('')
@@ -37,9 +40,9 @@ export default function ExplorePage() {
   useEffect(() => { setPage(1) }, [search, cuisine, price, keywords, city, sort])
 
   useEffect(() => {
-    const timer = setTimeout(() => { fetchRestaurants() }, 400)
+    const timer = setTimeout(() => { runFetch() }, 400)
     return () => clearTimeout(timer)
-  }, [search, cuisine, price, keywords, city, sort, page, perPage])
+  }, [search, cuisine, price, keywords, city, sort, page])
 
   useEffect(() => {
     getRestaurants({ sort_by: 'rating', sort_order: 'desc', per_page: 8 })
@@ -50,28 +53,20 @@ export default function ExplorePage() {
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: 'smooth' }) }, [messages])
 
-  const fetchRestaurants = async () => {
-    setLoading(true)
+  const runFetch = () => {
     const isSearching = search || cuisine || price || keywords || city
     setHasSearched(!!isSearching)
-    try {
-      const params = { page, per_page: perPage }
-      if (sort === 'rating') { params.sort_by = 'rating'; params.sort_order = 'desc' }
-      else if (sort === 'reviews') { params.sort_by = 'reviews'; params.sort_order = 'desc' }
-      else if (sort === 'price_low') { params.sort_by = 'price'; params.sort_order = 'asc' }
-      else if (sort === 'price_high') { params.sort_by = 'price'; params.sort_order = 'desc' }
-      if (search) params.name = search
-      if (cuisine) params.cuisine_type = cuisine
-      if (keywords) params.keywords = keywords
-      if (city) params.city = city
-      if (price) params.pricing_tier = price
-      const res = await getRestaurants(params)
-      const results = res.data.items || []
-      setRestaurants(results)
-      setTotalRestaurants(Number(res.data.total) || results.length)
-      setTotalPages(Number(res.data.total_pages) || Math.max(1, Math.ceil((Number(res.data.total) || results.length) / perPage)))
-    } catch { setRestaurants([]); setTotalRestaurants(0); setTotalPages(1) }
-    finally { setLoading(false) }
+    const params = { page, per_page: perPage }
+    if (sort === 'rating') { params.sort_by = 'rating'; params.sort_order = 'desc' }
+    else if (sort === 'reviews') { params.sort_by = 'reviews'; params.sort_order = 'desc' }
+    else if (sort === 'price_low') { params.sort_by = 'price'; params.sort_order = 'asc' }
+    else if (sort === 'price_high') { params.sort_by = 'price'; params.sort_order = 'desc' }
+    if (search) params.name = search
+    if (cuisine) params.cuisine_type = cuisine
+    if (keywords) params.keywords = keywords
+    if (city) params.city = city
+    if (price) params.pricing_tier = price
+    dispatch(fetchRestaurantsThunk(params))
   }
 
   const buildVisiblePages = () => {
