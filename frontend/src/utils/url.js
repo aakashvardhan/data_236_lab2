@@ -1,36 +1,13 @@
-/**
- * API base URLs.
- *
- * - If `VITE_API_BASE_URL` is set: single monolithic API (e.g. Lab 1 on port 8000).
- * - Otherwise: split microservices behind the same origin (`/api/users`, …) — Docker
- *   nginx or `vite.config.js` dev proxy forwards to ports 8001–8004.
- */
-const DEFAULT_SINGLE_API = 'http://localhost:8000'
-
-export function getApiConfig() {
-  const raw = import.meta.env.VITE_API_BASE_URL
-  if (raw) {
-    return { mode: 'single', baseURL: String(raw).replace(/\/$/, '') }
-  }
-  const origin =
-    typeof window !== 'undefined' && window.location?.origin
-      ? window.location.origin
-      : ''
-  return {
-    mode: 'split',
-    user: `${origin}/api/users`,
-    restaurant: `${origin}/api/restaurants`,
-    review: `${origin}/api/reviews`,
-    owner: `${origin}/api/owner`,
-  }
-}
+const DEFAULT_API_BASE_URL = 'http://localhost:8000'
 
 export function getApiBaseUrl() {
-  const c = getApiConfig()
-  if (c.mode === 'single') {
-    return c.baseURL || DEFAULT_SINGLE_API
-  }
-  return c.user
+  const rawBaseUrl =
+    import.meta.env.VITE_API_BASE_URL ||
+    import.meta.env.REACT_APP_API_BASE_URL ||
+    import.meta.env.NEXT_PUBLIC_API_BASE_URL ||
+    DEFAULT_API_BASE_URL
+
+  return rawBaseUrl.replace(/\/$/, '')
 }
 
 export function resolvePhotoUrl(photo) {
@@ -42,8 +19,7 @@ export function resolvePhotoUrl(photo) {
     return photo
   }
 
-  const c = getApiConfig()
-  const baseUrl = c.mode === 'single' ? c.baseURL : c.user
+  const baseUrl = getApiBaseUrl()
   const normalizedPhotoPath = photo.startsWith('/') ? photo : `/${photo}`
   return `${baseUrl}${normalizedPhotoPath}`
 }
