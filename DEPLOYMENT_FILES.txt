@@ -1,0 +1,490 @@
+================================================================================
+DATA_236_LAB2 - COMPLETE DEPLOYMENT PACKAGE
+================================================================================
+
+📦 FILES CREATED (Total: 9 files, ~122 KB)
+
+📚 DOCUMENTATION (6 files, ~97 KB)
+────────────────────────────────────────────────────────────────────────────────
+✓ DEPLOYMENT_INDEX.md              (14 KB)  Master index & navigation
+✓ DEPLOYMENT_SUMMARY.md            (9.6 KB) Executive summary & quick guide
+✓ QUICK_START.md                   (14 KB)  Quick reference guide
+✓ DEPLOYMENT_GUIDE.md              (22 KB)  Complete 5-phase guide
+✓ DEPLOYMENT_CHECKLIST.md          (13 KB)  Progress tracking checklist
+✓ AWS_COST_OPTIMIZATION.md         (13 KB)  Cost-saving strategies
+
+🛠️  SCRIPTS (2 files, ~25 KB - Both executable)
+────────────────────────────────────────────────────────────────────────────────
+✓ quick-deploy.sh                  (13 KB)  One-command full deployment
+✓ deploy.sh                        (12 KB)  Interactive menu deployment
+
+📋 REFERENCE (1 file)
+────────────────────────────────────────────────────────────────────────────────
+✓ PACKAGE_CONTENTS.md              (This file overview)
+
+================================================================================
+🎯 QUICK START - CHOOSE YOUR PATH
+================================================================================
+
+🏃 FASTEST (Recommended - 90 minutes)
+   1. Read: DEPLOYMENT_SUMMARY.md (5 min)
+   2. Run: ./quick-deploy.sh (90 min)
+   3. Done! ✓
+
+📚 LEARNING (90 minutes + understanding)
+   1. Read: QUICK_START.md (10 min)
+   2. Read: DEPLOYMENT_GUIDE.md (reference as you go)
+   3. Run: ./quick-deploy.sh or ./deploy.sh (90 min)
+
+🔧 ADVANCED (Full control - 1-2 hours)
+   1. Read: DEPLOYMENT_GUIDE.md (thoroughly)
+   2. Follow: Step-by-step manually
+   3. Check: DEPLOYMENT_CHECKLIST.md
+
+================================================================================
+📖 DOCUMENTATION GUIDE
+================================================================================
+
+START HERE:
+→ DEPLOYMENT_INDEX.md
+  Master navigation guide for choosing your path
+
+QUICK REFERENCE:
+→ DEPLOYMENT_SUMMARY.md
+  5-minute executive overview
+
+FAST START:
+→ QUICK_START.md
+  Quick reference with key concepts
+
+DETAILED GUIDE:
+→ DEPLOYMENT_GUIDE.md
+  Complete 5-phase deployment guide (22 KB)
+  - Phase 1: Docker Setup & Registry
+  - Phase 2: AWS Infrastructure
+  - Phase 3: Kubernetes Cluster
+  - Phase 4: Deploy to EKS
+  - Phase 5: Verification & Monitoring
+  - Troubleshooting section
+
+TRACKING PROGRESS:
+→ DEPLOYMENT_CHECKLIST.md
+  Detailed checklist to ensure nothing is missed
+
+SAVE MONEY:
+→ AWS_COST_OPTIMIZATION.md
+  Strategies to minimize AWS spending
+
+================================================================================
+🛠️ DEPLOYMENT SCRIPTS
+================================================================================
+
+1. quick-deploy.sh (RECOMMENDED)
+   • Fully automated deployment
+   • Handles all 8 steps automatically
+   • Progress tracking and error handling
+   • Time: 60-90 minutes
+
+   Usage:
+   $ ./quick-deploy.sh
+
+2. deploy.sh (INTERACTIVE)
+   • Menu-driven deployment
+   • Choose which steps to run
+   • Can repeat individual steps
+   • Good for learning
+   • Time: 60-90 minutes (you control pace)
+
+   Usage:
+   $ ./deploy.sh
+   Select options from menu:
+   - 1: Check prerequisites
+   - 2: Setup AWS environment
+   - 3: Create ECR repositories
+   - 4: Build and push images
+   - 5: Create EKS cluster
+   - 6: Deploy to EKS
+   - 7: Verify deployment
+   - 8: Full deployment
+   - 9: Cleanup resources
+   - 0: Exit
+
+================================================================================
+⏱️ TIMELINE
+================================================================================
+
+Setup & Configuration          5 min    ░░░░░░
+AWS Credentials Check          5 min    ░░░░░░
+ECR Repository Setup           10 min   ░░░░░░░░░
+Docker Build & Push            15 min   ░░░░░░░░░░░░░░░
+EKS Cluster Creation          15 min   ░░░░░░░░░░░░░░░ ⏳ LONGEST
+Deploy Services               15 min   ░░░░░░░░░░░░░░░
+Verification & Testing         5 min   ░░░░░░░░
+─────────────────────────────────────────────────────────────
+TOTAL                         70 min   (MOSTLY AUTOMATED!)
+
+================================================================================
+💰 COST ANALYSIS
+================================================================================
+
+FOR TESTING (Recommended):
+• Duration: 1-2 hours
+• Cost: $5-10
+• Action: Deploy → Test → Delete
+• Final cost: $0 ✓
+
+MONTHLY (If left running):
+• EKS: $73/month
+• 3x EC2 (t3.medium): $90/month
+• Storage: $7/month
+• Total: ~$170/month
+
+COST OPTIMIZATION (See AWS_COST_OPTIMIZATION.md):
+• Use spot instances: -70% on EC2
+• Auto-scaling: -50% on nodes
+• Scheduled shutdown: -50% if off 12 hrs/day
+• Combined savings: -75% possible!
+• Optimized cost: $40-50/month
+
+================================================================================
+📋 PREREQUISITES CHECKLIST
+================================================================================
+
+✓ AWS Account
+  - AWS account created
+  - AWS credentials generated
+  - AWS CLI configured (`aws configure`)
+
+✓ Local Tools (macOS)
+  - Docker installed and running
+  - kubectl installed (`brew install kubectl`)
+  - AWS CLI v2 (`brew install awscliv2`)
+  - eksctl (`brew install weaveworks/tap/eksctl`)
+  - Python 3 (`python3 --version`)
+
+✓ Project Files
+  - Repository cloned locally
+  - All Dockerfiles present
+  - k8s/ directory with manifests
+  - docker-compose.yml exists
+  - Scripts executable (quick-deploy.sh, deploy.sh)
+
+✓ Resources
+  - 1-2 hours available
+  - Budget for testing ($5-10)
+  - Internet connection
+  - AWS region selected (e.g., us-east-1)
+
+================================================================================
+🚀 QUICK COMMANDS
+================================================================================
+
+Configuration:
+  aws configure                                    # Setup AWS credentials
+  echo $AWS_REGION                                 # Check region
+
+Deployment:
+  ./quick-deploy.sh                                # Automatic deployment
+  ./deploy.sh                                      # Interactive menu
+
+Verification:
+  kubectl get pods -n yelp                         # View all pods
+  kubectl get svc -n yelp                          # View all services
+  kubectl cluster-info                             # Cluster info
+  kubectl get nodes                                # Node status
+
+Testing:
+  kubectl port-forward svc/user-service 8001:8001 -n yelp &
+  curl http://localhost:8001/health                # Test endpoint
+
+Monitoring:
+  kubectl logs deployment/user-service -n yelp     # View logs
+  kubectl logs -f deployment/user-service -n yelp  # Stream logs
+  kubectl describe pod <pod-name> -n yelp          # Debug pod
+
+Cleanup:
+  kubectl delete namespace yelp                    # Delete namespace
+  eksctl delete cluster --name yelp-cluster        # Delete cluster
+  aws ecr delete-repository --repository-name yelp/user-service --force
+
+================================================================================
+✅ SUCCESS CRITERIA (After Deployment)
+================================================================================
+
+✓ All pods in RUNNING state
+✓ All services created with correct ports
+✓ MongoDB accessible and responding
+✓ Kafka topics created
+✓ Frontend has external LoadBalancer IP
+✓ Health endpoints return 200 OK
+✓ Frontend loads in browser
+✓ Can sign up / login
+✓ Can create restaurants
+✓ No error messages in logs
+
+================================================================================
+🎯 WHAT GETS DEPLOYED
+================================================================================
+
+AWS Cloud (us-east-1)
+├── ECR Repositories (5)
+│   ├── yelp/user-service
+│   ├── yelp/restaurant-service
+│   ├── yelp/restaurant-owner-service
+│   ├── yelp/review-service
+│   └── yelp/frontend
+│
+├── VPC (Virtual Private Cloud)
+│   ├── 2 Public Subnets (different AZs)
+│   ├── Internet Gateway
+│   └── Security Groups
+│
+├── EKS Cluster: yelp-cluster
+│   ├── Control Plane (AWS-managed)
+│   ├── 3 EC2 Worker Nodes (t3.medium)
+│   └── Kubernetes Namespace: yelp
+│       ├── user-service (FastAPI)
+│       ├── restaurant-service (FastAPI)
+│       ├── restaurant-owner-service (FastAPI)
+│       ├── review-service (FastAPI)
+│       ├── frontend (React, LoadBalancer)
+│       ├── mongodb (Database)
+│       ├── kafka (Messaging)
+│       ├── zookeeper (Coordination)
+│       ├── ConfigMap (Environment vars)
+│       └── Secrets (Credentials)
+│
+└── CloudWatch
+    ├── Cluster logs
+    ├── Application logs
+    └── Performance metrics
+
+================================================================================
+🐛 TROUBLESHOOTING QUICK REFERENCE
+================================================================================
+
+Issue: Pods stuck in ImagePullBackOff
+→ Solution: Check ECR login, verify image URLs in manifests
+
+Issue: Services can't communicate
+→ Solution: Test DNS with: kubectl exec -it <pod> -- nslookup mongodb
+
+Issue: Frontend can't load
+→ Solution: Check LoadBalancer status, verify CORS settings
+
+Issue: Database connection failing
+→ Solution: Port forward MongoDB, test with mongosh
+
+For detailed troubleshooting:
+→ See DEPLOYMENT_GUIDE.md → Troubleshooting section
+
+================================================================================
+🎓 LEARNING RESOURCES
+================================================================================
+
+Documentation:
+✓ Kubernetes: https://kubernetes.io/docs/
+✓ AWS EKS: https://docs.aws.amazon.com/eks/
+✓ Docker: https://docs.docker.com/
+✓ eksctl: https://eksctl.io/
+
+Video Tutorials (Recommended):
+• "Kubernetes for Beginners" - 30 minutes
+• "AWS EKS Tutorial" - 20 minutes
+• "Docker Container Basics" - 25 minutes
+
+Books:
+• "Kubernetes in Action" by Marko Luksa
+• "AWS in Action" by Andreas Wittig
+
+================================================================================
+📞 COMMON QUESTIONS
+================================================================================
+
+Q: How long does deployment take?
+A: 60-90 minutes (mostly automated, ~15 min wait for EKS cluster)
+
+Q: How much will it cost?
+A: $5-10 for 1-2 hours of testing. Delete cluster after testing.
+
+Q: Can I test locally first?
+A: Yes! Run `docker-compose up` before deploying to AWS.
+
+Q: What if deployment fails?
+A: Check logs with `kubectl logs`, see troubleshooting guide.
+
+Q: Can I modify the deployment?
+A: Yes! Edit manifests in k8s/ directory and reapply.
+
+Q: Is my data safe?
+A: Yes! MongoDB data stored in AWS EBS volumes with persistence.
+
+Q: Can I scale services?
+A: Yes! `kubectl scale deployment/user-service --replicas=3 -n yelp`
+
+Q: Do I need to redeploy every time?
+A: No! Only for code changes. Rerun scripts to update images.
+
+================================================================================
+🎯 FINAL CHECKLIST BEFORE DEPLOYMENT
+================================================================================
+
+Pre-Deployment:
+□ AWS account created and verified
+□ AWS credentials configured (`aws configure`)
+□ Docker running and verified
+□ kubectl, AWS CLI, eksctl installed and working
+□ Python 3 installed
+□ Project code available locally
+□ Have 1-2 hours blocked
+□ Budget approved ($5-10)
+□ Network/internet stable
+
+After Deployment:
+□ All pods in RUNNING state
+□ All services created
+□ Frontend accessible
+□ APIs responding to health checks
+□ No errors in logs
+□ Application tested (sign up, browse, etc.)
+
+Cleanup:
+□ EKS cluster deleted
+□ ECR repositories cleaned up
+□ No unexpected charges
+
+================================================================================
+✨ FILE LOCATIONS
+================================================================================
+
+All files located in:
+/Users/khushidonda/Documents/semester-2/distrubuted systems/homeworks/data_236_lab2/
+
+Documentation:
+  ├── DEPLOYMENT_INDEX.md
+  ├── DEPLOYMENT_SUMMARY.md
+  ├── QUICK_START.md
+  ├── DEPLOYMENT_GUIDE.md
+  ├── DEPLOYMENT_CHECKLIST.md
+  ├── AWS_COST_OPTIMIZATION.md
+  └── PACKAGE_CONTENTS.md
+
+Scripts:
+  ├── quick-deploy.sh (executable)
+  ├── deploy.sh (executable)
+  ├── test_api.sh
+  └── test_kafka.sh
+
+Kubernetes Configs:
+  └── k8s/
+      ├── configmap.yaml
+      ├── secrets.yaml
+      ├── mongodb-*.yaml
+      ├── kafka-*.yaml
+      ├── zookeeper-*.yaml
+      ├── *-service-*.yaml
+      └── frontend-*.yaml
+
+================================================================================
+🚀 GET STARTED IN 3 STEPS
+================================================================================
+
+STEP 1: Read (5 minutes)
+→ Read DEPLOYMENT_SUMMARY.md for quick overview
+
+STEP 2: Prepare (5 minutes)
+→ Run: aws configure
+→ Verify: aws --version, kubectl version --client, docker --version
+
+STEP 3: Deploy (60-90 minutes)
+→ Run: ./quick-deploy.sh
+→ Wait for completion
+→ Verify with: kubectl get pods -n yelp
+
+================================================================================
+🎉 YOU NOW HAVE
+================================================================================
+
+✓ Complete documentation (~97 KB)
+  - 6 comprehensive guides
+  - Step-by-step instructions
+  - Troubleshooting guides
+  - Cost optimization strategies
+
+✓ Automated deployment scripts (~25 KB)
+  - One-command full deployment
+  - Interactive menu-driven deployment
+  - Color-coded output with progress tracking
+
+✓ Production-ready setup
+  - Same configuration used in real deployments
+  - Industry best practices
+  - Fully containerized microservices
+  - Kubernetes orchestration
+
+✓ Complete support materials
+  - Success criteria
+  - Verification procedures
+  - Cleanup procedures
+  - Common issues and solutions
+
+Total Package: ~122 KB (very lightweight!)
+
+================================================================================
+📊 DEPLOYMENT PACKAGE STATISTICS
+================================================================================
+
+Documentation Files:       6
+Script Files:             2
+Total Files:              8 (+ reference files)
+
+Documentation Size:       ~97 KB
+  - Guides: ~70 KB
+  - Checklists: ~13 KB
+  - References: ~14 KB
+
+Script Size:              ~25 KB
+  - Automated: ~13 KB
+  - Interactive: ~12 KB
+
+Total Package:            ~122 KB
+
+Deployment Time:          60-90 minutes
+Setup Cost:               $5-10 for testing
+Effort Required:          Minimal (mostly automated)
+
+================================================================================
+🏁 NEXT STEPS
+================================================================================
+
+Immediate:
+  1. Read DEPLOYMENT_SUMMARY.md
+  2. Configure AWS (`aws configure`)
+  3. Run `./quick-deploy.sh` or `./deploy.sh`
+  4. Verify deployment
+  5. Test the application
+
+Short-term (This week):
+  - Implement Kafka producers/consumers
+  - Add Redux to frontend
+  - Run performance tests (JMeter)
+  - Monitor AWS costs
+
+Medium-term (Next week+):
+  - Setup CI/CD pipeline
+  - Add SSL/TLS certificates
+  - Configure auto-scaling
+  - Setup backup strategy
+
+================================================================================
+
+For questions or issues:
+1. Check DEPLOYMENT_GUIDE.md → Troubleshooting section
+2. See AWS_COST_OPTIMIZATION.md for budget concerns
+3. Review DEPLOYMENT_CHECKLIST.md for tracking
+
+Good luck with your deployment! 🚀
+
+Created: April 27, 2026
+Version: 1.0 (Complete Package)
+================================================================================
