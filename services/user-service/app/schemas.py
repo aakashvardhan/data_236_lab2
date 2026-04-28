@@ -167,6 +167,7 @@ class RestaurantRecommendation(BaseModel):
     rating: Optional[float] = None
     pricing_tier: Optional[str] = None
     cuisines: Optional[str] = None
+    url: Optional[str] = None
 
 
 class ChatResponse(BaseModel):

@@ -1,12 +1,5 @@
-const DEFAULT_API_BASE_URL = 'http://localhost:8000'
-
 export function getApiBaseUrl() {
-  const rawBaseUrl =
-    import.meta.env.VITE_API_BASE_URL ||
-    import.meta.env.REACT_APP_API_BASE_URL ||
-    import.meta.env.NEXT_PUBLIC_API_BASE_URL ||
-    DEFAULT_API_BASE_URL
-
+  const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || '/api'
   return rawBaseUrl.replace(/\/$/, '')
 }
 
@@ -19,7 +12,6 @@ export function resolvePhotoUrl(photo) {
     return photo
   }
 
-  const baseUrl = getApiBaseUrl()
   const normalizedPhotoPath = photo.startsWith('/') ? photo : `/${photo}`
-  return `${baseUrl}${normalizedPhotoPath}`
+  return `/api${normalizedPhotoPath}`
 }

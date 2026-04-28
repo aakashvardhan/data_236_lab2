@@ -188,7 +188,7 @@ export default function AddRestaurantPage() {
         for (const photo of photos) {
           const formData = new FormData()
           formData.append('file', photo)
-          await fetch(`http://localhost:8000/restaurants/${restaurantId}/photos`, {
+          await fetch(`/api/restaurants/${restaurantId}/photos`, {
             method: 'POST',
             headers: { Authorization: `Bearer ${token}` },
             body: formData

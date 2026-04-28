@@ -85,7 +85,7 @@ export default function ProfilePage() {
     setSaving(true)
     try {
       const pendingPic = profilePic
-      await updateMe({
+      const profileFields = {
         name: form.name,
         phone: form.phone,
         about_me: form.about_me,
@@ -94,7 +94,11 @@ export default function ProfilePage() {
         country: form.country,
         languages: form.languages,
         gender: form.gender,
-      })
+      }
+      const hasProfileFields = Object.values(profileFields).some(v => v !== '' && v !== null && v !== undefined)
+      if (hasProfileFields) {
+        await updateMe(profileFields)
+      }
       if (pendingPic) {
         await uploadProfilePic(pendingPic)
         setProfilePic(null)
@@ -107,7 +111,8 @@ export default function ProfilePage() {
       notifyUserProfileUpdated()
     } catch (err) {
       setMessageType('error')
-      setMessage('Failed to update profile or picture.')
+      const detail = err?.response?.data?.detail
+      setMessage(detail || 'Failed to update profile or picture.')
     } finally {
       setSaving(false)
     }

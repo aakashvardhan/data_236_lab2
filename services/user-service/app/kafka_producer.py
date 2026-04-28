@@ -27,13 +27,18 @@ def _delivery_callback(err, msg):
 
 
 def _sync_publish(topic: str, payload: str) -> None:
-    producer = _get_producer()
-    producer.produce(topic, value=payload.encode(), callback=_delivery_callback)
-    producer.poll(0)
+    global _producer
+    try:
+        producer = _get_producer()
+        producer.produce(topic, value=payload.encode(), callback=_delivery_callback)
+        producer.poll(0)
+    except Exception as exc:
+        print(f"[user-producer] kafka publish error (non-fatal): {exc}")
+        _producer = None
 
 
 async def publish_user_event(topic: str, data: dict) -> None:
-    """Fire-and-forget publish so the API response is not blocked."""
+    """Fire-and-forget publish — Kafka errors are logged but never propagated."""
     payload = json.dumps({
         "correlation_id": uuid.uuid4().hex,
         "event": topic,
@@ -41,4 +46,7 @@ async def publish_user_event(topic: str, data: dict) -> None:
         "timestamp": datetime.now(timezone.utc).isoformat(),
     })
     loop = asyncio.get_event_loop()
-    await loop.run_in_executor(None, partial(_sync_publish, topic, payload))
+    try:
+        await loop.run_in_executor(None, partial(_sync_publish, topic, payload))
+    except Exception as exc:
+        print(f"[user-producer] executor error (non-fatal): {exc}")

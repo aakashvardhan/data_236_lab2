@@ -1,5 +1,7 @@
+import json
 import re
 from typing import AsyncGenerator
+from urllib.parse import quote
 
 from langchain_classic.agents import AgentExecutor, create_react_agent
 from langchain_classic.agents.output_parsers import ReActSingleInputOutputParser
@@ -156,7 +158,43 @@ _NUMBERED_ITEM_PATTERN = re.compile(
 )
 
 
-def _parse_web_recommendations(response_text: str) -> list[dict]:
+def _extract_tavily_items(observation) -> list[dict]:
+    """Extract url+title pairs from a Tavily tool observation."""
+    if isinstance(observation, list):
+        items = observation
+    elif isinstance(observation, str):
+        try:
+            items = json.loads(observation)
+        except Exception:
+            return []
+    else:
+        return []
+    return [
+        {"url": item["url"], "title": item.get("title", "")}
+        for item in items
+        if isinstance(item, dict) and item.get("url")
+    ]
+
+
+def _best_url_for(name: str, tavily_items: list[dict]) -> str:
+    """Return the best URL for a restaurant name, preferring Yelp, else a Yelp search fallback."""
+    name_lower = name.lower()
+    for item in tavily_items:
+        url = item.get("url", "")
+        title = item.get("title", "").lower()
+        if "yelp.com" in url and (name_lower in url.lower() or name_lower in title):
+            return url
+    for item in tavily_items:
+        url = item.get("url", "")
+        title = item.get("title", "").lower()
+        if name_lower in title:
+            return url
+    return f"https://www.yelp.com/search?find_desc={quote(name)}"
+
+
+def _parse_web_recommendations(
+    response_text: str, tavily_items: list[dict] | None = None
+) -> list[dict]:
     """Parse the LLM's numbered-list response into structured recommendation cards."""
     restaurants: list[dict] = []
     for line in response_text.splitlines():
@@ -165,12 +203,14 @@ def _parse_web_recommendations(response_text: str) -> list[dict]:
             continue
         name = match.group("name").strip().strip("*")
         cuisine = match.group("cuisine").strip()
+        url = _best_url_for(name, tavily_items or [])
         restaurants.append({
             "id": f"web-{hash(name) % 100000}",
             "name": name,
             "cuisines": cuisine,
             "pricing_tier": "",
             "rating": None,
+            "url": url,
         })
     return restaurants[:5]
 
@@ -293,12 +333,14 @@ async def chat(
 
     recommendations: list[dict] = []
     used_tavily = False
+    tavily_items: list[dict] = []
     for action, observation in result.get("intermediate_steps", []):
         tool_name = getattr(action, "tool", "")
         if tool_name == "search_restaurants":
             recommendations.extend(_parse_restaurant_lines(str(observation)))
         elif tool_name == "tavily_search_results_json":
             used_tavily = True
+            tavily_items.extend(_extract_tavily_items(observation))
 
     ai_response = _finalize_response(
         str(result.get("output", "")), recommendations
@@ -306,7 +348,7 @@ async def chat(
 
     # For Tavily results, parse the LLM's formatted response into cards
     if used_tavily and not recommendations:
-        recommendations = _parse_web_recommendations(ai_response)
+        recommendations = _parse_web_recommendations(ai_response, tavily_items)
     recommendations = _dedupe_recommendations(recommendations)[:5]
     await conversation_manager.save_turn(user_id, session_id, message, ai_response)
     return ai_response, recommendations

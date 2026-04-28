@@ -88,7 +88,7 @@ export default function ExplorePage() {
       if (!token) { setMessages(prev => [...prev, { role: 'assistant', text: 'Please log in to use the AI assistant! 😊' }]); return }
       const res = await chatWithAI({ message: userText, session_id: sessionId || 'default' })
       setSessionId(res.data.session_id)
-      const recs = (res.data.recommendations || []).map(r => ({ id: r.id || Math.random(), name: r.name, cuisine_type: r.cuisines, pricing_tier: r.pricing_tier, avg_rating: r.rating || 0 }))
+      const recs = (res.data.recommendations || []).map(r => ({ id: r.id || Math.random(), name: r.name, cuisine_type: r.cuisines, pricing_tier: r.pricing_tier, avg_rating: r.rating || 0, url: r.url || null, isWeb: typeof r.id === 'string' && r.id.startsWith('web-') }))
       setMessages(prev => [...prev, { role: 'assistant', text: res.data.response, recommendations: recs }])
     } catch (err) {
       setMessages(prev => [...prev, { role: 'assistant', text: err.response?.status === 401 ? 'Session expired. Please log in again!' : 'Sorry, AI is unavailable right now.' }])
@@ -357,11 +357,23 @@ export default function ExplorePage() {
                     {msg.recommendations?.length > 0 && (
                       <div className="mt-2 flex flex-col gap-1">
                         {msg.recommendations.map(r => (
-                          <Link key={r.id} to={`/restaurant/${r.id}`}
-                            className="bg-red-50 rounded-lg p-2 text-xs text-gray-800 hover:bg-red-100 transition block">
-                            <div className="font-semibold text-red-600">{r.name}</div>
-                            <div className="text-gray-500">{r.cuisine_type} · {r.pricing_tier} · ⭐ {r.avg_rating}</div>
-                          </Link>
+                          r.isWeb ? (
+                            <a key={r.id} href={r.url} target="_blank" rel="noopener noreferrer"
+                              className="bg-red-50 rounded-lg p-2 text-xs text-gray-800 hover:bg-red-100 transition block">
+                              <div className="flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 text-gray-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9" /></svg>
+                                <span className="font-semibold text-gray-800">{r.name}</span>
+                              </div>
+                              {r.cuisine_type && <div className="text-gray-500 ml-4">{r.cuisine_type}</div>}
+                              <div className="text-blue-400 ml-4">View on Yelp ↗</div>
+                            </a>
+                          ) : (
+                            <Link key={r.id} to={`/restaurant/${r.id}`}
+                              className="bg-red-50 rounded-lg p-2 text-xs text-gray-800 hover:bg-red-100 transition block">
+                              <div className="font-semibold text-red-600">{r.name}</div>
+                              <div className="text-gray-500">{r.cuisine_type} · {r.pricing_tier} · ⭐ {r.avg_rating}</div>
+                            </Link>
+                          )
                         ))}
                       </div>
                     )}
